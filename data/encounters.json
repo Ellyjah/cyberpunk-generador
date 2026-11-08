@@ -1,0 +1,528 @@
+[
+ {
+  "id": "day",
+  "title": "Encuentros diurnos en Night City",
+  "die": "1d100",
+  "rows": [
+   {
+    "min": 1,
+    "max": 5,
+    "title": "Agentes locales",
+    "text": "una cantidad de patrulleros igual a la mitad del número de jugadores, armados con fusiles de asalto, pistolas muy pesadas y porras pesadas, con blindaje de Kevlar®. Si lleváis armas o blindaje visibles, os retienen y exigen que os identifiquéis. Si discutís con ellos, llaman a refuerzos (3 oficiales) para deteneros. Si sacáis un arma, primero disparan y luego rellenan el papeleo. Usa operativos de seguridad.",
+    "uses": [
+     "securityOperative"
+    ]
+   },
+   {
+    "min": 6,
+    "max": 11,
+    "title": "Guardias corporativos",
+    "text": "la misma cantidad de guardias corporativos de bajo nivel que de jugadores patrullan la zona, vistiendo blindaje ligero y armados con subfusiles. A menos que trabajéis para su corporación, no creen que tengáis motivos para andar merodeando por ahí: «moveos, punks». Usa operativos de seguridad; sustituye el Kevlar® por blindaje ligero y el fusil de asalto de mala calidad por un subfusil de mala calidad.",
+    "uses": [
+     "securityOperative"
+    ]
+   },
+   {
+    "min": 12,
+    "max": 13,
+    "title": "Técnicos",
+    "text": "una cantidad de técnicos igual a la mitad del número de jugadores, con escopetas y vistiendo chalecos de Kevlar®. Tira 1d10. 1-2, están cargando una caja de herramientas en un AV-4. 3-5, están trabajando en una infraestructura de la ciudad, justo en vuestro camino. 6-10, están caminando hacia vosotros de camino al trabajo. Usa guardaespaldas; añade una mano con herramientas y un ciberojo con microópticos.",
+    "uses": [
+     "bodyguard"
+    ]
+   },
+   {
+    "min": 14,
+    "max": 17,
+    "title": "Detective privado",
+    "text": "un detective privado armado con una pistola muy pesada y una porra pesada, vistiendo blindaje mediano. Tira 1d10. 1-3, está por delante de vosotros, importunando a un informador en la esquina de la calle para conocer el paradero de un sospechoso. 4-7, está siguiendo a alguien por delante de vosotros. 8-10, os para y os pregunta si habéis visto a la persona que está siguiendo. Usa oficial de seguridad; quita el fusil de asalto y el escudo antibalas.",
+    "uses": [
+     "securityOfficer"
+    ]
+   },
+   {
+    "min": 18,
+    "max": 20,
+    "title": "Corporativos",
+    "text": "una cantidad de corporativos de una empresa local igual al número de jugadores, tratando de encontrar un taxi. Llevan trajes tejidos con Kevlar® y pistolas medianas. Tira 1d10. 1-4, les siguen el mismo número de pandilleros con intención de robarles. 5-8, creen que sois pandilleros y abren fuego ante cualquier provocación. 9-10, creen que sois un problema y piden refuerzos a la corporación (ver guardias corporativos). Para corporativos usa pandilleros; quita los destripadores, sustituye el cuero por Kevlar® y la pistola muy pesada de mala calidad por una pistola mediana. Añade un equipo de ciberaudio y un escáner de radio/reproductor de música. Usa pandilleros normales si es necesario.",
+    "uses": [
+     "booster"
+    ]
+   },
+   {
+    "min": 21,
+    "max": 27,
+    "title": "Locales",
+    "text": "dos jóvenes del barrio (usa pandilleros; quita los destripadores y la pistola muy pesada de mala calidad). Tira 1d10. 1-5, son retenidos por una cantidad de pandilleros de la Legión Metálica Roja igual al número de jugadores. 6-10, son duramente golpeados por una cantidad de sectarios de los Inquisidores igual al número de jugadores por el pecado de tener ojos de diseño. Legión Metálica Roja: usa pandilleros; sustituye el cuero por blindaje pesado. Inquisidores: usa pandilleros; sustituye los destripadores por un arma cuerpo a cuerpo mediana; quita el tecnopelo.",
+    "uses": [
+     "booster"
+    ]
+   },
+   {
+    "min": 28,
+    "max": 32,
+    "title": "Recuperadores",
+    "text": "os encontráis con un grupo formado por una cantidad de recuperadores bien equipados igual al número de jugadores menos 2, con 1 jefe de recuperadores, que intentan conectar un edificio abandonado a la red eléctrica local. Tira 1d10. Con 1-5, os ignoran. 6-8, el jefe y uno de los recuperadores se acercan para «ver de qué van esos tipos que nos vigilan». 9-10, hacen estallar un transformador local y toda la manzana se queda sin electricidad, lo que provoca el pánico generalizado. Recuperadores: usa pandilleros de carretera.",
+    "uses": [
+     "roadGanger"
+    ]
+   },
+   {
+    "min": 33,
+    "max": 37,
+    "title": "Periodistas",
+    "text": "un equipo de 2 personas formado por un cámara y un entrevistador, vigilando un edificio en una misión urgente. Tira 1d10. 1-5, son descubiertos por el sujeto de la historia y se produce un conflicto. Vosotros, por supuesto, estáis justo en medio. 6-10, deciden que la historia sois vosotros y empiezan a seguiros. Periodistas: usa pandilleros; sustituye el cuero por Kevlar® y la pistola muy pesada de mala calidad por una pistola pesada, quita los destripadores, añade un ciberojo con microvídeo, un equipo de ciberaudio y escucha amplificada. Sujeto de la investigación: vuelve a tirar en la tabla de encuentros.",
+    "uses": [
+     "booster"
+    ]
+   },
+   {
+    "min": 38,
+    "max": 41,
+    "title": "Detective privado",
+    "text": "un detective privado armado con una pistola muy pesada y una porra pesada, vistiendo blindaje mediano. Tira 1d10. 1-3, está por delante de vosotros, pegando a un informador en la esquina de la calle. 4-7, está entrando por la fuerza en el coche de alguien. 8-10, os para y os pregunta si habéis visto a la persona que está siguiendo. Usa oficial de seguridad; quita el fusil de asalto y el escudo antibalas.",
+    "uses": [
+     "securityOfficer"
+    ]
+   },
+   {
+    "min": 42,
+    "max": 46,
+    "title": "Trauma Team",
+    "text": "un AV-4 toma tierra en medio de un tiroteo reciente y los médicos empiezan a atender a media docena de pandilleros heridos. Tira 1d10. 1-5, el Trauma Team decide que solo pasabais por ahí y os ignora. 6-10, creen que formáis parte del problema y los 2 oficiales de seguridad abren fuego con fusiles de asalto. Ver Trauma Team en la PÁG. 224 para las estadísticas.",
+    "uses": []
+   },
+   {
+    "min": 47,
+    "max": 57,
+    "title": "Vagabundos",
+    "text": "una cantidad, igual al número de jugadores, de vagabundos mugrientos que hurgan entre las ruinas o la basura cerca de una de las manzanas calcinadas de la ciudad. Todos llevan blindaje de cuero sucio y van armados con diferentes cuchillos de fabricación casera y pistolas muy pesadas de mala calidad. Tira 1d10. 1-6, os piden dinero en efectivo o cualquier cosa que os sobre. 7-8, os ignoran. 9-10, intentan atracaros. A discreción del DJ, los vagabundos pueden tener hasta seis compañeros cerca que acuden en su ayuda si se produce un enfrentamiento. Usa pandilleros; sustituye los destripadores por un arma cuerpo a cuerpo ligera.",
+    "uses": [
+     "booster"
+    ]
+   },
+   {
+    "min": 58,
+    "max": 63,
+    "title": "Nómadas",
+    "text": "una cantidad de nómadas igual al número de jugadores. Llevan blindaje de cuero, ballestas, cuchillos y pistolas muy pesadas. Están algo borrachos y buscando pelea. Se meten con cualquiera que encuentren atractivo en vuestro grupo. Aceptadlo: quieren bronca, así que dádsela. Usa pandilleros de carretera.",
+    "uses": [
+     "roadGanger"
+    ]
+   },
+   {
+    "min": 64,
+    "max": 70,
+    "title": "Pandilleros de la calle",
+    "text": "una cantidad de pandilleros de bajo nivel, igual al número de jugadores, que forman parte de la banda de los Pirañas. Si parecéis presas fáciles y tenéis dinero, intentarán daros una paliza. Están armados con pistolas muy pesadas y destripadores. Usa pandilleros.",
+    "uses": [
+     "booster"
+    ]
+   },
+   {
+    "min": 71,
+    "max": 76,
+    "title": "Punks callejeros",
+    "text": "una cantidad de yonquis de smash igual al número de jugadores, que buscan pasta para mantener su adicción. Si no lleváis colores corporativos o de una pandilla, intentan atracaros en medio de la calle. Van armados con cuchillos y palos, y no llevan blindaje. Usa pandilleros; sustituye los destripadores por un arma cuerpo a cuerpo ligera, quita la pistola muy pesada y el blindaje de cuero.",
+    "uses": [
+     "booster"
+    ]
+   },
+   {
+    "min": 77,
+    "max": 82,
+    "title": "Sectarios",
+    "text": "los Reclutadores han salido a la calle. Una cantidad igual al número de jugadores, visiblemente armados con cuchillos, palos y pistolas pesadas, os arrinconan para predicar que el cielo rojo es una señal del Fin de los Tiempos. Si no les hacéis caso, intentarán que la verdad os entre con sangre. Usa pandilleros; sustituye los destripadores por nudillos de acero y la pistola muy pesada de mala calidad por un pistola pesada de mala calidad, añade un arma cuerpo a cuerpo ligera.",
+    "uses": [
+     "booster"
+    ]
+   },
+   {
+    "min": 83,
+    "max": 88,
+    "title": "Camión de nómadas",
+    "text": "una cantidad de nómadas de los Vaqueros de Acero igual a la mitad del número de jugadores (mínimo 2) se ocupan de un camión averiado. La mayoría están luchando contra una cantidad de pandilleros locales igual al número de jugadores, mientras que el que queda trata de arreglar el motor. Si los ignoráis, os ignoran, pero los nómadas pueden aceptar una oferta de ayuda (tira 1d10: 1-6, sí; 7-10, no). Nómadas: usa pandilleros de carretera; sustituye el blindaje de cuero por Kevlar®.",
+    "uses": [
+     "roadGanger"
+    ]
+   },
+   {
+    "min": 89,
+    "max": 94,
+    "title": "Pandilla",
+    "text": "una cantidad de miembros de la pandilla Ironsights igual al número de jugadores, equipados con subfusiles, destripadores, ciberojos de luz tenue y cibervelocidad. Acosan a cualquier miembro del grupo que destaque, intentando sacaros dinero y, en general, buscando pelea. Usa pandilleros; sustituye la pistola muy pesada de mala calidad por un subfusil de mala calidad, añade ciberojos con luz tenue/infrarrojos/ ultravioletas, conexión neuronal y cibervelocidad Kerenzikov.",
+    "uses": [
+     "booster"
+    ]
+   },
+   {
+    "min": 95,
+    "max": 100,
+    "title": "Criminales importantes",
+    "text": "os habéis encontrado con una operación clave del despiadado sindicato Vilshenko. Una cantidad de mercenarios igual al número de jugadores menos 2, armados con pistolas muy pesadas y escopetas, que llevan blindaje pesado, están bajando cargamento de contrabando de un camión. Los dirige un mercenario veterano. Tira 1d10. 1-4, no se fijan en vosotros. 5-8, os ven y uno os dice que os larguéis. 9-10, deciden que habéis visto demasiado y que hay que acabar con vosotros. Mercenarios: usa operativos de seguridad. Mercenario veterano: usa oficial de seguridad; sustituye el fusil de asalto de mala calidad y el fusil de asalto por una escopeta, respectivamente.",
+    "uses": [
+     "securityOperative",
+     "securityOfficer"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "dusk",
+  "title": "Encuentros al anochecer en Night City",
+  "die": "1d100",
+  "rows": [
+   {
+    "min": 1,
+    "max": 5,
+    "title": "Policía de la ciudad",
+    "text": "una cantidad de patrulleros igual a la mitad del número de jugadores, armados con fusiles de asalto y vistiendo blindaje mediano. Si lleváis armas o armaduras visibles, os retienen y exigen vuestros documentos de identidad. Si os ponéis a discutir, piden refuerzos (3 operativos de seguridad) para deteneros. Si sacáis las armas, dispararán primero y rellenarán el papeleo después. Usa oficiales de seguridad.",
+    "uses": [
+     "securityOfficer"
+    ]
+   },
+   {
+    "min": 6,
+    "max": 11,
+    "title": "Guardias corporativos",
+    "text": "la misma cantidad de guardias corporativos que de jugadores patrullan la zona, vistiendo blindaje pesado y armados con subfusiles pesados. A menos que trabajéis para una corporación, no creen que tengáis nada que hacer merodeando por su territorio: «¡Moveos, punks!». Usa operativos de seguridad; sustituye el Kevlar® por blindaje pesado y el fusil de asalto de mala calidad por un subfusil pesado de mala calidad.",
+    "uses": [
+     "securityOperative"
+    ]
+   },
+   {
+    "min": 12,
+    "max": 13,
+    "title": "Técnicos corporativos",
+    "text": "un número de técnicos corporativos igual a la mitad del número de jugadores acompañados por la misma cantidad de guardaespaldas fuertemente armados. Tira 1d10. 1-2, están cargando cajas de piezas en un AV-4. 3-5, están trabajando en una infraestructura de la ciudad que se encuentra en vuestro camino. 6-10, están arreglando un bonito coche en el arcén. Técnico: usa guardaespaldas; añade una mano con herramientas y un ciberojo con microópticos. Guardaespaldas: usa guardaespaldas; sustituye el Kevlar® por blindaje mediano y la escopeta de mala calidad por una escopeta; añade un ciberojo con sistema de puntería.",
+    "uses": [
+     "bodyguard"
+    ]
+   },
+   {
+    "min": 14,
+    "max": 17,
+    "title": "Detective privado",
+    "text": "un detective privado armado con una pistola muy pesada y un machete, que lleva blindaje ligero. Tira 1d10. 1-3, está por delante de vosotros, acosando a un informador en la esquina de la calle para conocer el paradero de un sospechoso. 4-7, está siguiendo a alguien por delante de vosotros. 8-10, os para y os pregunta si habéis visto a la persona que está siguiendo. Va armado con un revólver de gran calibre y lleva una chaqueta blindada. Usa jefe recuperador; quita la tienda y material de acampada y la escopeta, sustituye la pistola pesada por una pistola muy pesada y el arma cuerpo a cuerpo pesada por un arma cuerpo a cuerpo mediana.",
+    "uses": [
+     "reclaimerChief"
+    ]
+   },
+   {
+    "min": 18,
+    "max": 20,
+    "title": "Corporativos",
+    "text": "una cantidad de corporativos de una gran empresa igual al número de jugadores, que se dirigen a la estación de tren levitatorio. Todos llevan trajes tejidos con Kevlar® y tienen polímeros de un disparo. Tira 1d10. 1-4, les sigue la misma cantidad de pandilleros con intención de atracarles. 5-8, creen que sois pandilleros y abrirán fuego ante cualquier provocación. 9-10, no solo creen que seáis un problema, sino que piden refuerzos a la corporación. Ver guardias corporativos. Corporativos: usa pandilleros; quita los destripadores, sustituye el cuero por Kevlar®, añade un equipo de ciberaudio y un escáner de radio/reproductor de música.",
+    "uses": [
+     "booster"
+    ]
+   },
+   {
+    "min": 21,
+    "max": 25,
+    "title": "Rockeros",
+    "text": "empezáis a adelantar a una cantidad de rockeros igual al número de jugadores menos 1, que van de camino a un concierto acompañados por sus guardaespaldas mercenarios (una cantidad igual a la mitad del número de jugadores) y su representante arreglador. Tira 1d10. 1-4, os invitan a uniros a ellos. 5-8, envían a los mercenarios a «ocuparse de esos tipos que les siguen». 9-10, os ignoran. Rockeros: usa pandilleros; añade un AudioVox e instrumentos. Arreglador: usa pandillero; añade un equipo de ciberaudio y un agente interno.",
+    "uses": [
+     "booster"
+    ]
+   },
+   {
+    "min": 26,
+    "max": 30,
+    "title": "Periodistas",
+    "text": "un equipo de 2 personas formado por un cámara y un entrevistador, vigilando un edificio en una misión urgente. Tira 1d10. 1-5, son descubiertos por el sujeto de la historia y se produce un conflicto. Vosotros, por supuesto, estáis justo en medio. 6-10, deciden que la historia sois vosotros y empiezan a seguiros. Periodistas: usa pandilleros; sustituye el cuero por Kevlar® y la pistola muy pesada de mala calidad por una pistola pesada, quita los destripadores, añade un ciberojo con microvídeo, un equipo de ciberaudio y escucha amplificada. Sujeto de la investigación: vuelve a tirar en la tabla de encuentros.",
+    "uses": [
+     "booster"
+    ]
+   },
+   {
+    "min": 31,
+    "max": 33,
+    "title": "Vampiros Filarmónicos",
+    "text": "la pandilla de los Vampiros Filarmónicos vuelve a causar problemas. Tira 1d10. 1-2, tres de sus miembros están preparando algún tipo de broma con tres o cuatro objetos domésticos inusuales (a tu elección), pero una cantidad de pandilleros igual al número de jugadores se ha dado cuenta y estalla un conflicto. 3-4, tres de sus miembros han pirateado las farolas locales para que parpadeen al ritmo de una popular canción pop. 5-6, tres de sus miembros han pirateado los data terms para mostrar la advertencia de un inminente ataque con misiles y provocar el pánico generalizado. 7-8, tres de sus miembros han lanzado el contenido de varias bolsas enormes de europavos desde la ventanilla de un coche de policía robado. La gente se lanza a por el dinero, solo para descubrir que es falso. 9-10, tres de sus miembros han pirateado las pantallas de vídeo locales y están emitiendo noticias falsas. Desbaratar las bromas de los Vampiros requiere una prueba de Electrónica/Seguridad VD14. Vampiros Filarmónicos: usa pandilleros; añade la habilidad Electrónica/Seguridad con base de habilidad 10. Pandilleros: usa guardaespaldas.",
+    "uses": [
+     "booster",
+     "bodyguard"
+    ]
+   },
+   {
+    "min": 34,
+    "max": 40,
+    "title": "Locales",
+    "text": "un adolescente de una urbanización, que probablemente se escabulló para ver la ciudad. Tira 1d10. 1-4, está retenido por una cantidad de miembros de los Pirañas igual al número de jugadores. 5-8, una cantidad de Inquisidores igual al número de jugadores le están dando una paliza por el pecado de usar cibermoda. 9-10, está retenido por un arreglador: no tiene dinero para pagarle. Pirañas: usa pandilleros; sustituye el cuero por blindaje ligero. Inquisidores: usa pandilleros; sustituye los destripadores por un arma cuerpo a cuerpo ligera, quita el tecnopelo. Arreglador: usa guardaespaldas; añade un equipo de ciberaudio, un agente interno y un analizador de voz, añade la habilidad Comerciar con una base de 10.",
+    "uses": [
+     "booster",
+     "bodyguard"
+    ]
+   },
+   {
+    "min": 41,
+    "max": 46,
+    "title": "Netrunners errantes",
+    "text": "dos netrunners armados con pistolas muy pesadas y con blindaje ligero. Están merodeando cerca de una pequeña oficina corporativa tratando de no ser vistos mientras irrumpen en la arquitectura de RED del edificio. Tira 1d10. 1-5, son descubiertos por una cantidad de guardias de seguridad igual al número de jugadores y se produce un conflicto. Vosotros, por supuesto, estáis justo en medio. 6-10, los netrunners dan por sentado que sois guardias y utilizan las 2 torretas de seguridad del edificio para atacaros. Netrunners: usa netrunners; sustituye el traje Bodyweight por blindaje ligero. Guardias: usa operativos de seguridad. Torreta de seguridad: usa la torreta automatizada de la PÁG. 214.",
+    "uses": [
+     "netrunner",
+     "securityOperative"
+    ],
+    "external": [
+     "la torreta automatizada de la PÁG"
+    ]
+   },
+   {
+    "min": 47,
+    "max": 52,
+    "title": "Nómadas",
+    "text": "una cantidad de nómadas de la tribu de los Correcaminos igual al número de jugadores. Llevan blindaje mediano, cuchillos y pistolas muy pesadas. Están algo borrachos y buscando pelea. Se meten con cualquiera que encuentren atractivo en vuestro grupo. Aceptadlo: quieren bronca, así que dádsela. Usa pandilleros de carretera; sustituye la ballesta por un fusil de asalto y el cuero por blindaje mediano. Cambia la habilidad Tiro con arco por la de Armas largas.",
+    "uses": [
+     "roadGanger"
+    ]
+   },
+   {
+    "min": 53,
+    "max": 58,
+    "title": "Punks callejeros",
+    "text": "una cantidad de yonquis de smash igual al número de jugadores, que buscan pasta para mantener su adicción. Si no lleváis colores corporativos o de una pandilla, intentan atracaros en medio de la calle. Van armados con cuchillos y palos, y no llevan blindaje. Usa pandilleros; sustituye los destripadores por un arma cuerpo a cuerpo ligera, quita la pistola muy pesada y el blindaje de cuero.",
+    "uses": [
+     "booster"
+    ]
+   },
+   {
+    "min": 59,
+    "max": 63,
+    "title": "Trauma Team",
+    "text": "un AV-4 toma tierra en medio de un tiroteo reciente y los médicos empiezan a atender a media docena de pandilleros heridos. Tira 1d10. 1-5, el Trauma Team decide que solo pasabais por ahí y os ignora. 6-10, creen que formáis parte del problema y los 2 oficiales de seguridad abren fuego con fusiles de asalto. Ver Trauma Team en la PÁG. 224 para las estadísticas.",
+    "uses": []
+   },
+   {
+    "min": 64,
+    "max": 69,
+    "title": "Cromados",
+    "text": "un grupo de fans acérrimos de una banda local de rock cromático, ataviados con ropa de cuero llena de pinchos, brazos metálicos cubiertos de cromo y ciberarmas. Igualan en número a los jugadores. Tira 1d10. 1-5, están exaltados por el smash y tratan de buscar pelea. 6-7, pasan de vosotros, quizá haciendo algún comentario grosero. 8-10, se interesan por uno o más miembros del grupo y os invitan a que los acompañéis a tomar smash e ir al concierto. Usa pandilleros; añade 2 ciberbrazos con recubrimiento de Superchrome®, sustituye los destripadores por garras y el cuero por blindaje ligero.",
+    "uses": [
+     "booster"
+    ]
+   },
+   {
+    "min": 70,
+    "max": 72,
+    "title": "Equipo de mercenarios",
+    "text": "una cantidad de mercenarios igual al número de jugadores, protegidos con blindaje ligero y armados con espadas y pistolas pesadas. Tienen reflejos potenciados, ciberojos con infrarrojos y ciberpiernas. Está claro que se trata de un equipo de asesinos en busca de su víctima. Tira 1d10. 1-5, os evitan y siguen adelante; 6-10, deciden que sois testigos y que debéis ser eliminados de inmediato. Usa oficiales de seguridad; añade ciberojos de luz tenue/infrarrojos/ ultravioletas y dos ciberpiernas con potenciadores de salto, quita el fusil de asalto, sustituye la pistola muy pesada por una pistola pesada.",
+    "uses": [
+     "securityOfficer"
+    ]
+   },
+   {
+    "min": 73,
+    "max": 77,
+    "title": "Pandilla",
+    "text": "una cantidad de miembros de la pandilla Ironsights igual al número de jugadores, equipados con armas automáticas, ciberarmas, ciberojos de luz tenue/infrarrojos/ultravioletas y reflejos potenciados. Acosan a cualquier miembro atractivo del grupo, intentando sacaros dinero y, en general, buscando pelea. Este grupo es más duro que el del encuentro diurno. Usa guardaespaldas; sustituye la escopeta de mala calidad por un subfusil pesado, añade dos ciberarmas de tu elección y ciberojos con luz tenue/infrarrojos/ ultravioletas, conexión neuronal y cibervelocidad Kerenzikov.",
+    "uses": [
+     "bodyguard"
+    ]
+   },
+   {
+    "min": 78,
+    "max": 83,
+    "title": "Equipo de mercenarios",
+    "text": "una cantidad de mercenarios igual a la mitad del número de jugadores, armados con fusiles de asalto con conexión de arma inteligente. Tienen reflejos potenciados, audición potenciada, ciberojos con infrarrojos y sistema de puntería. Está claro que están metidos en alguna operación encubierta. Si lleváis uniformes o insignias de una corporación rival, actuarán. Tira 1d10. 1-5, os evitan y siguen adelante. 6-10, deciden que sois testigos y que debéis ser eliminados de inmediato. Usa oficiales de seguridad; añade conexión de arma inteligente, conectores interface, equipo de ciberaudio, escucha amplificada, ciberojos de luz tenue/infrarrojos/ultravioletas y sistema de puntería en un ojo.",
+    "uses": [
+     "securityOfficer"
+    ]
+   },
+   {
+    "min": 84,
+    "max": 90,
+    "title": "Pandilleros de la calle",
+    "text": "una cantidad de pandilleros de bajo nivel igual al número de jugadores más 2, que forman parte de la banda de los Pirañas. Si parecéis presas fáciles y tenéis dinero, intentarán daros una paliza. Están armados con pistolas medianas, cuchillos y reflejos potenciados. Usa pandilleros; sustituye la pistola muy pesada de mala calidad por pistola mediana de mala calidad, añade conexión neuronal y cibervelocidad Kerenzikov.",
+    "uses": [
+     "booster"
+    ]
+   },
+   {
+    "min": 91,
+    "max": 93,
+    "title": "Criminales importantes",
+    "text": "os habéis encontrado con una operación significativa de la famosa familia Scagattalia. Varios mercenarios cibernetizados equipados con armas cibernéticas, pistolas pesadas y fusiles pesados con conexión de arma inteligente están descargando droga de un camión. Tira 1d10. 1-4, no se fijan en vosotros. 5-8, os ven y uno os dice que os larguéis. 9-10, deciden que habéis visto demasiado y que hay que acabar con vosotros. Usa una cantidad de operativos de seguridad igual a la mitad del número de jugadores y 2 oficiales de seguridad; sustituye el fusil de asalto por un fusil de asalto con conexión de arma inteligente, añade garras, conexión neuronal, conectores interface, conexión de arma inteligente y un ciberojo con sistema de puntería.",
+    "uses": [
+     "securityOperative",
+     "securityOfficer"
+    ]
+   },
+   {
+    "min": 94,
+    "max": 100,
+    "title": "Tiroteo",
+    "text": "genial. Acabáis de meteros en un gran altercado entre el Maelstrom y la Legión Metálica Roja. Cada bando tiene una cantidad de miembros igual al número de jugadores, llevan blindaje ligero y empuñan pistolas muy pesadas. Hay ciberarmas por todas partes. Ambos bandos están dirigidos por 1 líder que lleva armas más pesadas. Elegid un bando o un objetivo. Combatientes: usa pandilleros; sustituye el cuero por blindaje ligero, mantén los destripadores o sustitúyelos por otras ciberarmas según creas necesario. Líderes: usa oficiales de seguridad; añade una ciberarma de tu elección.",
+    "uses": [
+     "booster",
+     "securityOfficer"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "midnight",
+  "title": "Encuentros de medianoche en Night City",
+  "die": "1d100",
+  "rows": [
+   {
+    "min": 1,
+    "max": 10,
+    "title": "Policía de la ciudad",
+    "text": "una cantidad de patrulleros igual a la mitad de los jugadores, armados con fusiles de asalto con conexión de arma inteligente. Si lleváis armas o armaduras visibles, os retienen y exigen vuestros documentos de identidad. No tenéis nada que hacer por aquí pasada la medianoche y ellos lo saben. Os retienen y buscan cualquier pretexto para deteneros, como el simple hecho de llevar esas armas a la vista. Si sacáis las armas, dispararán primero y rellenarán el papeleo después. Usa oficiales de seguridad; añade conectores interface y conexión de arma inteligente.",
+    "uses": [
+     "securityOfficer"
+    ]
+   },
+   {
+    "min": 11,
+    "max": 22,
+    "title": "Guardias corporativos",
+    "text": "la misma cantidad de guardias corporativos que de jugadores patrullan la zona, equipados con subfusiles pesados con conexión de arma inteligente. «¿Qué hacéis en la propiedad pasada la medianoche? ¡Es imposible que tengáis una buena razón!» Usa oficiales de seguridad; sustituye el fusil de asalto por un subfusil pesado, añade conectores interface y conexión de arma inteligente.",
+    "uses": [
+     "securityOfficer"
+    ]
+   },
+   {
+    "min": 23,
+    "max": 24,
+    "title": "Detective privado",
+    "text": "un detective privado armado con una pistola muy pesada y un machete, que lleva blindaje ligero. Tira 1d10. 1-3, está por delante de vosotros, acosando a un informador en la esquina de la calle para conocer el paradero de un sospechoso. 4-7, está siguiendo a alguien por delante de vosotros. 8-10, os para y os pregunta si habéis visto a la persona que está siguiendo. Va armado con un revólver de gran calibre y lleva una chaqueta blindada. Usa jefe recuperador; quita la tienda y material de acampada y la escopeta, sustituye la pistola pesada por una pistola muy pesada y el arma cuerpo a cuerpo pesada por un arma cuerpo a cuerpo mediana.",
+    "uses": [
+     "reclaimerChief"
+    ]
+   },
+   {
+    "min": 25,
+    "max": 25,
+    "title": "Periodistas",
+    "text": "un equipo de 2 personas formado por un cámara y un entrevistador, en busca de un buen artículo. Tira 1d10. 1-5, son descubiertos por el sujeto de la historia y se produce un conflicto. Vosotros, por supuesto, estáis justo en medio. 6-10, deciden que vosotros sois la historia y os siguen. Periodistas: usa pandilleros; sustituye el cuero por Kevlar® y la pistola muy pesada de mala calidad por una pistola pesada, quita los destripadores, añade un ciberojo con microvídeo, un equipo de ciberaudio y escucha amplificada. Sujeto de la investigación: vuelve a tirar en la tabla de encuentros.",
+    "uses": [
+     "booster"
+    ]
+   },
+   {
+    "min": 26,
+    "max": 29,
+    "title": "Cromados",
+    "text": "un grupo de fans acérrimos de una banda local de rock cromático, ataviados con ropa de cuero llena de pinchos, brazos metálicos cubiertos de cromo y ciberarmas. Superan en número a los jugadores en dos miembros. Tira 1d10. 1-5, vuelven de un concierto, exaltados por el smash y tratan de buscar pelea. 6-7, pasan de largo medio borrachos, quizá haciendo algún comentario grosero. 8-10, se interesan por uno o más miembros del grupo y os invitan a que los acompañéis a tomar smash y seguir con la fiesta. Usa pandilleros; añade 2 ciberbrazos con recubrimiento de Superchrome®, sustituye los destripadores por garras y el cuero por blindaje ligero.",
+    "uses": [
+     "booster"
+    ]
+   },
+   {
+    "min": 30,
+    "max": 39,
+    "title": "Equipo de edgerunners",
+    "text": "un pequeño equipo de edgerunners. Un netrunner, un mercenario y un nómada. Están en la calle en un viejo coche preparándose para allanar una pequeña oficina corporativa. En el exterior patrullan 6 guardias de seguridad. Tira 1d10. 1-5, son descubiertos por la seguridad y se produce un conflicto. Vosotros, por supuesto, estáis justo en medio. 6-10, os descubren y os ofrecen formar parte de la operación. Netrunner: usa netrunner. Mercenario: usa oficial de seguridad. Nómada: usa jefe de recuperadores. Seguridad: usa operativos de seguridad.",
+    "uses": [
+     "netrunner",
+     "securityOfficer",
+     "reclaimerChief",
+     "securityOperative"
+    ]
+   },
+   {
+    "min": 40,
+    "max": 42,
+    "title": "Trauma Team",
+    "text": "un AV-4 toma tierra en medio de un tiroteo reciente y los médicos empiezan a atender a media docena de pandilleros heridos. Tira 1d10. 1-5, el Trauma Team decide que solo pasabais por ahí y os ignora. 6-10, creen que formáis parte del problema y los 2 oficiales de seguridad abren fuego con fusiles de asalto. Ver Trauma Team en la PÁG. 224 para las estadísticas.",
+    "uses": []
+   },
+   {
+    "min": 43,
+    "max": 45,
+    "title": "Detectives",
+    "text": "un agente y su ayudante están buscando a una banda local de 6 vagabundos que se esconden en la ciudad. Tira 1d10. 1-5, el tiroteo ya ha estallado cuando llegáis, bloqueando vuestro camino. El agente pide a los personajes que se unan a ellos. Hay una buena recompensa por los delincuentes. 6-10, el agente y su ayudante están a punto de entrar en el escondite de la pandilla para hacerlos salir. Han bloqueado la calle con la ayuda de la policía local y ofrecen a los jugadores una parte de la recompensa para que entren y ayuden a sacar a los vagabundos vivos o muertos. Agente: usa piloto. Ayudante: usa pandillero de carretera. Vagabundos: usa pandilleros.",
+    "uses": [
+     "outrider",
+     "roadGanger",
+     "booster"
+    ]
+   },
+   {
+    "min": 46,
+    "max": 58,
+    "title": "Nómadas",
+    "text": "una cantidad de nómadas de la Tribu Salvaje igual al número de jugadores están dando una paliza a un par de corporativos por mirarlos mal. Llevan tatuajes luminosos, pantalones de cuero, cuchillos, palos y fusiles. Mientras os mantengáis alejados de ellos y de sus motos, os ignoran y se concentran en machacar a los corporativos. Nómadas: usa pandilleros de carretera; añade tatuajes luminosos, sustituye la ballesta por un fusil de asalto, cambia la habilidad Tiro con arco por Armas largas. Corporativos: usa pandilleros; quita los destripadores.",
+    "uses": [
+     "roadGanger",
+     "booster"
+    ]
+   },
+   {
+    "min": 59,
+    "max": 63,
+    "title": "Sectarios",
+    "text": "¡Es la hora de la inquisición! Los Inquisidores han salido a la calle con fuerza. Una cantidad de ellos igual al número de jugadores, visiblemente armados con nunchakus, armas de fuego y látigos, os arrinconan. Otros dos Inquisidores armados con pistolas de aire con balas de ácido se sitúan detrás, listos para acribillar a los jugadores con más blindaje. «Solo los sirvientes de los Demonios Metálicos estarían despiertos a estas horas. Los ciudadanos decentes están en casa, durmiendo. ¡Destruid, matad y mutilad a los herejes!». Inquisidores: usa pandilleros; quita el blindaje de cuero y el tecnopelo, sustituye los destripadores por un arma cuerpo a cuerpo mediana, añade pistola de aire con 20 bolas de pintura con ácido a dos de ellos.",
+    "uses": [
+     "booster"
+    ]
+   },
+   {
+    "min": 64,
+    "max": 73,
+    "title": "Punks callejeros",
+    "text": "una cantidad de yonquis de encaje negro igual al número de jugadores más 2, que buscan pasta para mantener su adicción. Si no lleváis colores corporativos o de una pandilla, intentan atracaros en medio de la calle. Están afectados por el encaje negro, van armados con cuchillos y palos y no llevan blindaje. Usa pandilleros; sustituye los destripadores por un arma cuerpo a cuerpo ligera, quita la pistola muy pesada y el blindaje de cuero. Están bajo la influencia del encaje negro (VER PÁG. 227) y no les afecta el estado de herida grave.",
+    "uses": [
+     "booster"
+    ]
+   },
+   {
+    "min": 74,
+    "max": 74,
+    "title": "Criminales importantes",
+    "text": "os habéis encontrado con una operación significativa de la famosa familia Scagattalia. Varios mercenarios cibernetizados, equipados con armas cibernéticas, pistolas pesadas y fusiles pesados con conexión de arma inteligente, están descargando droga de un camión. Tira 1d10. 1-4, no se fijan en vosotros. 5-8, os ven y uno os dice que os larguéis. 9-10, deciden que habéis visto demasiado y que hay que acabar con vosotros. Usa oficiales de seguridad; añade garras, conectores interface, conexión de arma inteligente y un ciberojo con sistema de puntería.",
+    "uses": [
+     "securityOfficer"
+    ]
+   },
+   {
+    "min": 75,
+    "max": 79,
+    "title": "Guerra territorial",
+    "text": "acabáis de meteros en una guerra territorial entre las dos pandillas más importantes de la zona. Genial. Tira 1d10 para cada uno de los bandos. 1-2, son de la Garra del Tigre, con chaquetas de motorista de blindaje ligero, katanas y pistolas muy pesadas. 3-4, son de la Calle 6ª, con blindaje mediano y armados con subfusiles pesados. 5-6, son de los Pirañas, armados con pistolas muy pesadas y chaquetas de cuero rasgadas. 7-8, son los Ironsights, armados con diferentes ciberarmas y subfusiles. 9-10, son patrulleros del NCPD con uniformes de blindaje mediano y fusiles de asalto. Cada bando tiene una cantidad de miembros igual al número de jugadores (mínimo 4) y equipo de acuerdo con su afiliación. Hay ciberarmas por todas partes. Elegid un bando o un objetivo. Garra del Tigre: usa pandilleros; añade un arma cuerpo a cuerpo pesada, sustituye el cuero por blindaje ligero. Calle 6.ª: usa pandilleros; sustituye el cuero por blindaje mediano, sustituye los destripadores por un subfusil pesado. Pirañas: usa pandilleros. Ironsights: usa pandilleros; sustituye la pistola muy pesada de mala calidad por un subfusil, sustituye los destripadores por ciberarmas de tu elección. Patrulleros del NCPD: usa pandilleros; sustituye el cuero por blindaje mediano, añade un fusil de asalto y la habilidad Armas largas con una base de 10.",
+    "uses": [
+     "booster"
+    ]
+   },
+   {
+    "min": 80,
+    "max": 87,
+    "title": "Pirómanos",
+    "text": "un pequeño grupo de anarquistas radicales resentidos con alguien de la zona. Un pandillero cibernetizado que empuña un lanzallamas, un hacha y una pistola pesada, liderando a una cantidad de pandilleros igual al número de jugadores menos 3 (mínimo 2), cada uno de ellos armado con una granada incendiaria, destripadores y una pistola muy pesada de mala calidad. No buscan una pelea, pero están quemando la manzana y matarán a cualquiera que se interponga en su camino, o que simplemente esté ahí. Pandillero con lanzallamas: usa pirómano. Pandilleros: usa pandilleros; añade una granada incendiaria.",
+    "uses": [
+     "pyro",
+     "booster"
+    ]
+   },
+   {
+    "min": 88,
+    "max": 92,
+    "title": "Guerra territorial",
+    "text": "acabáis de meteros en una guerra territorial entre las dos pandillas más importantes de la zona. Genial. Tira 1d10 para cada uno de los bandos. 1-2, son de los Payasos, ataviados con blindaje ligero de lunares, mazos gigantes y pistolas muy pesadas de colores. 3-4, son del Maelstrom, equipados con blindaje mediano y una gran cantidad de ciberarmas. 5-6, son de los Intérpretes del Prime-Time, armados con escopetas de la vieja escuela y chaquetas de cuero con flecos. 7-8, son de los Hijos del Vudú, armados con granadas de gas lacrimógeno y subfusiles. 9-10, son de la Legión Metálica Roja, con uniformes de blindaje mediano y fusiles de asalto. Cada bando tiene una cantidad de miembros igual al número de jugadores (mínimo 4) y equipo de acuerdo con su afiliación. Hay ciberarmas por todas partes. Elegid un bando o un objetivo. Payasos: usa pandilleros; sustituye el cuero por blindaje ligero, sustituye los destripadores por nudillos de acero, añade un arma cuerpo a cuerpo muy pesada. Maelstrom: usa pandilleros; sustituye el cuero por blindaje mediano, sustituye los destripadores por garras. Intérpretes del Prime-Time: usa pandilleros; añade escopeta con 20 balas y la habilidad Armas largas con una base de 10. Hijos del Vudú: usa pandilleros; sustituye la pistola muy pesada de mala calidad por un subfusil, añade 1 granada de gas lacrimógeno. Legión Metálica Roja: usa pandilleros; sustituye el cuero por blindaje mediano, añade un fusil de asalto y la habilidad Armas largas con una base de 10.",
+    "uses": [
+     "booster"
+    ]
+   },
+   {
+    "min": 93,
+    "max": 99,
+    "title": "Criminales importantes",
+    "text": "os habéis encontrado con una operación significativa de la famosa familia Scagattalia. Seis mercenarios cibernetizados, equipados con armas cibernéticas, pistolas pesadas y fusiles pesados con conexión de arma inteligente, están descargando droga de un camión. Tira 1d10. 1-4, no se fijan en vosotros. 5-8, os ven y uno os dice que os larguéis. 9-10, deciden que habéis visto demasiado y que hay que acabar con vosotros. Usa 6 oficiales de seguridad; añade garras, conectores interface, conexión de arma inteligente y un ciberojo con sistema de puntería.",
+    "uses": [
+     "securityOfficer"
+    ]
+   },
+   {
+    "min": 100,
+    "max": 100,
+    "title": "Furia ciberpsicópata",
+    "text": "un solo ciberpsicópata, recubierto de metal y empeñado en descargar su furia contra un peatón que tropezó con él y lo empujó un poco. Está cibernetizado hasta las cejas con cuatro cibermiembros, potenciadores de salto, múltiples armas ocultas, garras y otros elementos. No parece que vaya a calmarse y pasará un tiempo (1d6 + 1 asaltos) antes de que un Psicoescuadrón pueda entrar en escena. Y lo que es peor, el ciberpsicópata se está fijando en vosotros. Usa ciberpsicópata.",
+    "uses": [
+     "cyberpsycho"
+    ]
+   }
+  ]
+ }
+]

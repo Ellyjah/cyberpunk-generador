@@ -1,0 +1,2715 @@
+{
+ "source": {
+  "pdf": "documentos/Ciberpunk RED - Libro básico.pdf",
+  "pages": "PDF 416–429 (impresas 412–425)",
+  "sha256": "1a6216ee5b5498572d24679518c31870b2bd58252bb8b2a9c5888a0edae063ea"
+ },
+ "npcs": [
+  {
+   "key": "bodyguard",
+   "name": "Guardaespaldas",
+   "tier": "mook",
+   "stats": {
+    "int": 3,
+    "will": 4,
+    "ref": 6,
+    "luck": null,
+    "dex": 5,
+    "cool": 4,
+    "tech": 2,
+    "body": 6,
+    "move": 4,
+    "emp": 3
+   },
+   "hp": 35,
+   "seriouslyWounded": 18,
+   "deathSave": 6,
+   "role": null,
+   "skills": [
+    {
+     "label": "Armas cortas",
+     "base": 10,
+     "level": 4,
+     "red": "Handgun",
+     "redId": "l7gW0F5MaWg9I7tC"
+    },
+    {
+     "label": "Armas largas",
+     "base": 10,
+     "level": 4,
+     "red": "Shoulder Arms",
+     "redId": "VdvSW102ytvqRgfx"
+    },
+    {
+     "label": "Atletismo",
+     "base": 9,
+     "level": 4,
+     "red": "Athletics",
+     "redId": "2cEhxWWDwDYepIuJ"
+    },
+    {
+     "label": "Concentración",
+     "base": 6,
+     "level": 2,
+     "red": "Concentration",
+     "redId": "f319Qi6jITQMATyG"
+    },
+    {
+     "label": "Conducir vehículo terrestre",
+     "base": 10,
+     "level": 4,
+     "red": "Drive Land Vehicle",
+     "redId": "UZspAWJSJ2Gdb7NI"
+    },
+    {
+     "label": "Conversación",
+     "base": 5,
+     "level": 2,
+     "red": "Conversation",
+     "redId": "DlYHwCapjvfyYgKh"
+    },
+    {
+     "label": "Cultura",
+     "base": 5,
+     "level": 2,
+     "red": "Education",
+     "redId": "m6zHqBrjzEGAs3c0"
+    },
+    {
+     "label": "Evasión",
+     "base": 7,
+     "level": 2,
+     "red": "Evasion",
+     "redId": "CzaAkwAjPDplz4nn"
+    },
+    {
+     "label": "Experto local (tu hogar)",
+     "base": 5,
+     "level": 2,
+     "red": "Local Expert (Your Home)",
+     "redId": "E6ZW9X4H8tjX294j"
+    },
+    {
+     "label": "Idioma (jerga callejera)",
+     "base": 5,
+     "level": 2,
+     "red": "Language (Streetslang)",
+     "redId": "LsFm00AIool6DVwl"
+    },
+    {
+     "label": "Idioma (nativo)",
+     "base": 5,
+     "level": 2,
+     "specialtyPack": "core_skills-languages",
+     "specialty": "nativo",
+     "native": true
+    },
+    {
+     "label": "Interrogatorio",
+     "base": 6,
+     "level": 2,
+     "red": "Interrogation",
+     "redId": "bBSVyMIWcWtEt4nC"
+    },
+    {
+     "label": "Pelea",
+     "base": 11,
+     "level": 6,
+     "red": "Brawling",
+     "redId": "fPnx3mKaMiRgGavI"
+    },
+    {
+     "label": "Percepción",
+     "base": 9,
+     "level": 6,
+     "red": "Perception",
+     "redId": "nPVwsGDzkjaGu6mZ"
+    },
+    {
+     "label": "Percepción humana",
+     "base": 5,
+     "level": 2,
+     "red": "Human Perception",
+     "redId": "FxviNlk84J78vEhV"
+    },
+    {
+     "label": "Persuasión",
+     "base": 6,
+     "level": 2,
+     "red": "Persuasion",
+     "redId": "cwwOn3YucT9CqJBN"
+    },
+    {
+     "label": "Primeros auxilios",
+     "base": 4,
+     "level": 2,
+     "red": "First Aid",
+     "redId": "8yxaK6GbNu59yxKH"
+    },
+    {
+     "label": "Resistencia",
+     "base": 9,
+     "level": 5,
+     "red": "Endurance",
+     "redId": "dai7lskmxzohcpZS"
+    },
+    {
+     "label": "Resistir torturas/drogas",
+     "base": 8,
+     "level": 4,
+     "red": "Resist Torture/Drugs",
+     "redId": "4nZAn6M44PYI8CU2"
+    },
+    {
+     "label": "Sigilo",
+     "base": 7,
+     "level": 2,
+     "red": "Stealth",
+     "redId": "y2oyHHPllOLVxiNJ"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Escopeta de mala calidad",
+     "damage": "5d6",
+     "uuid": "Compendium.cyberpunk-red-core.core_weapons.Item.L4aHgrhuHNzcyXTY",
+     "poor": true
+    },
+    {
+     "name": "Pistola muy pesada",
+     "damage": "4d6",
+     "uuid": "Compendium.cyberpunk-red-core.core_weapons.Item.4L05qIZxsy0uDSHz",
+     "poor": false
+    }
+   ],
+   "armor": {
+    "name": "Kevlar®",
+    "head": 7,
+    "body": 7,
+    "uuid": "Compendium.cyberpunk-red-core.core_armor.Item.DbASrTymPy4wHNpX",
+    "headUuid": "Compendium.cyberpunk-red-core.core_armor.Item.n4nBTZca1I6bg9rs"
+   },
+   "gear": [
+    {
+     "text": "Munición de escopeta x25",
+     "name": "Munición de escopeta",
+     "qty": 25,
+     "uuid": "Compendium.cyberpunk-red-core.core_ammo.Item.mkI1KpjAOUz9PxRM"
+    },
+    {
+     "text": "munición de pistola muy pesada x25",
+     "name": "munición de pistola muy pesada",
+     "qty": 25,
+     "uuid": "Compendium.cyberpunk-red-core.core_ammo.Item.NQP4I9heyv9fXj46"
+    },
+    {
+     "text": "comunicador de radio",
+     "name": "comunicador de radio",
+     "qty": 1,
+     "uuid": "Compendium.cyberpunk-red-core.core_gear.Item.DO2Nzq3dw0R72dpm"
+    }
+   ],
+   "programs": []
+  },
+  {
+   "key": "booster",
+   "name": "Pandillero",
+   "tier": "mook",
+   "stats": {
+    "int": 2,
+    "will": 2,
+    "ref": 6,
+    "luck": null,
+    "dex": 5,
+    "cool": 4,
+    "tech": 2,
+    "body": 2,
+    "move": 4,
+    "emp": 3
+   },
+   "hp": 20,
+   "seriouslyWounded": 10,
+   "deathSave": 2,
+   "role": null,
+   "skills": [
+    {
+     "label": "Arma cuerpo a cuerpo",
+     "base": 11,
+     "level": 6,
+     "red": "Melee Weapon",
+     "redId": "2YDWLi0oPsH3c7B6"
+    },
+    {
+     "label": "Armas cortas",
+     "base": 12,
+     "level": 6,
+     "red": "Handgun",
+     "redId": "l7gW0F5MaWg9I7tC"
+    },
+    {
+     "label": "Atletismo",
+     "base": 9,
+     "level": 4,
+     "red": "Athletics",
+     "redId": "2cEhxWWDwDYepIuJ"
+    },
+    {
+     "label": "Concentración",
+     "base": 4,
+     "level": 2,
+     "red": "Concentration",
+     "redId": "f319Qi6jITQMATyG"
+    },
+    {
+     "label": "Conducir vehículo terrestre",
+     "base": 10,
+     "level": 4,
+     "red": "Drive Land Vehicle",
+     "redId": "UZspAWJSJ2Gdb7NI"
+    },
+    {
+     "label": "Conversación",
+     "base": 5,
+     "level": 2,
+     "red": "Conversation",
+     "redId": "DlYHwCapjvfyYgKh"
+    },
+    {
+     "label": "Cultura",
+     "base": 4,
+     "level": 2,
+     "red": "Education",
+     "redId": "m6zHqBrjzEGAs3c0"
+    },
+    {
+     "label": "Evasión",
+     "base": 7,
+     "level": 2,
+     "red": "Evasion",
+     "redId": "CzaAkwAjPDplz4nn"
+    },
+    {
+     "label": "Experto local (tu hogar)",
+     "base": 4,
+     "level": 2,
+     "red": "Local Expert (Your Home)",
+     "redId": "E6ZW9X4H8tjX294j"
+    },
+    {
+     "label": "Idioma (jerga callejera)",
+     "base": 4,
+     "level": 2,
+     "red": "Language (Streetslang)",
+     "redId": "LsFm00AIool6DVwl"
+    },
+    {
+     "label": "Idioma (nativo)",
+     "base": 4,
+     "level": 2,
+     "specialtyPack": "core_skills-languages",
+     "specialty": "nativo",
+     "native": true
+    },
+    {
+     "label": "Interrogatorio",
+     "base": 6,
+     "level": 2,
+     "red": "Interrogation",
+     "redId": "bBSVyMIWcWtEt4nC"
+    },
+    {
+     "label": "Ocultar/Revelar objeto",
+     "base": 4,
+     "level": 2,
+     "red": "Conceal/Reveal Object",
+     "redId": "rIU0OZRG7RavocVV"
+    },
+    {
+     "label": "Pelea",
+     "base": 9,
+     "level": 4,
+     "red": "Brawling",
+     "redId": "fPnx3mKaMiRgGavI"
+    },
+    {
+     "label": "Percepción",
+     "base": 6,
+     "level": 4,
+     "red": "Perception",
+     "redId": "nPVwsGDzkjaGu6mZ"
+    },
+    {
+     "label": "Percepción humana",
+     "base": 5,
+     "level": 2,
+     "red": "Human Perception",
+     "redId": "FxviNlk84J78vEhV"
+    },
+    {
+     "label": "Persuasión",
+     "base": 6,
+     "level": 2,
+     "red": "Persuasion",
+     "redId": "cwwOn3YucT9CqJBN"
+    },
+    {
+     "label": "Primeros auxilios",
+     "base": 4,
+     "level": 2,
+     "red": "First Aid",
+     "redId": "8yxaK6GbNu59yxKH"
+    },
+    {
+     "label": "Resistencia",
+     "base": 6,
+     "level": 4,
+     "red": "Endurance",
+     "redId": "dai7lskmxzohcpZS"
+    },
+    {
+     "label": "Resistir torturas/drogas",
+     "base": 4,
+     "level": 2,
+     "red": "Resist Torture/Drugs",
+     "redId": "4nZAn6M44PYI8CU2"
+    },
+    {
+     "label": "Sigilo",
+     "base": 7,
+     "level": 2,
+     "red": "Stealth",
+     "redId": "y2oyHHPllOLVxiNJ"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Pistola MP de mala calidad",
+     "damage": "4d6",
+     "uuid": "Compendium.cyberpunk-red-core.core_weapons.Item.CQ3pmuNqBNFiNMBd",
+     "poor": true
+    },
+    {
+     "name": "Destripadores",
+     "damage": "2d6",
+     "uuid": "Compendium.cyberpunk-red-core.core_cyberware.Item.oeIi9BoY1WvIiqEQ",
+     "poor": false
+    }
+   ],
+   "armor": {
+    "name": "Cuero",
+    "head": 4,
+    "body": 4,
+    "uuid": "Compendium.cyberpunk-red-core.core_armor.Item.2hwEBP93U98aRz4p",
+    "headUuid": "Compendium.cyberpunk-red-core.core_armor.Item.gCSiPGLnb78IGA1K"
+   },
+   "gear": [
+    {
+     "text": "Munición de pistola MP x30",
+     "name": "Munición de pistola MP",
+     "qty": 30,
+     "uuid": "Compendium.cyberpunk-red-core.core_ammo.Item.NQP4I9heyv9fXj46"
+    },
+    {
+     "text": "destripadores",
+     "name": "destripadores",
+     "qty": 1,
+     "uuid": "Compendium.cyberpunk-red-core.core_cyberware.Item.oeIi9BoY1WvIiqEQ"
+    },
+    {
+     "text": "teléfono móvil desechable",
+     "name": "teléfono móvil desechable",
+     "qty": 1,
+     "uuid": "Compendium.cyberpunk-red-core.core_gear.Item.OjMJ2SyoMr4VWmnm"
+    },
+    {
+     "text": "tecnopelo",
+     "name": "tecnopelo",
+     "qty": 1,
+     "uuid": "Compendium.cyberpunk-red-core.core_cyberware.Item.opzHe5mz24EwqNCM"
+    }
+   ],
+   "programs": []
+  },
+  {
+   "key": "roadGanger",
+   "name": "Pandillero de carretera",
+   "tier": "mook",
+   "stats": {
+    "int": 4,
+    "will": 3,
+    "ref": 6,
+    "luck": null,
+    "dex": 4,
+    "cool": 3,
+    "tech": 4,
+    "body": 3,
+    "move": 3,
+    "emp": 3
+   },
+   "hp": 25,
+   "seriouslyWounded": 13,
+   "deathSave": 3,
+   "role": null,
+   "skills": [
+    {
+     "label": "Arma cuerpo a cuerpo",
+     "base": 8,
+     "level": 4,
+     "red": "Melee Weapon",
+     "redId": "2YDWLi0oPsH3c7B6"
+    },
+    {
+     "label": "Armas cortas",
+     "base": 10,
+     "level": 4,
+     "red": "Handgun",
+     "redId": "l7gW0F5MaWg9I7tC"
+    },
+    {
+     "label": "Atletismo",
+     "base": 10,
+     "level": 6,
+     "red": "Athletics",
+     "redId": "2cEhxWWDwDYepIuJ"
+    },
+    {
+     "label": "Concentración",
+     "base": 5,
+     "level": 2,
+     "red": "Concentration",
+     "redId": "f319Qi6jITQMATyG"
+    },
+    {
+     "label": "Conducir vehículo terrestre",
+     "base": 12,
+     "level": 6,
+     "red": "Drive Land Vehicle",
+     "redId": "UZspAWJSJ2Gdb7NI"
+    },
+    {
+     "label": "Conversación",
+     "base": 6,
+     "level": 3,
+     "red": "Conversation",
+     "redId": "DlYHwCapjvfyYgKh"
+    },
+    {
+     "label": "Cultura",
+     "base": 6,
+     "level": 2,
+     "red": "Education",
+     "redId": "m6zHqBrjzEGAs3c0"
+    },
+    {
+     "label": "Evasión",
+     "base": 6,
+     "level": 2,
+     "red": "Evasion",
+     "redId": "CzaAkwAjPDplz4nn"
+    },
+    {
+     "label": "Experto local (tu hogar)",
+     "base": 6,
+     "level": 2,
+     "red": "Local Expert (Your Home)",
+     "redId": "E6ZW9X4H8tjX294j"
+    },
+    {
+     "label": "Idioma (jerga callejera)",
+     "base": 6,
+     "level": 2,
+     "red": "Language (Streetslang)",
+     "redId": "LsFm00AIool6DVwl"
+    },
+    {
+     "label": "Idioma (nativo)",
+     "base": 6,
+     "level": 2,
+     "specialtyPack": "core_skills-languages",
+     "specialty": "nativo",
+     "native": true
+    },
+    {
+     "label": "Mecánica de vehículos terrestres",
+     "base": 10,
+     "level": 6,
+     "red": "Land Vehicle Tech",
+     "redId": "ENrWOKuCjjpJjCtl"
+    },
+    {
+     "label": "Pelea",
+     "base": 6,
+     "level": 2,
+     "red": "Brawling",
+     "redId": "fPnx3mKaMiRgGavI"
+    },
+    {
+     "label": "Percepción",
+     "base": 6,
+     "level": 2,
+     "red": "Perception",
+     "redId": "nPVwsGDzkjaGu6mZ"
+    },
+    {
+     "label": "Percepción humana",
+     "base": 5,
+     "level": 2,
+     "red": "Human Perception",
+     "redId": "FxviNlk84J78vEhV"
+    },
+    {
+     "label": "Persuasión",
+     "base": 5,
+     "level": 2,
+     "red": "Persuasion",
+     "redId": "cwwOn3YucT9CqJBN"
+    },
+    {
+     "label": "Primeros auxilios",
+     "base": 6,
+     "level": 2,
+     "red": "First Aid",
+     "redId": "8yxaK6GbNu59yxKH"
+    },
+    {
+     "label": "Rastrear",
+     "base": 8,
+     "level": 4,
+     "red": "Tracking",
+     "redId": "bkDDCt1Gb3xWXEEw"
+    },
+    {
+     "label": "Resistencia",
+     "base": 5,
+     "level": 2,
+     "red": "Endurance",
+     "redId": "dai7lskmxzohcpZS"
+    },
+    {
+     "label": "Sigilo",
+     "base": 8,
+     "level": 4,
+     "red": "Stealth",
+     "redId": "y2oyHHPllOLVxiNJ"
+    },
+    {
+     "label": "Supervivencia",
+     "base": 8,
+     "level": 4,
+     "red": "Wilderness Survival",
+     "redId": "jFdPv4BuD0tLj7su"
+    },
+    {
+     "label": "Tiro con arco",
+     "base": 10,
+     "level": 4,
+     "red": "Archery",
+     "redId": "dZ6CPPQLCGfFULo5"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Pistola muy pesada",
+     "damage": "4d6",
+     "uuid": "Compendium.cyberpunk-red-core.core_weapons.Item.4L05qIZxsy0uDSHz",
+     "poor": false
+    },
+    {
+     "name": "Arma cuerpo a cuerpo ligera",
+     "damage": "1d6",
+     "uuid": "Compendium.cyberpunk-red-core.core_weapons.Item.hvxl5hrwWBPZmSwF",
+     "poor": false
+    },
+    {
+     "name": "Ballesta",
+     "damage": "4d6",
+     "uuid": "Compendium.cyberpunk-red-core.core_weapons.Item.BWLryyUI4fVpD70G",
+     "poor": false
+    }
+   ],
+   "armor": {
+    "name": "Cuero",
+    "head": 4,
+    "body": 4,
+    "uuid": "Compendium.cyberpunk-red-core.core_armor.Item.2hwEBP93U98aRz4p",
+    "headUuid": "Compendium.cyberpunk-red-core.core_armor.Item.gCSiPGLnb78IGA1K"
+   },
+   "gear": [
+    {
+     "text": "Munición de pistola MP x20",
+     "name": "Munición de pistola MP",
+     "qty": 20,
+     "uuid": "Compendium.cyberpunk-red-core.core_ammo.Item.NQP4I9heyv9fXj46"
+    },
+    {
+     "text": "flechas x20",
+     "name": "flechas",
+     "qty": 20,
+     "uuid": "Compendium.cyberpunk-red-core.core_ammo.Item.CTfIn76uMH5nGGqB"
+    },
+    {
+     "text": "cuerda",
+     "name": "cuerda",
+     "qty": 1,
+     "uuid": "Compendium.cyberpunk-red-core.core_gear.Item.i0xmIJjhcMKIWJ0M"
+    },
+    {
+     "text": "linterna",
+     "name": "linterna",
+     "qty": 1,
+     "uuid": "Compendium.cyberpunk-red-core.core_gear.Item.spgehgLv94vrH4Zo"
+    },
+    {
+     "text": "conexión neuronal (conectores interface)",
+     "name": "conexión neuronal",
+     "qty": 1,
+     "uuid": "Compendium.cyberpunk-red-core.core_cyberware.Item.ju5Rq9rOe2lpDKKl",
+     "options": [
+      {
+       "text": "conectores interface",
+       "name": "conectores interface",
+       "qty": 1,
+       "uuid": "Compendium.cyberpunk-red-core.core_cyberware.Item.KofoAolDFb3rvpbL"
+      }
+     ]
+    }
+   ],
+   "programs": []
+  },
+  {
+   "key": "securityOperative",
+   "name": "Operativo de seguridad",
+   "tier": "mook",
+   "stats": {
+    "int": 3,
+    "will": 3,
+    "ref": 7,
+    "luck": null,
+    "dex": 4,
+    "cool": 3,
+    "tech": 2,
+    "body": 5,
+    "move": 2,
+    "emp": 3
+   },
+   "hp": 30,
+   "seriouslyWounded": 15,
+   "deathSave": 5,
+   "role": null,
+   "skills": [
+    {
+     "label": "Arma cuerpo a cuerpo",
+     "base": 6,
+     "level": 2,
+     "red": "Melee Weapon",
+     "redId": "2YDWLi0oPsH3c7B6"
+    },
+    {
+     "label": "Armas cortas",
+     "base": 10,
+     "level": 3,
+     "red": "Handgun",
+     "redId": "l7gW0F5MaWg9I7tC"
+    },
+    {
+     "label": "Armas largas",
+     "base": 10,
+     "level": 3,
+     "red": "Shoulder Arms",
+     "redId": "VdvSW102ytvqRgfx"
+    },
+    {
+     "label": "Atletismo",
+     "base": 8,
+     "level": 4,
+     "red": "Athletics",
+     "redId": "2cEhxWWDwDYepIuJ"
+    },
+    {
+     "label": "Concentración",
+     "base": 7,
+     "level": 4,
+     "red": "Concentration",
+     "redId": "f319Qi6jITQMATyG"
+    },
+    {
+     "label": "Conversación",
+     "base": 5,
+     "level": 2,
+     "red": "Conversation",
+     "redId": "DlYHwCapjvfyYgKh"
+    },
+    {
+     "label": "Cultura",
+     "base": 5,
+     "level": 2,
+     "red": "Education",
+     "redId": "m6zHqBrjzEGAs3c0"
+    },
+    {
+     "label": "Disparo automático",
+     "base": 10,
+     "level": 3,
+     "red": "Autofire",
+     "redId": "Xbk6aAKKUQtXRunw"
+    },
+    {
+     "label": "Evasión",
+     "base": 6,
+     "level": 2,
+     "red": "Evasion",
+     "redId": "CzaAkwAjPDplz4nn"
+    },
+    {
+     "label": "Experto local (tu hogar)",
+     "base": 5,
+     "level": 2,
+     "red": "Local Expert (Your Home)",
+     "redId": "E6ZW9X4H8tjX294j"
+    },
+    {
+     "label": "Idioma (jerga callejera)",
+     "base": 5,
+     "level": 2,
+     "red": "Language (Streetslang)",
+     "redId": "LsFm00AIool6DVwl"
+    },
+    {
+     "label": "Idioma (nativo)",
+     "base": 5,
+     "level": 2,
+     "specialtyPack": "core_skills-languages",
+     "specialty": "nativo",
+     "native": true
+    },
+    {
+     "label": "Interrogatorio",
+     "base": 6,
+     "level": 3,
+     "red": "Interrogation",
+     "redId": "bBSVyMIWcWtEt4nC"
+    },
+    {
+     "label": "Pelea",
+     "base": 6,
+     "level": 2,
+     "red": "Brawling",
+     "redId": "fPnx3mKaMiRgGavI"
+    },
+    {
+     "label": "Percepción",
+     "base": 5,
+     "level": 2,
+     "red": "Perception",
+     "redId": "nPVwsGDzkjaGu6mZ"
+    },
+    {
+     "label": "Percepción humana",
+     "base": 5,
+     "level": 2,
+     "red": "Human Perception",
+     "redId": "FxviNlk84J78vEhV"
+    },
+    {
+     "label": "Persuasión",
+     "base": 4,
+     "level": 1,
+     "red": "Persuasion",
+     "redId": "cwwOn3YucT9CqJBN"
+    },
+    {
+     "label": "Primeros auxilios",
+     "base": 4,
+     "level": 2,
+     "red": "First Aid",
+     "redId": "8yxaK6GbNu59yxKH"
+    },
+    {
+     "label": "Resistir torturas/drogas",
+     "base": 5,
+     "level": 2,
+     "red": "Resist Torture/Drugs",
+     "redId": "4nZAn6M44PYI8CU2"
+    },
+    {
+     "label": "Sigilo",
+     "base": 6,
+     "level": 2,
+     "red": "Stealth",
+     "redId": "y2oyHHPllOLVxiNJ"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Fusil de asalto de mala calidad",
+     "damage": "5d6",
+     "uuid": "Compendium.cyberpunk-red-core.core_weapons.Item.wNHXTitRqLd1X0Do",
+     "poor": true
+    },
+    {
+     "name": "Arma cuerpo a cuerpo mediana",
+     "damage": "2d6",
+     "uuid": "Compendium.cyberpunk-red-core.core_weapons.Item.lKlvupxxfKfNVPEc",
+     "poor": false
+    },
+    {
+     "name": "Pistola muy pesada",
+     "damage": "4d6",
+     "uuid": "Compendium.cyberpunk-red-core.core_weapons.Item.4L05qIZxsy0uDSHz",
+     "poor": false
+    }
+   ],
+   "armor": {
+    "name": "Kevlar®",
+    "head": 7,
+    "body": 7,
+    "uuid": "Compendium.cyberpunk-red-core.core_armor.Item.DbASrTymPy4wHNpX",
+    "headUuid": "Compendium.cyberpunk-red-core.core_armor.Item.n4nBTZca1I6bg9rs"
+   },
+   "gear": [
+    {
+     "text": "Munición de fusil x40",
+     "name": "Munición de fusil",
+     "qty": 40,
+     "uuid": "Compendium.cyberpunk-red-core.core_ammo.Item.J3NfMgRdqoUwFDDs"
+    },
+    {
+     "text": "munición de pistola MP x20",
+     "name": "munición de pistola MP",
+     "qty": 20,
+     "uuid": "Compendium.cyberpunk-red-core.core_ammo.Item.NQP4I9heyv9fXj46"
+    },
+    {
+     "text": "comunicador de radio",
+     "name": "comunicador de radio",
+     "qty": 1,
+     "uuid": "Compendium.cyberpunk-red-core.core_gear.Item.DO2Nzq3dw0R72dpm"
+    }
+   ],
+   "programs": []
+  },
+  {
+   "key": "netrunner",
+   "name": "Netrunner",
+   "tier": "lieutenant",
+   "stats": {
+    "int": 7,
+    "will": 5,
+    "ref": 5,
+    "luck": null,
+    "dex": 4,
+    "cool": 5,
+    "tech": 7,
+    "body": 3,
+    "move": 4,
+    "emp": 4
+   },
+   "hp": 30,
+   "seriouslyWounded": 15,
+   "deathSave": 3,
+   "role": {
+    "ability": "Interface",
+    "rank": 4,
+    "key": "netrunner",
+    "uuid": "Compendium.cyberpunk-red-core.core_roles.Item.g5S5E8UG1QJ4yFsp"
+   },
+   "skills": [
+    {
+     "label": "Abrir cerraduras",
+     "base": 11,
+     "level": 4,
+     "red": "Pick Lock",
+     "redId": "puWDSgyEiCY5qwVp"
+    },
+    {
+     "label": "Armas cortas",
+     "base": 10,
+     "level": 5,
+     "red": "Handgun",
+     "redId": "l7gW0F5MaWg9I7tC"
+    },
+    {
+     "label": "Atletismo",
+     "base": 9,
+     "level": 5,
+     "red": "Athletics",
+     "redId": "2cEhxWWDwDYepIuJ"
+    },
+    {
+     "label": "Buscar en bibliotecas",
+     "base": 9,
+     "level": 2,
+     "red": "Library Search",
+     "redId": "cUIOleVPNLHP9y3i"
+    },
+    {
+     "label": "Concentración",
+     "base": 9,
+     "level": 4,
+     "red": "Concentration",
+     "redId": "f319Qi6jITQMATyG"
+    },
+    {
+     "label": "Conversación",
+     "base": 6,
+     "level": 2,
+     "red": "Conversation",
+     "redId": "DlYHwCapjvfyYgKh"
+    },
+    {
+     "label": "Criptografía",
+     "base": 11,
+     "level": 4,
+     "red": "Cryptography",
+     "redId": "RI5M0MhWRVNFwUKm"
+    },
+    {
+     "label": "Cultura",
+     "base": 11,
+     "level": 4,
+     "red": "Education",
+     "redId": "m6zHqBrjzEGAs3c0"
+    },
+    {
+     "label": "Deducción",
+     "base": 11,
+     "level": 4,
+     "red": "Deduction",
+     "redId": "RkNmXeJttYnBdgTK"
+    },
+    {
+     "label": "Electrónica/Seguridad",
+     "base": 11,
+     "level": 4,
+     "red": "Electronics/Security Tech",
+     "redId": "4TnbLnA1TqSFnXtq"
+    },
+    {
+     "label": "Evasión",
+     "base": 6,
+     "level": 2,
+     "red": "Evasion",
+     "redId": "CzaAkwAjPDplz4nn"
+    },
+    {
+     "label": "Experto local (tu hogar)",
+     "base": 13,
+     "level": 6,
+     "red": "Local Expert (Your Home)",
+     "redId": "E6ZW9X4H8tjX294j"
+    },
+    {
+     "label": "Falsificación",
+     "base": 13,
+     "level": 6,
+     "red": "Forgery",
+     "redId": "wpHLZDqfC7wE00Vw"
+    },
+    {
+     "label": "Idioma (jerga callejera)",
+     "base": 9,
+     "level": 2,
+     "red": "Language (Streetslang)",
+     "redId": "LsFm00AIool6DVwl"
+    },
+    {
+     "label": "Idioma (nativo)",
+     "base": 9,
+     "level": 2,
+     "specialtyPack": "core_skills-languages",
+     "specialty": "nativo",
+     "native": true
+    },
+    {
+     "label": "Mecánica básica",
+     "base": 13,
+     "level": 6,
+     "red": "Basic Tech",
+     "redId": "13raQA8s0uaE9Pmq"
+    },
+    {
+     "label": "Ocultar/Revelar objeto",
+     "base": 11,
+     "level": 4,
+     "red": "Conceal/Reveal Object",
+     "redId": "rIU0OZRG7RavocVV"
+    },
+    {
+     "label": "Pelea",
+     "base": 6,
+     "level": 2,
+     "red": "Brawling",
+     "redId": "fPnx3mKaMiRgGavI"
+    },
+    {
+     "label": "Percepción",
+     "base": 11,
+     "level": 4,
+     "red": "Perception",
+     "redId": "nPVwsGDzkjaGu6mZ"
+    },
+    {
+     "label": "Percepción humana",
+     "base": 6,
+     "level": 2,
+     "red": "Human Perception",
+     "redId": "FxviNlk84J78vEhV"
+    },
+    {
+     "label": "Persuasión",
+     "base": 6,
+     "level": 1,
+     "red": "Persuasion",
+     "redId": "cwwOn3YucT9CqJBN"
+    },
+    {
+     "label": "Primeros auxilios",
+     "base": 9,
+     "level": 2,
+     "red": "First Aid",
+     "redId": "8yxaK6GbNu59yxKH"
+    },
+    {
+     "label": "Resistir torturas/drogas",
+     "base": 7,
+     "level": 2,
+     "red": "Resist Torture/Drugs",
+     "redId": "4nZAn6M44PYI8CU2"
+    },
+    {
+     "label": "Sigilo",
+     "base": 8,
+     "level": 4,
+     "red": "Stealth",
+     "redId": "y2oyHHPllOLVxiNJ"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Pistola muy pesada",
+     "damage": "4d6",
+     "uuid": "Compendium.cyberpunk-red-core.core_weapons.Item.4L05qIZxsy0uDSHz",
+     "poor": false
+    }
+   ],
+   "armor": {
+    "name": "Traje Bodyweight",
+    "head": 11,
+    "body": 11,
+    "uuid": "Compendium.cyberpunk-red-core.core_armor.Item.hgYX1T8OCsSUL5zC",
+    "headUuid": null
+   },
+   "gear": [
+    {
+     "text": "Munición de pistola MP x50",
+     "name": "Munición de pistola MP",
+     "qty": 50,
+     "uuid": "Compendium.cyberpunk-red-core.core_ammo.Item.NQP4I9heyv9fXj46"
+    },
+    {
+     "text": "gafas de realidad virtual",
+     "name": "gafas de realidad virtual",
+     "qty": 1,
+     "uuid": "Compendium.cyberpunk-red-core.core_gear.Item.ECoCsPyfIEBCSggM"
+    },
+    {
+     "text": "linterna",
+     "name": "linterna",
+     "qty": 1,
+     "uuid": "Compendium.cyberpunk-red-core.core_gear.Item.spgehgLv94vrH4Zo"
+    },
+    {
+     "text": "conexión neuronal (conectores interface)",
+     "name": "conexión neuronal",
+     "qty": 1,
+     "uuid": "Compendium.cyberpunk-red-core.core_cyberware.Item.ju5Rq9rOe2lpDKKl",
+     "options": [
+      {
+       "text": "conectores interface",
+       "name": "conectores interface",
+       "qty": 1,
+       "uuid": "Compendium.cyberpunk-red-core.core_cyberware.Item.KofoAolDFb3rvpbL"
+      }
+     ]
+    }
+   ],
+   "programs": [
+    {
+     "name": "Banhammer",
+     "uuid": "Compendium.cyberpunk-red-core.core_programs.Item.ccLHU1Ym4K4mnOds"
+    },
+    {
+     "name": "Borrado",
+     "uuid": "Compendium.cyberpunk-red-core.core_programs.Item.h6lsYlaAZLd6eoo2"
+    },
+    {
+     "name": "Escudo",
+     "uuid": "Compendium.cyberpunk-red-core.core_programs.Item.XIIBLQw8yb3DSnHv"
+    },
+    {
+     "name": "Espada",
+     "uuid": "Compendium.cyberpunk-red-core.core_programs.Item.iHUrp2OkBZb3Ugf8"
+    },
+    {
+     "name": "Gusano",
+     "uuid": "Compendium.cyberpunk-red-core.core_programs.Item.SmwW6B3Qi6svIClB"
+    },
+    {
+     "name": "Rayo infernal",
+     "uuid": "Compendium.cyberpunk-red-core.core_programs.Item.LArvxvm3JE9Yc9l2"
+    },
+    {
+     "name": "TermiKrash",
+     "uuid": "Compendium.cyberpunk-red-core.core_programs.Item.qKOBTqM4sJzBjUXq"
+    }
+   ]
+  },
+  {
+   "key": "reclaimerChief",
+   "name": "Jefe de recuperadores",
+   "tier": "lieutenant",
+   "stats": {
+    "int": 3,
+    "will": 5,
+    "ref": 6,
+    "luck": null,
+    "dex": 6,
+    "cool": 4,
+    "tech": 5,
+    "body": 6,
+    "move": 4,
+    "emp": 4
+   },
+   "hp": 40,
+   "seriouslyWounded": 20,
+   "deathSave": 6,
+   "role": null,
+   "skills": [
+    {
+     "label": "Abrir cerraduras",
+     "base": 7,
+     "level": 2,
+     "red": "Pick Lock",
+     "redId": "puWDSgyEiCY5qwVp"
+    },
+    {
+     "label": "Arma cuerpo a cuerpo",
+     "base": 10,
+     "level": 4,
+     "red": "Melee Weapon",
+     "redId": "2YDWLi0oPsH3c7B6"
+    },
+    {
+     "label": "Armas cortas",
+     "base": 10,
+     "level": 4,
+     "red": "Handgun",
+     "redId": "l7gW0F5MaWg9I7tC"
+    },
+    {
+     "label": "Armas largas",
+     "base": 10,
+     "level": 4,
+     "red": "Shoulder Arms",
+     "redId": "VdvSW102ytvqRgfx"
+    },
+    {
+     "label": "Atletismo",
+     "base": 12,
+     "level": 6,
+     "red": "Athletics",
+     "redId": "2cEhxWWDwDYepIuJ"
+    },
+    {
+     "label": "Concentración",
+     "base": 7,
+     "level": 2,
+     "red": "Concentration",
+     "redId": "f319Qi6jITQMATyG"
+    },
+    {
+     "label": "Conducir vehículo terrestre",
+     "base": 10,
+     "level": 4,
+     "red": "Drive Land Vehicle",
+     "redId": "UZspAWJSJ2Gdb7NI"
+    },
+    {
+     "label": "Conversación",
+     "base": 6,
+     "level": 2,
+     "red": "Conversation",
+     "redId": "DlYHwCapjvfyYgKh"
+    },
+    {
+     "label": "Cultura",
+     "base": 5,
+     "level": 2,
+     "red": "Education",
+     "redId": "m6zHqBrjzEGAs3c0"
+    },
+    {
+     "label": "Deducción",
+     "base": 7,
+     "level": 4,
+     "red": "Deduction",
+     "redId": "RkNmXeJttYnBdgTK"
+    },
+    {
+     "label": "Electrónica/Seguridad",
+     "base": 9,
+     "level": 4,
+     "red": "Electronics/Security Tech",
+     "redId": "4TnbLnA1TqSFnXtq"
+    },
+    {
+     "label": "Enfermería",
+     "base": 7,
+     "level": 2,
+     "red": "Paramedic",
+     "redId": "zJA3lYQ47dmm55fd"
+    },
+    {
+     "label": "Evasión",
+     "base": 8,
+     "level": 2,
+     "red": "Evasion",
+     "redId": "CzaAkwAjPDplz4nn"
+    },
+    {
+     "label": "Experto local (tu hogar)",
+     "base": 5,
+     "level": 2,
+     "red": "Local Expert (Your Home)",
+     "redId": "E6ZW9X4H8tjX294j"
+    },
+    {
+     "label": "Idioma (jerga callejera)",
+     "base": 5,
+     "level": 2,
+     "red": "Language (Streetslang)",
+     "redId": "LsFm00AIool6DVwl"
+    },
+    {
+     "label": "Idioma (nativo)",
+     "base": 5,
+     "level": 2,
+     "specialtyPack": "core_skills-languages",
+     "specialty": "nativo",
+     "native": true
+    },
+    {
+     "label": "Mecánica básica",
+     "base": 9,
+     "level": 4,
+     "red": "Basic Tech",
+     "redId": "13raQA8s0uaE9Pmq"
+    },
+    {
+     "label": "Mecánica de armas",
+     "base": 9,
+     "level": 4,
+     "red": "Weaponstech",
+     "redId": "Z41spNxYQPCAPXoC"
+    },
+    {
+     "label": "Mecánica de vehículos terrestres",
+     "base": 7,
+     "level": 2,
+     "red": "Land Vehicle Tech",
+     "redId": "ENrWOKuCjjpJjCtl"
+    },
+    {
+     "label": "Pelea",
+     "base": 8,
+     "level": 2,
+     "red": "Brawling",
+     "redId": "fPnx3mKaMiRgGavI"
+    },
+    {
+     "label": "Percepción",
+     "base": 8,
+     "level": 5,
+     "red": "Perception",
+     "redId": "nPVwsGDzkjaGu6mZ"
+    },
+    {
+     "label": "Percepción humana",
+     "base": 6,
+     "level": 2,
+     "red": "Human Perception",
+     "redId": "FxviNlk84J78vEhV"
+    },
+    {
+     "label": "Persuasión",
+     "base": 6,
+     "level": 2,
+     "red": "Persuasion",
+     "redId": "cwwOn3YucT9CqJBN"
+    },
+    {
+     "label": "Primeros auxilios",
+     "base": 7,
+     "level": 2,
+     "red": "First Aid",
+     "redId": "8yxaK6GbNu59yxKH"
+    },
+    {
+     "label": "Resistencia",
+     "base": 11,
+     "level": 6,
+     "red": "Endurance",
+     "redId": "dai7lskmxzohcpZS"
+    },
+    {
+     "label": "Resistir torturas/drogas",
+     "base": 10,
+     "level": 5,
+     "red": "Resist Torture/Drugs",
+     "redId": "4nZAn6M44PYI8CU2"
+    },
+    {
+     "label": "Sigilo",
+     "base": 10,
+     "level": 4,
+     "red": "Stealth",
+     "redId": "y2oyHHPllOLVxiNJ"
+    },
+    {
+     "label": "Supervivencia",
+     "base": 7,
+     "level": 4,
+     "red": "Wilderness Survival",
+     "redId": "jFdPv4BuD0tLj7su"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Escopeta",
+     "damage": "5d6",
+     "uuid": "Compendium.cyberpunk-red-core.core_weapons.Item.PJhu6eY766OegZBo",
+     "poor": false
+    },
+    {
+     "name": "Arma cuerpo a cuerpo ligera",
+     "damage": "1d6",
+     "uuid": "Compendium.cyberpunk-red-core.core_weapons.Item.hvxl5hrwWBPZmSwF",
+     "poor": false
+    },
+    {
+     "name": "Pistola pesada",
+     "damage": "3d6",
+     "uuid": "Compendium.cyberpunk-red-core.core_weapons.Item.Y433cjlB1uVHPysk",
+     "poor": false
+    },
+    {
+     "name": "Arma cuerpo a cuerpo pesada",
+     "damage": "3d6",
+     "uuid": "Compendium.cyberpunk-red-core.core_weapons.Item.g2d7I3KLRXXbMr1g",
+     "poor": false
+    }
+   ],
+   "armor": {
+    "name": "Ligero",
+    "head": 11,
+    "body": 11,
+    "uuid": "Compendium.cyberpunk-red-core.core_armor.Item.uaN9WukkezPfcutU",
+    "headUuid": "Compendium.cyberpunk-red-core.core_armor.Item.Bsalv6m63PhmHkMm"
+   },
+   "gear": [
+    {
+     "text": "Munición de escopeta x25",
+     "name": "Munición de escopeta",
+     "qty": 25,
+     "uuid": "Compendium.cyberpunk-red-core.core_ammo.Item.mkI1KpjAOUz9PxRM"
+    },
+    {
+     "text": "munición de Pistola P x25",
+     "name": "munición de Pistola P",
+     "qty": 25,
+     "uuid": "Compendium.cyberpunk-red-core.core_ammo.Item.jmia1vHSv6bdQEVP"
+    },
+    {
+     "text": "agente",
+     "name": "agente",
+     "qty": 1,
+     "uuid": "Compendium.cyberpunk-red-core.core_gear.Item.GqYz689ddSKQHMen"
+    },
+    {
+     "text": "comunicador de radio",
+     "name": "comunicador de radio",
+     "qty": 1,
+     "uuid": "Compendium.cyberpunk-red-core.core_gear.Item.DO2Nzq3dw0R72dpm"
+    },
+    {
+     "text": "filtros nasales",
+     "name": "filtros nasales",
+     "qty": 1,
+     "uuid": "Compendium.cyberpunk-red-core.core_cyberware.Item.1vcWKBzXQuBkJ3Dl"
+    },
+    {
+     "text": "pistola de garfio",
+     "name": "pistola de garfio",
+     "qty": 1,
+     "uuid": "Compendium.cyberpunk-red-core.core_gear.Item.VrwVUEHuMCGjp8Fi"
+    },
+    {
+     "text": "tienda y material de acampada",
+     "name": "tienda y material de acampada",
+     "qty": 1,
+     "uuid": "Compendium.cyberpunk-red-core.core_gear.Item.bZlhfqhQEVp4vodP"
+    },
+    {
+     "text": "conexión neuronal (amplificador táctil, zócalo para chips)",
+     "name": "conexión neuronal",
+     "qty": 1,
+     "uuid": "Compendium.cyberpunk-red-core.core_cyberware.Item.ju5Rq9rOe2lpDKKl",
+     "options": [
+      {
+       "text": "amplificador táctil",
+       "name": "amplificador táctil",
+       "qty": 1,
+       "uuid": "Compendium.cyberpunk-red-core.core_cyberware.Item.zoj5iyIV1bVrMxzW"
+      },
+      {
+       "text": "zócalo para chips",
+       "name": "zócalo para chips",
+       "qty": 1,
+       "uuid": "Compendium.cyberpunk-red-core.core_cyberware.Item.IJarQGKk5rPayoLT"
+      }
+     ]
+    }
+   ],
+   "programs": []
+  },
+  {
+   "key": "securityOfficer",
+   "name": "Oficial de seguridad",
+   "tier": "lieutenant",
+   "stats": {
+    "int": 4,
+    "will": 5,
+    "ref": 8,
+    "luck": null,
+    "dex": 6,
+    "cool": 6,
+    "tech": 4,
+    "body": 7,
+    "move": 6,
+    "emp": 4
+   },
+   "hp": 40,
+   "seriouslyWounded": 20,
+   "deathSave": 7,
+   "role": null,
+   "skills": [
+    {
+     "label": "Arma cuerpo a cuerpo",
+     "base": 10,
+     "level": 4,
+     "red": "Melee Weapon",
+     "redId": "2YDWLi0oPsH3c7B6"
+    },
+    {
+     "label": "Armas cortas",
+     "base": 10,
+     "level": 2,
+     "red": "Handgun",
+     "redId": "l7gW0F5MaWg9I7tC"
+    },
+    {
+     "label": "Armas largas",
+     "base": 10,
+     "level": 2,
+     "red": "Shoulder Arms",
+     "redId": "VdvSW102ytvqRgfx"
+    },
+    {
+     "label": "Atletismo",
+     "base": 10,
+     "level": 4,
+     "red": "Athletics",
+     "redId": "2cEhxWWDwDYepIuJ"
+    },
+    {
+     "label": "Concentración",
+     "base": 7,
+     "level": 2,
+     "red": "Concentration",
+     "redId": "f319Qi6jITQMATyG"
+    },
+    {
+     "label": "Conducir vehículo terrestre",
+     "base": 12,
+     "level": 4,
+     "red": "Drive Land Vehicle",
+     "redId": "UZspAWJSJ2Gdb7NI"
+    },
+    {
+     "label": "Conversación",
+     "base": 6,
+     "level": 2,
+     "red": "Conversation",
+     "redId": "DlYHwCapjvfyYgKh"
+    },
+    {
+     "label": "Cultura",
+     "base": 6,
+     "level": 2,
+     "red": "Education",
+     "redId": "m6zHqBrjzEGAs3c0"
+    },
+    {
+     "label": "Deducción",
+     "base": 6,
+     "level": 2,
+     "red": "Deduction",
+     "redId": "RkNmXeJttYnBdgTK"
+    },
+    {
+     "label": "Disparo automático",
+     "base": 12,
+     "level": 4,
+     "red": "Autofire",
+     "redId": "Xbk6aAKKUQtXRunw"
+    },
+    {
+     "label": "Evasión",
+     "base": 10,
+     "level": 4,
+     "red": "Evasion",
+     "redId": "CzaAkwAjPDplz4nn"
+    },
+    {
+     "label": "Experto local (tu hogar)",
+     "base": 6,
+     "level": 2,
+     "red": "Local Expert (Your Home)",
+     "redId": "E6ZW9X4H8tjX294j"
+    },
+    {
+     "label": "Idioma (jerga callejera)",
+     "base": 6,
+     "level": 2,
+     "red": "Language (Streetslang)",
+     "redId": "LsFm00AIool6DVwl"
+    },
+    {
+     "label": "Idioma (nativo)",
+     "base": 6,
+     "level": 2,
+     "specialtyPack": "core_skills-languages",
+     "specialty": "nativo",
+     "native": true
+    },
+    {
+     "label": "Interrogatorio",
+     "base": 8,
+     "level": 2,
+     "red": "Interrogation",
+     "redId": "bBSVyMIWcWtEt4nC"
+    },
+    {
+     "label": "Pelea",
+     "base": 10,
+     "level": 4,
+     "red": "Brawling",
+     "redId": "fPnx3mKaMiRgGavI"
+    },
+    {
+     "label": "Percepción",
+     "base": 6,
+     "level": 2,
+     "red": "Perception",
+     "redId": "nPVwsGDzkjaGu6mZ"
+    },
+    {
+     "label": "Percepción humana",
+     "base": 6,
+     "level": 2,
+     "red": "Human Perception",
+     "redId": "FxviNlk84J78vEhV"
+    },
+    {
+     "label": "Persuasión",
+     "base": 8,
+     "level": 2,
+     "red": "Persuasion",
+     "redId": "cwwOn3YucT9CqJBN"
+    },
+    {
+     "label": "Primeros auxilios",
+     "base": 6,
+     "level": 2,
+     "red": "First Aid",
+     "redId": "8yxaK6GbNu59yxKH"
+    },
+    {
+     "label": "Resistir torturas/drogas",
+     "base": 10,
+     "level": 5,
+     "red": "Resist Torture/Drugs",
+     "redId": "4nZAn6M44PYI8CU2"
+    },
+    {
+     "label": "Sigilo",
+     "base": 8,
+     "level": 2,
+     "red": "Stealth",
+     "redId": "y2oyHHPllOLVxiNJ"
+    },
+    {
+     "label": "Tácticas",
+     "base": 6,
+     "level": 2,
+     "red": "Tactics",
+     "redId": "xT6Lp6hhlWRaTs0n"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Fusil de asalto",
+     "damage": "5d6",
+     "uuid": "Compendium.cyberpunk-red-core.core_weapons.Item.QrQNdHTuEDxrfIxS",
+     "poor": false
+    },
+    {
+     "name": "Arma cuerpo a cuerpo mediana",
+     "damage": "2d6",
+     "uuid": "Compendium.cyberpunk-red-core.core_weapons.Item.lKlvupxxfKfNVPEc",
+     "poor": false
+    },
+    {
+     "name": "Pistola muy pesada",
+     "damage": "4d6",
+     "uuid": "Compendium.cyberpunk-red-core.core_weapons.Item.4L05qIZxsy0uDSHz",
+     "poor": false
+    }
+   ],
+   "armor": {
+    "name": "Mediano",
+    "head": 12,
+    "body": 12,
+    "uuid": "Compendium.cyberpunk-red-core.core_armor.Item.sV2rvaWBOntsxYvC",
+    "headUuid": "Compendium.cyberpunk-red-core.core_armor.Item.ReNlsir0b9jmxnPi"
+   },
+   "gear": [
+    {
+     "text": "Munición de fusil x50",
+     "name": "Munición de fusil",
+     "qty": 50,
+     "uuid": "Compendium.cyberpunk-red-core.core_ammo.Item.J3NfMgRdqoUwFDDs"
+    },
+    {
+     "text": "munición de pistola MP x30",
+     "name": "munición de pistola MP",
+     "qty": 30,
+     "uuid": "Compendium.cyberpunk-red-core.core_ammo.Item.NQP4I9heyv9fXj46"
+    },
+    {
+     "text": "escudo antibalas (10 PD)",
+     "name": "escudo antibalas",
+     "qty": 1,
+     "uuid": "Compendium.cyberpunk-red-core.core_armor.Item.Bg1YEeF25HhfrzOG"
+    },
+    {
+     "text": "binoculares",
+     "name": "binoculares",
+     "qty": 1,
+     "uuid": "Compendium.cyberpunk-red-core.core_gear.Item.JL6Nf3l7hjzDmJZ5"
+    },
+    {
+     "text": "comunicador de radio",
+     "name": "comunicador de radio",
+     "qty": 1,
+     "uuid": "Compendium.cyberpunk-red-core.core_gear.Item.DO2Nzq3dw0R72dpm"
+    },
+    {
+     "text": "escáner de radio/reproductor de música",
+     "name": "escáner de radio/reproductor de música",
+     "qty": 1,
+     "uuid": "Compendium.cyberpunk-red-core.core_gear.Item.sMAZKb9ErPoQJ1vV"
+    },
+    {
+     "text": "esposas x2",
+     "name": "esposas",
+     "qty": 2,
+     "uuid": "Compendium.cyberpunk-red-core.core_gear.Item.uYXTKNbOO4ofu53c"
+    },
+    {
+     "text": "linterna",
+     "name": "linterna",
+     "qty": 1,
+     "uuid": "Compendium.cyberpunk-red-core.core_gear.Item.spgehgLv94vrH4Zo"
+    },
+    {
+     "text": "teléfono móvil desechable",
+     "name": "teléfono móvil desechable",
+     "qty": 1,
+     "uuid": "Compendium.cyberpunk-red-core.core_gear.Item.OjMJ2SyoMr4VWmnm"
+    },
+    {
+     "text": "conexión neuronal (cibervelocidad Kerenzikov)",
+     "name": "conexión neuronal",
+     "qty": 1,
+     "uuid": "Compendium.cyberpunk-red-core.core_cyberware.Item.ju5Rq9rOe2lpDKKl",
+     "options": [
+      {
+       "text": "cibervelocidad Kerenzikov",
+       "name": "cibervelocidad Kerenzikov",
+       "qty": 1,
+       "uuid": "Compendium.cyberpunk-red-core.core_cyberware.Item.nSdoCKRscSOeaZUH"
+      }
+     ]
+    }
+   ],
+   "programs": []
+  },
+  {
+   "key": "outrider",
+   "name": "Piloto",
+   "tier": "miniboss",
+   "stats": {
+    "int": 6,
+    "will": 6,
+    "ref": 8,
+    "luck": null,
+    "dex": 8,
+    "cool": 6,
+    "tech": 3,
+    "body": 6,
+    "move": 5,
+    "emp": 6
+   },
+   "hp": 40,
+   "seriouslyWounded": 20,
+   "deathSave": 6,
+   "role": {
+    "ability": "Motor",
+    "rank": 4,
+    "key": "nomad",
+    "uuid": "Compendium.cyberpunk-red-core.core_roles.Item.E2NkaEAx8Rv4nqWQ"
+   },
+   "skills": [
+    {
+     "label": "Armas cortas",
+     "base": 14,
+     "level": 6,
+     "red": "Handgun",
+     "redId": "l7gW0F5MaWg9I7tC"
+    },
+    {
+     "label": "Armas cuerpo a cuerpo",
+     "base": 12,
+     "level": 4,
+     "red": "Melee Weapon",
+     "redId": "2YDWLi0oPsH3c7B6"
+    },
+    {
+     "label": "Armas largas",
+     "base": 14,
+     "level": 6,
+     "red": "Shoulder Arms",
+     "redId": "VdvSW102ytvqRgfx"
+    },
+    {
+     "label": "Atletismo",
+     "base": 14,
+     "level": 6,
+     "red": "Athletics",
+     "redId": "2cEhxWWDwDYepIuJ"
+    },
+    {
+     "label": "Concentración",
+     "base": 10,
+     "level": 4,
+     "red": "Concentration",
+     "redId": "f319Qi6jITQMATyG"
+    },
+    {
+     "label": "Conducir vehículo terrestre",
+     "base": 14,
+     "level": 6,
+     "red": "Drive Land Vehicle",
+     "redId": "UZspAWJSJ2Gdb7NI"
+    },
+    {
+     "label": "Conocimiento de la calle",
+     "base": 9,
+     "level": 3,
+     "red": "Streetwise",
+     "redId": "EkO3gpmabPfeGZeU"
+    },
+    {
+     "label": "Conversación",
+     "base": 6,
+     "level": 0,
+     "red": "Conversation",
+     "redId": "DlYHwCapjvfyYgKh"
+    },
+    {
+     "label": "Criminología",
+     "base": 10,
+     "level": 4,
+     "red": "Criminology",
+     "redId": "HbUTj5xqErBhyiN4"
+    },
+    {
+     "label": "Cultura",
+     "base": 8,
+     "level": 2,
+     "red": "Education",
+     "redId": "m6zHqBrjzEGAs3c0"
+    },
+    {
+     "label": "Disparo automático",
+     "base": 12,
+     "level": 4,
+     "red": "Autofire",
+     "redId": "Xbk6aAKKUQtXRunw"
+    },
+    {
+     "label": "Evasión",
+     "base": 14,
+     "level": 6,
+     "red": "Evasion",
+     "redId": "CzaAkwAjPDplz4nn"
+    },
+    {
+     "label": "Experto local (tierras baldías)",
+     "base": 10,
+     "level": 4,
+     "specialtyPack": "core_skills-local-expert",
+     "specialty": "tierras baldías",
+     "uuid": "Compendium.cyberpunk-red-core.core_skills-local-expert.Item.Jv4rcUkFn1f1gLsf"
+    },
+    {
+     "label": "Experto local (tu hogar)",
+     "base": 8,
+     "level": 2,
+     "red": "Local Expert (Your Home)",
+     "redId": "E6ZW9X4H8tjX294j"
+    },
+    {
+     "label": "Idioma (jerga callejera)",
+     "base": 8,
+     "level": 2,
+     "red": "Language (Streetslang)",
+     "redId": "LsFm00AIool6DVwl"
+    },
+    {
+     "label": "Idioma (nativo)",
+     "base": 8,
+     "level": 2,
+     "specialtyPack": "core_skills-languages",
+     "specialty": "nativo",
+     "native": true
+    },
+    {
+     "label": "Manejo de animales",
+     "base": 8,
+     "level": 2,
+     "red": "Animal Handling",
+     "redId": "4mmnxQPl7tWbMweF"
+    },
+    {
+     "label": "Mecánica básica",
+     "base": 5,
+     "level": 2,
+     "red": "Basic Tech",
+     "redId": "13raQA8s0uaE9Pmq"
+    },
+    {
+     "label": "Mecánica de vehículos terrestres",
+     "base": 7,
+     "level": 4,
+     "red": "Land Vehicle Tech",
+     "redId": "ENrWOKuCjjpJjCtl"
+    },
+    {
+     "label": "Pelea",
+     "base": 14,
+     "level": 6,
+     "red": "Brawling",
+     "redId": "fPnx3mKaMiRgGavI"
+    },
+    {
+     "label": "Percepción",
+     "base": 14,
+     "level": 8,
+     "red": "Perception",
+     "redId": "nPVwsGDzkjaGu6mZ"
+    },
+    {
+     "label": "Percepción humana",
+     "base": 8,
+     "level": 2,
+     "red": "Human Perception",
+     "redId": "FxviNlk84J78vEhV"
+    },
+    {
+     "label": "Persuasión",
+     "base": 7,
+     "level": 1,
+     "red": "Persuasion",
+     "redId": "cwwOn3YucT9CqJBN"
+    },
+    {
+     "label": "Primeros auxilios",
+     "base": 5,
+     "level": 2,
+     "red": "First Aid",
+     "redId": "8yxaK6GbNu59yxKH"
+    },
+    {
+     "label": "Rastrear",
+     "base": 10,
+     "level": 4,
+     "red": "Tracking",
+     "redId": "bkDDCt1Gb3xWXEEw"
+    },
+    {
+     "label": "Resistencia",
+     "base": 10,
+     "level": 4,
+     "red": "Endurance",
+     "redId": "dai7lskmxzohcpZS"
+    },
+    {
+     "label": "Resistir torturas/drogas",
+     "base": 12,
+     "level": 6,
+     "red": "Resist Torture/Drugs",
+     "redId": "4nZAn6M44PYI8CU2"
+    },
+    {
+     "label": "Sigilo",
+     "base": 12,
+     "level": 4,
+     "red": "Stealth",
+     "redId": "y2oyHHPllOLVxiNJ"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Fusil de asalto",
+     "damage": "5d6",
+     "uuid": "Compendium.cyberpunk-red-core.core_weapons.Item.QrQNdHTuEDxrfIxS",
+     "poor": false
+    },
+    {
+     "name": "Arma cuerpo a cuerpo ligera",
+     "damage": "1d6",
+     "uuid": "Compendium.cyberpunk-red-core.core_weapons.Item.hvxl5hrwWBPZmSwF",
+     "poor": false
+    },
+    {
+     "name": "Pistola muy pesada",
+     "damage": "4d6",
+     "uuid": "Compendium.cyberpunk-red-core.core_weapons.Item.4L05qIZxsy0uDSHz",
+     "poor": false
+    }
+   ],
+   "armor": {
+    "name": "Ligero",
+    "head": 11,
+    "body": 11,
+    "uuid": "Compendium.cyberpunk-red-core.core_armor.Item.uaN9WukkezPfcutU",
+    "headUuid": "Compendium.cyberpunk-red-core.core_armor.Item.Bsalv6m63PhmHkMm"
+   },
+   "gear": [
+    {
+     "text": "Munición de fusil x60",
+     "name": "Munición de fusil",
+     "qty": 60,
+     "uuid": "Compendium.cyberpunk-red-core.core_ammo.Item.J3NfMgRdqoUwFDDs"
+    },
+    {
+     "text": "munición de pistola MP x40",
+     "name": "munición de pistola MP",
+     "qty": 40,
+     "uuid": "Compendium.cyberpunk-red-core.core_ammo.Item.NQP4I9heyv9fXj46"
+    },
+    {
+     "text": "esposas x2",
+     "name": "esposas",
+     "qty": 2,
+     "uuid": "Compendium.cyberpunk-red-core.core_gear.Item.uYXTKNbOO4ofu53c"
+    },
+    {
+     "text": "rastreadores",
+     "name": "rastreadores",
+     "qty": 1,
+     "uuid": "Compendium.cyberpunk-red-core.core_gear.Item.QIHx5oQOirtTlAaD"
+    },
+    {
+     "text": "comunicador de radio",
+     "name": "comunicador de radio",
+     "qty": 1,
+     "uuid": "Compendium.cyberpunk-red-core.core_gear.Item.DO2Nzq3dw0R72dpm"
+    },
+    {
+     "text": "equipo de ciberaudio (escucha amplificada)",
+     "name": "equipo de ciberaudio",
+     "qty": 1,
+     "uuid": "Compendium.cyberpunk-red-core.core_cyberware.Item.hsoSD662cLKvHKZJ",
+     "options": [
+      {
+       "text": "escucha amplificada",
+       "name": "escucha amplificada",
+       "qty": 1,
+       "uuid": "Compendium.cyberpunk-red-core.core_cyberware.Item.9pZMYMlVFeWDS56L"
+      }
+     ]
+    },
+    {
+     "text": "ciberojo (sistema de puntería, amplificador de imagen)",
+     "name": "ciberojo",
+     "qty": 1,
+     "uuid": "Compendium.cyberpunk-red-core.core_cyberware.Item.aC234RUXPPUb08cO",
+     "options": [
+      {
+       "text": "sistema de puntería",
+       "name": "sistema de puntería",
+       "qty": 1,
+       "uuid": "Compendium.cyberpunk-red-core.core_cyberware.Item.wFp72x2FXhipZXPj"
+      },
+      {
+       "text": "amplificador de imagen",
+       "name": "amplificador de imagen",
+       "qty": 1,
+       "uuid": "Compendium.cyberpunk-red-core.core_cyberware.Item.uApwuxpuIJMe47Vn"
+      }
+     ]
+    },
+    {
+     "text": "conexión neuronal (conectores interface)",
+     "name": "conexión neuronal",
+     "qty": 1,
+     "uuid": "Compendium.cyberpunk-red-core.core_cyberware.Item.ju5Rq9rOe2lpDKKl",
+     "options": [
+      {
+       "text": "conectores interface",
+       "name": "conectores interface",
+       "qty": 1,
+       "uuid": "Compendium.cyberpunk-red-core.core_cyberware.Item.KofoAolDFb3rvpbL"
+      }
+     ]
+    }
+   ],
+   "programs": []
+  },
+  {
+   "key": "pyro",
+   "name": "Pirómano",
+   "tier": "miniboss",
+   "stats": {
+    "int": 5,
+    "will": 4,
+    "ref": 8,
+    "luck": null,
+    "dex": 6,
+    "cool": 6,
+    "tech": 7,
+    "body": 5,
+    "move": 4,
+    "emp": 3
+   },
+   "hp": 35,
+   "seriouslyWounded": 18,
+   "deathSave": 5,
+   "role": {
+    "ability": "Conciencia de combate",
+    "rank": 4,
+    "key": "solo",
+    "uuid": "Compendium.cyberpunk-red-core.core_roles.Item.I4qtphsiVa4rj9U8"
+   },
+   "skills": [
+    {
+     "label": "Arma cuerpo a cuerpo",
+     "base": 13,
+     "level": 7,
+     "red": "Melee Weapon",
+     "redId": "2YDWLi0oPsH3c7B6"
+    },
+    {
+     "label": "Armas cortas",
+     "base": 14,
+     "level": 6,
+     "red": "Handgun",
+     "redId": "l7gW0F5MaWg9I7tC"
+    },
+    {
+     "label": "Armas pesadas",
+     "base": 14,
+     "level": 6,
+     "red": "Heavy Weapons",
+     "redId": "TNA0LGN1MAYoA60l"
+    },
+    {
+     "label": "Atletismo",
+     "base": 11,
+     "level": 5,
+     "red": "Athletics",
+     "redId": "2cEhxWWDwDYepIuJ"
+    },
+    {
+     "label": "Ciencia (química)",
+     "base": 10,
+     "level": 5,
+     "specialtyPack": "core_skills-science",
+     "specialty": "química",
+     "uuid": "Compendium.cyberpunk-red-core.core_skills-science.Item.b1y9Oaaz41Js0Wkj"
+    },
+    {
+     "label": "Concentración",
+     "base": 8,
+     "level": 4,
+     "red": "Concentration",
+     "redId": "f319Qi6jITQMATyG"
+    },
+    {
+     "label": "Conducir vehículo terrestre",
+     "base": 10,
+     "level": 2,
+     "red": "Drive Land Vehicle",
+     "redId": "UZspAWJSJ2Gdb7NI"
+    },
+    {
+     "label": "Conocimiento de la calle",
+     "base": 8,
+     "level": 2,
+     "red": "Streetwise",
+     "redId": "EkO3gpmabPfeGZeU"
+    },
+    {
+     "label": "Conversación",
+     "base": 5,
+     "level": 2,
+     "red": "Conversation",
+     "redId": "DlYHwCapjvfyYgKh"
+    },
+    {
+     "label": "Cultura",
+     "base": 7,
+     "level": 2,
+     "red": "Education",
+     "redId": "m6zHqBrjzEGAs3c0"
+    },
+    {
+     "label": "Demoliciones",
+     "base": 13,
+     "level": 6,
+     "red": "Demolitions",
+     "redId": "hCZpo57MoOlMYfrL"
+    },
+    {
+     "label": "Evasión",
+     "base": 13,
+     "level": 7,
+     "red": "Evasion",
+     "redId": "CzaAkwAjPDplz4nn"
+    },
+    {
+     "label": "Experto local (tu hogar)",
+     "base": 7,
+     "level": 2,
+     "red": "Local Expert (Your Home)",
+     "redId": "E6ZW9X4H8tjX294j"
+    },
+    {
+     "label": "Idioma (jerga callejera)",
+     "base": 7,
+     "level": 2,
+     "red": "Language (Streetslang)",
+     "redId": "LsFm00AIool6DVwl"
+    },
+    {
+     "label": "Idioma (nativo)",
+     "base": 7,
+     "level": 2,
+     "specialtyPack": "core_skills-languages",
+     "specialty": "nativo",
+     "native": true
+    },
+    {
+     "label": "Interrogatorio",
+     "base": 10,
+     "level": 4,
+     "red": "Interrogation",
+     "redId": "bBSVyMIWcWtEt4nC"
+    },
+    {
+     "label": "Mecánica básica",
+     "base": 12,
+     "level": 5,
+     "red": "Basic Tech",
+     "redId": "13raQA8s0uaE9Pmq"
+    },
+    {
+     "label": "Pelea",
+     "base": 10,
+     "level": 4,
+     "red": "Brawling",
+     "redId": "fPnx3mKaMiRgGavI"
+    },
+    {
+     "label": "Percepción",
+     "base": 12,
+     "level": 7,
+     "red": "Perception",
+     "redId": "nPVwsGDzkjaGu6mZ"
+    },
+    {
+     "label": "Percepción humana",
+     "base": 5,
+     "level": 2,
+     "red": "Human Perception",
+     "redId": "FxviNlk84J78vEhV"
+    },
+    {
+     "label": "Persuasión",
+     "base": 6,
+     "level": 0,
+     "red": "Persuasion",
+     "redId": "cwwOn3YucT9CqJBN"
+    },
+    {
+     "label": "Primeros auxilios",
+     "base": 9,
+     "level": 2,
+     "red": "First Aid",
+     "redId": "8yxaK6GbNu59yxKH"
+    },
+    {
+     "label": "Resistir torturas/drogas",
+     "base": 14,
+     "level": 10,
+     "red": "Resist Torture/Drugs",
+     "redId": "4nZAn6M44PYI8CU2"
+    },
+    {
+     "label": "Sigilo",
+     "base": 10,
+     "level": 4,
+     "red": "Stealth",
+     "redId": "y2oyHHPllOLVxiNJ"
+    },
+    {
+     "label": "Tácticas",
+     "base": 8,
+     "level": 3,
+     "red": "Tactics",
+     "redId": "xT6Lp6hhlWRaTs0n"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Lanzallamas",
+     "damage": "3d6",
+     "uuid": "Compendium.cyberpunk-red-core.core_weapons.Item.qAqYtbD1yFgQNelR",
+     "poor": false
+    },
+    {
+     "name": "Arma cuerpo a cuerpo pesada",
+     "damage": "3d6",
+     "uuid": "Compendium.cyberpunk-red-core.core_weapons.Item.g2d7I3KLRXXbMr1g",
+     "poor": false
+    },
+    {
+     "name": "Pistola pesada",
+     "damage": "3d6",
+     "uuid": "Compendium.cyberpunk-red-core.core_weapons.Item.Y433cjlB1uVHPysk",
+     "poor": false
+    }
+   ],
+   "armor": {
+    "name": "Ligero",
+    "head": 11,
+    "body": 11,
+    "uuid": "Compendium.cyberpunk-red-core.core_armor.Item.uaN9WukkezPfcutU",
+    "headUuid": "Compendium.cyberpunk-red-core.core_armor.Item.Bsalv6m63PhmHkMm"
+   },
+   "gear": [
+    {
+     "text": "Munición de lanzallamas (cartuchos de escopeta incendiarios) x8",
+     "name": "Munición de lanzallamas (cartuchos de escopeta incendiarios)",
+     "qty": 8,
+     "uuid": "Compendium.cyberpunk-red-core.core_ammo.Item.MdA5gBfCKbBuHGof"
+    },
+    {
+     "text": "munición de pistola MP x50",
+     "name": "munición de pistola MP",
+     "qty": 50,
+     "uuid": "Compendium.cyberpunk-red-core.core_ammo.Item.NQP4I9heyv9fXj46"
+    },
+    {
+     "text": "granada incendiaria x1",
+     "name": "granada incendiaria",
+     "qty": 1,
+     "uuid": "Compendium.cyberpunk-red-core.core_ammo.Item.IJhN5QHmu4hAJxLo"
+    },
+    {
+     "text": "granada cegadora x1",
+     "name": "granada cegadora",
+     "qty": 1,
+     "uuid": "Compendium.cyberpunk-red-core.core_ammo.Item.e8gDMbdK1oPKwhqW"
+    },
+    {
+     "text": "ciberojo x2 (protección antideslumbrante x2)",
+     "name": "ciberojo",
+     "qty": 2,
+     "uuid": "Compendium.cyberpunk-red-core.core_cyberware.Item.aC234RUXPPUb08cO",
+     "options": [
+      {
+       "text": "protección antideslumbrante x2",
+       "name": "protección antideslumbrante",
+       "qty": 2,
+       "uuid": "Compendium.cyberpunk-red-core.core_cyberware.Item.3JmrxH1mrD592Hxa"
+      }
+     ]
+    },
+    {
+     "text": "equipo de ciberaudio (atenuadores de nivel)",
+     "name": "equipo de ciberaudio",
+     "qty": 1,
+     "uuid": "Compendium.cyberpunk-red-core.core_cyberware.Item.hsoSD662cLKvHKZJ",
+     "options": [
+      {
+       "text": "atenuadores de nivel",
+       "name": "atenuadores de nivel",
+       "qty": 1,
+       "uuid": "Compendium.cyberpunk-red-core.core_cyberware.Item.yAqg8qVDiAc1ysYa"
+      }
+     ]
+    },
+    {
+     "text": "filtros nasales",
+     "name": "filtros nasales",
+     "qty": 1,
+     "uuid": "Compendium.cyberpunk-red-core.core_cyberware.Item.1vcWKBzXQuBkJ3Dl"
+    }
+   ],
+   "programs": []
+  },
+  {
+   "key": "cyberpsycho",
+   "name": "Ciberpsicópata",
+   "tier": "boss",
+   "stats": {
+    "int": 5,
+    "will": 7,
+    "ref": 8,
+    "luck": null,
+    "dex": 8,
+    "cool": 8,
+    "tech": 5,
+    "body": 10,
+    "move": 4,
+    "emp": 0
+   },
+   "hp": 55,
+   "seriouslyWounded": 28,
+   "deathSave": 10,
+   "role": null,
+   "skills": [
+    {
+     "label": "Arma cuerpo a cuerpo",
+     "base": 17,
+     "level": 9,
+     "red": "Melee Weapon",
+     "redId": "2YDWLi0oPsH3c7B6"
+    },
+    {
+     "label": "Armas cortas",
+     "base": 12,
+     "level": 4,
+     "red": "Handgun",
+     "redId": "l7gW0F5MaWg9I7tC"
+    },
+    {
+     "label": "Armas pesadas",
+     "base": 14,
+     "level": 6,
+     "red": "Heavy Weapons",
+     "redId": "TNA0LGN1MAYoA60l"
+    },
+    {
+     "label": "Atletismo",
+     "base": 16,
+     "level": 8,
+     "red": "Athletics",
+     "redId": "2cEhxWWDwDYepIuJ"
+    },
+    {
+     "label": "Concentración",
+     "base": 6,
+     "level": 0,
+     "belowStat": -1,
+     "red": "Concentration",
+     "redId": "f319Qi6jITQMATyG"
+    },
+    {
+     "label": "Conducir vehículo terrestre",
+     "base": 10,
+     "level": 2,
+     "red": "Drive Land Vehicle",
+     "redId": "UZspAWJSJ2Gdb7NI"
+    },
+    {
+     "label": "Conversación",
+     "base": 2,
+     "level": 2,
+     "red": "Conversation",
+     "redId": "DlYHwCapjvfyYgKh"
+    },
+    {
+     "label": "Cultura",
+     "base": 7,
+     "level": 2,
+     "red": "Education",
+     "redId": "m6zHqBrjzEGAs3c0"
+    },
+    {
+     "label": "Disparo automático",
+     "base": 14,
+     "level": 6,
+     "red": "Autofire",
+     "redId": "Xbk6aAKKUQtXRunw"
+    },
+    {
+     "label": "Evasión",
+     "base": 13,
+     "level": 5,
+     "red": "Evasion",
+     "redId": "CzaAkwAjPDplz4nn"
+    },
+    {
+     "label": "Experto local (tu hogar)",
+     "base": 7,
+     "level": 2,
+     "red": "Local Expert (Your Home)",
+     "redId": "E6ZW9X4H8tjX294j"
+    },
+    {
+     "label": "Idioma (jerga callejera)",
+     "base": 7,
+     "level": 2,
+     "red": "Language (Streetslang)",
+     "redId": "LsFm00AIool6DVwl"
+    },
+    {
+     "label": "Idioma (nativo)",
+     "base": 7,
+     "level": 2,
+     "specialtyPack": "core_skills-languages",
+     "specialty": "nativo",
+     "native": true
+    },
+    {
+     "label": "Interrogatorio",
+     "base": 13,
+     "level": 5,
+     "red": "Interrogation",
+     "redId": "bBSVyMIWcWtEt4nC"
+    },
+    {
+     "label": "Mecánica básica",
+     "base": 11,
+     "level": 6,
+     "red": "Basic Tech",
+     "redId": "13raQA8s0uaE9Pmq"
+    },
+    {
+     "label": "Pelea",
+     "base": 15,
+     "level": 7,
+     "red": "Brawling",
+     "redId": "fPnx3mKaMiRgGavI"
+    },
+    {
+     "label": "Percepción",
+     "base": 9,
+     "level": 4,
+     "red": "Perception",
+     "redId": "nPVwsGDzkjaGu6mZ"
+    },
+    {
+     "label": "Percepción humana",
+     "base": 2,
+     "level": 2,
+     "red": "Human Perception",
+     "redId": "FxviNlk84J78vEhV"
+    },
+    {
+     "label": "Persuasión",
+     "base": 6,
+     "level": 0,
+     "belowStat": -2,
+     "red": "Persuasion",
+     "redId": "cwwOn3YucT9CqJBN"
+    },
+    {
+     "label": "Primeros auxilios",
+     "base": 6,
+     "level": 1,
+     "red": "First Aid",
+     "redId": "8yxaK6GbNu59yxKH"
+    },
+    {
+     "label": "Rastrear",
+     "base": 10,
+     "level": 5,
+     "red": "Tracking",
+     "redId": "bkDDCt1Gb3xWXEEw"
+    },
+    {
+     "label": "Resistencia",
+     "base": 10,
+     "level": 3,
+     "red": "Endurance",
+     "redId": "dai7lskmxzohcpZS"
+    },
+    {
+     "label": "Resistir torturas/drogas",
+     "base": 15,
+     "level": 8,
+     "red": "Resist Torture/Drugs",
+     "redId": "4nZAn6M44PYI8CU2"
+    },
+    {
+     "label": "Sigilo",
+     "base": 10,
+     "level": 2,
+     "red": "Stealth",
+     "redId": "y2oyHHPllOLVxiNJ"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Lanzagranadas oculto",
+     "damage": "6d6",
+     "uuid": "Compendium.cyberpunk-red-core.core_cyberware.Item.TievDHlAoROyoynx",
+     "poor": false
+    },
+    {
+     "name": "Ciberserpiente",
+     "damage": "4d6",
+     "uuid": "Compendium.cyberpunk-red-core.core_cyberware.Item.YPujgoyVf2ZBR1hK",
+     "poor": false
+    },
+    {
+     "name": "Subfusil pesado oculto",
+     "damage": "3d6",
+     "uuid": "Compendium.cyberpunk-red-core.core_cyberware.Item.gUvoOayETJInctg8",
+     "poor": false
+    },
+    {
+     "name": "Garras",
+     "damage": "3d6",
+     "uuid": "Compendium.cyberpunk-red-core.core_cyberware.Item.GUT0BBUD2iKpPRoM",
+     "poor": false
+    }
+   ],
+   "armor": {
+    "name": "Subdérmico",
+    "head": 11,
+    "body": 11,
+    "uuid": "Compendium.cyberpunk-red-core.core_cyberware.Item.O5GmxTYCrrs8uWAd"
+   },
+   "gear": [
+    {
+     "text": "Granada perforante x2",
+     "name": "Granada perforante",
+     "qty": 2,
+     "uuid": "Compendium.cyberpunk-red-core.core_ammo.Item.tivSfxqoNYnBlNah"
+    },
+    {
+     "text": "munición de pistola pesada x100",
+     "name": "munición de pistola pesada",
+     "qty": 100,
+     "uuid": "Compendium.cyberpunk-red-core.core_ammo.Item.jmia1vHSv6bdQEVP"
+    },
+    {
+     "text": "blindaje subdérmico",
+     "name": "blindaje subdérmico",
+     "qty": 1,
+     "uuid": "Compendium.cyberpunk-red-core.core_cyberware.Item.O5GmxTYCrrs8uWAd"
+    },
+    {
+     "text": "ciberbrazo x2 (lanzagranadas oculto x2, subfusil pesado oculto, garras)",
+     "name": "ciberbrazo",
+     "qty": 2,
+     "uuid": "Compendium.cyberpunk-red-core.core_cyberware.Item.RT4NU0EbvmkgoSpZ",
+     "options": [
+      {
+       "text": "lanzagranadas oculto x2",
+       "name": "lanzagranadas oculto",
+       "qty": 2,
+       "uuid": "Compendium.cyberpunk-red-core.core_cyberware.Item.TievDHlAoROyoynx"
+      },
+      {
+       "text": "subfusil pesado oculto",
+       "name": "subfusil pesado oculto",
+       "qty": 1,
+       "uuid": "Compendium.cyberpunk-red-core.core_cyberware.Item.gUvoOayETJInctg8"
+      },
+      {
+       "text": "garras",
+       "name": "garras",
+       "qty": 1,
+       "uuid": "Compendium.cyberpunk-red-core.core_cyberware.Item.GUT0BBUD2iKpPRoM"
+      }
+     ]
+    },
+    {
+     "text": "ciberpierna x2 (potenciadores de salto x2)",
+     "name": "ciberpierna",
+     "qty": 2,
+     "uuid": "Compendium.cyberpunk-red-core.core_cyberware.Item.APmOX0zOhga6Z1e6",
+     "options": [
+      {
+       "text": "potenciadores de salto x2",
+       "name": "potenciadores de salto",
+       "qty": 2,
+       "uuid": "Compendium.cyberpunk-red-core.core_cyberware.Item.MVTHnEFMD7S3d1D9"
+      }
+     ]
+    },
+    {
+     "text": "ciberserpiente",
+     "name": "ciberserpiente",
+     "qty": 1,
+     "uuid": "Compendium.cyberpunk-red-core.core_cyberware.Item.YPujgoyVf2ZBR1hK"
+    },
+    {
+     "text": "conexión neuronal (zócalo para chips, editor de dolor)",
+     "name": "conexión neuronal",
+     "qty": 1,
+     "uuid": "Compendium.cyberpunk-red-core.core_cyberware.Item.ju5Rq9rOe2lpDKKl",
+     "options": [
+      {
+       "text": "zócalo para chips",
+       "name": "zócalo para chips",
+       "qty": 1,
+       "uuid": "Compendium.cyberpunk-red-core.core_cyberware.Item.IJarQGKk5rPayoLT"
+      },
+      {
+       "text": "editor de dolor",
+       "name": "editor de dolor",
+       "qty": 1,
+       "uuid": "Compendium.cyberpunk-red-core.core_cyberware.Item.umX2i9wlVcBG1lgv"
+      }
+     ]
+    },
+    {
+     "text": "implante de hueso y músculo",
+     "name": "implante de hueso y músculo",
+     "qty": 1,
+     "uuid": "Compendium.cyberpunk-red-core.core_cyberware.Item.Lx9FSNDEIxLZ7Pyh"
+    }
+   ],
+   "programs": []
+  }
+ ]
+}
