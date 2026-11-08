@@ -247,7 +247,7 @@ Un nodo con `when:{id, value}` solo se recorre si la decisión `id` vale `value`
     - 0 errores de página. Captura revisada.
 - **Nota:** en el banco, el cliente del DJ estaba en inglés. Los textos en español se comprobarán en la prueba del paso 3.
 - **Sin tocar:** `edgerunners-2070` (Codex trabaja en él) ni los registros compartidos `ESTADO.md` y `PRUEBAS.md`. El director pidió no escribir en ellos por ahora. Solo se ha creado el aviso nuevo `03-coordinacion/GENERADOR-PERSONAJES.md`, que remite a este documento.
-- **Git:** repositorio local en esta carpeta. Sin remoto ni push (pendiente de autorización del director).
+- **Git:** repositorio local en esta carpeta. Desde 1.0.0, remoto privado `Ellyjah/cyberpunk-generador`.
 
 ### 2026-11-08 — Paso 2: tablas de PJ en datos — Claude Code
 
@@ -396,7 +396,12 @@ Un nodo con `when:{id, value}` solo se recorre si la decisión `id` vale `value`
   - `gen01` y `gen03` activan la autorización de jugadores, desactivada por defecto desde 0.4.0;
   - `gen01` crea con `Actor.implementation.create`;
   - `gen05` elige los compendios por id completo y su prueba de «solo RED» desactiva también el Mission Kit, ahora instalado en el banco. Repetida: solo `cyberpunk-generador` activo, personaje creado y aplicado.
-- **Versión 1.0.0:** `CHANGELOG.md` con la historia de versiones. Copias: ver el apartado siguiente, que se completa al hacerlas.
+- **Versión 1.0.0:** `CHANGELOG.md` con la historia de versiones. Commit `7290a81` y etiqueta `v1.0.0`.
+- **Copias** (2026-11-08):
+  - proyecto: `cyberpunk/releases/cyberpunk-generador-1.0.0.zip` (`git archive` de la etiqueta: `module.json`, `README.md`, `CHANGELOG.md`, `scripts`, `templates`, `styles`, `lang` y `data`; 26 archivos), SHA-256 `b2a816234c1d6d7a03e2a70484803adc5f5ab7124b3679bf7e0008fcb319a96a`, 99 074 bytes;
+  - Raspberry: `/home/joselu/SSD/cyberpunk-generador-releases/cyberpunk-generador-1.0.0.zip`, misma huella;
+  - V12: `Data/modules/cyberpunk-generador`, instalado con el mundo cerrado (`active:false`, comprobado en la misma orden); 26 de 26 archivos idénticos a la etiqueta. Es un módulo nuevo, sin versión anterior. **Hay que activarlo en el mundo** (Gestionar módulos) para usarlo;
+  - GitHub privado: repositorio `Ellyjah/cyberpunk-generador` creado como privado (autorizado por el director para cuando terminaran los pasos), `main` y `v1.0.0` subidos, release v1.0.0 con el ZIP y el `module.json`.
 - **Pendiente:** revisión visual del director y registro en ESTADO y PRUEBAS, que se hará cuando el director confirme que Codex ya no escribe en ellos.
 
 ## Cómo retomar
