@@ -24,7 +24,7 @@ El director pidió un generador lo más completo posible para PJ y PNJ. Debe cub
 1. **Esqueleto, permisos y ajustes.** ✅ 0.1.0.
 2. **Tablas de PJ en datos** (`data/*.json`), extraídas del Core en español y cotejadas. ✅ (las tablas de PNJ se extraen en el paso 6).
 3. **Rata callejera y vida pasada** (tiradas en el chat, política de tiradas, repetición autorizada, aplicación a la ficha). ✅ 0.2.0.
-4. Edgerunner.
+4. **Edgerunner** (una tirada por característica, 86 puntos de habilidad, mismo equipo que Rata callejera). ✅ 0.3.0.
 5. Paquete completo con tienda.
 6. PNJ.
 7. Integración con el motor 2070.
@@ -46,6 +46,7 @@ El director pidió un generador lo más completo posible para PJ y PNJ. Debe cub
   scripts/logic/core.js  lógica pura: constantes, permisos, borrador (texto JSON), navegación, rollRights
   scripts/logic/lifepath.js  huecos de vida pasada, filas por tirada, condiciones, texto para system.lifepath.*
   scripts/logic/streetrat.js plan de Rata callejera: elecciones pendientes, equipo, ropa → core_clothing
+  scripts/logic/methods.js   por método: missingFor, planFor; Edgerunner: características por columna, coste y reparto
   templates/wizard.hbs   barra de pasos, cuerpo del paso, pie con Anterior/Siguiente
   styles/generador.css   solo estructura; los colores son los del tema
   lang/es.json, en.json  claves CPRGEN.*
@@ -88,6 +89,11 @@ El director pidió un generador lo más completo posible para PJ y PNJ. Debe cub
 - ropa: `core_clothing` por `system.style` y `system.type`;
 - ciberequipo: primero el fundacional, en la ficha; cada opción, en el fundacional de su tipo. Las ranuras base de RED (interno, externo, moda) cuentan como fundacionales. Se instala con `installItems`, sin el diálogo de RED, y después se aplica `loseHumanityValue(…, "static")`, la pérdida media; RED recalcula la Humanidad máxima y la EMP;
 - dinero: +500 en el libro de cuentas `system.wealth`, con su apunte.
+
+**Edgerunner** (`logic/methods.js`):
+- Características: `stats.<clave>` → `{row}`, una tirada 1d10 por característica, en su columna de la tabla del rol.
+- Habilidades: `skill.<etiqueta>` → `{level}`; sin respuesta vale 2, el mínimo. El coste es nivel × 1, o nivel × 2 en las habilidades con `x2`, como en los ejemplos del Core; el reparto de Jay del Core da exactamente 86 y está en las pruebas. Límites: 86 puntos y niveles entre 2 y 6; el asistente recorta el valor al rango y la revisión bloquea si se pasa del presupuesto. Los puntos sobrantes se permiten, porque el libro no obliga a gastarlos.
+- Equipo, especialidades e idioma: los de Rata callejera (el Core da la misma lista a ambos métodos).
 
 **Importante, fichas creadas por código:** hay que usar `Actor.implementation.create(…)` (la clase de RED). `Actor.create(…)` crea la ficha **sin** las 63 habilidades base ni las ranuras de ciberequipo. `applyPlan` se detiene con un aviso si la ficha no tiene habilidades base.
 
@@ -230,14 +236,36 @@ Un nodo con `when:{id, value}` solo se recorre si la decisión `id` vale `value`
   - Pérdida de Humanidad: se usa la media de RED, que coincide con la del libro en los 10 roles (comprobado).
   - La «mano con herramientas» del técnico es una opción de ciberbrazo sin ciberbrazo en el libro: si una opción no tiene fundacional de su tipo, se instala en la ficha y se avisa en el resumen del chat.
 
+### 2026-11-08 — Paso 4: Edgerunner (0.3.0) — Claude Code
+
+- **Hecho:**
+  - `logic/methods.js` (`missingFor`, `planFor`, `edgerunnerStats`, `edgerunnerSkills`, `skillCost`);
+  - paso Características con 10 huecos de tirada, uno por característica, y la celda elegida marcada en la tabla;
+  - paso Habilidades con un campo de nivel por habilidad, columna de coste, contador de puntos (en rojo si se pasa) y especialidades e idioma;
+  - revisión y aplicación comunes a ambos métodos (`buildPlan` usa `planFor`);
+  - título «Amigos» en la vida pasada (la tabla heredaba el encabezado de página «Amigos y enemigos»).
+- **Pruebas:**
+  - unitarias 20/20 (`tests/edgerunner.test.mjs`: costes, ejemplo real de Jay = 86, mínimos, exceso de presupuesto, fuera de rango, características por columna, plan);
+  - banco 30013 (`tools/bench/gen04-edgerunner.mjs`), con un mercenario:
+    - 10 tiradas en el chat, con la fila igual a la tirada − 1;
+    - reparto de Jay → «86 de 86»;
+    - 88 puntos → contador en rojo y revisión bloqueada;
+    - un 9 se recorta a 6;
+    - vida pasada 24/24 y 2 elecciones de equipo;
+    - aplicación: características por columna, Disparo automático 2, Evasión 6, Tácticas 4, idioma, rol con rango 4, ciberequipo instalado, Humanidad 60 − 14 = 46 (EMP 4, como en el libro) y 500 ed;
+    - 0 errores.
+  - Regresión de Rata callejera (`gen03`) correcta.
+  - Capturas revisadas. Tras compactar las filas de la tabla de habilidades, que eran demasiado altas, se comprobó con una captura nueva.
+- **Incidencia de entorno:** una copia al banco falló por un corte de SSH (timeout). Se repitió y se comprobó el archivo servido por Foundry. El puerto 30013 quedó con una escucha sin proceso propietario (residuo del sistema tras cerrar el túnel): comprobado que no hay ningún ssh propio. Hay otro túnel ajeno (31420→30014), que no se tocó.
+
 ## Cómo retomar
 
 1. Lee este documento y `module.json`.
 2. Ejecuta las pruebas unitarias y, si cambias el extractor, vuelve a generar los datos.
-3. Siguiente: **paso 4, Edgerunner.**
-   - **Características:** según el Core, «tira 1d10 para cada característica individualmente» en la tabla del rol: 10 huecos `stats.<clave>` con fila por característica. `rollRights` sirve igual.
-   - **Habilidades:** las 20 de `edgerunnerSkills`, con 86 puntos, cada una entre 2 y 6; las básicas, mínimo 2; las de coste doble (`x2` en `skills.json`) cuestan 2 puntos por nivel. El idioma de origen es gratis, a 4. Hay que añadir la lógica pura de coste y validación con sus pruebas.
-   - **Equipo:** el mismo que Rata callejera (el Core da la misma lista para ambos métodos), es decir, `gearContext` y `chosenGear`.
-   - **Plan:** generaliza `streetratPlan` en un `planFor(method)`: misma aplicación, distinta fuente de características y habilidades.
-   - Para la prueba de banco, copia `gen03-rata-callejera.mjs`.
+3. Siguiente: **paso 5, Paquete completo con tienda.**
+   - **Características:** reparto de puntos según el rango (`rules.complete.statPoints`; el principiante tiene 62, y el DJ podría elegir otro rango con un ajuste nuevo), cada una entre 2 y 8. Usa `stats.<clave>` → `{value}` (no `{row}`): hay que distinguirlo en `planFor`.
+   - **Habilidades:** 86 puntos entre **cualquiera** de las 66 (`skills.json`), máximo 6. Las 13 básicas tienen mínimo 2 (`basic` en `skills.json`, más «Idioma (jerga callejera)» y «Experto local (tu hogar)»); el resto empieza en 0. Coste: el de `skillCost`. Las especialidades (Artes marciales, Ciencia, Tocar instrumento) se añaden eligiendo el Item del compendio, cada una con su nivel. Idioma de origen gratis, a 4.
+   - **Tienda:** 2550 ed para armas, blindaje, equipo y ciberequipo, y 800 ed solo para moda y cibermoda (lo que no se gasta de los 800 se pierde; lo de los 2550 se conserva como dinero). Precios: `system.price.market` de los Items de los compendios de RED (`core_weapons`, `core_armor`, `core_gear`, `core_ammo`, `core_cyberware`, `core_clothing`, `core_programs`). En el libro la ropa es «moda»; la cibermoda es el ciberequipo de tipo `fashionware`. Conviene un buscador por compendio, un carrito con cantidades y los totales de ambos presupuestos.
+   - **Aplicación:** el dinero sobrante de los 2550 va a `system.wealth`; no hay los 500 ed extra (`rules.extraMoney` solo es para Rata callejera y Edgerunner).
+   - Pruebas: lógica pura de presupuestos y validación, y prueba de banco copiando `gen04-edgerunner.mjs`.
 4. No escribas en `edgerunners-2070` ni en ESTADO/PRUEBAS sin confirmar con el director que Codex ha terminado.

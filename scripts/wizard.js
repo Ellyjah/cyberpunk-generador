@@ -7,7 +7,8 @@
  */
 import { MODULE_ID, METHODS, STEPS, canUseGenerator, normalizeDraft, serializeDraft, moveStep, rollRights } from "./logic/core.js";
 import { lifepathSlots, slotTable, rowText, rowForTotal, countFromTotal, missingSlots } from "./logic/lifepath.js";
-import { gearChoices, specialtyChoices, missingStreetrat, cap } from "./logic/streetrat.js";
+import { gearChoices, specialtyChoices, cap } from "./logic/streetrat.js";
+import { edgerunnerSkills, missingFor } from "./logic/methods.js";
 import { setting } from "./settings.js";
 import { loadData, packChoices } from "./data.js";
 import { rollToChat } from "./rolls.js";
@@ -19,7 +20,7 @@ const L = (k, d) => game.i18n.format(`CPRGEN.${k}`, d ?? {});
 // foundry.utils.escapeHTML no existe en V12.
 const esc = (t) => String(t ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
 const STAT_KEYS = ["int", "ref", "dex", "tech", "cool", "will", "luck", "move", "body", "emp"];
-const IMPLEMENTED = { streetrat: ["role", "stats", "skills", "lifepath", "gear", "review"], edgerunner: ["role", "lifepath"], complete: ["role", "lifepath"] };
+const IMPLEMENTED = { streetrat: ["role", "stats", "skills", "lifepath", "gear", "review"], edgerunner: ["role", "stats", "skills", "lifepath", "gear", "review"], complete: ["role", "lifepath"] };
 
 export function userCanUse(user, actor) {
   return canUseGenerator({ isGM: user.isGM, isOwner: actor.testUserPermission(user, "OWNER"), playersEnabled: setting("playersEnabled"), actorType: actor.type });
@@ -118,8 +119,9 @@ export class GeneratorWizard extends HandlebarsApplicationMixin(ApplicationV2) {
     };
     if (ctx.pending || ctx.needRole) return ctx;
     if (draft.step === "role") ctx.roles = data.roles.map((r) => ({ key: r.key, name: r.name, selected: r.key === draft.data.role }));
-    if (draft.step === "stats") ctx.stats = this.statsContext(role, answers);
-    if (draft.step === "skills") ctx.skills = await this.skillsContext(role, answers, data);
+    ctx.method = { [draft.method]: true };
+    if (draft.step === "stats") ctx.stats = draft.method === "edgerunner" ? this.statsEdgerunnerContext(role, answers) : this.statsContext(role, answers);
+    if (draft.step === "skills") ctx.skills = await this.skillsContext(role, answers, data, draft.method);
     if (draft.step === "lifepath") ctx.lifepath = this.lifepathContext(role, answers, data);
     if (draft.step === "gear") ctx.gear = this.gearContext(role, answers);
     if (draft.step === "review") ctx.review = this.reviewContext(role, answers, data, draft);
@@ -138,18 +140,39 @@ export class GeneratorWizard extends HandlebarsApplicationMixin(ApplicationV2) {
     };
   }
 
-  async skillsContext(role, answers, data) {
+  /** Edgerunner: una tirada de 1d10 por característica, en su columna de la tabla del rol. */
+  statsEdgerunnerContext(role, answers) {
+    const slots = STAT_KEYS.map((k) => {
+      const key = `stats.${k}`, a = answers[key];
+      const opts = role.statTable.map((row, i) => ({ value: i, label: `${i + 1}: ${row[k]}`, selected: a?.row === i }));
+      const view = this.slotView(key, L(`stat.${k}`), a, opts);
+      return Object.assign(view, { kind: "row", die: "1d10", text: a ? String(role.statTable[a.row][k]) : "" });
+    });
+    return {
+      slots, perStat: true,
+      header: STAT_KEYS.map((k) => L(`stat.${k}`)),
+      table: role.statTable.map((row, i) => ({ n: i + 1, values: STAT_KEYS.map((k) => ({ v: row[k], selected: answers[`stats.${k}`]?.row === i })) })),
+    };
+  }
+
+  async skillsContext(role, answers, data, method) {
     const specs = [];
-    for (const s of specialtyChoices(role.streetratSkills)) {
+    const template = method === "edgerunner" ? role.edgerunnerSkills : role.streetratSkills;
+    const er = method === "edgerunner" ? edgerunnerSkills(role, answers, data.skills, data.rules) : null;
+    for (const s of specialtyChoices(template)) {
       const choices = await packChoices(s.pack);
-      specs.push({ key: s.key, label: s.label, level: s.level, options: choices.map((c) => ({ value: c.uuid, label: c.name, selected: answers[s.key]?.uuid === c.uuid })) });
+      specs.push({ key: s.key, label: s.label, level: s.level ?? er?.rows.find((r) => r.label === s.label)?.level, options: choices.map((c) => ({ value: c.uuid, label: c.name, selected: answers[s.key]?.uuid === c.uuid })) });
     }
     const langs = await packChoices("core_skills-languages");
     const region = data.lifepath.find((x) => x.id === "culturalOrigin");
     const ra = answers["g.culturalOrigin"];
     const lang = answers["lang.origin"];
     return {
-      list: role.streetratSkills.map((s) => ({ label: s.label, level: s.level, spec: s.specialtyPack ? answers[`spec.${s.label}`]?.text ?? "" : "" })),
+      list: er ? null : role.streetratSkills.map((s) => ({ label: s.label, level: s.level, spec: s.specialtyPack ? answers[`spec.${s.label}`]?.text ?? "" : "" })),
+      points: er ? {
+        rows: er.rows.map((r) => ({ key: `skill.${r.label}`, label: r.label, level: r.level, x2: r.x2, cost: r.cost, spec: r.specialtyPack ? answers[`spec.${r.label}`]?.text ?? "" : "" })),
+        spent: er.spent, budget: er.budget, remaining: er.remaining, over: er.remaining < 0, min: data.rules.skills.min, max: data.rules.skills.max,
+      } : null,
       specs,
       lang: {
         options: langs.map((c) => ({ value: c.uuid, label: c.name, selected: lang?.uuid === c.uuid })),
@@ -215,8 +238,14 @@ export class GeneratorWizard extends HandlebarsApplicationMixin(ApplicationV2) {
   reviewContext(role, answers, data, draft) {
     const slots = lifepathSlots(data.lifepath, role.lifepath, answers);
     const missLp = missingSlots(slots, answers);
-    const missSr = missingStreetrat(role, answers);
-    const missing = [...missSr.map((k) => L(`review.missing.${k.split(".")[0]}`, { key: k.split(".").slice(1).join(".") })), ...(missLp.length ? [L("review.missing.lifepath", { n: missLp.length })] : [])];
+    const missM = missingFor(draft.method, role, answers, data.skills, data.rules);
+    // Las diez características de Edgerunner se resumen en una sola línea.
+    const statsMiss = missM.filter((k) => k.startsWith("stats.")).length;
+    const missing = [
+      ...(statsMiss ? [L(draft.method === "edgerunner" ? "review.missing.statsEach" : "review.missing.stats", { n: statsMiss })] : []),
+      ...missM.filter((k) => !k.startsWith("stats.")).map((k) => L(`review.missing.${k.split(".")[0]}`, { key: k.split(".").slice(1).join(".") })),
+      ...(missLp.length ? [L("review.missing.lifepath", { n: missLp.length })] : []),
+    ];
     const ctx = { missing, ready: missing.length === 0, applied: draft.appliedAt ? new Date(draft.appliedAt).toLocaleString(game.i18n.lang) : null };
     if (ctx.ready) {
       const plan = buildPlan(data, draft);
@@ -236,6 +265,7 @@ export class GeneratorWizard extends HandlebarsApplicationMixin(ApplicationV2) {
     const el = this.element;
     el.querySelectorAll("select[data-key]").forEach((s) => s.addEventListener("change", (ev) => this.#onChooseSlot(ev)));
     el.querySelectorAll("input[data-text-key]").forEach((i) => i.addEventListener("change", (ev) => this.#onTextSlot(ev)));
+    el.querySelectorAll("input[data-skill-key]").forEach((i) => i.addEventListener("change", (ev) => this.#onSkillLevel(ev)));
   }
 
   async close(options) {
@@ -251,6 +281,14 @@ export class GeneratorWizard extends HandlebarsApplicationMixin(ApplicationV2) {
     if (kind === "choice") return this.setAnswer(key, { value: v });
     if (kind === "uuid") return this.setAnswer(key, { uuid: v, text: sel.selectedOptions[0]?.textContent.trim() });
     return this.setAnswer(key, { row: Number(v) });
+  }
+
+  /** Nivel de una habilidad de Edgerunner (entre el mínimo y el máximo de las reglas). */
+  async #onSkillLevel(ev) {
+    const inp = ev.currentTarget;
+    const { min, max } = (await loadData()).rules.skills;
+    const level = Math.min(max, Math.max(min, Math.round(Number(inp.value) || min)));
+    await this.setAnswer(inp.dataset.skillKey, { level });
   }
 
   async #onTextSlot(ev) {
@@ -305,6 +343,11 @@ export class GeneratorWizard extends HandlebarsApplicationMixin(ApplicationV2) {
     const r = rollRights({ answered: answers[key] != null, policy: setting("rollPolicy"), isGM: game.user.isGM, granted: d.data.grants?.[key] });
     if (!r.canRoll) return ui.notifications.warn(L("reroll.locked"));
     const record = (total, extra = {}) => ({ rolls: [...(d.rolls ?? []), { key, total, user: game.user.id, at: Date.now(), ...extra }] });
+    if (key.startsWith("stats.") && key !== "stats.row") {
+      const k = key.slice(6);
+      const total = await rollToChat(this.actor, "1d10", L("chat.statEach", { role: role.name, stat: L(`stat.${k}`) }));
+      return this.setAnswer(key, { row: total - 1, total }, record(total));
+    }
     if (key === "stats.row") {
       const total = await rollToChat(this.actor, "1d10", L("chat.stats", { role: role.name }));
       return this.setAnswer(key, { row: total - 1, total }, record(total));

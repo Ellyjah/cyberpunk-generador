@@ -7,7 +7,7 @@
  */
 import { MODULE_ID } from "./logic/core.js";
 import { lifepathFields } from "./logic/lifepath.js";
-import { streetratPlan } from "./logic/streetrat.js";
+import { planFor } from "./logic/methods.js";
 
 const STATS = ["int", "ref", "dex", "tech", "cool", "will", "luck", "move", "body", "emp"];
 const LP_FIELDS = ["aboutPeople", "affectations", "childhoodEnvironment", "clothingStyle", "culturalOrigin", "enemies", "familyBackground", "familyCrisis", "friends", "hairStyle", "lifeGoals", "personality", "roleLifepath", "tragicLoveAffairs", "valueMost", "valuedPerson", "valuedPossession"];
@@ -36,7 +36,7 @@ async function clothingIndex() {
 export function buildPlan(data, draft) {
   const role = data.role(draft.data.role);
   const answers = draft.data.answers ?? {};
-  const plan = streetratPlan(role, answers, data.rules);
+  const plan = planFor(draft.method, role, answers, data.rules, data.skills);
   plan.lifepath = lifepathFields(data.lifepath, role.lifepath, answers, {
     none: L("lifepath.none"), wrongedTitle: L("lifepath.wronged"), languageLabel: L("lifepath.language"),
   });

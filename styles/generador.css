@@ -40,3 +40,9 @@
 .cprgen-summary dd { margin: 0 0 0 12px; }
 .cprgen-apply { width: auto; margin-top: 8px; font-weight: bold; }
 .cprgen-body .hint { font-size: 0.9em; opacity: 0.8; font-style: italic; }
+/* Paso 4: reparto de puntos de Edgerunner. */
+.cprgen-skills input[type="number"] { width: 4em; text-align: center; }
+.cprgen-points.over { color: var(--color-level-error, #c00); }
+.cprgen-table td.selected { font-weight: bold; outline: 2px solid var(--color-border-highlight, #ff6400); }
+.cprgen-table th, .cprgen-table td { padding: 1px 4px !important; line-height: 1.3; height: auto; }
+.cprgen-skills input[type="number"] { height: 1.7em; padding: 0; }

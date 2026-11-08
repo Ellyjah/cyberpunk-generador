@@ -989,7 +989,7 @@
  },
  {
   "id": "friends",
-  "title": "Amigos y enemigos",
+  "title": "Amigos",
   "instruction": "Tira 1d10 y resta 7 (mínimo 0) para ver cuántos amigos has hecho hasta ahora en tu vida.",
   "die": "1d10",
   "columns": [

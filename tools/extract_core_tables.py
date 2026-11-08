@@ -283,7 +283,7 @@ GENERAL = [
     ('familyBackground', '994c0f60ff144b8f', 0, {'fields': ['familyBackground', 'familyBackground']}),
     ('childhoodEnvironment', '994c0f60ff144b8f', 1, {'fields': ['childhoodEnvironment']}),
     ('familyCrisis', '994c0f60ff144b8f', 2, {'fields': ['familyCrisis']}),
-    ('friends', '03f931e03bee71f4', 0, {'fields': ['friends'], 'count': '1d10-7'}),
+    ('friends', '03f931e03bee71f4', 0, {'fields': ['friends'], 'count': '1d10-7', 'title': 'Amigos'}),  # la tabla hereda el encabezado de página «Amigos y enemigos»
     ('enemies', '03f931e03bee71f4', 1, {'fields': ['enemies', 'enemies', 'enemies'], 'count': '1d10-7', 'perColumn': True, 'wronged': [{'value': 'you', 'label': 'Tú'}, {'value': 'them', 'label': 'Tu enemigo'}], 'then': 'revenge'}),
     ('revenge', '03f931e03bee71f4', 2, {'fields': ['enemies'], 'perEnemy': True}),
     ('tragicLoveAffairs', '97c0e8973496e0a1', 0, {'fields': ['tragicLoveAffairs'], 'count': '1d10-7'}),
@@ -297,7 +297,7 @@ def general_lifepath():
         # Las tablas de amigos/enemigos/amores tiran 1d10 por entrada aunque la instrucción hable del recuento.
         tab = roll_table(t, f'{sid}', 10 if sid in ('friends', 'enemies', 'tragicLoveAffairs') else None)
         if len(opt['fields']) != len(tab['columns']): die(f'{sid}: {len(tab["columns"])} columnas, {len(opt["fields"])} campos')
-        sec = {'id': sid, 'title': t['heading'], 'instruction': t['instruction'], **tab, **opt}
+        sec = {'id': sid, 'title': t['heading'], 'instruction': t['instruction'], **tab, **opt}  # opt['title'] corrige el título si hace falta
         if opt.get('languages'):
             sec['languageOptions'] = [[x.strip(' .') for x in r['cells'][1].split(',')] for r in tab['rows']]
         out.append(sec)

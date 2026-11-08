@@ -64,7 +64,8 @@
     "chat": {
       "prefix": "Generador —",
       "stats": "características de {role} (fila de la plantilla)",
-      "count": "{what}: recuento ({formula}, mínimo 0)"
+      "count": "{what}: recuento ({formula}, mínimo 0)",
+      "statEach": "{stat} de {role} (columna de la plantilla)"
     },
     "reroll": {
       "title": "Repetir una tirada",
@@ -81,7 +82,8 @@
     },
     "stats": {
       "row": "Fila de características",
-      "introStreetrat": "Tira 1d10 y copia la fila de la plantilla de tu rol, sin cambiar el orden."
+      "introStreetrat": "Tira 1d10 y copia la fila de la plantilla de tu rol, sin cambiar el orden.",
+      "introEdgerunner": "Tira 1d10 para cada característica por separado y toma el valor de esa fila en su columna de la plantilla de tu rol."
     },
     "stat": {
       "int": "INT",
@@ -100,7 +102,12 @@
       "originLanguage": "Idioma de origen (nivel {level})",
       "otherLanguage": "…o escribe otro idioma",
       "suggested": "Idiomas de tu región cultural",
-      "suggestedNone": "Tira o elige tu origen cultural en «Vida pasada» para ver los idiomas de tu región."
+      "suggestedNone": "Tira o elige tu origen cultural en «Vida pasada» para ver los idiomas de tu región.",
+      "introEdgerunner": "Reparte {budget} puntos entre las 20 habilidades de tu rol. Cada habilidad debe quedar entre {min} y {max}. Las marcadas con (x2) cuestan 2 puntos por nivel. El idioma de origen (nivel 4) es gratis.",
+      "points": "Puntos gastados: {spent} de {budget} (quedan {remaining}).",
+      "over": "te has pasado del presupuesto.",
+      "level": "Nivel",
+      "cost": "Coste"
     },
     "lifepath": {
       "intro": "Recorre la vida pasada general y la de tu rol. Cada tabla se puede tirar; las decisiones se eligen.",
@@ -132,7 +139,9 @@
         "spec": "La especialidad de {key} (paso Habilidades).",
         "lang": "El idioma de origen (paso Habilidades).",
         "gear": "Una opción de equipo (paso Equipo).",
-        "lifepath": "{n} apartados de la vida pasada (paso Vida pasada)."
+        "lifepath": "{n} apartados de la vida pasada (paso Vida pasada).",
+        "statsEach": "{n} características sin tirar ni elegir (paso Características).",
+        "skills": "El reparto de habilidades supera los puntos disponibles (paso Habilidades)."
       }
     },
     "slot": {

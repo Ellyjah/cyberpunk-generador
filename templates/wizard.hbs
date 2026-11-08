@@ -50,17 +50,36 @@
         {{#each roles}}<button type="button" class="cprgen-role {{#if selected}}selected{{/if}}" data-action="selectRole" data-role="{{key}}">{{name}}</button>{{/each}}
       </div>
     {{else if step.stats}}
-      <p>{{localize "CPRGEN.stats.introStreetrat"}}</p>
-      {{> slot stats.slot}}
-      <table class="cprgen-table">
-        <thead><tr><th>1d10</th>{{#each stats.header}}<th>{{this}}</th>{{/each}}</tr></thead>
-        <tbody>{{#each stats.table}}<tr class="{{#if selected}}selected{{/if}}"><td>{{n}}</td>{{#each values}}<td>{{this}}</td>{{/each}}</tr>{{/each}}</tbody>
-      </table>
+      {{#if stats.perStat}}
+        <p>{{localize "CPRGEN.stats.introEdgerunner"}}</p>
+        {{#each stats.slots}}{{> slot this}}{{/each}}
+        <table class="cprgen-table">
+          <thead><tr><th>1d10</th>{{#each stats.header}}<th>{{this}}</th>{{/each}}</tr></thead>
+          <tbody>{{#each stats.table}}<tr><td>{{n}}</td>{{#each values}}<td class="{{#if selected}}selected{{/if}}">{{v}}</td>{{/each}}</tr>{{/each}}</tbody>
+        </table>
+      {{else}}
+        <p>{{localize "CPRGEN.stats.introStreetrat"}}</p>
+        {{> slot stats.slot}}
+        <table class="cprgen-table">
+          <thead><tr><th>1d10</th>{{#each stats.header}}<th>{{this}}</th>{{/each}}</tr></thead>
+          <tbody>{{#each stats.table}}<tr class="{{#if selected}}selected{{/if}}"><td>{{n}}</td>{{#each values}}<td>{{this}}</td>{{/each}}</tr>{{/each}}</tbody>
+        </table>
+      {{/if}}
     {{else if step.skills}}
-      <p>{{localize "CPRGEN.skills.introStreetrat"}}</p>
-      <table class="cprgen-table cprgen-skills">
-        <tbody>{{#each skills.list}}<tr><td>{{label}}{{#if spec}} → <strong>{{spec}}</strong>{{/if}}</td><td>{{level}}</td></tr>{{/each}}</tbody>
-      </table>
+      {{#if skills.points}}
+        <p>{{localize "CPRGEN.skills.introEdgerunner" min=skills.points.min max=skills.points.max budget=skills.points.budget}}</p>
+        <p class="cprgen-points {{#if skills.points.over}}over{{/if}}"><strong>{{localize "CPRGEN.skills.points" spent=skills.points.spent budget=skills.points.budget remaining=skills.points.remaining}}</strong>{{#if skills.points.over}} — {{localize "CPRGEN.skills.over"}}{{/if}}</p>
+        <table class="cprgen-table cprgen-skills">
+          <thead><tr><th>{{localize "CPRGEN.step.skills"}}</th><th>{{localize "CPRGEN.skills.level"}}</th><th>{{localize "CPRGEN.skills.cost"}}</th></tr></thead>
+          <tbody>{{#each skills.points.rows}}<tr><td>{{label}}{{#if x2}} (x2){{/if}}{{#if spec}} → <strong>{{spec}}</strong>{{/if}}</td>
+            <td><input type="number" data-skill-key="{{key}}" value="{{level}}" min="{{../skills.points.min}}" max="{{../skills.points.max}}" step="1"></td><td>{{cost}}</td></tr>{{/each}}</tbody>
+        </table>
+      {{else}}
+        <p>{{localize "CPRGEN.skills.introStreetrat"}}</p>
+        <table class="cprgen-table cprgen-skills">
+          <tbody>{{#each skills.list}}<tr><td>{{label}}{{#if spec}} → <strong>{{spec}}</strong>{{/if}}</td><td>{{level}}</td></tr>{{/each}}</tbody>
+        </table>
+      {{/if}}
       {{#each skills.specs}}
         <div class="cprgen-slot">
           <span class="cprgen-slot-label">{{label}} ({{level}})</span>
