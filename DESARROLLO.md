@@ -112,7 +112,7 @@ Un nodo con `when:{id, value}` solo se recorre si la decisión `id` vale `value`
 
 **Ficha de RED:** solo trae campos de texto de vida pasada (`system.lifepath.culturalOrigin`, `personality`, `clothingStyle`, `hairStyle`, `affectations`, `valueMost`, `aboutPeople`, `valuedPerson`, `valuedPossession`, `familyBackground`, `childhoodEnvironment`, `familyCrisis`, `lifeGoals`, `friends`, `enemies`, `tragicLoveAffairs`, `roleLifepath`). RED no trae tablas ni asistente.
 
-**Pendiente para los pasos 3 y 4:** la ropa del equipo inicial está en texto («Ropa de deporte: calzado x2…»). Hay que decidir cómo convertirla en Items de `core_clothing` de RED, que distingue estilo y tipo, o dejarla como nota en la ficha.
+**Ropa (resuelto):** la ropa del equipo inicial está en texto («Ropa de deporte: calzado x2…»). `core_clothing` de RED tiene exactamente 10 estilos × 9 tipos (90 Items, con `system.style` y `system.type`), así que en el paso 3 cada línea se convierte en su Item nativo. Faltan las dos tablas de correspondencia en español. Estilos: Ropa normal elegante=`genericChic`, Ropa de deporte=`leisurewear`, Tendencias urbanas=`urbanFlash`, Ropa de negocios=`businesswear`, Alta costura=`highFashion`, Ropa bohemia=`bohemian`, Ropa de mendigo=`bagLadyChic`, Colores de pandilla=`gangColors`, Cuero nómada=`nomadLeathers`, Moda asiática=`asiaPop`. Tipos: parte de arriba=`top`, chaqueta=`jacket`, calzado=`footwear`, gafas=`glasses`, parte de abajo=`bottoms`, sombrero=`hats`, joyas=`jewelry`, lentes de contacto=`contactLenses`, gafas espejadas=`mirrorshades`. Hay que comprobar los nombres exactos que aparecen en `roles.json` antes de dar la correspondencia por cerrada.
 
 ## Pruebas
 
@@ -170,9 +170,7 @@ Un nodo con `when:{id, value}` solo se recorre si la decisión `id` vale `value`
   - extractor idempotente;
   - cotejo con el PDF: 100/100 filas de características.
 - **Decisión técnica:** los datos se generan del Core en lugar de copiarse a mano, y el extractor se detiene ante cualquier discrepancia. Las cuatro peculiaridades del Core encontradas están documentadas en «Datos».
-- **Pendiente:**
-  - la ropa en texto (decidir en los pasos 3 y 4);
-  - las tablas de PNJ, del PDF, en el paso 6.
+- **Pendiente:** la ropa se convierte en Items en el paso 3 (correspondencia en «Datos»); las tablas de PNJ, del PDF, en el paso 6.
 
 ## Cómo retomar
 
