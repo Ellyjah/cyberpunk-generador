@@ -33,6 +33,11 @@
         "r70": "Major supporting character (70)",
         "r75": "Minor hero (75)",
         "r80": "Major hero (80)"
+      },
+      "edgerunnersGame": {
+        "name": "Edgerunners game",
+        "hint": "2070s setting (Mission Kit). The Complete Package shop offers the Mission Kit arsenal at its price and all RED items at double price. If the character has non-medical cyberware, the creation neuroport is added (free, no Humanity loss). Requires the Edgerunners 2070 and Edgerunners Mission Kit modules to be active.",
+        "missing": "«Edgerunners game» is on, but modules are missing ({modules}). The generator works as RED until they are active."
       }
     },
     "wizard": {
@@ -181,7 +186,8 @@
       },
       "replaceNote": "Applying again replaces that application (it does not add up) and needs GM approval.",
       "reapply": "Apply again (replaces the previous one)",
-      "requestApply": "Ask the GM to approve applying again"
+      "requestApply": "Ask the GM to approve applying again",
+      "neuroport": "Edgerunners game: if the character has non-medical cyberware, the creation neuroport is added (free, no Humanity loss)."
     },
     "slot": {
       "rolled": "rolled:",
@@ -209,7 +215,9 @@
         "noFoundation": "{name} has no foundational cyberware of its type; installed directly on the body.",
         "cyber": "{n} cyberware installed; Humanity {hum}, EMP {emp}.",
         "money": "{n}eb added.",
-        "undo": "Previous application removed: {items} items, {skills} core skills reset to 0 and {money}eb."
+        "undo": "Previous application removed: {items} items, {skills} core skills reset to 0 and {money}eb.",
+        "neuroport": "Creation {name} added and installed (free, no Humanity loss).",
+        "noNeuroport": "The Mission Kit neuroport was not found: add it by hand."
       },
       "noCoreSkills": "The sheet lacks RED core skills. Create the sheet from the actors directory (or the generator button) and apply again.",
       "authTitle": "Approve a new application",
@@ -242,8 +250,11 @@
         "core_gear": "Gear",
         "core_programs": "Programs",
         "core_cyberware": "Cyberware",
-        "core_clothing": "Fashion"
-      }
+        "core_clothing": "Fashion",
+        "objetos": "Mission Kit: arsenal"
+      },
+      "intro2070": "Edgerunners game: Mission Kit arsenal at its price and RED items at double price. The creation neuroport is free: no need to buy it.",
+      "catalog2070": "Catalog: Mission Kit and RED"
     },
     "menu": {
       "title": "Character generator",

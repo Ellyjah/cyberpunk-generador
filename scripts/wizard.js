@@ -9,7 +9,7 @@ import { MODULE_ID, METHODS, STEPS, canUseGenerator, normalizeDraft, serializeDr
 import { lifepathSlots, slotTable, rowText, rowForTotal, countFromTotal, missingSlots } from "./logic/lifepath.js";
 import { gearChoices, specialtyChoices, cap } from "./logic/streetrat.js";
 import { edgerunnerSkills, missingFor, completeStats, completeSkills, shopTotals } from "./logic/methods.js";
-import { setting } from "./settings.js";
+import { setting, edgerunnersMode } from "./settings.js";
 import { loadData, packChoices } from "./data.js";
 import { rollToChat } from "./rolls.js";
 import { gmExec, registerHandler } from "./socket.js";
@@ -22,7 +22,13 @@ const esc = (t) => String(t ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<
 const STAT_KEYS = ["int", "ref", "dex", "tech", "cool", "will", "luck", "move", "body", "emp"];
 const IMPLEMENTED = { streetrat: ["role", "stats", "skills", "lifepath", "gear", "review"], edgerunner: ["role", "stats", "skills", "lifepath", "gear", "review"], complete: ["role", "stats", "skills", "lifepath", "gear", "review"] };
 // Tienda del Paquete completo: compendios de RED (armas, blindaje, munición, equipo, programas, ciberequipo, moda).
-const SHOP_PACKS = ["core_weapons", "core_armor", "core_ammo", "core_gear", "core_programs", "core_cyberware", "core_clothing"];
+const RED_SHOP_PACKS = ["core_weapons", "core_armor", "core_ammo", "core_gear", "core_programs", "core_cyberware", "core_clothing"].map((p) => `cyberpunk-red-core.${p}`);
+// Partida de Edgerunners (decisión del director): arsenal del Mission Kit con su precio y todos los objetos de RED al doble.
+const MK_PACK = "edgerunners-mission-kit.objetos";
+const RED_PRICE_2070 = 2;
+const shopPacks = () => (edgerunnersMode() ? [MK_PACK, ...RED_SHOP_PACKS] : RED_SHOP_PACKS);
+/** Multiplicador de precio de un compendio: ×2 para RED en la partida de Edgerunners. */
+const priceFactor = (pack) => (edgerunnersMode() && pack.startsWith("cyberpunk-red-core.") ? RED_PRICE_2070 : 1);
 const SHOP_LIMIT = 80;
 /** Reglas con los puntos de característica del rango elegido por el DJ. */
 const rulesOf = (data) => ({ ...data.rules, completePoints: setting("completeRank") });
@@ -191,18 +197,21 @@ export class GeneratorWizard extends HandlebarsApplicationMixin(ApplicationV2) {
 
   /** Paquete completo: tienda con buscador por compendio, carrito y los dos presupuestos. */
   async shopContext(answers, data) {
-    const pack = this._shopPack ?? SHOP_PACKS[0];
+    const packs = shopPacks();
+    const pack = packs.includes(this._shopPack) ? this._shopPack : packs[0];
     const query = (this._shopQuery ?? "").trim().toLocaleLowerCase(game.i18n.lang);
-    const p = game.packs.get(`cyberpunk-red-core.${pack}`);
+    const p = game.packs.get(pack);
+    const factor = priceFactor(pack);
     const index = p ? await p.getIndex({ fields: ["system.price.market", "system.amount", "system.type"] }) : [];
     const cart = answers.cart?.items ?? [];
     const list = index.filter((e) => !query || e.name.toLocaleLowerCase(game.i18n.lang).includes(query))
       .sort((a, b) => a.name.localeCompare(b.name, game.i18n.lang)).slice(0, SHOP_LIMIT)
-      .map((e) => ({ uuid: e.uuid ?? `Compendium.cyberpunk-red-core.${pack}.Item.${e._id}`, name: e.name, price: e.system?.price?.market ?? 0, amount: e.system?.amount ?? null, packSize: (e.system?.amount ?? 1) > 1 ? e.system.amount : null, inCart: cart.some((c) => c.uuid === (e.uuid ?? "")) }));
+      .map((e) => ({ uuid: e.uuid ?? `Compendium.${pack}.Item.${e._id}`, name: e.name, price: (e.system?.price?.market ?? 0) * factor, amount: e.system?.amount ?? null, packSize: (e.system?.amount ?? 1) > 1 ? e.system.amount : null, inCart: cart.some((c) => c.uuid === (e.uuid ?? "")) }));
     const t = shopTotals(answers.cart, data.rules);
     return {
       shop: true,
-      packs: SHOP_PACKS.map((k) => ({ key: k, label: L(`shop.pack.${k}`), selected: k === pack })),
+      packs: packs.map((k) => ({ key: k, label: L(`shop.pack.${k.split(".").pop()}`), selected: k === pack })),
+      edgerunners: edgerunnersMode(), factor,
       query: this._shopQuery ?? "", list, more: index.length > SHOP_LIMIT && !query,
       cart: cart.map((c, i) => ({ ...c, index: i, subtotal: c.price * c.packs, units: c.amount > 1 ? c.packs * c.amount : null })),
       totals: t,
@@ -330,7 +339,7 @@ export class GeneratorWizard extends HandlebarsApplicationMixin(ApplicationV2) {
       ...(missLp.length ? [L("review.missing.lifepath", { n: missLp.length })] : []),
     ];
     const rec = appliedRecord(this.actor);
-    const ctx = { missing, ready: missing.length === 0, applied: rec ? new Date(rec.at).toLocaleString(game.i18n.lang) : null, needAuth: Boolean(rec) && !game.user.isGM };
+    const ctx = { missing, ready: missing.length === 0, applied: rec ? new Date(rec.at).toLocaleString(game.i18n.lang) : null, needAuth: Boolean(rec) && !game.user.isGM, edgerunners: edgerunnersMode() };
     if (ctx.ready) {
       const plan = buildPlan(data, draft);
       ctx.summary = {
@@ -474,11 +483,12 @@ export class GeneratorWizard extends HandlebarsApplicationMixin(ApplicationV2) {
   static async #onShopAdd(_event, target) {
     const uuid = target.dataset.uuid;
     const doc = await fromUuid(uuid);
+    const pack = doc?.pack ?? "";
     if (!doc) return;
     const items = [...(this.draft.data.answers?.cart?.items ?? [])];
     const i = items.findIndex((c) => c.uuid === uuid);
     if (i >= 0) items[i] = { ...items[i], packs: items[i].packs + 1 };
-    else items.push({ uuid, name: doc.name, price: doc.system.price?.market ?? 0, amount: doc.system.amount ?? 1, packs: 1, type: doc.type,
+    else items.push({ uuid, name: doc.name, price: (doc.system.price?.market ?? 0) * priceFactor(pack), amount: doc.system.amount ?? 1, packs: 1, type: doc.type, pack,
       fashion: doc.type === "clothing" || (doc.type === "cyberware" && doc.system.type === "fashionware") });
     await this.setAnswer("cart", { items });
   }

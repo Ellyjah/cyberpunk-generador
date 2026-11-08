@@ -13,6 +13,19 @@
 import { MODULE_ID } from "./logic/core.js";
 import { lifepathFields } from "./logic/lifepath.js";
 import { planFor } from "./logic/methods.js";
+import { edgerunnersMode } from "./settings.js";
+
+const ER = "edgerunners-2070";
+const capsOf = (item) => (item.flags?.[ER]?.capabilities ?? []).filter((c) => c?.enabled !== false).map((c) => c.type);
+
+/** Neuropuerto de creación del Mission Kit: el Item con la capacidad «neuroport» y creationFree. */
+async function findCreationNeuroport() {
+  const pack = game.packs.get("edgerunners-mission-kit.objetos");
+  if (!pack) return null;
+  const index = await pack.getIndex({ fields: [`flags.${ER}.capabilities`] });
+  const e = index.find((x) => (x.flags?.[ER]?.capabilities ?? []).some((c) => c.type === "neuroport" && c.creationFree));
+  return e ? (e.uuid ?? `Compendium.edgerunners-mission-kit.objetos.Item.${e._id}`) : null;
+}
 
 const STATS = ["int", "ref", "dex", "tech", "cool", "will", "luck", "move", "body", "emp"];
 const LP_FIELDS = ["aboutPeople", "affectations", "childhoodEnvironment", "clothingStyle", "culturalOrigin", "enemies", "familyBackground", "familyCrisis", "friends", "hairStyle", "lifeGoals", "personality", "roleLifepath", "tragicLoveAffairs", "valueMost", "valuedPerson", "valuedPossession"];
@@ -186,16 +199,35 @@ export async function applyPlan(actor, plan) {
   log.push(L("apply.log.items", { n: created.length }));
 
   // 5. Ciberequipo: primero el fundacional; cada opción en su fundacional del mismo tipo (o en la ficha si no hay).
-  const cyber = created.filter((i) => i.type === "cyberware").sort((a, b) => Number(b.system.isFoundational) - Number(a.system.isFoundational));
+  // Partida de Edgerunners: si hay ciberequipo que no sea de grado médico, neuropuerto de creación del Mission Kit, gratis,
+  // instalado sin pérdida de Humanidad y marcado para el motor 2070 (install.mode = "creation"; el motor devuelve el −2
+  // de Humanidad máxima que resta RED). Las opciones de neuralware van a la conexión neuronal, no al neuropuerto.
+  let port = null;
+  if (edgerunnersMode()) {
+    const cyberItems = created.filter((i) => i.type === "cyberware");
+    port = cyberItems.find((i) => capsOf(i).includes("neuroport")) ?? null;
+    const needs = cyberItems.some((i) => !capsOf(i).includes("neuroport") && !capsOf(i).includes("medical-grade") && !/grado m[eé]dico|medical grade/i.test(i.name));
+    if (needs && !port) {
+      const uuid = await findCreationNeuroport();
+      if (uuid) { [port] = await actor.createEmbeddedDocuments("Item", [await itemData(uuid)]); log.push(L("apply.log.neuroport", { name: port.name })); }
+      else log.push(L("apply.log.noNeuroport"));
+    }
+    if (port) {
+      await actor.installItems([actor.items.get(port.id)]);
+      await actor.items.get(port.id).setFlag(ER, "install", { mode: "creation", at: game.time.worldTime });
+    }
+  }
+  const cyber = created.filter((i) => i.type === "cyberware" && i.id !== port?.id).sort((a, b) => Number(b.system.isFoundational) - Number(a.system.isFoundational));
   const installed = [];
   for (const cw of cyber) {
     const item = actor.items.get(cw.id);
-    const target = item.system.isFoundational ? actor
-      : actor.itemTypes.cyberware.find((c) => c.id !== item.id && c.system.isInstalled && c.system.isFoundational && c.system.type === item.system.type);
+    const bases = actor.itemTypes.cyberware.filter((c) => c.id !== item.id && c.system.isInstalled && c.system.isFoundational && c.system.type === item.system.type);
+    const target = item.system.isFoundational ? actor : bases.find((c) => c.id !== port?.id) ?? bases[0];
     if (!target) log.push(L("apply.log.noFoundation", { name: item.name }));
     if (await (target ?? actor).installItems([item])) installed.push(actor.items.get(item.id));
   }
   if (installed.length) await actor.loseHumanityValue(installed, "static");
+  else if (port) await actor.setMaxHumanity();
   log.push(L("apply.log.cyber", { n: installed.length, hum: actor.system.derivedStats.humanity.value, emp: actor.system.stats.emp.value }));
 
   // 6. Dinero inicial en el libro de cuentas de RED (la ficha de secuaz no tiene dinero).

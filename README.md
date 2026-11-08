@@ -7,6 +7,7 @@ Contiene tablas del libro, así que no se publica en abierto. Contenido no ofici
 - **Uso (DJ):** botón «Generador de personajes» en el directorio de actores, o botón «Generador» en la cabecera de una ficha.
 - **Uso (jugadores):** botón «Generador» en la cabecera de su ficha, si el DJ les ha dado la propiedad y el ajuste lo permite.
 - **Ajustes:** «Autorizar a los jugadores a usar el generador» (desactivado por defecto; al cerrarlo, el botón desaparece al momento), «Tiradas del generador» y «Rango de personaje (Paquete completo)».
+- **Partida de Edgerunners** (ajuste): tienda con el arsenal del Mission Kit y los objetos de RED al doble, y neuropuerto de creación gratis si hay ciberequipo. Requiere Edgerunners 2070 y Edgerunners Mission Kit.
 - **Requisitos:** solo el sistema Cyberpunk RED – Core. Funciona sin los demás módulos del proyecto; con la traducción activa, los objetos de RED salen en español.
 - **Volver a aplicar:** sustituye la aplicación anterior y requiere la autorización del DJ.
 

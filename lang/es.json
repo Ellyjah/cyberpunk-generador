@@ -33,6 +33,11 @@
         "r70": "Personaje secundario importante (70)",
         "r75": "Héroe menor (75)",
         "r80": "Héroe importante (80)"
+      },
+      "edgerunnersGame": {
+        "name": "Partida de Edgerunners",
+        "hint": "Ambientación de los años 2070 (Mission Kit). La tienda del Paquete completo ofrece el arsenal del Mission Kit con su precio y todos los objetos de RED al doble de su precio. Si el personaje lleva ciberequipo que no sea de grado médico, se añade el neuropuerto de creación (gratis y sin pérdida de Humanidad). Requiere los módulos Edgerunners 2070 y Edgerunners Mission Kit activos.",
+        "missing": "«Partida de Edgerunners» está activada, pero faltan módulos ({modules}). El generador funciona como RED hasta que se activen."
       }
     },
     "wizard": {
@@ -181,7 +186,8 @@
       },
       "replaceNote": "Volver a aplicar sustituye esa aplicación (no se suma) y requiere la autorización del DJ.",
       "reapply": "Volver a aplicar (sustituye la anterior)",
-      "requestApply": "Pedir al DJ que autorice volver a aplicar"
+      "requestApply": "Pedir al DJ que autorice volver a aplicar",
+      "neuroport": "Partida de Edgerunners: si el personaje lleva ciberequipo que no sea de grado médico, se añadirá el neuropuerto de creación (gratis y sin pérdida de Humanidad)."
     },
     "slot": {
       "rolled": "tirada:",
@@ -209,7 +215,9 @@
         "noFoundation": "{name} no tiene ciberequipo base de su tipo; se instala directamente en el cuerpo.",
         "cyber": "{n} piezas de ciberequipo instaladas; Humanidad {hum}, EMP {emp}.",
         "money": "{n} ed añadidos al dinero.",
-        "undo": "Aplicación anterior retirada: {items} objetos, {skills} habilidades base a 0 y {money} ed."
+        "undo": "Aplicación anterior retirada: {items} objetos, {skills} habilidades base a 0 y {money} ed.",
+        "neuroport": "{name} de creación añadido e instalado (gratis, sin pérdida de Humanidad).",
+        "noNeuroport": "No se encontró el neuropuerto del Mission Kit: añádelo a mano."
       },
       "noCoreSkills": "La ficha no tiene las habilidades base de RED. Crea la ficha desde el directorio de actores (o con el botón del generador) y vuelve a aplicar.",
       "authTitle": "Autorizar una nueva aplicación",
@@ -242,8 +250,11 @@
         "core_gear": "Equipo",
         "core_programs": "Programas",
         "core_cyberware": "Ciberequipo",
-        "core_clothing": "Moda"
-      }
+        "core_clothing": "Moda",
+        "objetos": "Mission Kit: arsenal"
+      },
+      "intro2070": "Partida de Edgerunners: arsenal del Mission Kit con su precio y objetos de RED al doble. El neuropuerto de creación es gratis: no hace falta comprarlo.",
+      "catalog2070": "Catálogo: Mission Kit y RED"
     },
     "menu": {
       "title": "Generador de personajes",

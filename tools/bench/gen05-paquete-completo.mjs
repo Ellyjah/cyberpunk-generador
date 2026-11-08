@@ -99,7 +99,7 @@ try {
   step("A-tienda", await gm.evaluate(async (id) => {
     await __click(id, '[data-step="gear"]');
     const add = async (pack, uuid, times = 1) => {
-      const sel = __gen(id).element.querySelector("select[data-shop-pack]"); sel.value = pack; sel.dispatchEvent(new Event("change")); await __w(1500);
+      const sel = __gen(id).element.querySelector("select[data-shop-pack]"); sel.value = `cyberpunk-red-core.${pack}`; sel.dispatchEvent(new Event("change")); await __w(1500);
       for (let i = 0; i < times; i++) { const b = __gen(id).element.querySelector(`[data-action="shopAdd"][data-uuid="${uuid}"]`); if (!b) throw new Error("sin botón " + uuid); b.click(); await __w(900); }
     };
     const C = "Compendium.cyberpunk-red-core.";
@@ -110,7 +110,7 @@ try {
     await add("core_ammo", C + "core_ammo.Item.7xhKxgwOELzaPyYr", 2);       // granada de humo ×2
     await add("core_armor", C + "core_armor.Item.uaN9WukkezPfcutU");
     // Moda: primera prenda del catálogo de moda, y búsqueda.
-    const sel = __gen(id).element.querySelector("select[data-shop-pack]"); sel.value = "core_clothing"; sel.dispatchEvent(new Event("change")); await __w(1500);
+    const sel = __gen(id).element.querySelector("select[data-shop-pack]"); sel.value = "cyberpunk-red-core.core_clothing"; sel.dispatchEvent(new Event("change")); await __w(1500);
     const q = __gen(id).element.querySelector("input[data-shop-query]"); q.value = "zz-no-existe"; q.dispatchEvent(new Event("input")); await __w(1500);
     const none = __gen(id).element.querySelectorAll(".cprgen-catalog tbody tr").length;
     const q2 = __gen(id).element.querySelector("input[data-shop-query]"); q2.value = ""; q2.dispatchEvent(new Event("input")); await __w(1500);

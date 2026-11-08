@@ -15,7 +15,7 @@ El director pidió un generador lo más completo posible para PJ y PNJ. Debe cub
 | PNJ | Dos vías: las plantillas de amenaza del libro (secuaces, lugartenientes, minijefes y jefes) con variaciones, y la generación rápida por rol con el método Rata callejera. |
 | Quién crea los PJ | El DJ y los jugadores. Un jugador **solo trabaja sobre una ficha existente** de la que el DJ le haya dado la propiedad, y los cambios van a esa ficha. Los jugadores nunca crean actores. |
 | Tiradas | Un ajuste del DJ elige entre «Tirar o elegir» y «Solo tiradas». Todas las tiradas salen en el chat, y el DJ puede autorizar que se repita una. |
-| Motor 2070 activo | Neuropuerto de creación gratis y sin −2 de Humanidad máxima, implantes marcados como instalados en la creación y pérdida media de Humanidad (ver `03-coordinacion/REGLAS.md`, líneas sobre la creación, y `CONTRATOS.md`, sobre `install` y `creationFree`). |
+| Partida de Edgerunners (paso 7, 2026-11-08) | Ajuste «Partida de Edgerunners», desactivado por defecto. Solo actúa si están activos `edgerunners-2070` y `edgerunners-mission-kit`; si falta alguno, avisa al DJ y el generador funciona como RED. **Tienda:** el arsenal del Mission Kit (`edgerunners-mission-kit.objetos`, 47 objetos) con su precio y **todos** los objetos de RED **al doble** (el director eligió «todo de RED al doble»; el libro solo da el recargo corporativo ×2 por compra directa). **Neuropuerto:** automático y gratis si hay ciberequipo que no sea de grado médico, con pérdida media en el resto de implantes. Las listas de equipo inicial del libro no cambian. |
 | Equipo | Edgerunner usa las listas del libro por rol. Paquete completo usa una tienda con los compendios de RED, que salen en español gracias a `cyberpunk-tr-esp`, con control de presupuesto y límites. |
 | Vida pasada | Completa: la general más la propia de cada uno de los 10 roles, escrita en los campos `system.lifepath.*` de la ficha de RED. |
 
@@ -29,7 +29,7 @@ El director pidió un generador lo más completo posible para PJ y PNJ. Debe cub
 4. **Edgerunner** (una tirada por característica, 86 puntos de habilidad, mismo equipo que Rata callejera). ✅ 0.3.0.
 5. **Paquete completo con tienda**, más sustitución autorizada de la segunda aplicación, autorización de jugadores con efecto inmediato y prueba con solo RED. ✅ 0.4.0.
 6. **PNJ**: fichas del libro, encuentros aleatorios y PNJ rápido por rol. ✅ 0.5.0.
-7. Integración con el motor 2070.
+7. **Partida de Edgerunners** (tienda Mission Kit + RED al doble, neuropuerto de creación). ✅ 0.6.0.
 8. Pruebas completas y copias habituales (proyecto, Raspberry, V12 con el mundo cerrado, GitHub privado; esto último, previa autorización).
 
 ## Arquitectura (estado actual)
@@ -53,6 +53,7 @@ El director pidió un generador lo más completo posible para PJ y PNJ. Debe cub
   scripts/logic/npcs.js      PNJ: npcPlan (ficha del libro), encounterFor, autoAnswers (PNJ rápido)
   scripts/npc.js         menú del botón del directorio (DJ), createActor, createBookNpc, encuentro aleatorio, createQuickNpc
   tools/extract_npcs.py  genera data/npcs.json y data/encounters.json desde el PDF del libro básico (paso 6)
+  (settings.js)          edgerunnersMode(), missingEdgerunnersModules(), warnEdgerunners() (paso 7)
   templates/wizard.hbs   barra de pasos, cuerpo del paso, pie con Anterior/Siguiente
   styles/generador.css   solo estructura; los colores son los del tema
   lang/es.json, en.json  claves CPRGEN.*
@@ -143,6 +144,16 @@ El director pidió un generador lo más completo posible para PJ y PNJ. Debe cub
 - **PNJ rápido por rol:** Rata callejera con `autoAnswers`: fila, equipo, especialidades, idioma y, opcionalmente, vida pasada al azar con el generador aleatorio de Foundry (`CONFIG.Dice.randomUniform`), sin publicar las tiradas. Se aplica con `applyCharacter` (resumen susurrado al DJ) y, durante la creación, el modo de tirada pasa a «solo DJ» para que las tarjetas de pérdida de Humanidad de RED no sean públicas.
 - **Ficha de secuaz de RED:** no tiene vida pasada, estilo de vida ni dinero. `applyPlan` escribe la vida pasada en las notas (`system.information.notes`) y omite el alojamiento y el dinero; `undoApplied` también lo tiene en cuenta.
 - **Fallo de RED v0.92.4 que se evita:** `CPRMookActor.create` llama a `super.create` sin `await` ni `return`, así que devuelve `undefined` y el actor aparece después. `createActor` (npc.js) marca el actor con un identificador, espera a su `createActor` y a que RED instale sus ranuras de ciberequipo. Úsalo siempre para crear actores.
+
+**Partida de Edgerunners** (paso 7):
+- `edgerunnersMode()` (settings.js) es verdadero solo con el ajuste activado y el motor y el Mission Kit activos. `warnEdgerunners()` avisa al DJ al iniciar y al cambiar el ajuste si faltan módulos.
+- Tienda (wizard.js): `shopPacks()` da `[MK_PACK, …RED_SHOP_PACKS]` en este modo, o solo RED fuera de él (ahora con id completo de compendio). `priceFactor(pack)` es ×2 para `cyberpunk-red-core.*` en este modo. El precio se fija en el carrito al añadir el objeto (`price` ya multiplicado y `pack` guardado): si se cambia el ajuste después, los objetos ya en el carrito conservan su precio.
+- Neuropuerto (apply.js, paso 5 de `applyPlan`):
+  - si en este modo hay algún ciberequipo creado sin las capacidades `neuroport` ni `medical-grade` (ni «grado médico / medical grade» en el nombre), se crea el Item del Mission Kit con la capacidad `neuroport` y `creationFree` (`findCreationNeuroport`, por capacidad; hoy es «Neuropuerto»);
+  - se instala en la ficha sin pérdida de Humanidad y se marca con `flags["edgerunners-2070"].install = {mode: "creation", at}`, que es el contrato del motor (`CONTRATOS.md` §2 y §11); el motor devuelve el −2 de Humanidad máxima con `_calcMaxHumanity`;
+  - las opciones del mismo tipo (neuralware) se instalan en otro fundacional (la conexión neuronal) antes que en el neuropuerto;
+  - si el personaje ya compró un neuropuerto, no se añade otro.
+- Fuera de la tienda y del neuropuerto, el modo no cambia nada: las listas de equipo inicial del libro, los PNJ del libro y los encuentros siguen igual. No hay neuropuerto para los PNJ del libro, que son de 2045.
 
 **Importante, fichas creadas por código:** hay que usar `Actor.implementation.create(…)` (la clase de RED). `Actor.create(…)` crea la ficha **sin** las 63 habilidades base ni las ranuras de ciberequipo. `applyPlan` se detiene con un aviso si la ficha no tiene habilidades base.
 
@@ -355,10 +366,36 @@ Un nodo con `when:{id, value}` solo se recorre si la decisión `id` vale `value`
   6. La ficha de secuaz no tiene dinero ni vida pasada.
   7. Las tarjetas de pérdida de Humanidad de RED salían públicas al crear PNJ.
 
+### 2026-11-08 — Paso 7: Partida de Edgerunners (0.6.0) — Claude Code
+
+- **Investigación y consulta:**
+  - el Libro de reglas del Mission Kit (conversión, PDF 26–27) no da «precios 2070» para los objetos de RED; solo el recargo corporativo ×2 por compra directa, y dice que todo lo de RED sigue valiendo;
+  - el Mission Kit 1.4.0 trae 47 objetos nativos con precio en «Arsenal y hackeos rápidos»;
+  - consultado el director: todo lo de RED al doble, todos los objetos de RED disponibles y neuropuerto automático.
+- **Hecho:**
+  - ajuste «Partida de Edgerunners» con comprobación de módulos y aviso;
+  - tienda con el Mission Kit y RED ×2;
+  - neuropuerto de creación marcado para el motor;
+  - avisos en la tienda y en la revisión;
+  - rótulo «Catálogo: Mission Kit y RED».
+- **Pruebas:**
+  - unitarias 29/29 sin cambios;
+  - banco 30013 (`tools/bench/gen07-edgerunners.mjs`; el Mission Kit 1.4.0-preview.3 se copió al banco desde V12 con el mundo cerrado, 194/194 archivos idénticos):
+    - **A)** sin el modo, 7 compendios de RED y el fusil de asalto a 500;
+    - **B)** con el ajuste activado y sin el Mission Kit, aviso «faltan módulos» y tienda de RED;
+    - **C)** con el Mission Kit, Mission Kit primero (47 objetos con su precio, neuropuerto a 1000) y fusil a 1000; la compra (Carnage 100 + conexión neuronal 1000 + Sandevistan 1000 = 2100, sobran 450) aplicada da neuropuerto instalado y marcado `creation`, Sandevistan en la conexión neuronal y Humanidad 60 − 14 = 46 con máximo 56 (60 − 3 × 2 + 2 del motor);
+    - **D)** una técnica Rata callejera en este modo recibe también su neuropuerto `creation`; Humanidad y máximo coherentes (el −2 del neuropuerto, compensado);
+  - regresiones de los pasos 5 (`gen05`, con su prueba actualizada a los id completos de compendio) y 6 (`gen06`): correctas;
+  - 0 errores; captura de la tienda revisada.
+- **Incidencias de entorno:** la copia del Mission Kit al banco con `cp -a` y `cp -r` falló porque el disco del banco no admite permisos Unix y porque una tubería con `head` cortó la copia (error mío). Se hizo con `tar` y se comparó archivo a archivo. La primera ejecución de la parte B no la probaba de verdad, porque el mundo del banco ya tenía el Mission Kit activado; se corrigió la prueba para desactivarlo primero.
+
 ## Cómo retomar
 
 1. Lee este documento y `module.json`.
 2. Ejecuta las pruebas unitarias y, si cambias el extractor, vuelve a generar los datos.
-3. Siguiente: **paso 7, integración con Edgerunners** (punto 4).
-4. **Paso 7 (integración Edgerunners), decidido por el director (2026-11-08):** ajuste «Partida de Edgerunners». Desactivado, solo hay la tienda de RED (como ahora). Activado, la tienda de RED se sustituye por la de Edgerunners: los objetos del Mission Kit, más los objetos de RED que se puedan usar en la ambientación, **con el precio 2070**. Falta averiguar dónde están esos precios y qué objetos de RED son válidos en el Mission Kit y el motor (ver `03-coordinacion/REGLAS.md`, conversión y arsenal del Libro de reglas del Mission Kit, PDF 26–37). En ese modo se piden el motor 2070 y el Mission Kit, y se aplican las reglas de creación del motor (neuropuerto gratis y pérdida media, `REGLAS.md` y `CONTRATOS.md`).
+3. Siguiente: **paso 8, pruebas completas y copias habituales.**
+   - Hay que repetir `tools/bench/gen01` … `gen07` en el banco. El `gen01` usa `Actor.create`; cámbialo a `Actor.implementation.create` si hace falta probar habilidades. El ajuste «Autorizar a los jugadores» está desactivado por defecto: `gen03` lo necesita activado.
+   - Revisión visual final del director.
+   - Copias: proyecto (`releases/cyberpunk-generador-<v>.zip`, con `git archive` de `module.json`, `scripts`, `templates`, `styles`, `lang` y `data`), carpeta de versiones de la Raspberry, V12 `Data/modules/cyberpunk-generador` (**solo con el mundo cerrado**, comprobando `active:false` en el mismo comando) y GitHub privado (el director lo autorizó para cuando terminen los pasos).
+   - Registrar en ESTADO y PRUEBAS cuando el director confirme que Codex ya no escribe en ellos.
 5. No escribas en `edgerunners-2070` ni en ESTADO/PRUEBAS sin confirmar con el director que Codex ha terminado.

@@ -117,6 +117,7 @@
       {{/each}}
     {{else if gear.shop}}
       <p>{{localize "CPRGEN.shop.intro" money=gear.totals.money fashion=gear.totals.fashionMoney}}</p>
+      {{#if gear.edgerunners}}<p class="hint">{{localize "CPRGEN.shop.intro2070"}}</p>{{/if}}
       <p class="cprgen-points {{#if gear.totals.over}}over{{/if}}"><strong>{{localize "CPRGEN.shop.totals" main=gear.totals.mainSpent money=gear.totals.money left=gear.totals.mainLeft fashion=gear.totals.fashionUsed fashionMoney=gear.totals.fashionMoney}}</strong>{{#if gear.totals.over}} — {{localize "CPRGEN.skills.over"}}{{/if}}</p>
       <fieldset class="cprgen-group"><legend>{{localize "CPRGEN.shop.cart"}}</legend>
         {{#if gear.cart.length}}
@@ -128,7 +129,7 @@
         </table>
         {{else}}<p class="hint">{{localize "CPRGEN.shop.empty"}}</p>{{/if}}
       </fieldset>
-      <fieldset class="cprgen-group"><legend>{{localize "CPRGEN.shop.catalog"}}</legend>
+      <fieldset class="cprgen-group"><legend>{{#if gear.edgerunners}}{{localize "CPRGEN.shop.catalog2070"}}{{else}}{{localize "CPRGEN.shop.catalog"}}{{/if}}</legend>
         <div class="cprgen-shopbar">
           <select data-shop-pack>{{#each gear.packs}}<option value="{{key}}" {{#if selected}}selected{{/if}}>{{label}}</option>{{/each}}</select>
           <input type="search" data-shop-query value="{{gear.query}}" placeholder="{{localize "CPRGEN.shop.search"}}">
@@ -165,6 +166,7 @@
         </dl>
         {{#if review.applied}}<p class="hint">{{localize "CPRGEN.review.applied" date=review.applied}} {{localize "CPRGEN.review.replaceNote"}}</p>{{/if}}
         <p>{{localize "CPRGEN.review.note"}}</p>
+        {{#if review.edgerunners}}<p class="hint">{{localize "CPRGEN.review.neuroport"}}</p>{{/if}}
         <button type="button" class="cprgen-apply" data-action="applySheet"><i class="fas fa-file-import"></i> {{#if review.needAuth}}{{localize "CPRGEN.review.requestApply"}}{{else if review.applied}}{{localize "CPRGEN.review.reapply"}}{{else}}{{localize "CPRGEN.review.apply"}}{{/if}}</button>
       {{else}}
         <p>{{localize "CPRGEN.review.missingIntro"}}</p>

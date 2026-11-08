@@ -3,7 +3,7 @@
  * Documentación de desarrollo y traspaso: DESARROLLO.md (en la raíz del módulo).
  */
 import { MODULE_ID } from "./logic/core.js";
-import { registerSettings } from "./settings.js";
+import { registerSettings, warnEdgerunners } from "./settings.js";
 import { listenSocket } from "./socket.js";
 import { openGenerator, userCanUse } from "./wizard.js";
 import { openMenu, createBookNpc, createQuickNpc } from "./npc.js";
@@ -15,7 +15,7 @@ Hooks.once("init", () => {
   game.modules.get(MODULE_ID).api = { open: openGenerator, menu: openMenu, createBookNpc, createQuickNpc };
 });
 
-Hooks.once("ready", () => listenSocket());
+Hooks.once("ready", () => { listenSocket(); warnEdgerunners(); });
 
 // Botón en la cabecera de la ficha (hojas V1 de RED): solo si el usuario puede usarlo sobre ese actor.
 Hooks.on("getActorSheetHeaderButtons", (sheet, buttons) => {

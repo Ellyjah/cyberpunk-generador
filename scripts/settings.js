@@ -18,6 +18,14 @@ export function registerSettings() {
     choices: Object.fromEntries(ROLL_POLICIES.map((p) => [p, `CPRGEN.settings.rollPolicy.${p}`])),
     onChange: () => rerenderOpen(),
   });
+  // Partida de Edgerunners (paso 7): tienda del Mission Kit + RED al doble y neuropuerto de creación. Requiere el motor
+  // edgerunners-2070 y el Mission Kit; sin ellos, el generador sigue como RED y avisa al DJ.
+  game.settings.register(MODULE_ID, "edgerunnersGame", {
+    name: "CPRGEN.settings.edgerunnersGame.name",
+    hint: "CPRGEN.settings.edgerunnersGame.hint",
+    scope: "world", config: true, type: Boolean, default: false,
+    onChange: () => { warnEdgerunners(); rerenderOpen(); },
+  });
   game.settings.register(MODULE_ID, "completeRank", {
     name: "CPRGEN.settings.completeRank.name",
     hint: "CPRGEN.settings.completeRank.hint",
@@ -28,6 +36,24 @@ export function registerSettings() {
 }
 
 export const setting = (key) => game.settings.get(MODULE_ID, key);
+
+/** Módulos que necesita la «Partida de Edgerunners». */
+export const EDGERUNNERS_MODULES = ["edgerunners-2070", "edgerunners-mission-kit"];
+export const missingEdgerunnersModules = () => EDGERUNNERS_MODULES.filter((id) => !game.modules.get(id)?.active);
+
+/** ¿Está activa la «Partida de Edgerunners»? (ajuste activado y motor y Mission Kit activos). */
+export function edgerunnersMode() {
+  try { return setting("edgerunnersGame") === true && missingEdgerunnersModules().length === 0; } catch { return false; }
+}
+
+/** Aviso al DJ si el ajuste está activado pero faltan módulos. */
+export function warnEdgerunners() {
+  if (!game.user?.isGM) return;
+  let on = false;
+  try { on = setting("edgerunnersGame"); } catch { return; }
+  const missing = missingEdgerunnersModules();
+  if (on && missing.length) ui.notifications.warn(game.i18n.format("CPRGEN.settings.edgerunnersGame.missing", { modules: missing.join(", ") }), { permanent: true });
+}
 
 /** Vuelve a dibujar los asistentes abiertos (por ejemplo, al cambiar un ajuste). */
 export function rerenderOpen() {
