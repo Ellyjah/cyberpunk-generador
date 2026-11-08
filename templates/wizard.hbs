@@ -50,7 +50,13 @@
         {{#each roles}}<button type="button" class="cprgen-role {{#if selected}}selected{{/if}}" data-action="selectRole" data-role="{{key}}">{{name}}</button>{{/each}}
       </div>
     {{else if step.stats}}
-      {{#if stats.perStat}}
+      {{#if stats.buy}}
+        <p>{{localize "CPRGEN.stats.introComplete" min=stats.min max=stats.max rank=stats.rank budget=stats.budget}}</p>
+        <p class="cprgen-points {{#if stats.over}}over{{/if}}"><strong>{{localize "CPRGEN.skills.points" spent=stats.spent budget=stats.budget remaining=stats.remaining}}</strong>{{#if stats.over}} — {{localize "CPRGEN.skills.over"}}{{/if}}</p>
+        <table class="cprgen-table cprgen-skills">
+          <tbody>{{#each stats.rows}}<tr><td>{{label}}</td><td><input type="number" data-stat-key="{{key}}" value="{{value}}" min="{{../stats.min}}" max="{{../stats.max}}" step="1"></td></tr>{{/each}}</tbody>
+        </table>
+      {{else if stats.perStat}}
         <p>{{localize "CPRGEN.stats.introEdgerunner"}}</p>
         {{#each stats.slots}}{{> slot this}}{{/each}}
         <table class="cprgen-table">
@@ -66,7 +72,17 @@
         </table>
       {{/if}}
     {{else if step.skills}}
-      {{#if skills.points}}
+      {{#if skills.complete}}
+        <p>{{localize "CPRGEN.skills.introComplete"}}</p>
+        <p class="cprgen-points {{#if skills.complete.over}}over{{/if}}"><strong>{{localize "CPRGEN.skills.points" spent=skills.complete.spent budget=skills.complete.budget remaining=skills.complete.remaining}}</strong>{{#if skills.complete.over}} — {{localize "CPRGEN.skills.over"}}{{/if}}</p>
+        <table class="cprgen-table cprgen-skills">
+          <thead><tr><th>{{localize "CPRGEN.step.skills"}}</th><th></th><th>{{localize "CPRGEN.skills.level"}}</th><th>{{localize "CPRGEN.skills.cost"}}</th></tr></thead>
+          <tbody>{{#each skills.complete.rows}}<tr class="{{#if basic}}basic{{/if}}"><td>{{label}}{{#if x2}} (x2){{/if}}{{#if basic}} *{{/if}}
+            {{#if spec}}<select data-key="{{spec.key}}" data-kind="uuid"><option value="">{{localize "CPRGEN.skills.chooseSpecialty"}}</option>{{#each spec.options}}<option value="{{value}}" {{#if selected}}selected{{/if}}>{{label}}</option>{{/each}}</select>{{/if}}</td>
+            <td>{{stat}}</td><td><input type="number" data-skill-key="{{key}}" value="{{level}}" min="{{min}}" max="{{max}}" step="1"></td><td>{{cost}}</td></tr>{{/each}}</tbody>
+        </table>
+        <p class="hint">{{localize "CPRGEN.skills.basicNote"}}</p>
+      {{else if skills.points}}
         <p>{{localize "CPRGEN.skills.introEdgerunner" min=skills.points.min max=skills.points.max budget=skills.points.budget}}</p>
         <p class="cprgen-points {{#if skills.points.over}}over{{/if}}"><strong>{{localize "CPRGEN.skills.points" spent=skills.points.spent budget=skills.points.budget remaining=skills.points.remaining}}</strong>{{#if skills.points.over}} — {{localize "CPRGEN.skills.over"}}{{/if}}</p>
         <table class="cprgen-table cprgen-skills">
@@ -99,6 +115,30 @@
           {{#each slots}}{{> slot this}}{{/each}}
         </fieldset>
       {{/each}}
+    {{else if gear.shop}}
+      <p>{{localize "CPRGEN.shop.intro" money=gear.totals.money fashion=gear.totals.fashionMoney}}</p>
+      <p class="cprgen-points {{#if gear.totals.over}}over{{/if}}"><strong>{{localize "CPRGEN.shop.totals" main=gear.totals.mainSpent money=gear.totals.money left=gear.totals.mainLeft fashion=gear.totals.fashionUsed fashionMoney=gear.totals.fashionMoney}}</strong>{{#if gear.totals.over}} — {{localize "CPRGEN.skills.over"}}{{/if}}</p>
+      <fieldset class="cprgen-group"><legend>{{localize "CPRGEN.shop.cart"}}</legend>
+        {{#if gear.cart.length}}
+        <table class="cprgen-table cprgen-cart">
+          <thead><tr><th>{{localize "CPRGEN.shop.item"}}</th><th>{{localize "CPRGEN.shop.packs"}}</th><th>{{localize "CPRGEN.shop.price"}}</th><th>{{localize "CPRGEN.shop.subtotal"}}</th><th></th></tr></thead>
+          <tbody>{{#each gear.cart}}<tr><td>{{name}}{{#if fashion}} <em>({{localize "CPRGEN.shop.fashion"}})</em>{{/if}}{{#if units}} <em>= {{units}} u.</em>{{/if}}</td>
+            <td><input type="number" data-cart-index="{{index}}" value="{{packs}}" min="0" step="1"></td><td>{{price}}</td><td>{{subtotal}}</td>
+            <td><button type="button" data-action="cartRemove" data-index="{{index}}" title="{{localize "CPRGEN.shop.remove"}}"><i class="fas fa-trash"></i></button></td></tr>{{/each}}</tbody>
+        </table>
+        {{else}}<p class="hint">{{localize "CPRGEN.shop.empty"}}</p>{{/if}}
+      </fieldset>
+      <fieldset class="cprgen-group"><legend>{{localize "CPRGEN.shop.catalog"}}</legend>
+        <div class="cprgen-shopbar">
+          <select data-shop-pack>{{#each gear.packs}}<option value="{{key}}" {{#if selected}}selected{{/if}}>{{label}}</option>{{/each}}</select>
+          <input type="search" data-shop-query value="{{gear.query}}" placeholder="{{localize "CPRGEN.shop.search"}}">
+        </div>
+        <table class="cprgen-table cprgen-catalog">
+          <tbody>{{#each gear.list}}<tr><td>{{name}}{{#if packSize}} <em>(x{{packSize}})</em>{{/if}}</td><td>{{price}} ed</td>
+            <td><button type="button" data-action="shopAdd" data-uuid="{{uuid}}"><i class="fas fa-cart-plus"></i></button></td></tr>{{/each}}</tbody>
+        </table>
+        {{#if gear.more}}<p class="hint">{{localize "CPRGEN.shop.more"}}</p>{{/if}}
+      </fieldset>
     {{else if step.gear}}
       <p>{{localize "CPRGEN.gear.intro"}}</p>
       {{#each gear.groups}}
@@ -123,9 +163,9 @@
           <dt>{{localize "CPRGEN.review.money"}}</dt><dd>{{review.summary.money}} ed</dd>
           <dt>{{localize "CPRGEN.review.housing"}}</dt><dd>{{review.summary.housing}}</dd>
         </dl>
-        {{#if review.applied}}<p class="hint">{{localize "CPRGEN.review.applied" date=review.applied}}</p>{{/if}}
+        {{#if review.applied}}<p class="hint">{{localize "CPRGEN.review.applied" date=review.applied}} {{localize "CPRGEN.review.replaceNote"}}</p>{{/if}}
         <p>{{localize "CPRGEN.review.note"}}</p>
-        <button type="button" class="cprgen-apply" data-action="applySheet"><i class="fas fa-file-import"></i> {{localize "CPRGEN.review.apply"}}</button>
+        <button type="button" class="cprgen-apply" data-action="applySheet"><i class="fas fa-file-import"></i> {{#if review.needAuth}}{{localize "CPRGEN.review.requestApply"}}{{else if review.applied}}{{localize "CPRGEN.review.reapply"}}{{else}}{{localize "CPRGEN.review.apply"}}{{/if}}</button>
       {{else}}
         <p>{{localize "CPRGEN.review.missingIntro"}}</p>
         <ul>{{#each review.missing}}<li>{{this}}</li>{{/each}}</ul>

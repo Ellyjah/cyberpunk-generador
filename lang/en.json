@@ -20,8 +20,19 @@
         "rollsOnly": "Rolls only"
       },
       "playersEnabled": {
-        "name": "Players can use the generator",
-        "hint": "Only on character sheets they own. Players never create new sheets: the GM creates the sheet and gives them ownership."
+        "name": "Allow players to use the generator",
+        "hint": "Turn it on during character creation and off when done: the «Generator» button disappears immediately from the players' interface and their open generators close. Only on character sheets they own; they never create new sheets.",
+        "opened": "The GM has opened the character generator.",
+        "closed": "The GM has closed the character generator."
+      },
+      "completeRank": {
+        "name": "Character rank (Complete Package)",
+        "hint": "Stat points for the Complete Package. The book strongly recommends the starting character (62).",
+        "r50": "Minor supporting character (50)",
+        "r62": "Starting character (62)",
+        "r70": "Major supporting character (70)",
+        "r75": "Minor hero (75)",
+        "r80": "Major hero (80)"
       }
     },
     "wizard": {
@@ -83,7 +94,8 @@
     "stats": {
       "row": "Stat row",
       "introStreetrat": "Roll 1d10 and copy that row of your role template, in order.",
-      "introEdgerunner": "Roll 1d10 for each stat separately and take that row's value in its column of your role template."
+      "introEdgerunner": "Roll 1d10 for each stat separately and take that row's value in its column of your role template.",
+      "introComplete": "Spend {budget} points ({rank}) among the ten stats. None can be above {max} or below {min}. All start at 6 (60 points); adjust until you spend yours."
     },
     "stat": {
       "int": "INT",
@@ -107,7 +119,10 @@
       "points": "Points spent: {spent} of {budget} ({remaining} left).",
       "over": "you are over budget.",
       "level": "Level",
-      "cost": "Cost"
+      "cost": "Cost",
+      "introComplete": "Spend 86 points on any skills. None can exceed 6. Basic skills (*) must be at least 2. Skills marked (x2) cost 2 points per level. For Martial Arts, Science or Play Instrument choose the specialty. The origin language (level 4) is free.",
+      "chooseSpecialty": "— Specialty —",
+      "basicNote": "* Basic skills: minimum 2."
     },
     "lifepath": {
       "intro": "Go through the general and role lifepath. Tables can be rolled; decisions are chosen.",
@@ -131,7 +146,7 @@
       "money": "Money",
       "housing": "Housing and lifestyle",
       "applied": "Already applied to the sheet on {date}.",
-      "note": "Applying writes stats, skills, lifepath, money and housing, and adds the role, gear and installed cyberware (with its Humanity loss). Nothing is deleted from the sheet.",
+      "note": "Applying writes stats, skills, lifepath, money and housing, and adds the role, gear and installed cyberware (with its Humanity loss). Items the generator did not create are left alone.",
       "apply": "Apply to sheet",
       "missingIntro": "Still missing:",
       "missing": {
@@ -141,8 +156,13 @@
         "gear": "A gear option (Gear step).",
         "lifepath": "{n} lifepath entries (Lifepath step).",
         "statsEach": "{n} stats not rolled or chosen (Stats step).",
-        "skills": "The skill spread exceeds the available points (Skills step)."
-      }
+        "skills": "The skill spread is not valid: over the points or out of limits (Skills step).",
+        "statsPoints": "The stat spread exceeds the points or leaves 2–8 (Stats step).",
+        "shop": "The purchase exceeds the available money (Gear step)."
+      },
+      "replaceNote": "Applying again replaces that application (it does not add up) and needs GM approval.",
+      "reapply": "Apply again (replaces the previous one)",
+      "requestApply": "Ask the GM to approve applying again"
     },
     "slot": {
       "rolled": "rolled:",
@@ -156,8 +176,6 @@
       "missingItem": "Item {uuid} not found in the RED compendia.",
       "languageName": "Language ({name})",
       "moneyReason": "Generator: starting money",
-      "againTitle": "Apply again",
-      "againBody": "This character was already applied. Applying again adds the role, gear and cyberware again (duplicates). Continue?",
       "title": "Apply to sheet",
       "body": "The character will be written to the RED sheet. Continue?",
       "done": "Character applied to the sheet.",
@@ -171,9 +189,42 @@
         "items": "{n} items added.",
         "noFoundation": "{name} has no foundational cyberware of its type; installed directly on the body.",
         "cyber": "{n} cyberware installed; Humanity {hum}, EMP {emp}.",
-        "money": "{n}eb added."
+        "money": "{n}eb added.",
+        "undo": "Previous application removed: {items} items, {skills} core skills reset to 0 and {money}eb."
       },
-      "noCoreSkills": "The sheet lacks RED core skills. Create the sheet from the actors directory (or the generator button) and apply again."
+      "noCoreSkills": "The sheet lacks RED core skills. Create the sheet from the actors directory (or the generator button) and apply again.",
+      "authTitle": "Approve a new application",
+      "authAsk": "{user} asks to apply the generator again to {actor}, already applied on {date}.",
+      "authSelf": "This sheet was already applied on {date}. Approve applying it again?",
+      "authBody": "The new application replaces the previous one: the role, gear, cyberware and skills added by the generator are removed, core skills go back to 0 and the added money is removed; then the current character is applied. Anything the generator did not create is left alone.",
+      "authSent": "Request sent to the GM.",
+      "authDenied": "The GM does not approve applying the generator again to {actor} ({user}).",
+      "doneReplaced": "Character applied, replacing the previous application.",
+      "moneyUndo": "Generator: previous application money removed"
+    },
+    "shop": {
+      "intro": "You have {money}eb for weapons, armor, gear, programs and cyberware, which you may keep, and {fashion}eb for fashion and cyberfashion only, lost if unspent. Fashion beyond {fashion}eb is paid from the rest.",
+      "totals": "Spent: {main} of {money}eb ({left} left, kept) · Fashion: {fashion} of {fashionMoney}eb.",
+      "cart": "Purchase",
+      "catalog": "RED catalog",
+      "item": "Item",
+      "packs": "Quantity",
+      "price": "Price",
+      "subtotal": "Total",
+      "remove": "Remove",
+      "fashion": "fashion",
+      "empty": "Nothing bought yet.",
+      "search": "Search…",
+      "more": "There are more items: type in the search box to filter.",
+      "pack": {
+        "core_weapons": "Weapons",
+        "core_armor": "Armor",
+        "core_ammo": "Ammo and grenades",
+        "core_gear": "Gear",
+        "core_programs": "Programs",
+        "core_cyberware": "Cyberware",
+        "core_clothing": "Fashion"
+      }
     }
   }
 }

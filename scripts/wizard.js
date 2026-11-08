@@ -8,19 +8,24 @@
 import { MODULE_ID, METHODS, STEPS, canUseGenerator, normalizeDraft, serializeDraft, moveStep, rollRights } from "./logic/core.js";
 import { lifepathSlots, slotTable, rowText, rowForTotal, countFromTotal, missingSlots } from "./logic/lifepath.js";
 import { gearChoices, specialtyChoices, cap } from "./logic/streetrat.js";
-import { edgerunnerSkills, missingFor } from "./logic/methods.js";
+import { edgerunnerSkills, missingFor, completeStats, completeSkills, shopTotals } from "./logic/methods.js";
 import { setting } from "./settings.js";
 import { loadData, packChoices } from "./data.js";
 import { rollToChat } from "./rolls.js";
 import { gmExec, registerHandler } from "./socket.js";
-import { buildPlan, applyPlan, markApplied } from "./apply.js";
+import { buildPlan, applyCharacter, appliedRecord } from "./apply.js";
 
 const { ApplicationV2, HandlebarsApplicationMixin } = foundry.applications.api;
 const L = (k, d) => game.i18n.format(`CPRGEN.${k}`, d ?? {});
 // foundry.utils.escapeHTML no existe en V12.
 const esc = (t) => String(t ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
 const STAT_KEYS = ["int", "ref", "dex", "tech", "cool", "will", "luck", "move", "body", "emp"];
-const IMPLEMENTED = { streetrat: ["role", "stats", "skills", "lifepath", "gear", "review"], edgerunner: ["role", "stats", "skills", "lifepath", "gear", "review"], complete: ["role", "lifepath"] };
+const IMPLEMENTED = { streetrat: ["role", "stats", "skills", "lifepath", "gear", "review"], edgerunner: ["role", "stats", "skills", "lifepath", "gear", "review"], complete: ["role", "stats", "skills", "lifepath", "gear", "review"] };
+// Tienda del Paquete completo: compendios de RED (armas, blindaje, munición, equipo, programas, ciberequipo, moda).
+const SHOP_PACKS = ["core_weapons", "core_armor", "core_ammo", "core_gear", "core_programs", "core_cyberware", "core_clothing"];
+const SHOP_LIMIT = 80;
+/** Reglas con los puntos de característica del rango elegido por el DJ. */
+const rulesOf = (data) => ({ ...data.rules, completePoints: setting("completeRank") });
 
 export function userCanUse(user, actor) {
   return canUseGenerator({ isGM: user.isGM, isOwner: actor.testUserPermission(user, "OWNER"), playersEnabled: setting("playersEnabled"), actorType: actor.type });
@@ -47,6 +52,21 @@ registerHandler("rerollRequest", async ({ actorId, key, label }, userId) => {
   ChatMessage.create({ content: L(ok ? "reroll.granted" : "reroll.denied", { user: user.name, what: esc(String(label ?? key)) }), whisper: [userId, game.user.id] });
 });
 
+// Reaplicación pedida por un jugador: el DJ activo la autoriza en una ventana y, si acepta, la aplica él.
+registerHandler("reapplyRequest", async ({ actorId }, userId) => {
+  const user = game.users.get(userId), actor = game.actors.get(actorId);
+  if (!user || !actor || !actor.testUserPermission(user, "OWNER")) return;
+  const rec = appliedRecord(actor);
+  const ok = await Dialog.confirm({ title: L("apply.authTitle"), content: `<p>${L("apply.authAsk", { user: esc(user.name), actor: esc(actor.name), date: rec ? new Date(rec.at).toLocaleString(game.i18n.lang) : "?" })}</p><p>${L("apply.authBody")}</p>` });
+  if (!ok) return ChatMessage.create({ content: L("apply.authDenied", { user: esc(user.name), actor: esc(actor.name) }), whisper: [userId, game.user.id] });
+  try {
+    await applyCharacter(actor, await loadData(), normalizeDraft(actor.getFlag(MODULE_ID, "draft")), userId);
+  } catch (err) {
+    console.error(`${MODULE_ID} |`, err);
+    ChatMessage.create({ content: L("apply.error", { msg: esc(err.message) }), whisper: [userId, game.user.id] });
+  }
+});
+
 export class GeneratorWizard extends HandlebarsApplicationMixin(ApplicationV2) {
   static isCprGenerator = true;
 
@@ -63,6 +83,8 @@ export class GeneratorWizard extends HandlebarsApplicationMixin(ApplicationV2) {
       resetDraft: GeneratorWizard.#onReset,
       rollSlot: GeneratorWizard.#onRollSlot,
       requestReroll: GeneratorWizard.#onRequestReroll,
+      shopAdd: GeneratorWizard.#onShopAdd,
+      cartRemove: GeneratorWizard.#onCartRemove,
       applySheet: GeneratorWizard.#onApply,
     },
   };
@@ -120,10 +142,11 @@ export class GeneratorWizard extends HandlebarsApplicationMixin(ApplicationV2) {
     if (ctx.pending || ctx.needRole) return ctx;
     if (draft.step === "role") ctx.roles = data.roles.map((r) => ({ key: r.key, name: r.name, selected: r.key === draft.data.role }));
     ctx.method = { [draft.method]: true };
-    if (draft.step === "stats") ctx.stats = draft.method === "edgerunner" ? this.statsEdgerunnerContext(role, answers) : this.statsContext(role, answers);
+    if (draft.step === "stats") ctx.stats = draft.method === "edgerunner" ? this.statsEdgerunnerContext(role, answers)
+      : draft.method === "complete" ? this.statsCompleteContext(answers, data) : this.statsContext(role, answers);
     if (draft.step === "skills") ctx.skills = await this.skillsContext(role, answers, data, draft.method);
     if (draft.step === "lifepath") ctx.lifepath = this.lifepathContext(role, answers, data);
-    if (draft.step === "gear") ctx.gear = this.gearContext(role, answers);
+    if (draft.step === "gear") ctx.gear = draft.method === "complete" ? await this.shopContext(answers, data) : this.gearContext(role, answers);
     if (draft.step === "review") ctx.review = this.reviewContext(role, answers, data, draft);
     return ctx;
   }
@@ -155,7 +178,39 @@ export class GeneratorWizard extends HandlebarsApplicationMixin(ApplicationV2) {
     };
   }
 
+  /** Paquete completo: características compradas con los puntos del rango (cada una entre 2 y 8). */
+  statsCompleteContext(answers, data) {
+    const rules = rulesOf(data);
+    const st = completeStats(answers, rules, rules.completePoints);
+    return {
+      buy: true, rank: L(`settings.completeRank.r${rules.completePoints}`),
+      spent: st.spent, budget: st.budget, remaining: st.remaining, over: st.remaining < 0, min: rules.complete.statMin, max: rules.complete.statMax,
+      rows: STAT_KEYS.map((k) => ({ key: `stats.${k}`, label: L(`stat.${k}`), value: st.stats[k] })),
+    };
+  }
+
+  /** Paquete completo: tienda con buscador por compendio, carrito y los dos presupuestos. */
+  async shopContext(answers, data) {
+    const pack = this._shopPack ?? SHOP_PACKS[0];
+    const query = (this._shopQuery ?? "").trim().toLocaleLowerCase(game.i18n.lang);
+    const p = game.packs.get(`cyberpunk-red-core.${pack}`);
+    const index = p ? await p.getIndex({ fields: ["system.price.market", "system.amount", "system.type"] }) : [];
+    const cart = answers.cart?.items ?? [];
+    const list = index.filter((e) => !query || e.name.toLocaleLowerCase(game.i18n.lang).includes(query))
+      .sort((a, b) => a.name.localeCompare(b.name, game.i18n.lang)).slice(0, SHOP_LIMIT)
+      .map((e) => ({ uuid: e.uuid ?? `Compendium.cyberpunk-red-core.${pack}.Item.${e._id}`, name: e.name, price: e.system?.price?.market ?? 0, amount: e.system?.amount ?? null, packSize: (e.system?.amount ?? 1) > 1 ? e.system.amount : null, inCart: cart.some((c) => c.uuid === (e.uuid ?? "")) }));
+    const t = shopTotals(answers.cart, data.rules);
+    return {
+      shop: true,
+      packs: SHOP_PACKS.map((k) => ({ key: k, label: L(`shop.pack.${k}`), selected: k === pack })),
+      query: this._shopQuery ?? "", list, more: index.length > SHOP_LIMIT && !query,
+      cart: cart.map((c, i) => ({ ...c, index: i, subtotal: c.price * c.packs, units: c.amount > 1 ? c.packs * c.amount : null })),
+      totals: t,
+    };
+  }
+
   async skillsContext(role, answers, data, method) {
+    if (method === "complete") return this.skillsCompleteContext(answers, data);
     const specs = [];
     const template = method === "edgerunner" ? role.edgerunnerSkills : role.streetratSkills;
     const er = method === "edgerunner" ? edgerunnerSkills(role, answers, data.skills, data.rules) : null;
@@ -181,6 +236,33 @@ export class GeneratorWizard extends HandlebarsApplicationMixin(ApplicationV2) {
         level: data.rules.cultureLanguageLevel,
       },
     };
+  }
+
+  /** Bloque común de idioma de origen (gratis, nivel 4). */
+  async langContext(answers, data) {
+    const langs = await packChoices("core_skills-languages");
+    const region = data.lifepath.find((x) => x.id === "culturalOrigin");
+    const ra = answers["g.culturalOrigin"], lang = answers["lang.origin"];
+    return {
+      options: langs.map((c) => ({ value: c.uuid, label: c.name, selected: lang?.uuid === c.uuid })),
+      other: lang && !lang.uuid ? lang.text : "", suggested: ra ? region.rows[ra.row].cells[1] : "", level: data.rules.cultureLanguageLevel,
+    };
+  }
+
+  /** Paquete completo: las 66 habilidades, básicas mínimo 2, especialidades con su Item. */
+  async skillsCompleteContext(answers, data) {
+    const sk = completeSkills(answers, data.skills, data.rules);
+    const LABEL = { "Experto local": "Experto local (tu hogar)", "Idioma": "Idioma (jerga callejera)" };
+    const rows = [];
+    for (const r of sk.rows.sort((a, b) => Number(b.basic) - Number(a.basic) || a.name.localeCompare(b.name, "es"))) {
+      const row = { key: `skill.${r.name}`, label: LABEL[r.name] ?? r.name, stat: L(`stat.${r.stat}`), x2: r.x2, basic: r.basic, level: r.level, min: r.min, max: r.max, cost: r.cost };
+      if (r.specialtyPack) {
+        const choices = await packChoices(r.specialtyPack);
+        row.spec = { key: `spec.${r.name}`, options: choices.map((c) => ({ value: c.uuid, label: c.name, selected: answers[`spec.${r.name}`]?.uuid === c.uuid })) };
+      }
+      rows.push(row);
+    }
+    return { complete: { rows, spent: sk.spent, budget: sk.budget, remaining: sk.remaining, over: sk.remaining < 0 }, specs: [], lang: await this.langContext(answers, data) };
   }
 
   lifepathContext(role, answers, data) {
@@ -238,15 +320,17 @@ export class GeneratorWizard extends HandlebarsApplicationMixin(ApplicationV2) {
   reviewContext(role, answers, data, draft) {
     const slots = lifepathSlots(data.lifepath, role.lifepath, answers);
     const missLp = missingSlots(slots, answers);
-    const missM = missingFor(draft.method, role, answers, data.skills, data.rules);
+    const missM = missingFor(draft.method, role, answers, data.skills, rulesOf(data));
     // Las diez características de Edgerunner se resumen en una sola línea.
-    const statsMiss = missM.filter((k) => k.startsWith("stats.")).length;
+    const statsMiss = missM.filter((k) => k.startsWith("stats.") && k !== "stats.points").length;
     const missing = [
       ...(statsMiss ? [L(draft.method === "edgerunner" ? "review.missing.statsEach" : "review.missing.stats", { n: statsMiss })] : []),
+      ...(missM.includes("stats.points") ? [L("review.missing.statsPoints")] : []),
       ...missM.filter((k) => !k.startsWith("stats.")).map((k) => L(`review.missing.${k.split(".")[0]}`, { key: k.split(".").slice(1).join(".") })),
       ...(missLp.length ? [L("review.missing.lifepath", { n: missLp.length })] : []),
     ];
-    const ctx = { missing, ready: missing.length === 0, applied: draft.appliedAt ? new Date(draft.appliedAt).toLocaleString(game.i18n.lang) : null };
+    const rec = appliedRecord(this.actor);
+    const ctx = { missing, ready: missing.length === 0, applied: rec ? new Date(rec.at).toLocaleString(game.i18n.lang) : null, needAuth: Boolean(rec) && !game.user.isGM };
     if (ctx.ready) {
       const plan = buildPlan(data, draft);
       ctx.summary = {
@@ -266,6 +350,14 @@ export class GeneratorWizard extends HandlebarsApplicationMixin(ApplicationV2) {
     el.querySelectorAll("select[data-key]").forEach((s) => s.addEventListener("change", (ev) => this.#onChooseSlot(ev)));
     el.querySelectorAll("input[data-text-key]").forEach((i) => i.addEventListener("change", (ev) => this.#onTextSlot(ev)));
     el.querySelectorAll("input[data-skill-key]").forEach((i) => i.addEventListener("change", (ev) => this.#onSkillLevel(ev)));
+    el.querySelectorAll("input[data-stat-key]").forEach((i) => i.addEventListener("change", (ev) => this.#onStatValue(ev)));
+    el.querySelectorAll("input[data-cart-index]").forEach((i) => i.addEventListener("change", (ev) => this.#onCartPacks(ev)));
+    el.querySelector("select[data-shop-pack]")?.addEventListener("change", (ev) => { this._shopPack = ev.currentTarget.value; this.render(); });
+    const q = el.querySelector("input[data-shop-query]");
+    if (q) {
+      q.addEventListener("input", (ev) => { clearTimeout(this._qt); const v = ev.currentTarget.value; this._qt = setTimeout(() => { this._shopQuery = v; this._focusQuery = true; this.render(); }, 350); });
+      if (this._focusQuery) { q.focus(); q.setSelectionRange(q.value.length, q.value.length); this._focusQuery = false; }
+    }
   }
 
   async close(options) {
@@ -283,12 +375,26 @@ export class GeneratorWizard extends HandlebarsApplicationMixin(ApplicationV2) {
     return this.setAnswer(key, { row: Number(v) });
   }
 
-  /** Nivel de una habilidad de Edgerunner (entre el mínimo y el máximo de las reglas). */
+  /** Nivel de una habilidad (entre el mínimo y el máximo del propio campo: 2–6, o 0–6 en el Paquete completo). */
   async #onSkillLevel(ev) {
-    const inp = ev.currentTarget;
-    const { min, max } = (await loadData()).rules.skills;
-    const level = Math.min(max, Math.max(min, Math.round(Number(inp.value) || min)));
+    const inp = ev.currentTarget, min = Number(inp.min), max = Number(inp.max);
+    const level = Math.min(max, Math.max(min, Math.round(Number(inp.value) || 0)));
     await this.setAnswer(inp.dataset.skillKey, { level });
+  }
+
+  /** Valor comprado de una característica (Paquete completo, 2–8). */
+  async #onStatValue(ev) {
+    const inp = ev.currentTarget, min = Number(inp.min), max = Number(inp.max);
+    await this.setAnswer(inp.dataset.statKey, { value: Math.min(max, Math.max(min, Math.round(Number(inp.value) || min))) });
+  }
+
+  /** Cajas de una línea del carrito (0 la quita). */
+  async #onCartPacks(ev) {
+    const i = Number(ev.currentTarget.dataset.cartIndex), packs = Math.max(0, Math.round(Number(ev.currentTarget.value) || 0));
+    const items = [...(this.draft.data.answers?.cart?.items ?? [])];
+    if (!items[i]) return;
+    if (packs === 0) items.splice(i, 1); else items[i] = { ...items[i], packs };
+    await this.setAnswer("cart", { items });
   }
 
   async #onTextSlot(ev) {
@@ -364,6 +470,25 @@ export class GeneratorWizard extends HandlebarsApplicationMixin(ApplicationV2) {
     await this.setAnswer(key, { row, total }, record(total));
   }
 
+  /** Añade un Item de la tienda al carrito (o una caja más si ya está). La moda: ropa y ciberequipo de tipo fashionware. */
+  static async #onShopAdd(_event, target) {
+    const uuid = target.dataset.uuid;
+    const doc = await fromUuid(uuid);
+    if (!doc) return;
+    const items = [...(this.draft.data.answers?.cart?.items ?? [])];
+    const i = items.findIndex((c) => c.uuid === uuid);
+    if (i >= 0) items[i] = { ...items[i], packs: items[i].packs + 1 };
+    else items.push({ uuid, name: doc.name, price: doc.system.price?.market ?? 0, amount: doc.system.amount ?? 1, packs: 1, type: doc.type,
+      fashion: doc.type === "clothing" || (doc.type === "cyberware" && doc.system.type === "fashionware") });
+    await this.setAnswer("cart", { items });
+  }
+
+  static async #onCartRemove(_event, target) {
+    const items = [...(this.draft.data.answers?.cart?.items ?? [])];
+    items.splice(Number(target.dataset.index), 1);
+    await this.setAnswer("cart", { items });
+  }
+
   static async #onRequestReroll(_event, target) {
     await gmExec("rerollRequest", { actorId: this.actor.id, key: target.dataset.key, label: target.dataset.label });
     ui.notifications.info(L("reroll.sent"));
@@ -372,21 +497,24 @@ export class GeneratorWizard extends HandlebarsApplicationMixin(ApplicationV2) {
   static async #onApply() {
     const d = this.draft;
     const data = await loadData();
-    if (d.appliedAt) {
-      const again = await Dialog.confirm({ title: L("apply.againTitle"), content: `<p>${L("apply.againBody")}</p>` });
-      if (!again) return;
-    } else {
-      const ok = await Dialog.confirm({ title: L("apply.title"), content: `<p>${L("apply.body")}</p>` });
-      if (!ok) return;
+    const previous = appliedRecord(this.actor);
+    if (previous && !game.user.isGM) {
+      // Segunda aplicación de un jugador: la autoriza (y la ejecuta) el DJ.
+      if (!game.users.activeGM) return ui.notifications.error(L("noGM"));
+      await gmExec("reapplyRequest", { actorId: this.actor.id });
+      return ui.notifications.info(L("apply.authSent"));
     }
+    const ok = previous
+      ? await Dialog.confirm({ title: L("apply.authTitle"), content: `<p>${L("apply.authSelf", { date: new Date(previous.at).toLocaleString(game.i18n.lang) })}</p><p>${L("apply.authBody")}</p>` })
+      : await Dialog.confirm({ title: L("apply.title"), content: `<p>${L("apply.body")}</p>` });
+    if (!ok) return;
     try {
-      const log = await applyPlan(this.actor, buildPlan(data, d));
-      await this.writeDraft(markApplied(this.draft));
-      ChatMessage.create({ speaker: ChatMessage.getSpeaker({ actor: this.actor }), content: `<p><strong>${L("apply.done")}</strong></p><ul>${log.map((l) => `<li>${l}</li>`).join("")}</ul>` });
-      ui.notifications.info(L("apply.done"));
+      await applyCharacter(this.actor, data, d);
+      ui.notifications.info(L(previous ? "apply.doneReplaced" : "apply.done"));
     } catch (err) {
       console.error(`${MODULE_ID} |`, err);
       ui.notifications.error(L("apply.error", { msg: err.message }));
     }
   }
+
 }

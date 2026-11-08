@@ -9,7 +9,9 @@ El director pidió un generador lo más completo posible para PJ y PNJ. Debe cub
 | Tema | Decisión |
 |---|---|
 | Ubicación | Módulo nuevo e independiente, con id **`cyberpunk-generador`** (sin sufijo). No va dentro de `edgerunners-2070`. |
-| Dependencias | Solo el sistema `cyberpunk-red-core`. Si `edgerunners-2070` está activo, se aplican sus reglas de creación; el generador **no depende** de ese módulo. |
+| Dependencias | **Solo el sistema `cyberpunk-red-core`** (indicación del director, 2026-11-08): debe funcionar sin ninguno de los demás módulos del proyecto (Babele, `cyberpunk-tr-esp`, Core en español, motor, Mission Kit). Las tablas van dentro del módulo, en `data/`. Para una partida de Edgerunners tiene sentido que pida y use el motor 2070 y el Mission Kit (sobre todo por sus objetos de inventario); esa integración es el paso 7 y solo se activa si esos módulos están presentes. |
+| Autorización de jugadores | Ajuste «Autorizar a los jugadores a usar el generador», **desactivado por defecto**. El DJ lo activa durante la creación y lo cierra al terminar. Al cerrarlo, el botón desaparece al momento de la interfaz de los jugadores y se cierran sus generadores (indicación del director, 2026-11-08). |
+| Segunda aplicación | Requiere la autorización del DJ en una ventana: si la pide un jugador, el DJ la autoriza y se ejecuta desde su cliente; si la pide el DJ, la confirma en la misma ventana. **Sustituye** a la anterior, no se suma (indicación del director, 2026-11-08). |
 | PNJ | Dos vías: las plantillas de amenaza del libro (secuaces, lugartenientes, minijefes y jefes) con variaciones, y la generación rápida por rol con el método Rata callejera. |
 | Quién crea los PJ | El DJ y los jugadores. Un jugador **solo trabaja sobre una ficha existente** de la que el DJ le haya dado la propiedad, y los cambios van a esa ficha. Los jugadores nunca crean actores. |
 | Tiradas | Un ajuste del DJ elige entre «Tirar o elegir» y «Solo tiradas». Todas las tiradas salen en el chat, y el DJ puede autorizar que se repita una. |
@@ -25,7 +27,7 @@ El director pidió un generador lo más completo posible para PJ y PNJ. Debe cub
 2. **Tablas de PJ en datos** (`data/*.json`), extraídas del Core en español y cotejadas. ✅ (las tablas de PNJ se extraen en el paso 6).
 3. **Rata callejera y vida pasada** (tiradas en el chat, política de tiradas, repetición autorizada, aplicación a la ficha). ✅ 0.2.0.
 4. **Edgerunner** (una tirada por característica, 86 puntos de habilidad, mismo equipo que Rata callejera). ✅ 0.3.0.
-5. Paquete completo con tienda.
+5. **Paquete completo con tienda**, más sustitución autorizada de la segunda aplicación, autorización de jugadores con efecto inmediato y prueba con solo RED. ✅ 0.4.0.
 6. PNJ.
 7. Integración con el motor 2070.
 8. Pruebas completas y copias habituales (proyecto, Raspberry, V12 con el mundo cerrado, GitHub privado; esto último, previa autorización).
@@ -36,7 +38,8 @@ El director pidió un generador lo más completo posible para PJ y PNJ. Debe cub
 06-cyberpunk-generador/
   module.json            id cyberpunk-generador, Foundry V12 (12.343), sistema cyberpunk-red-core v0.92.4, socket
   scripts/main.js        hooks: init (ajustes y API), ready (socket), botón de cabecera de ficha, botón del directorio (DJ)
-  scripts/settings.js    ajustes de mundo: rollPolicy ("free" | "rollsOnly"), playersEnabled (Boolean)
+  scripts/settings.js    ajustes de mundo: playersEnabled (Boolean, por defecto false; efecto inmediato), rollPolicy ("free" | "rollsOnly"),
+                         completeRank (puntos de característica del Paquete completo: 50/62/70/75/80, por defecto 62)
   scripts/socket.js      canal DJ: gmExec/registerHandler/listenSocket (mismo patrón que edgerunners-2070/effects.js)
   scripts/wizard.js      GeneratorWizard (ApplicationV2 + HandlebarsApplicationMixin): contexto de cada paso, acciones
                          (tirar, elegir, pedir repetir, aplicar) y manejador de socket «rerollRequest»
@@ -94,6 +97,29 @@ El director pidió un generador lo más completo posible para PJ y PNJ. Debe cub
 - Características: `stats.<clave>` → `{row}`, una tirada 1d10 por característica, en su columna de la tabla del rol.
 - Habilidades: `skill.<etiqueta>` → `{level}`; sin respuesta vale 2, el mínimo. El coste es nivel × 1, o nivel × 2 en las habilidades con `x2`, como en los ejemplos del Core; el reparto de Jay del Core da exactamente 86 y está en las pruebas. Límites: 86 puntos y niveles entre 2 y 6; el asistente recorta el valor al rango y la revisión bloquea si se pasa del presupuesto. Los puntos sobrantes se permiten, porque el libro no obliga a gastarlos.
 - Equipo, especialidades e idioma: los de Rata callejera (el Core da la misma lista a ambos métodos).
+
+**Paquete completo** (`logic/methods.js`: `completeStats`, `completeSkills`, `shopTotals`):
+- Características: `stats.<clave>` → `{value}`. Por defecto valen 6 (el «reparto inicial» del Core, 60 puntos). Cada una entre 2 y 8, con los puntos del ajuste `completeRank`.
+- Habilidades: `skill.<nombre de skills.json>` → `{level}` para las 66. Las 13 básicas (`basic`), mínimo 2; el resto, 0. Máximo 6, 86 puntos y el coste de `skillCost`. Especialidades: `spec.<Artes marciales|Ciencia|Tocar instrumento>` → `{uuid, text}`, obligatoria si el nivel es mayor que 0. Hay una especialidad por habilidad; varias especialidades de la misma habilidad, como Ciencia (Física) y Ciencia (Química), no están contempladas.
+- Tienda: `cart` → `{items: [{uuid, name, price, amount, packs, type, fashion}]}`.
+  - Compendios: `SHOP_PACKS` de `wizard.js` (armas, blindaje, munición, equipo, programas, ciberequipo, moda). No incluye armas de marca, mejoras, drogas ni vehículos.
+  - Precio por caja = `system.price.market`; unidades por caja = `system.amount` (munición, 10). Comprobado: la compra de Jay del Core, con los precios de RED, da 2550 ed exactos.
+  - Moda = `clothing`, más `cyberware` de tipo `fashionware`. Se paga primero de los 800 ed y el exceso, de los 2550. Lo que sobra de los 2550 pasa a `system.wealth`; lo que sobra de los 800 se pierde.
+  - No hay los 500 ed extra.
+- Revisión: bloquea si se pasan los puntos de características o de habilidades, si falta una especialidad o si se pasa el presupuesto.
+
+**Sustitución de una aplicación anterior** (`apply.js`: `applyCharacter`, `undoApplied`, `appliedRecord`):
+- Cada Item creado lleva `flags.cyberpunk-generador.generated`. La ficha guarda `flags.cyberpunk-generador.applied` (texto JSON `{at, by, method, money, coreSkills, replaced}`), que se conserva aunque el DJ reinicie el borrador.
+- Al reaplicar, primero se deshace la aplicación anterior:
+  - el ciberequipo generado se desinstala de su contenedor (primero las opciones, después los fundacionales) y se borran los Items generados;
+  - se limpian las referencias huérfanas en las listas de instalación;
+  - las habilidades base de `coreSkills` vuelven a 0;
+  - se retira `money` con su apunte y se vacía el rol activo.
+
+  Después se aplica normalmente. Los Items que no creó el generador no se tocan.
+- Autorización: el jugador con una aplicación previa envía `reapplyRequest` por socket. El DJ activo ve una ventana con el nombre del jugador y, si acepta, ejecuta `applyCharacter` en su cliente, con el registro a nombre del jugador. Si el DJ no acepta, se envía un susurro a ambos. El DJ reaplica confirmando la misma ventana («Autorizar una nueva aplicación»).
+
+**Autorización de jugadores:** `playersEnabled` tiene un `onChange` en cada cliente de jugador (`settings.js`). Al cerrarse, se quitan los botones `.cprgen-open` de las fichas abiertas, se cierran los asistentes y se avisa. Al abrirse, se reabren sus fichas de personaje abiertas para que aparezca el botón.
 
 **Importante, fichas creadas por código:** hay que usar `Actor.implementation.create(…)` (la clase de RED). `Actor.create(…)` crea la ficha **sin** las 63 habilidades base ni las ranuras de ciberequipo. `applyPlan` se detiene con un aviso si la ficha no tiene habilidades base.
 
@@ -258,14 +284,33 @@ Un nodo con `when:{id, value}` solo se recorre si la decisión `id` vale `value`
   - Capturas revisadas. Tras compactar las filas de la tabla de habilidades, que eran demasiado altas, se comprobó con una captura nueva.
 - **Incidencia de entorno:** una copia al banco falló por un corte de SSH (timeout). Se repitió y se comprobó el archivo servido por Foundry. El puerto 30013 quedó con una escucha sin proceso propietario (residuo del sistema tras cerrar el túnel): comprobado que no hay ningún ssh propio. Hay otro túnel ajeno (31420→30014), que no se tocó.
 
+### 2026-11-08 — Paso 5: Paquete completo, sustitución autorizada y solo RED (0.4.0) — Claude Code
+
+- **Indicaciones del director durante el paso:**
+  1. funcionar con solo RED;
+  2. la segunda aplicación, con ventana de autorización del DJ y sustituyendo a la primera;
+  3. ajuste para autorizar a los jugadores y bloquearlo al terminar, con desaparición del botón.
+
+  El ajuste del punto 3 ya existía desde 0.1.0; se ha completado con el efecto inmediato, se ha puesto desactivado por defecto y se le ha dado un nombre más claro.
+- **Hecho:** Paquete completo (características con puntos, 66 habilidades con especialidades, tienda con buscador por compendio, carrito, cajas y los dos presupuestos), ajuste `completeRank`, sustitución con registro y deshacer, autorización por socket y efecto inmediato del bloqueo.
+- **Pruebas:**
+  - unitarias 24/24 (`tests/complete.test.mjs`, con los tres ejemplos de Jay del Core: características 62, habilidades 86, compra 2550 ed, más moda 380 de los 800, exceso de moda, exceso de presupuesto y plan);
+  - banco 30013 (`tools/bench/gen05-paquete-completo.mjs`):
+    - **A)** Jay completo: 62/86, recortes (un 12 queda en 8; una básica a 0 queda en 2), Judo, compra de 1800 ed (sobran 750, que pasan a dinero), munición 10 cajas = 100 balas, ciberequipo instalado y Humanidad 40 − 14 = 26;
+    - **B)** reaplicación del DJ con ventana: 1 rol, 10 Items generados (sin duplicados), munición 50, dinero 800 (no 750 + 800);
+    - **C)** el jugador pide, el DJ ve la ventana con su nombre, acepta y se aplica (registro `by` = jugador);
+    - **D)** al bloquear, el botón y el asistente del jugador desaparecen al momento y llega el aviso; al autorizar, el botón vuelve;
+    - **E)** solo RED (Babele, traducción, Core, motor y libWrapper desactivados): Rata callejera completa y aplicada; nombres de RED en inglés y tablas en español. Módulos restaurados y comprobados.
+  - 0 errores; capturas revisadas (habilidades, tienda, revisión, solo RED).
+- **Fallo de la prueba, no del módulo:** la prenda elegida en la primera ejecución costaba 5000 ed (la primera por orden alfabético), así que la compra se pasaba del presupuesto y el botón de aplicar estaba bloqueado (comportamiento correcto). La prueba elige ahora una prenda de 20 ed.
+
 ## Cómo retomar
 
 1. Lee este documento y `module.json`.
 2. Ejecuta las pruebas unitarias y, si cambias el extractor, vuelve a generar los datos.
-3. Siguiente: **paso 5, Paquete completo con tienda.**
-   - **Características:** reparto de puntos según el rango (`rules.complete.statPoints`; el principiante tiene 62, y el DJ podría elegir otro rango con un ajuste nuevo), cada una entre 2 y 8. Usa `stats.<clave>` → `{value}` (no `{row}`): hay que distinguirlo en `planFor`.
-   - **Habilidades:** 86 puntos entre **cualquiera** de las 66 (`skills.json`), máximo 6. Las 13 básicas tienen mínimo 2 (`basic` en `skills.json`, más «Idioma (jerga callejera)» y «Experto local (tu hogar)»); el resto empieza en 0. Coste: el de `skillCost`. Las especialidades (Artes marciales, Ciencia, Tocar instrumento) se añaden eligiendo el Item del compendio, cada una con su nivel. Idioma de origen gratis, a 4.
-   - **Tienda:** 2550 ed para armas, blindaje, equipo y ciberequipo, y 800 ed solo para moda y cibermoda (lo que no se gasta de los 800 se pierde; lo de los 2550 se conserva como dinero). Precios: `system.price.market` de los Items de los compendios de RED (`core_weapons`, `core_armor`, `core_gear`, `core_ammo`, `core_cyberware`, `core_clothing`, `core_programs`). En el libro la ropa es «moda»; la cibermoda es el ciberequipo de tipo `fashionware`. Conviene un buscador por compendio, un carrito con cantidades y los totales de ambos presupuestos.
-   - **Aplicación:** el dinero sobrante de los 2550 va a `system.wealth`; no hay los 500 ed extra (`rules.extraMoney` solo es para Rata callejera y Edgerunner).
-   - Pruebas: lógica pura de presupuestos y validación, y prueba de banco copiando `gen04-edgerunner.mjs`.
-4. No escribas en `edgerunners-2070` ni en ESTADO/PRUEBAS sin confirmar con el director que Codex ha terminado.
+3. Siguiente: **paso 6, PNJ.**
+   - Fuente: el PDF del libro básico, «Tipejos y reclutas», páginas impresas 412–416 (PDF 416–420), con 10 fichas, y las tablas de encuentros con variaciones («usa guardaespaldas; sustituye…», PDF ~420–424). Extráelas con un guion reproducible, como `extract_core_tables.py`, a `data/npcs.json`, con cotejo y pruebas.
+   - Dos vías (decisión del director): plantillas de amenaza con variaciones, y generación rápida por rol con Rata callejera (reutilizando `streetratPlan`), en ficha de secuaz (`mook`) o completa.
+   - Los PNJ los crea solo el DJ: añade la entrada en el diálogo del botón del directorio.
+4. **Paso 7 (integración Edgerunners), pendiente de concretar con el director:** qué objetos del Mission Kit deben usarse (en la tienda y/o en lugar del equipo inicial del libro) y cómo se pide la presencia del motor y del Mission Kit (¿un ajuste «Partida de Edgerunners»?). Reglas de creación del motor: neuropuerto gratis y pérdida media (`REGLAS.md`, `CONTRATOS.md`).
+5. No escribas en `edgerunners-2070` ni en ESTADO/PRUEBAS sin confirmar con el director que Codex ha terminado.

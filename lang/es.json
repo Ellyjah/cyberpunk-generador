@@ -20,8 +20,19 @@
         "rollsOnly": "Solo tiradas"
       },
       "playersEnabled": {
-        "name": "Los jugadores pueden usar el generador",
-        "hint": "Solo sobre las fichas de personaje de las que sean propietarios. Los jugadores nunca crean fichas nuevas: el DJ crea la ficha y les da la propiedad."
+        "name": "Autorizar a los jugadores a usar el generador",
+        "hint": "Actívalo durante la creación de personajes y desactívalo al terminar: el botón «Generador» desaparece al momento de la interfaz de los jugadores y se cierran sus generadores abiertos. Solo pueden usarlo en las fichas de personaje de las que sean propietarios; nunca crean fichas nuevas.",
+        "opened": "El DJ ha autorizado el generador de personajes.",
+        "closed": "El DJ ha cerrado el generador de personajes."
+      },
+      "completeRank": {
+        "name": "Rango de personaje (Paquete completo)",
+        "hint": "Puntos de característica para el Paquete completo. El libro recomienda encarecidamente el personaje principiante (62).",
+        "r50": "Personaje secundario menor (50)",
+        "r62": "Personaje principiante (62)",
+        "r70": "Personaje secundario importante (70)",
+        "r75": "Héroe menor (75)",
+        "r80": "Héroe importante (80)"
       }
     },
     "wizard": {
@@ -83,7 +94,8 @@
     "stats": {
       "row": "Fila de características",
       "introStreetrat": "Tira 1d10 y copia la fila de la plantilla de tu rol, sin cambiar el orden.",
-      "introEdgerunner": "Tira 1d10 para cada característica por separado y toma el valor de esa fila en su columna de la plantilla de tu rol."
+      "introEdgerunner": "Tira 1d10 para cada característica por separado y toma el valor de esa fila en su columna de la plantilla de tu rol.",
+      "introComplete": "Reparte {budget} puntos ({rank}) entre las diez características. Ninguna puede ser superior a {max} ni inferior a {min}. Empiezan todas a 6 (60 puntos); ajusta hasta gastar los tuyos."
     },
     "stat": {
       "int": "INT",
@@ -107,7 +119,10 @@
       "points": "Puntos gastados: {spent} de {budget} (quedan {remaining}).",
       "over": "te has pasado del presupuesto.",
       "level": "Nivel",
-      "cost": "Coste"
+      "cost": "Coste",
+      "introComplete": "Reparte 86 puntos entre las habilidades que quieras. Ninguna puede pasar de 6. Las básicas (*) deben tener al menos 2. Las marcadas con (x2) cuestan 2 puntos por nivel. Para Artes marciales, Ciencia o Tocar instrumento elige la especialidad. El idioma de origen (nivel 4) es gratis.",
+      "chooseSpecialty": "— Especialidad —",
+      "basicNote": "* Habilidades básicas: mínimo 2."
     },
     "lifepath": {
       "intro": "Recorre la vida pasada general y la de tu rol. Cada tabla se puede tirar; las decisiones se eligen.",
@@ -131,7 +146,7 @@
       "money": "Dinero",
       "housing": "Alojamiento y estilo de vida",
       "applied": "Ya se aplicó a la ficha el {date}.",
-      "note": "Al aplicar se escriben las características, habilidades, vida pasada, dinero y alojamiento, y se añaden el rol, el equipo y el ciberequipo instalado (con su pérdida de Humanidad). No se borra nada de la ficha.",
+      "note": "Al aplicar se escriben las características, habilidades, vida pasada, dinero y alojamiento, y se añaden el rol, el equipo y el ciberequipo instalado (con su pérdida de Humanidad). Los objetos que no creó el generador no se tocan.",
       "apply": "Aplicar a la ficha",
       "missingIntro": "Falta completar:",
       "missing": {
@@ -141,8 +156,13 @@
         "gear": "Una opción de equipo (paso Equipo).",
         "lifepath": "{n} apartados de la vida pasada (paso Vida pasada).",
         "statsEach": "{n} características sin tirar ni elegir (paso Características).",
-        "skills": "El reparto de habilidades supera los puntos disponibles (paso Habilidades)."
-      }
+        "skills": "El reparto de habilidades no es válido: supera los puntos o se sale de los límites (paso Habilidades).",
+        "statsPoints": "El reparto de características supera los puntos o se sale de 2–8 (paso Características).",
+        "shop": "La compra supera el dinero disponible (paso Equipo)."
+      },
+      "replaceNote": "Volver a aplicar sustituye esa aplicación (no se suma) y requiere la autorización del DJ.",
+      "reapply": "Volver a aplicar (sustituye la anterior)",
+      "requestApply": "Pedir al DJ que autorice volver a aplicar"
     },
     "slot": {
       "rolled": "tirada:",
@@ -156,8 +176,6 @@
       "missingItem": "No se encuentra el Item {uuid} en los compendios de RED.",
       "languageName": "Idioma ({name})",
       "moneyReason": "Generador: dinero inicial",
-      "againTitle": "Volver a aplicar",
-      "againBody": "Este personaje ya se aplicó a la ficha. Si vuelves a aplicarlo, el rol, el equipo y el ciberequipo se añadirán otra vez (duplicados). ¿Continuar?",
       "title": "Aplicar a la ficha",
       "body": "Se escribirá el personaje en la ficha de RED. ¿Continuar?",
       "done": "Personaje aplicado a la ficha.",
@@ -171,9 +189,42 @@
         "items": "{n} objetos añadidos.",
         "noFoundation": "{name} no tiene ciberequipo base de su tipo; se instala directamente en el cuerpo.",
         "cyber": "{n} piezas de ciberequipo instaladas; Humanidad {hum}, EMP {emp}.",
-        "money": "{n} ed añadidos al dinero."
+        "money": "{n} ed añadidos al dinero.",
+        "undo": "Aplicación anterior retirada: {items} objetos, {skills} habilidades base a 0 y {money} ed."
       },
-      "noCoreSkills": "La ficha no tiene las habilidades base de RED. Crea la ficha desde el directorio de actores (o con el botón del generador) y vuelve a aplicar."
+      "noCoreSkills": "La ficha no tiene las habilidades base de RED. Crea la ficha desde el directorio de actores (o con el botón del generador) y vuelve a aplicar.",
+      "authTitle": "Autorizar una nueva aplicación",
+      "authAsk": "{user} pide volver a aplicar el generador a la ficha de {actor}, que ya se aplicó el {date}.",
+      "authSelf": "Esta ficha ya se aplicó el {date}. ¿Autorizas volver a aplicarla?",
+      "authBody": "La nueva aplicación sustituye a la anterior: se retiran el rol, el equipo, el ciberequipo y las habilidades añadidas por el generador, las habilidades base vuelven a 0 y se retira el dinero que se añadió; después se aplica el personaje actual. Lo que no creó el generador no se toca.",
+      "authSent": "Petición enviada al DJ.",
+      "authDenied": "El DJ no autoriza volver a aplicar el generador a {actor} ({user}).",
+      "doneReplaced": "Personaje aplicado a la ficha, sustituyendo la aplicación anterior.",
+      "moneyUndo": "Generador: se retira el dinero de la aplicación anterior"
+    },
+    "shop": {
+      "intro": "Tienes {money} ed para armas, blindaje, equipo, programas y ciberequipo, que puedes guardar, y {fashion} ed solo para moda y cibermoda, que se pierden si no los gastas. La moda que pase de {fashion} ed se paga de los demás.",
+      "totals": "Gastado: {main} de {money} ed (sobran {left}, que se guardan) · Moda: {fashion} de {fashionMoney} ed.",
+      "cart": "Compra",
+      "catalog": "Catálogo de RED",
+      "item": "Objeto",
+      "packs": "Cantidad",
+      "price": "Precio",
+      "subtotal": "Total",
+      "remove": "Quitar",
+      "fashion": "moda",
+      "empty": "Todavía no has comprado nada.",
+      "search": "Buscar…",
+      "more": "Hay más objetos: escribe en el buscador para filtrarlos.",
+      "pack": {
+        "core_weapons": "Armas",
+        "core_armor": "Blindaje",
+        "core_ammo": "Munición y granadas",
+        "core_gear": "Equipo",
+        "core_programs": "Programas",
+        "core_cyberware": "Ciberequipo",
+        "core_clothing": "Moda"
+      }
     }
   }
 }
