@@ -1,0 +1,64 @@
+{
+  "CPRGEN": {
+    "noGM": "No hay ningún DJ conectado para validar la acción.",
+    "denied": "No tienes permiso para usar el generador sobre esta ficha.",
+    "button": {
+      "sheet": "Generador",
+      "directory": "Generador de personajes"
+    },
+    "create": {
+      "title": "Nuevo personaje",
+      "body": "Se creará una ficha de personaje nueva y se abrirá el generador. Para que un jugador la complete, dale permisos de propietario sobre ella.",
+      "default": "Nuevo personaje",
+      "ok": "Crear y abrir"
+    },
+    "settings": {
+      "rollPolicy": {
+        "name": "Tiradas del generador",
+        "hint": "Con «Tirar o elegir», cada paso que admite tirada permite también elegir el resultado, como permite el Libro de reglas. Con «Solo tiradas», hay que tirar, y repetir una tirada exige la autorización del DJ. Todas las tiradas salen en el chat.",
+        "free": "Tirar o elegir",
+        "rollsOnly": "Solo tiradas"
+      },
+      "playersEnabled": {
+        "name": "Los jugadores pueden usar el generador",
+        "hint": "Solo sobre las fichas de personaje de las que sean propietarios. Los jugadores nunca crean fichas nuevas: el DJ crea la ficha y les da la propiedad."
+      }
+    },
+    "wizard": {
+      "title": "Generador — {name}",
+      "policy": "Tiradas",
+      "prev": "Anterior",
+      "next": "Siguiente",
+      "reset": "Reiniciar",
+      "resetTitle": "Reiniciar el generador",
+      "resetBody": "Se borrará todo lo elegido en el generador para esta ficha. La ficha de RED no cambia.",
+      "pending": "Este paso todavía no está disponible en esta versión del generador."
+    },
+    "step": {
+      "method": "Método",
+      "role": "Rol",
+      "stats": "Características",
+      "skills": "Habilidades",
+      "lifepath": "Vida pasada",
+      "gear": "Equipo",
+      "review": "Revisión"
+    },
+    "method": {
+      "intro": "Elige cómo crear el personaje. El método fija cómo se obtienen las características, las habilidades y el equipo. Cambiarlo más tarde descarta lo elegido.",
+      "changeTitle": "Cambiar de método",
+      "changeBody": "Al cambiar de método se descarta todo lo elegido hasta ahora en el generador. ¿Continuar?",
+      "streetrat": {
+        "label": "Rata callejera",
+        "hint": "La forma más rápida. Características tiradas en la tabla del rol; habilidades, armas, armadura, equipo y ciberequipo predeterminados por el rol, más 500 ed."
+      },
+      "edgerunner": {
+        "label": "Edgerunner",
+        "hint": "Características tiradas en la tabla del rol; compras las habilidades con puntos; armas, armadura, equipo y ciberequipo de las listas del rol, más 500 ed."
+      },
+      "complete": {
+        "label": "Paquete completo",
+        "hint": "Compras características (entre 2 y 8) y habilidades (máximo 6) con puntos, y gastas 2550 ed. en armas, armadura, equipo y ciberequipo y 800 ed. en moda y cibermoda."
+      }
+    }
+  }
+}

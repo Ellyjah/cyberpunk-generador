@@ -1,0 +1,34 @@
+<div class="cprgen-layout">
+  <nav class="cprgen-steps">
+    {{#each steps}}
+      <button type="button" class="cprgen-step {{#if current}}current{{/if}} {{#if done}}done{{/if}}" data-action="goStep" data-step="{{id}}" {{#if locked}}disabled{{/if}}>
+        <span class="n">{{n}}</span> {{label}}
+      </button>
+    {{/each}}
+    <p class="cprgen-policy">{{localize "CPRGEN.wizard.policy"}}: {{policy}}</p>
+    {{#if isGM}}<button type="button" class="cprgen-reset" data-action="resetDraft"><i class="fas fa-eraser"></i> {{localize "CPRGEN.wizard.reset"}}</button>{{/if}}
+  </nav>
+
+  <section class="cprgen-body">
+    <h2>{{stepLabel}}{{#if methodLabel}} <small>· {{methodLabel}}</small>{{/if}}</h2>
+
+    {{#if isMethodStep}}
+      <p>{{localize "CPRGEN.method.intro"}}</p>
+      <div class="cprgen-methods">
+        {{#each methods}}
+          <button type="button" class="cprgen-method {{#if selected}}selected{{/if}}" data-action="selectMethod" data-method="{{id}}">
+            <strong>{{label}}</strong>
+            <span>{{hint}}</span>
+          </button>
+        {{/each}}
+      </div>
+    {{else}}
+      <p class="cprgen-pending">{{localize "CPRGEN.wizard.pending"}}</p>
+    {{/if}}
+  </section>
+
+  <footer class="cprgen-footer">
+    <button type="button" data-action="prev" {{#unless canPrev}}disabled{{/unless}}><i class="fas fa-chevron-left"></i> {{localize "CPRGEN.wizard.prev"}}</button>
+    <button type="button" data-action="next" {{#unless canNext}}disabled{{/unless}}>{{localize "CPRGEN.wizard.next"}} <i class="fas fa-chevron-right"></i></button>
+  </footer>
+</div>

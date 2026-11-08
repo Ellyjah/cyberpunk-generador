@@ -1,0 +1,25 @@
+{
+  "id": "cyberpunk-generador",
+  "title": "Cyberpunk RED — Generador de personajes",
+  "description": "Generador privado de personajes jugadores y PNJ para Cyberpunk RED – Core: Rata callejera, Edgerunner y Paquete completo, camino de vida y plantillas de PNJ, con tiradas en el chat. Contenido privado no oficial, no aprobado ni respaldado por R. Talsorian Games.",
+  "version": "0.1.0",
+  "authors": [{ "name": "Ellyjah" }],
+  "compatibility": {
+    "minimum": "12",
+    "verified": "12.343",
+    "maximum": "12"
+  },
+  "relationships": {
+    "systems": [{ "id": "cyberpunk-red-core", "type": "system" }]
+  },
+  "esmodules": ["scripts/main.js"],
+  "socket": true,
+  "styles": ["styles/generador.css"],
+  "languages": [
+    { "lang": "es", "name": "Español", "path": "lang/es.json" },
+    { "lang": "en", "name": "English", "path": "lang/en.json" }
+  ],
+  "flags": {
+    "verifiedSystemVersion": "v0.92.4"
+  }
+}
