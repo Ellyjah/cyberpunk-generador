@@ -28,7 +28,7 @@ El director pidió un generador lo más completo posible para PJ y PNJ. Debe cub
 3. **Rata callejera y vida pasada** (tiradas en el chat, política de tiradas, repetición autorizada, aplicación a la ficha). ✅ 0.2.0.
 4. **Edgerunner** (una tirada por característica, 86 puntos de habilidad, mismo equipo que Rata callejera). ✅ 0.3.0.
 5. **Paquete completo con tienda**, más sustitución autorizada de la segunda aplicación, autorización de jugadores con efecto inmediato y prueba con solo RED. ✅ 0.4.0.
-6. PNJ.
+6. **PNJ**: fichas del libro, encuentros aleatorios y PNJ rápido por rol. ✅ 0.5.0.
 7. Integración con el motor 2070.
 8. Pruebas completas y copias habituales (proyecto, Raspberry, V12 con el mundo cerrado, GitHub privado; esto último, previa autorización).
 
@@ -50,6 +50,9 @@ El director pidió un generador lo más completo posible para PJ y PNJ. Debe cub
   scripts/logic/lifepath.js  huecos de vida pasada, filas por tirada, condiciones, texto para system.lifepath.*
   scripts/logic/streetrat.js plan de Rata callejera: elecciones pendientes, equipo, ropa → core_clothing
   scripts/logic/methods.js   por método: missingFor, planFor; Edgerunner: características por columna, coste y reparto
+  scripts/logic/npcs.js      PNJ: npcPlan (ficha del libro), encounterFor, autoAnswers (PNJ rápido)
+  scripts/npc.js         menú del botón del directorio (DJ), createActor, createBookNpc, encuentro aleatorio, createQuickNpc
+  tools/extract_npcs.py  genera data/npcs.json y data/encounters.json desde el PDF del libro básico (paso 6)
   templates/wizard.hbs   barra de pasos, cuerpo del paso, pie con Anterior/Siguiente
   styles/generador.css   solo estructura; los colores son los del tema
   lang/es.json, en.json  claves CPRGEN.*
@@ -120,6 +123,26 @@ El director pidió un generador lo más completo posible para PJ y PNJ. Debe cub
 - Autorización: el jugador con una aplicación previa envía `reapplyRequest` por socket. El DJ activo ve una ventana con el nombre del jugador y, si acepta, ejecuta `applyCharacter` en su cliente, con el registro a nombre del jugador. Si el DJ no acepta, se envía un susurro a ambos. El DJ reaplica confirmando la misma ventana («Autorizar una nueva aplicación»).
 
 **Autorización de jugadores:** `playersEnabled` tiene un `onChange` en cada cliente de jugador (`settings.js`). Al cerrarse, se quitan los botones `.cprgen-open` de las fichas abiertas, se cierran los asistentes y se avisa. Al abrirse, se reabren sus fichas de personaje abiertas para que aparezca el botón.
+
+**PNJ** (paso 6, solo DJ). El botón «Generador de personajes» del directorio abre un menú con cuatro opciones: Personaje jugador, PNJ del libro, Encuentro aleatorio y PNJ rápido por rol. Los PNJ van a la carpeta «Generador: PNJ», como secuaz (`mook`) o personaje completo.
+- **Datos** (`tools/extract_npcs.py`, PDF del libro básico):
+  - `npcs.json`: las 10 fichas de «Tipejos y reclutas» (PDF 416–420) con nivel de amenaza (`mook`, `lieutenant`, `miniboss`, `boss`, según el texto del libro), características, PD, rol y rango si lo tienen, habilidades (nivel = base del libro − característica), armas, blindaje, equipo y ciberequipo con opciones, y programas.
+  - `encounters.json`: las tres tablas de Night City (diurnos, al anochecer y de medianoche; 1d100; PDF 421–429), con el texto de cada entrada y las fichas que usa (`uses`), más `external` para las referencias fuera de las 10 fichas (torreta automatizada).
+  - Validaciones: PD = 10 + 5 × ⌈(VOL + TCO) / 2⌉, Gravemente herido = ⌈PD / 2⌉ y Salvación = TCO en las 10 fichas; rangos 1–100 completos; ningún «Usa» sin ficha; sin restos de maquetación ni caracteres de control. Es idempotente.
+  - Los nombres de objetos se resuelven con los enlaces del Core en español, los nombres de `cyberpunk-tr-esp` y `ALIAS`, solo al extraer; en ejecución no se depende de esos módulos. Todos quedan resueltos.
+- **Orden del texto del PDF** (maquetación en columnas, estable en las 10 fichas): INT, VOL, PD; bases de habilidad; REF, SUE, DES, FRI, Gravemente herido, TEC, TCO, MOV, EMP, Salvación. Los valores «8 (6)» del oficial de seguridad son con y sin Kerenzikov; se toma el primero.
+- **Ficha del libro** (`createBookNpc`):
+  - características, PD y Humanidad = EMP × 10, sin pérdida al instalar: la EMP del libro ya la tiene en cuenta;
+  - habilidades con `applySkills`; «Idioma (nativo)» usa el idioma elegido (por defecto, el español si existe);
+  - rol con su rango;
+  - armas y blindaje equipados, salvo el ciberequipo de arma (garras, lanzagranadas oculto…) y el blindaje subdérmico, que vienen en el ciberequipo;
+  - ciberequipo: cada fundacional con su cantidad y sus opciones repartidas entre ellos (dos ciberbrazos con sus armas ocultas);
+  - **corrección final:** si un efecto del ciberequipo cambia una característica (implante de hueso y músculo: +2 TCO), se ajusta el valor base para que el final sea el del libro, que ya lo incluye;
+  - las notas indican la ficha de origen, las bases por debajo de la característica (Concentración y Persuasión del ciberpsicópata, por penalizadores que el libro no detalla; nivel 0) y el texto del encuentro si lo hay.
+- **Encuentro aleatorio:** se tira 1d100 solo para el DJ, se le envía la entrada por susurro y un diálogo permite crear las fichas que usa la entrada. Las variaciones del texto («sustituye…, añade…, quita…») **se aplican a mano**: están en las notas, porque son texto libre del libro. Un secuaz sirve para varios tokens.
+- **PNJ rápido por rol:** Rata callejera con `autoAnswers`: fila, equipo, especialidades, idioma y, opcionalmente, vida pasada al azar con el generador aleatorio de Foundry (`CONFIG.Dice.randomUniform`), sin publicar las tiradas. Se aplica con `applyCharacter` (resumen susurrado al DJ) y, durante la creación, el modo de tirada pasa a «solo DJ» para que las tarjetas de pérdida de Humanidad de RED no sean públicas.
+- **Ficha de secuaz de RED:** no tiene vida pasada, estilo de vida ni dinero. `applyPlan` escribe la vida pasada en las notas (`system.information.notes`) y omite el alojamiento y el dinero; `undoApplied` también lo tiene en cuenta.
+- **Fallo de RED v0.92.4 que se evita:** `CPRMookActor.create` llama a `super.create` sin `await` ni `return`, así que devuelve `undefined` y el actor aparece después. `createActor` (npc.js) marca el actor con un identificador, espera a su `createActor` y a que RED instale sus ranuras de ciberequipo. Úsalo siempre para crear actores.
 
 **Importante, fichas creadas por código:** hay que usar `Actor.implementation.create(…)` (la clase de RED). `Actor.create(…)` crea la ficha **sin** las 63 habilidades base ni las ranuras de ciberequipo. `applyPlan` se detiene con un aviso si la ficha no tiene habilidades base.
 
@@ -304,13 +327,38 @@ Un nodo con `when:{id, value}` solo se recorre si la decisión `id` vale `value`
   - 0 errores; capturas revisadas (habilidades, tienda, revisión, solo RED).
 - **Fallo de la prueba, no del módulo:** la prenda elegida en la primera ejecución costaba 5000 ed (la primera por orden alfabético), así que la compra se pasaba del presupuesto y el botón de aplicar estaba bloqueado (comportamiento correcto). La prueba elige ahora una prenda de 20 ed.
 
+### 2026-11-08 — Paso 6: PNJ (0.5.0) — Claude Code
+
+- **Decisión del director para el paso 7, anotada en «Cómo retomar»:** ajuste «Partida de Edgerunners», que sustituye la tienda de RED por la de Edgerunners (Mission Kit y objetos de RED válidos, con el precio 2070).
+- **Hecho:**
+  - extractor y datos de las 10 fichas y de las 3 tablas de encuentros (55 entradas: 52 con ficha y 3 de Trauma Team, que remiten a la pág. 224);
+  - `logic/npcs.js` y `npc.js`;
+  - menú de cuatro opciones en el directorio;
+  - `applySkills`, `itemData` y `withQty` exportados desde `apply.js` para reutilizarlos;
+  - `applyCharacter` con la opción `whisper`;
+  - `rollToChat` con el modo de tirada.
+- **Pruebas:**
+  - unitarias 29/29 (`tests/npcs.test.mjs`: reglas de RED en las 10 fichas, plan del guardaespaldas, ciberarmas sin duplicar, tablas 1–100 con fichas válidas, PNJ rápido completo en los 10 roles con y sin vida pasada);
+  - banco 30013 (`tools/bench/gen06-pnj.mjs`):
+    - las 10 fichas creadas como secuaz: características, PD y niveles correctos; armas y blindaje equipados; ciberequipo instalado con sus opciones (el ciberpsicópata con dos ciberbrazos con armas ocultas y TCO 10); roles Netrunner, Nómada y Mercenario con rango 4; notas;
+    - menú con las 4 opciones;
+    - encuentro aleatorio desde el menú: tirada y entrada susurradas al DJ y fichas creadas con las notas del encuentro;
+    - PNJ rápidos: una netrunner secuaz con la vida pasada en las notas y un mercenario completo con los 17 campos de vida pasada y 500 ed; 0 mensajes públicos;
+  - regresión del paso 5 (`gen05`) completa, incluida la prueba con solo RED;
+  - 0 errores; capturas revisadas (ficha del ciberpsicópata y menú).
+- **Fallos encontrados y corregidos:**
+  1. Un `\b` escrito desde la shell se convirtió en el carácter de control 0x08 en el extractor (mismo tipo de incidencia que en el Core 1.0.2). Se corrigió con el editor y ahora el extractor rechaza caracteres de control en los datos. **Para patrones con escapes, usar el editor o un script escrito con el editor, nunca un heredoc de la shell.**
+  2. Rangos de encuentros con guion largo, «00» y un solo número; un recuadro lateral y créditos de ilustración dentro de entradas; «Usa» en minúscula o con cantidades («Usa 6 oficiales de seguridad»).
+  3. `CPRMookActor.create` de RED no devuelve el actor (ver arriba).
+  4. `Roll#evaluateSync` no admite dados en V12.
+  5. TCO del ciberpsicópata contado dos veces (efecto del implante más el valor del libro).
+  6. La ficha de secuaz no tiene dinero ni vida pasada.
+  7. Las tarjetas de pérdida de Humanidad de RED salían públicas al crear PNJ.
+
 ## Cómo retomar
 
 1. Lee este documento y `module.json`.
 2. Ejecuta las pruebas unitarias y, si cambias el extractor, vuelve a generar los datos.
-3. Siguiente: **paso 6, PNJ.**
-   - Fuente: el PDF del libro básico, «Tipejos y reclutas», páginas impresas 412–416 (PDF 416–420), con 10 fichas, y las tablas de encuentros con variaciones («usa guardaespaldas; sustituye…», PDF ~420–424). Extráelas con un guion reproducible, como `extract_core_tables.py`, a `data/npcs.json`, con cotejo y pruebas.
-   - Dos vías (decisión del director): plantillas de amenaza con variaciones, y generación rápida por rol con Rata callejera (reutilizando `streetratPlan`), en ficha de secuaz (`mook`) o completa.
-   - Los PNJ los crea solo el DJ: añade la entrada en el diálogo del botón del directorio.
+3. Siguiente: **paso 7, integración con Edgerunners** (punto 4).
 4. **Paso 7 (integración Edgerunners), decidido por el director (2026-11-08):** ajuste «Partida de Edgerunners». Desactivado, solo hay la tienda de RED (como ahora). Activado, la tienda de RED se sustituye por la de Edgerunners: los objetos del Mission Kit, más los objetos de RED que se puedan usar en la ambientación, **con el precio 2070**. Falta averiguar dónde están esos precios y qué objetos de RED son válidos en el Mission Kit y el motor (ver `03-coordinacion/REGLAS.md`, conversión y arsenal del Libro de reglas del Mission Kit, PDF 26–37). En ese modo se piden el motor 2070 y el Mission Kit, y se aplican las reglas de creación del motor (neuropuerto gratis y pérdida media, `REGLAS.md` y `CONTRATOS.md`).
 5. No escribas en `edgerunners-2070` ni en ESTADO/PRUEBAS sin confirmar con el director que Codex ha terminado.

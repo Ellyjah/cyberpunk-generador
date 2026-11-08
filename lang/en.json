@@ -131,7 +131,26 @@
       "count": "How many? ({formula}, minimum 0)",
       "wronged": "Who was wronged?",
       "none": "None",
-      "language": "Language"
+      "language": "Language",
+      "field": {
+        "aboutPeople": "About people",
+        "affectations": "Affectations",
+        "childhoodEnvironment": "Childhood environment",
+        "clothingStyle": "Clothing style",
+        "culturalOrigin": "Cultural origin",
+        "enemies": "Enemies",
+        "familyBackground": "Family background",
+        "familyCrisis": "Family crisis",
+        "friends": "Friends",
+        "hairStyle": "Hairstyle",
+        "lifeGoals": "Life goals",
+        "personality": "Personality",
+        "roleLifepath": "Role lifepath",
+        "tragicLoveAffairs": "Tragic love affairs",
+        "valueMost": "Value most",
+        "valuedPerson": "Valued person",
+        "valuedPossession": "Valued possession"
+      }
     },
     "gear": {
       "intro": "Starting gear is set by role. Where there are options, choose one. You also get 500eb.",
@@ -225,6 +244,50 @@
         "core_cyberware": "Cyberware",
         "core_clothing": "Fashion"
       }
+    },
+    "menu": {
+      "title": "Character generator",
+      "body": "What do you want to create?",
+      "pc": "Player character",
+      "book": "Book NPC",
+      "encounter": "Random encounter",
+      "quick": "Quick NPC by role"
+    },
+    "npc": {
+      "folder": "Generator: NPCs",
+      "template": "Stat block",
+      "name": "Name",
+      "namePlaceholder": "(the stat block's)",
+      "type": "Sheet type",
+      "typeMook": "Mook (short sheet)",
+      "typeCharacter": "Character (full sheet)",
+      "language": "Native language",
+      "create": "Create",
+      "tier": {
+        "mook": "mook",
+        "lieutenant": "lieutenant",
+        "miniboss": "mini-boss",
+        "boss": "boss"
+      },
+      "notesSource": "Book stat block: {name} ({tier}), «Mooks and Goons».",
+      "notesBelow": "Book skill bases below their stat (level 0 on the sheet): {list}.",
+      "notesUnresolved": "No matching RED item (add by hand): {list}."
+    },
+    "encounter": {
+      "intro": "Rolls 1d100 on the chosen table (GM only). Then you can create the stat blocks the encounter uses; its text, with variations, goes to each NPC's notes.",
+      "table": "Table",
+      "roll": "Roll 1d100",
+      "create": "Create this encounter's stat blocks:",
+      "hint": "Text variations (replace, add, remove) are applied by hand. One mook can back several tokens.",
+      "noNpc": "This encounter uses none of the book stat blocks.",
+      "close": "Close",
+      "noteTitle": "Encounter: {table} ({total}), {title}.",
+      "created": "{n} NPCs created in the «Generator: NPCs» folder."
+    },
+    "quick": {
+      "intro": "Creates an NPC with the Streetrat method: stat row, gear, specialties, language and (optionally) lifepath at random. The summary is GM only.",
+      "lifepath": "With lifepath",
+      "defaultName": "{role} (NPC)"
     }
   }
 }

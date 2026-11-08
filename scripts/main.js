@@ -6,12 +6,13 @@ import { MODULE_ID } from "./logic/core.js";
 import { registerSettings } from "./settings.js";
 import { listenSocket } from "./socket.js";
 import { openGenerator, userCanUse } from "./wizard.js";
+import { openMenu, createBookNpc, createQuickNpc } from "./npc.js";
 
 const L = (k, d) => game.i18n.format(`CPRGEN.${k}`, d ?? {});
 
 Hooks.once("init", () => {
   registerSettings();
-  game.modules.get(MODULE_ID).api = { open: openGenerator };
+  game.modules.get(MODULE_ID).api = { open: openGenerator, menu: openMenu, createBookNpc, createQuickNpc };
 });
 
 Hooks.once("ready", () => listenSocket());
@@ -23,7 +24,7 @@ Hooks.on("getActorSheetHeaderButtons", (sheet, buttons) => {
   buttons.unshift({ label: L("button.sheet"), class: "cprgen-open", icon: "fas fa-user-plus", onclick: () => openGenerator(actor) });
 });
 
-// Botón del DJ en el directorio de actores: crea una ficha nueva y abre el generador.
+// Botón del DJ en el directorio de actores: menú (personaje jugador, PNJ del libro, encuentro aleatorio, PNJ rápido por rol).
 Hooks.on("renderActorDirectory", (_app, html) => {
   if (!game.user.isGM) return;
   const root = html instanceof HTMLElement ? html : html[0];
@@ -33,20 +34,6 @@ Hooks.on("renderActorDirectory", (_app, html) => {
   btn.type = "button";
   btn.className = "cprgen-new";
   btn.innerHTML = `<i class="fas fa-user-plus"></i> ${L("button.directory")}`;
-  btn.addEventListener("click", createAndOpen);
+  btn.addEventListener("click", () => openMenu());
   bar.append(btn);
 });
-
-async function createAndOpen() {
-  const name = await Dialog.prompt({
-    title: L("create.title"),
-    content: `<p>${L("create.body")}</p><input type="text" name="name" value="${L("create.default")}" autofocus>`,
-    label: L("create.ok"),
-    callback: (html) => (html[0] ?? html).querySelector("input[name=name]").value.trim(),
-    rejectClose: false,
-  });
-  if (!name) return;
-  // Actor.implementation (la clase de RED) añade las habilidades base y las ranuras de ciberequipo; Actor.create no.
-  const actor = await Actor.implementation.create({ name, type: "character" });
-  if (actor) openGenerator(actor);
-}

@@ -5,8 +5,8 @@ let cache = null;
 export async function loadData() {
   if (cache) return cache;
   const get = async (f) => (await fetch(`modules/${MODULE_ID}/data/${f}`)).json();
-  const [roles, lifepath, skills, rules] = await Promise.all(["roles.json", "lifepath.json", "skills.json", "rules.json"].map(get));
-  cache = { roles, lifepath, skills, rules, role: (key) => roles.find((r) => r.key === key) };
+  const [roles, lifepath, skills, rules, npcs, encounters] = await Promise.all(["roles.json", "lifepath.json", "skills.json", "rules.json", "npcs.json", "encounters.json"].map(get));
+  cache = { roles, lifepath, skills, rules, npcs, encounters, role: (key) => roles.find((r) => r.key === key) };
   return cache;
 }
 

@@ -18,7 +18,7 @@ const STATS = ["int", "ref", "dex", "tech", "cool", "will", "luck", "move", "bod
 const LP_FIELDS = ["aboutPeople", "affectations", "childhoodEnvironment", "clothingStyle", "culturalOrigin", "enemies", "familyBackground", "familyCrisis", "friends", "hairStyle", "lifeGoals", "personality", "roleLifepath", "tragicLoveAffairs", "valueMost", "valuedPerson", "valuedPossession"];
 const L = (k, d) => game.i18n.format(`CPRGEN.${k}`, d ?? {});
 
-async function itemData(uuid) {
+export async function itemData(uuid) {
   const doc = await fromUuid(uuid);
   if (!doc) throw new Error(L("apply.missingItem", { uuid }));
   const data = doc.toObject();
@@ -58,7 +58,7 @@ export async function undoApplied(actor, record) {
   if (stale.length) await actor.updateEmbeddedDocuments("Item", stale);
   const resetSkills = (record?.coreSkills ?? []).filter((id) => actor.items.has(id)).map((id) => ({ _id: id, "system.level": 0 }));
   if (resetSkills.length) await actor.updateEmbeddedDocuments("Item", resetSkills);
-  if (record?.money) {
+  if (record?.money && actor.system.wealth) {
     const wealth = actor.system.wealth;
     const total = (wealth.value ?? 0) - record.money;
     await actor.update({
@@ -72,7 +72,7 @@ export async function undoApplied(actor, record) {
 }
 
 /** Datos de Items para un objeto con cantidad: apilables con system.amount; los demás, repetidos. */
-function withQty(data, qty) {
+export function withQty(data, qty) {
   if (qty <= 1) return [data];
   if (foundry.utils.hasProperty(data, "system.amount")) return [{ ...data, system: { ...data.system, amount: qty } }];
   return Array.from({ length: qty }, () => foundry.utils.deepClone(data));
@@ -81,6 +81,41 @@ function withQty(data, qty) {
 async function clothingIndex() {
   const pack = game.packs.get("cyberpunk-red-core.core_clothing");
   return pack.getIndex({ fields: ["system.style", "system.type"] });
+}
+
+/**
+ * Habilidades: las de la ficha (RED las crea con el actor) cambian de nivel; especialidades e idioma se añaden.
+ * Las habilidades base de la ficha llevan el nombre visible del compendio interno de RED (traducido por Babele si está
+ * activo); se buscan por el nombre actual del Item del compendio o por el nombre interno en inglés.
+ * Devuelve los ids de las habilidades base ajustadas (para poder deshacerlo). La usan los PJ y los PNJ.
+ */
+export async function applySkills(actor, skills, log) {
+  const skillIndex = await game.packs.get("cyberpunk-red-core.internal_skills").getIndex();
+  const visibleName = (en) => skillIndex.find((e) => e.name === en || e.originalName === en || e.flags?.babele?.originalName === en)?.name;
+  const skillUpd = [], newSkills = [];
+  for (const s of skills) {
+    if (s.red) {
+      const it = actor.itemTypes.skill.find((i) => i.name === s.red || i.name === visibleName(s.red) || (s.redId && i.name === skillIndex.get(s.redId)?.name));
+      if (it) skillUpd.push({ _id: it.id, "system.level": s.level });
+      else log.push(L("apply.log.skillMissing", { name: s.label }));
+    } else if (s.uuid) {
+      const d = await itemData(s.uuid);
+      d.system.level = s.level;
+      newSkills.push(d);
+    } else {
+      // Idioma no listado en el compendio: copia de un idioma de RED con otro nombre.
+      const pack = game.packs.get("cyberpunk-red-core.core_skills-languages");
+      const first = (await pack.getIndex()).contents[0];
+      const d = await itemData(first.uuid ?? `Compendium.cyberpunk-red-core.core_skills-languages.Item.${first._id}`);
+      d.name = L("apply.languageName", { name: s.text });
+      d.system.level = s.level;
+      newSkills.push(d);
+    }
+  }
+  if (skillUpd.length) await actor.updateEmbeddedDocuments("Item", skillUpd);
+  if (newSkills.length) await actor.createEmbeddedDocuments("Item", newSkills);
+  log.push(L("apply.log.skills", { n: skillUpd.length + newSkills.length }));
+  return skillUpd.map((u) => u._id);
 }
 
 export function buildPlan(data, draft) {
@@ -105,45 +140,26 @@ export async function applyPlan(actor, plan) {
   upd["system.stats.emp.max"] = plan.stats.emp;
   upd["system.derivedStats.humanity.max"] = plan.stats.emp * 10;
   upd["system.derivedStats.humanity.value"] = plan.stats.emp * 10;
-  for (const f of LP_FIELDS) upd[`system.lifepath.${f}`] = plan.lifepath[f] ?? "";
-  upd["system.lifestyle.housing.description"] = plan.housing.housing.description;
-  upd["system.lifestyle.housing.cost"] = plan.housing.housing.cost;
-  upd["system.lifestyle.lifeStyle.description"] = plan.housing.lifestyle.description;
-  upd["system.lifestyle.lifeStyle.cost"] = plan.housing.lifestyle.cost;
+  // La ficha de secuaz (mook) de RED no tiene vida pasada, estilo de vida ni dinero: la vida pasada va a sus notas.
+  if (actor.system.lifepath) {
+    for (const f of LP_FIELDS) upd[`system.lifepath.${f}`] = plan.lifepath[f] ?? "";
+  } else {
+    const lp = LP_FIELDS.filter((f) => plan.lifepath[f]).map((f) => `<h3>${L(`lifepath.field.${f}`)}</h3>${plan.lifepath[f]}`).join("");
+    if (lp) upd["system.information.notes"] = `${actor.system.information?.notes ?? ""}<h2>${L("step.lifepath")}</h2>${lp}`;
+  }
+  if (actor.system.lifestyle) {
+    upd["system.lifestyle.housing.description"] = plan.housing.housing.description;
+    upd["system.lifestyle.housing.cost"] = plan.housing.housing.cost;
+    upd["system.lifestyle.lifeStyle.description"] = plan.housing.lifestyle.description;
+    upd["system.lifestyle.lifeStyle.cost"] = plan.housing.lifestyle.cost;
+  }
   await actor.update(upd);
   const hp = actor.calcMaxHp();
   await actor.update({ "system.derivedStats.hp.max": hp, "system.derivedStats.hp.value": hp });
   log.push(L("apply.log.stats"));
 
-  // 2. Habilidades: las de la ficha (RED las crea con el actor) cambian de nivel; especialidades e idioma se añaden.
-  // Las habilidades base de la ficha llevan el nombre visible del compendio interno de RED (traducido por Babele si está
-  // activo); se buscan por el nombre actual del Item del compendio o por el nombre interno en inglés.
-  const skillIndex = await game.packs.get("cyberpunk-red-core.internal_skills").getIndex();
-  const visibleName = (en) => skillIndex.find((e) => e.name === en || e.originalName === en || e.flags?.babele?.originalName === en)?.name;
-  const skillUpd = [], newSkills = [];
-  for (const s of plan.skills) {
-    if (s.red) {
-      const it = actor.itemTypes.skill.find((i) => i.name === s.red || i.name === visibleName(s.red) || (s.redId && i.name === skillIndex.get(s.redId)?.name));
-      if (it) skillUpd.push({ _id: it.id, "system.level": s.level });
-      else log.push(L("apply.log.skillMissing", { name: s.label }));
-    } else if (s.uuid) {
-      const d = await itemData(s.uuid);
-      d.system.level = s.level;
-      newSkills.push(d);
-    } else {
-      // Idioma no listado en el compendio: copia de un idioma de RED con otro nombre.
-      const pack = game.packs.get("cyberpunk-red-core.core_skills-languages");
-      const first = (await pack.getIndex()).contents[0];
-      const d = await itemData(first.uuid ?? `Compendium.cyberpunk-red-core.core_skills-languages.Item.${first._id}`);
-      d.name = L("apply.languageName", { name: s.text });
-      d.system.level = s.level;
-      newSkills.push(d);
-    }
-  }
-  if (skillUpd.length) await actor.updateEmbeddedDocuments("Item", skillUpd);
-  const coreSkills = skillUpd.map((u) => u._id);
-  if (newSkills.length) await actor.createEmbeddedDocuments("Item", newSkills);
-  log.push(L("apply.log.skills", { n: skillUpd.length + newSkills.length }));
+  // 2. Habilidades.
+  const coreSkills = await applySkills(actor, plan.skills, log);
 
   // 3. Rol con rango 4, rol activo.
   const roleData = await itemData(plan.roleUuid);
@@ -182,8 +198,9 @@ export async function applyPlan(actor, plan) {
   if (installed.length) await actor.loseHumanityValue(installed, "static");
   log.push(L("apply.log.cyber", { n: installed.length, hum: actor.system.derivedStats.humanity.value, emp: actor.system.stats.emp.value }));
 
-  // 6. Dinero inicial en el libro de cuentas de RED.
+  // 6. Dinero inicial en el libro de cuentas de RED (la ficha de secuaz no tiene dinero).
   const wealth = actor.system.wealth;
+  if (!wealth) return { log, coreSkills, money: 0 };
   const total = (wealth.value ?? 0) + plan.money;
   await actor.update({
     "system.wealth.value": total,
@@ -197,7 +214,7 @@ export async function applyPlan(actor, plan) {
  * Aplica el borrador a la ficha, sustituyendo la aplicación anterior si la hay. Lo llama el DJ, o el propietario
  * en la primera aplicación; la autorización de una reaplicación se comprueba en wizard.js antes de llegar aquí.
  */
-export async function applyCharacter(actor, data, draft, userId = game.user.id) {
+export async function applyCharacter(actor, data, draft, userId = game.user.id, { whisper = false } = {}) {
   const previous = appliedRecord(actor);
   const plan = buildPlan(data, draft);
   const log = previous ? await undoApplied(actor, previous) : [];
@@ -206,7 +223,7 @@ export async function applyCharacter(actor, data, draft, userId = game.user.id) 
   const record = { at: Date.now(), by: userId, method: draft.method, money: res.money, coreSkills: res.coreSkills, replaced: Boolean(previous) };
   await actor.setFlag(MODULE_ID, "applied", JSON.stringify(record));
   await actor.setFlag(MODULE_ID, "draft", JSON.stringify(markApplied(draft, userId)));
-  await ChatMessage.create({ speaker: ChatMessage.getSpeaker({ actor }), content: `<p><strong>${L(previous ? "apply.doneReplaced" : "apply.done")}</strong></p><ul>${log.map((l) => `<li>${l}</li>`).join("")}</ul>` });
+  await ChatMessage.create({ speaker: ChatMessage.getSpeaker({ actor }), content: `<p><strong>${L(previous ? "apply.doneReplaced" : "apply.done")}</strong></p><ul>${log.map((l) => `<li>${l}</li>`).join("")}</ul>`, ...(whisper ? { whisper: ChatMessage.getWhisperRecipients("GM").map((u) => u.id) } : {}) });
   return log;
 }
 

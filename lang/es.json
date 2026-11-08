@@ -131,7 +131,26 @@
       "count": "¿Cuántos? ({formula}, mínimo 0)",
       "wronged": "¿Quién fue el perjudicado?",
       "none": "Ninguno",
-      "language": "Idioma"
+      "language": "Idioma",
+      "field": {
+        "aboutPeople": "Lo que opinas de la gente",
+        "affectations": "Rasgo que nunca te falta",
+        "childhoodEnvironment": "Ambiente en la niñez",
+        "clothingStyle": "Estilo de ropa",
+        "culturalOrigin": "Origen cultural",
+        "enemies": "Enemigos",
+        "familyBackground": "Entorno familiar",
+        "familyCrisis": "Tragedia familiar",
+        "friends": "Amigos",
+        "hairStyle": "Peinado",
+        "lifeGoals": "Objetivos vitales",
+        "personality": "Personalidad",
+        "roleLifepath": "Vida pasada de rol",
+        "tragicLoveAffairs": "Vida amorosa trágica",
+        "valueMost": "Lo que más aprecias",
+        "valuedPerson": "Persona que más valoras",
+        "valuedPossession": "Posesión más valiosa"
+      }
     },
     "gear": {
       "intro": "El equipo inicial viene dado por el rol. Donde hay varias opciones, elige una. Además tendrás 500 ed.",
@@ -225,6 +244,50 @@
         "core_cyberware": "Ciberequipo",
         "core_clothing": "Moda"
       }
+    },
+    "menu": {
+      "title": "Generador de personajes",
+      "body": "¿Qué quieres crear?",
+      "pc": "Personaje jugador",
+      "book": "PNJ del libro",
+      "encounter": "Encuentro aleatorio",
+      "quick": "PNJ rápido por rol"
+    },
+    "npc": {
+      "folder": "Generador: PNJ",
+      "template": "Ficha",
+      "name": "Nombre",
+      "namePlaceholder": "(el de la ficha)",
+      "type": "Tipo de ficha",
+      "typeMook": "Secuaz (ficha reducida)",
+      "typeCharacter": "Personaje (ficha completa)",
+      "language": "Idioma nativo",
+      "create": "Crear",
+      "tier": {
+        "mook": "subalterno",
+        "lieutenant": "lugarteniente",
+        "miniboss": "jefe menor",
+        "boss": "jefe"
+      },
+      "notesSource": "Ficha del libro: {name} ({tier}), «Tipejos y reclutas».",
+      "notesBelow": "Bases del libro por debajo de su característica (nivel 0 en la ficha): {list}.",
+      "notesUnresolved": "Sin objeto de RED equivalente (añadir a mano): {list}."
+    },
+    "encounter": {
+      "intro": "Se tira 1d100 en la tabla elegida (solo lo ve el DJ). Después puedes crear las fichas que cita el encuentro; su texto, con las variaciones, queda en las notas de cada PNJ.",
+      "table": "Tabla",
+      "roll": "Tirar 1d100",
+      "create": "Crear las fichas de este encuentro:",
+      "hint": "Las variaciones del texto (sustituye, añade, quita) se aplican a mano. Un secuaz sirve para varios tokens.",
+      "noNpc": "Este encuentro no usa ninguna de las fichas del libro.",
+      "close": "Cerrar",
+      "noteTitle": "Encuentro: {table} ({total}), {title}.",
+      "created": "{n} PNJ creados en la carpeta «Generador: PNJ»."
+    },
+    "quick": {
+      "intro": "Crea un PNJ con el método Rata callejera: fila de características, equipo, especialidades, idioma y (opcionalmente) vida pasada al azar. El resumen solo lo ve el DJ.",
+      "lifepath": "Con vida pasada",
+      "defaultName": "{role} (PNJ)"
     }
   }
 }
