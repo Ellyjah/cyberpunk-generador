@@ -1,0 +1,8428 @@
+[
+ {
+  "key": "fixer",
+  "name": "Arreglador",
+  "itemId": "fR6KBqJgywWfhI2n",
+  "uuid": "Compendium.cyberpunk-red-core.core_roles.Item.fR6KBqJgywWfhI2n",
+  "statTable": [
+   {
+    "int": 8,
+    "ref": 5,
+    "dex": 7,
+    "tech": 4,
+    "cool": 6,
+    "will": 5,
+    "luck": 8,
+    "move": 5,
+    "body": 5,
+    "emp": 8
+   },
+   {
+    "int": 8,
+    "ref": 5,
+    "dex": 5,
+    "tech": 5,
+    "cool": 6,
+    "will": 7,
+    "luck": 8,
+    "move": 7,
+    "body": 5,
+    "emp": 7
+   },
+   {
+    "int": 6,
+    "ref": 6,
+    "dex": 6,
+    "tech": 4,
+    "cool": 5,
+    "will": 6,
+    "luck": 8,
+    "move": 6,
+    "body": 3,
+    "emp": 8
+   },
+   {
+    "int": 7,
+    "ref": 7,
+    "dex": 5,
+    "tech": 5,
+    "cool": 7,
+    "will": 6,
+    "luck": 7,
+    "move": 7,
+    "body": 5,
+    "emp": 8
+   },
+   {
+    "int": 8,
+    "ref": 6,
+    "dex": 6,
+    "tech": 3,
+    "cool": 6,
+    "will": 5,
+    "luck": 8,
+    "move": 7,
+    "body": 5,
+    "emp": 6
+   },
+   {
+    "int": 8,
+    "ref": 7,
+    "dex": 5,
+    "tech": 5,
+    "cool": 6,
+    "will": 7,
+    "luck": 7,
+    "move": 5,
+    "body": 3,
+    "emp": 6
+   },
+   {
+    "int": 8,
+    "ref": 6,
+    "dex": 6,
+    "tech": 5,
+    "cool": 6,
+    "will": 5,
+    "luck": 6,
+    "move": 7,
+    "body": 5,
+    "emp": 8
+   },
+   {
+    "int": 6,
+    "ref": 6,
+    "dex": 7,
+    "tech": 4,
+    "cool": 7,
+    "will": 6,
+    "luck": 7,
+    "move": 7,
+    "body": 4,
+    "emp": 7
+   },
+   {
+    "int": 8,
+    "ref": 7,
+    "dex": 7,
+    "tech": 5,
+    "cool": 5,
+    "will": 5,
+    "luck": 7,
+    "move": 6,
+    "body": 5,
+    "emp": 7
+   },
+   {
+    "int": 6,
+    "ref": 5,
+    "dex": 6,
+    "tech": 5,
+    "cool": 5,
+    "will": 6,
+    "luck": 8,
+    "move": 6,
+    "body": 4,
+    "emp": 7
+   }
+  ],
+  "streetratSkills": [
+   {
+    "label": "Atletismo",
+    "red": "Athletics",
+    "level": 2
+   },
+   {
+    "label": "Concentración",
+    "red": "Concentration",
+    "level": 2
+   },
+   {
+    "label": "Conversación",
+    "red": "Conversation",
+    "level": 6
+   },
+   {
+    "label": "Cultura",
+    "red": "Education",
+    "level": 2
+   },
+   {
+    "label": "Evasión",
+    "red": "Evasion",
+    "level": 6
+   },
+   {
+    "label": "Experto local (tu hogar)",
+    "red": "Local Expert (Your Home)",
+    "level": 6
+   },
+   {
+    "label": "Idioma (jerga callejera)",
+    "red": "Language (Streetslang)",
+    "level": 4
+   },
+   {
+    "label": "Pelea",
+    "red": "Brawling",
+    "level": 2
+   },
+   {
+    "label": "Percepción",
+    "red": "Perception",
+    "level": 2
+   },
+   {
+    "label": "Percepción humana",
+    "red": "Human Perception",
+    "level": 6
+   },
+   {
+    "label": "Persuasión",
+    "red": "Persuasion",
+    "level": 4
+   },
+   {
+    "label": "Primeros auxilios",
+    "red": "First Aid",
+    "level": 2
+   },
+   {
+    "label": "Sigilo",
+    "red": "Stealth",
+    "level": 2
+   },
+   {
+    "label": "Abrir cerraduras",
+    "red": "Pick Lock",
+    "level": 4
+   },
+   {
+    "label": "Armas cortas",
+    "red": "Handgun",
+    "level": 6
+   },
+   {
+    "label": "Comerciar",
+    "red": "Trading",
+    "level": 6
+   },
+   {
+    "label": "Conocimiento de la calle",
+    "red": "Streetwise",
+    "level": 6
+   },
+   {
+    "label": "Falsificación",
+    "red": "Forgery",
+    "level": 6
+   },
+   {
+    "label": "Negocios",
+    "red": "Business",
+    "level": 6
+   },
+   {
+    "label": "Sobornar",
+    "red": "Bribery",
+    "level": 6
+   }
+  ],
+  "edgerunnerSkills": [
+   {
+    "label": "Atletismo",
+    "red": "Athletics"
+   },
+   {
+    "label": "Concentración",
+    "red": "Concentration"
+   },
+   {
+    "label": "Conversación",
+    "red": "Conversation"
+   },
+   {
+    "label": "Cultura",
+    "red": "Education"
+   },
+   {
+    "label": "Evasión",
+    "red": "Evasion"
+   },
+   {
+    "label": "Experto local (tu hogar)",
+    "red": "Local Expert (Your Home)"
+   },
+   {
+    "label": "Idioma (jerga callejera)",
+    "red": "Language (Streetslang)"
+   },
+   {
+    "label": "Pelea",
+    "red": "Brawling"
+   },
+   {
+    "label": "Percepción",
+    "red": "Perception"
+   },
+   {
+    "label": "Percepción humana",
+    "red": "Human Perception"
+   },
+   {
+    "label": "Persuasión",
+    "red": "Persuasion"
+   },
+   {
+    "label": "Primeros auxilios",
+    "red": "First Aid"
+   },
+   {
+    "label": "Sigilo",
+    "red": "Stealth"
+   },
+   {
+    "label": "Abrir cerraduras",
+    "red": "Pick Lock"
+   },
+   {
+    "label": "Armas cortas",
+    "red": "Handgun"
+   },
+   {
+    "label": "Comerciar",
+    "red": "Trading"
+   },
+   {
+    "label": "Conocimiento de la calle",
+    "red": "Streetwise"
+   },
+   {
+    "label": "Falsificación",
+    "red": "Forgery"
+   },
+   {
+    "label": "Negocios",
+    "red": "Business"
+   },
+   {
+    "label": "Sobornar",
+    "red": "Bribery"
+   }
+  ],
+  "weapons": [
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_weapons.Item.Y433cjlB1uVHPysk",
+      "name": "Pistola pesada",
+      "qty": 1,
+      "note": ""
+     },
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_weapons.Item.4L05qIZxsy0uDSHz",
+      "name": "pistola muy pesada",
+      "qty": 1,
+      "note": ""
+     }
+    ]
+   },
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_weapons.Item.Y433cjlB1uVHPysk",
+      "name": "Pistola pesada",
+      "qty": 1,
+      "note": ""
+     },
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_weapons.Item.4L05qIZxsy0uDSHz",
+      "name": "pistola muy pesada",
+      "qty": 1,
+      "note": ""
+     }
+    ]
+   },
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_weapons.Item.hvxl5hrwWBPZmSwF",
+      "name": "Arma cuerpo a cuerpo ligera",
+      "qty": 1,
+      "note": ""
+     }
+    ]
+   },
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_ammo.Item.jmia1vHSv6bdQEVP",
+      "name": "Munición básica de pistola P",
+      "qty": 100,
+      "note": ""
+     },
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_ammo.Item.NQP4I9heyv9fXj46",
+      "name": "munición básica de pistola MP",
+      "qty": 100,
+      "note": ""
+     }
+    ]
+   },
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_armor.Item.uaN9WukkezPfcutU",
+      "name": "Blindaje ligero en el cuerpo",
+      "qty": 1,
+      "note": "(CP11)"
+     }
+    ]
+   },
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_armor.Item.Bsalv6m63PhmHkMm",
+      "name": "Blindaje ligero en la cabeza",
+      "qty": 1,
+      "note": "(CP11)"
+     }
+    ]
+   }
+  ],
+  "gear": [
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_gear.Item.GqYz689ddSKQHMen",
+      "name": "Agente",
+      "qty": 1,
+      "note": ""
+     }
+    ]
+   },
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_gear.Item.Fa8Mse1uXrLLWIxo",
+      "name": "Detector de micrófonos",
+      "qty": 1,
+      "note": ""
+     }
+    ]
+   },
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_gear.Item.1K1dtvrm7rjoraAJ",
+      "name": "Ordenador",
+      "qty": 1,
+      "note": ""
+     }
+    ]
+   },
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_gear.Item.OjMJ2SyoMr4VWmnm",
+      "name": "Teléfono móvil desechable",
+      "qty": 2,
+      "note": ""
+     }
+    ]
+   },
+   {
+    "clothing": {
+     "style": "Ropa normal elegante",
+     "items": [
+      {
+       "type": "lentes de contacto",
+       "qty": 1
+      },
+      {
+       "type": "joyas",
+       "qty": 1
+      }
+     ]
+    },
+    "text": "Ropa normal elegante: lentes de contacto, joyas"
+   },
+   {
+    "clothing": {
+     "style": "Ropa de deporte",
+     "items": [
+      {
+       "type": "gafas espejadas",
+       "qty": 1
+      }
+     ]
+    },
+    "text": "Ropa de deporte: gafas espejadas"
+   },
+   {
+    "clothing": {
+     "style": "Tendencias urbanas",
+     "items": [
+      {
+       "type": "calzado",
+       "qty": 1
+      },
+      {
+       "type": "chaqueta",
+       "qty": 1
+      },
+      {
+       "type": "parte de abajo",
+       "qty": 1
+      },
+      {
+       "type": "parte de arriba",
+       "qty": 1
+      }
+     ]
+    },
+    "text": "Tendencias urbanas: calzado, chaqueta, parte de abajo, parte de arriba"
+   }
+  ],
+  "cyberware": [
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_cyberware.Item.2AE8D8ZdRA815IZK",
+      "name": "Agente interno",
+      "qty": 1,
+      "note": ""
+     }
+    ]
+   },
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_cyberware.Item.5PWjp9rOnZuhYPPu",
+      "name": "Analizador de voz",
+      "qty": 1,
+      "note": ""
+     },
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_cyberware.Item.9pZMYMlVFeWDS56L",
+      "name": "escucha amplificada",
+      "qty": 1,
+      "note": ""
+     }
+    ]
+   },
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_cyberware.Item.kPYQ2Fod5FQvED38",
+      "name": "Bolsillo subcutáneo",
+      "qty": 1,
+      "note": ""
+     }
+    ]
+   },
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_cyberware.Item.hsoSD662cLKvHKZJ",
+      "name": "Equipo de ciberaudio",
+      "qty": 1,
+      "note": ""
+     }
+    ]
+   }
+  ],
+  "cyberwareHumanityLoss": 16,
+  "cyberwareEmpLoss": -2,
+  "lifepathPage": "023d29a8e7846b7e",
+  "lifepath": [
+   {
+    "type": "table",
+    "id": "t0",
+    "title": "¿Qué tipo de arreglador eres?",
+    "instruction": "Tira 1d10 o colabora con el DJ para elegir uno.",
+    "die": "1d10",
+    "columns": [
+     "Tipo"
+    ],
+    "rows": [
+     {
+      "min": 1,
+      "max": 1,
+      "cells": [
+       "Intermediario entre bandas rivales."
+      ]
+     },
+     {
+      "min": 2,
+      "max": 2,
+      "cells": [
+       "Consigues recursos raros o atípicos para una clientela exclusiva."
+      ]
+     },
+     {
+      "min": 3,
+      "max": 3,
+      "cells": [
+       "Especializado en la mediación de servicios de mercenarios o técnicos como agente."
+      ]
+     },
+     {
+      "min": 4,
+      "max": 4,
+      "cells": [
+       "Suministras recursos regulares para los mercados nocturnos, como comida, medicinas o drogas."
+      ]
+     },
+     {
+      "min": 5,
+      "max": 5,
+      "cells": [
+       "Adquieres recursos extremadamente ilegales, como drogas callejeras o armas de grado militar."
+      ]
+     },
+     {
+      "min": 6,
+      "max": 6,
+      "cells": [
+       "Suministras recursos para técnicos y tecnomédicos, como repuestos y suministros médicos."
+      ]
+     },
+     {
+      "min": 7,
+      "max": 7,
+      "cells": [
+       "Explotas con éxito varios mercados nocturnos, aunque no como propietario."
+      ]
+     },
+     {
+      "min": 8,
+      "max": 8,
+      "cells": [
+       "Agente en contratos de uso de maquinaria pesada, vehículos militares y aviones."
+      ]
+     },
+     {
+      "min": 9,
+      "max": 9,
+      "cells": [
+       "Agente en tratos con recuperadores que asaltan corpos o zonas de combate."
+      ]
+     },
+     {
+      "min": 10,
+      "max": 10,
+      "cells": [
+       "Actúas como agente exclusivo de un periodista, rockero o tribu nómada."
+      ]
+     }
+    ]
+   },
+   {
+    "type": "choice",
+    "id": "partner",
+    "title": "¿Tienes un socio, o trabajas solo?",
+    "options": [
+     {
+      "value": "partner",
+      "label": "Socio"
+     },
+     {
+      "value": "solo",
+      "label": "Solo"
+     }
+    ]
+   },
+   {
+    "type": "table",
+    "id": "t1",
+    "title": "¿Tienes un socio? ¿Quién es?",
+    "instruction": "Tira 1d6 o elige un resultado.",
+    "die": "1d6",
+    "columns": [
+     "¿Quién?"
+    ],
+    "rows": [
+     {
+      "min": 1,
+      "max": 1,
+      "cells": [
+       "Miembro de la familia."
+      ]
+     },
+     {
+      "min": 2,
+      "max": 2,
+      "cells": [
+       "Viejo amigo."
+      ]
+     },
+     {
+      "min": 3,
+      "max": 3,
+      "cells": [
+       "Posible pareja romántica."
+      ]
+     },
+     {
+      "min": 4,
+      "max": 4,
+      "cells": [
+       "Mentor."
+      ]
+     },
+     {
+      "min": 5,
+      "max": 5,
+      "cells": [
+       "Socio secreto con conexiones con la mafia o alguna pandilla."
+      ]
+     },
+     {
+      "min": 6,
+      "max": 6,
+      "cells": [
+       "Socio secreto con conexiones corporativas."
+      ]
+     }
+    ],
+    "when": {
+     "id": "partner",
+     "value": "partner"
+    }
+   },
+   {
+    "type": "table",
+    "id": "t2",
+    "title": "¿Cómo es tu «oficina»?",
+    "instruction": "Tira 1d6 o elige un resultado",
+    "die": "1d6",
+    "columns": [
+     "Oficina"
+    ],
+    "rows": [
+     {
+      "min": 1,
+      "max": 1,
+      "cells": [
+       "No tienes. Te gusta estar en movimiento."
+      ]
+     },
+     {
+      "min": 2,
+      "max": 2,
+      "cells": [
+       "Un espacio en un bar local."
+      ]
+     },
+     {
+      "min": 3,
+      "max": 3,
+      "cells": [
+       "Solo mensajes a través de la reserva de datos y entregas anónimas."
+      ]
+     },
+     {
+      "min": 4,
+      "max": 4,
+      "cells": [
+       "Una habitación en un almacén, tienda o clínica."
+      ]
+     },
+     {
+      "min": 5,
+      "max": 5,
+      "cells": [
+       "Un edificio abandonado."
+      ]
+     },
+     {
+      "min": 6,
+      "max": 6,
+      "cells": [
+       "El vestíbulo de un hotel de cubículos."
+      ]
+     }
+    ]
+   },
+   {
+    "type": "table",
+    "id": "t3",
+    "title": "¿Quiénes son tus clientes secundarios?",
+    "instruction": "Tira 1d6 o elige un resultado.",
+    "die": "1d6",
+    "columns": [
+     "¿Quién?"
+    ],
+    "rows": [
+     {
+      "min": 1,
+      "max": 1,
+      "cells": [
+       "Rockeros o periodistas locales que te utilizan para conseguir conciertos o contactos."
+      ]
+     },
+     {
+      "min": 2,
+      "max": 2,
+      "cells": [
+       "Pandilleros locales que también protegen tu lugar de trabajo o tu casa."
+      ]
+     },
+     {
+      "min": 3,
+      "max": 3,
+      "cells": [
+       "Ejecutivos corporativos que te utilizan para trabajos de adquisición en «proyectos negros»."
+      ]
+     },
+     {
+      "min": 4,
+      "max": 4,
+      "cells": [
+       "Mercenarios locales u otros tipos de combatientes que te usan para conseguirles trabajos o contactos."
+      ]
+     },
+     {
+      "min": 5,
+      "max": 5,
+      "cells": [
+       "Nómadas y arregladores locales que te usan para realizar transacciones o cerrar acuerdos."
+      ]
+     },
+     {
+      "min": 6,
+      "max": 6,
+      "cells": [
+       "Políticos o ejecutivos locales que dependen de ti para obtener información."
+      ]
+     }
+    ]
+   },
+   {
+    "type": "table",
+    "id": "t4",
+    "title": "¿Quién te tiene en el punto de mira?",
+    "instruction": "Tira 1d6 o elige un resultado.",
+    "die": "1d6",
+    "columns": [
+     "¿Quién?"
+    ],
+    "rows": [
+     {
+      "min": 1,
+      "max": 1,
+      "cells": [
+       "Pandilleros de la zona de combate que quieren que trabajes exclusivamente para ellos."
+      ]
+     },
+     {
+      "min": 2,
+      "max": 2,
+      "cells": [
+       "Arregladores rivales que intentan robar tus clientes."
+      ]
+     },
+     {
+      "min": 3,
+      "max": 3,
+      "cells": [
+       "Ejecutivos que quieren que trabajes en exclusiva para ellos."
+      ]
+     },
+     {
+      "min": 4,
+      "max": 4,
+      "cells": [
+       "El enemigo de un antiguo cliente que quiere eliminar los «cabos sueltos» como tú."
+      ]
+     },
+     {
+      "min": 5,
+      "max": 5,
+      "cells": [
+       "Antiguo cliente que piensa que les has engañado."
+      ]
+     },
+     {
+      "min": 6,
+      "max": 6,
+      "cells": [
+       "Arreglador rival que trata de quitarte recursos y repuestos."
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "key": "exec",
+  "name": "Ejecutivo",
+  "itemId": "MauQVKqh2mLLWXA8",
+  "uuid": "Compendium.cyberpunk-red-core.core_roles.Item.MauQVKqh2mLLWXA8",
+  "statTable": [
+   {
+    "int": 8,
+    "ref": 5,
+    "dex": 5,
+    "tech": 3,
+    "cool": 8,
+    "will": 6,
+    "luck": 6,
+    "move": 5,
+    "body": 5,
+    "emp": 7
+   },
+   {
+    "int": 8,
+    "ref": 6,
+    "dex": 6,
+    "tech": 4,
+    "cool": 7,
+    "will": 6,
+    "luck": 7,
+    "move": 7,
+    "body": 5,
+    "emp": 7
+   },
+   {
+    "int": 8,
+    "ref": 7,
+    "dex": 6,
+    "tech": 3,
+    "cool": 8,
+    "will": 6,
+    "luck": 7,
+    "move": 6,
+    "body": 4,
+    "emp": 5
+   },
+   {
+    "int": 8,
+    "ref": 5,
+    "dex": 7,
+    "tech": 5,
+    "cool": 6,
+    "will": 5,
+    "luck": 6,
+    "move": 5,
+    "body": 5,
+    "emp": 7
+   },
+   {
+    "int": 7,
+    "ref": 7,
+    "dex": 6,
+    "tech": 5,
+    "cool": 8,
+    "will": 5,
+    "luck": 7,
+    "move": 7,
+    "body": 5,
+    "emp": 6
+   },
+   {
+    "int": 5,
+    "ref": 7,
+    "dex": 7,
+    "tech": 3,
+    "cool": 6,
+    "will": 7,
+    "luck": 6,
+    "move": 5,
+    "body": 5,
+    "emp": 7
+   },
+   {
+    "int": 6,
+    "ref": 6,
+    "dex": 7,
+    "tech": 5,
+    "cool": 8,
+    "will": 7,
+    "luck": 6,
+    "move": 7,
+    "body": 4,
+    "emp": 6
+   },
+   {
+    "int": 6,
+    "ref": 7,
+    "dex": 7,
+    "tech": 3,
+    "cool": 7,
+    "will": 5,
+    "luck": 7,
+    "move": 5,
+    "body": 5,
+    "emp": 7
+   },
+   {
+    "int": 7,
+    "ref": 6,
+    "dex": 7,
+    "tech": 5,
+    "cool": 7,
+    "will": 5,
+    "luck": 7,
+    "move": 6,
+    "body": 5,
+    "emp": 5
+   },
+   {
+    "int": 7,
+    "ref": 7,
+    "dex": 5,
+    "tech": 5,
+    "cool": 8,
+    "will": 6,
+    "luck": 6,
+    "move": 7,
+    "body": 4,
+    "emp": 7
+   }
+  ],
+  "streetratSkills": [
+   {
+    "label": "Atletismo",
+    "red": "Athletics",
+    "level": 2
+   },
+   {
+    "label": "Concentración",
+    "red": "Concentration",
+    "level": 2
+   },
+   {
+    "label": "Conversación",
+    "red": "Conversation",
+    "level": 6
+   },
+   {
+    "label": "Cultura",
+    "red": "Education",
+    "level": 6
+   },
+   {
+    "label": "Evasión",
+    "red": "Evasion",
+    "level": 6
+   },
+   {
+    "label": "Experto local (tu hogar)",
+    "red": "Local Expert (Your Home)",
+    "level": 2
+   },
+   {
+    "label": "Idioma (jerga callejera)",
+    "red": "Language (Streetslang)",
+    "level": 2
+   },
+   {
+    "label": "Pelea",
+    "red": "Brawling",
+    "level": 2
+   },
+   {
+    "label": "Percepción",
+    "red": "Perception",
+    "level": 2
+   },
+   {
+    "label": "Percepción humana",
+    "red": "Human Perception",
+    "level": 6
+   },
+   {
+    "label": "Persuasión",
+    "red": "Persuasion",
+    "level": 6
+   },
+   {
+    "label": "Primeros auxilios",
+    "red": "First Aid",
+    "level": 2
+   },
+   {
+    "label": "Sigilo",
+    "red": "Stealth",
+    "level": 2
+   },
+   {
+    "label": "Armas cortas",
+    "red": "Handgun",
+    "level": 6
+   },
+   {
+    "label": "Arreglo personal",
+    "red": "Personal Grooming",
+    "level": 4
+   },
+   {
+    "label": "Burocracia",
+    "red": "Bureaucracy",
+    "level": 6
+   },
+   {
+    "label": "Contabilidad",
+    "red": "Accounting",
+    "level": 6
+   },
+   {
+    "label": "Deducción",
+    "red": "Deduction",
+    "level": 6
+   },
+   {
+    "label": "Lectura de labios",
+    "red": "Lip Reading",
+    "level": 6
+   },
+   {
+    "label": "Negocios",
+    "red": "Business",
+    "level": 6
+   }
+  ],
+  "edgerunnerSkills": [
+   {
+    "label": "Atletismo",
+    "red": "Athletics"
+   },
+   {
+    "label": "Concentración",
+    "red": "Concentration"
+   },
+   {
+    "label": "Conversación",
+    "red": "Conversation"
+   },
+   {
+    "label": "Cultura",
+    "red": "Education"
+   },
+   {
+    "label": "Evasión",
+    "red": "Evasion"
+   },
+   {
+    "label": "Experto local (tu hogar)",
+    "red": "Local Expert (Your Home)"
+   },
+   {
+    "label": "Idioma (jerga callejera)",
+    "red": "Language (Streetslang)"
+   },
+   {
+    "label": "Pelea",
+    "red": "Brawling"
+   },
+   {
+    "label": "Percepción",
+    "red": "Perception"
+   },
+   {
+    "label": "Percepción humana",
+    "red": "Human Perception"
+   },
+   {
+    "label": "Persuasión",
+    "red": "Persuasion"
+   },
+   {
+    "label": "Primeros auxilios",
+    "red": "First Aid"
+   },
+   {
+    "label": "Sigilo",
+    "red": "Stealth"
+   },
+   {
+    "label": "Armas cortas",
+    "red": "Handgun"
+   },
+   {
+    "label": "Arreglo personal",
+    "red": "Personal Grooming"
+   },
+   {
+    "label": "Burocracia",
+    "red": "Bureaucracy"
+   },
+   {
+    "label": "Contabilidad",
+    "red": "Accounting"
+   },
+   {
+    "label": "Deducción",
+    "red": "Deduction"
+   },
+   {
+    "label": "Lectura de labios",
+    "red": "Lip Reading"
+   },
+   {
+    "label": "Negocios",
+    "red": "Business"
+   }
+  ],
+  "weapons": [
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_weapons.Item.4L05qIZxsy0uDSHz",
+      "name": "Pistola muy pesada",
+      "qty": 1,
+      "note": ""
+     }
+    ]
+   },
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_ammo.Item.NQP4I9heyv9fXj46",
+      "name": "Munición básica de pistola MP",
+      "qty": 50,
+      "note": ""
+     }
+    ]
+   },
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_armor.Item.uaN9WukkezPfcutU",
+      "name": "Blindaje ligero en el cuerpo",
+      "qty": 1,
+      "note": "(CP11)"
+     }
+    ]
+   },
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_armor.Item.Bsalv6m63PhmHkMm",
+      "name": "Blindaje ligero en la cabeza",
+      "qty": 1,
+      "note": "(CP11)"
+     }
+    ]
+   }
+  ],
+  "gear": [
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_gear.Item.DO2Nzq3dw0R72dpm",
+      "name": "Comunicador de radio",
+      "qty": 4,
+      "note": ""
+     }
+    ]
+   },
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_gear.Item.CLaUNQ7cqa05XfFg",
+      "name": "Codificador/Descodificador",
+      "qty": 1,
+      "note": ""
+     }
+    ]
+   },
+   {
+    "clothing": {
+     "style": "Ropa de negocios",
+     "items": [
+      {
+       "type": "calzado",
+       "qty": 1
+      },
+      {
+       "type": "chaqueta",
+       "qty": 1
+      },
+      {
+       "type": "parte de abajo",
+       "qty": 1
+      },
+      {
+       "type": "gafas espejadas",
+       "qty": 1
+      },
+      {
+       "type": "parte de arriba",
+       "qty": 1
+      },
+      {
+       "type": "joyas",
+       "qty": 2
+      }
+     ]
+    },
+    "text": "Ropa de negocios: calzado, chaqueta, parte de abajo, gafas espejadas, parte de arriba, joyas x2"
+   }
+  ],
+  "cyberware": [
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_cyberware.Item.2AE8D8ZdRA815IZK",
+      "name": "Agente interno",
+      "qty": 1,
+      "note": ""
+     }
+    ]
+   },
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_cyberware.Item.OhW1h2rwb7lvJPs3",
+      "name": "Antitoxinas",
+      "qty": 1,
+      "note": ""
+     },
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_cyberware.Item.1vcWKBzXQuBkJ3Dl",
+      "name": "filtros nasales",
+      "qty": 1,
+      "note": ""
+     }
+    ]
+   },
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_cyberware.Item.0d2bEozOFhfPgkUP",
+      "name": "Biomonitor",
+      "qty": 1,
+      "note": ""
+     },
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_cyberware.Item.opzHe5mz24EwqNCM",
+      "name": "tecnopelo",
+      "qty": 1,
+      "note": ""
+     }
+    ]
+   },
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_cyberware.Item.hsoSD662cLKvHKZJ",
+      "name": "Equipo de ciberaudio",
+      "qty": 1,
+      "note": ""
+     }
+    ]
+   }
+  ],
+  "cyberwareHumanityLoss": 12,
+  "cyberwareEmpLoss": -2,
+  "lifepathPage": "9ff75382798a0f87",
+  "lifepath": [
+   {
+    "type": "table",
+    "id": "t0",
+    "title": "¿Para qué tipo de corpo trabajas?",
+    "instruction": "Tira 1d10 o colabora con el DJ para elegir uno.",
+    "die": "1d10",
+    "columns": [
+     "Tipo"
+    ],
+    "rows": [
+     {
+      "min": 1,
+      "max": 1,
+      "cells": [
+       "Financiera."
+      ]
+     },
+     {
+      "min": 2,
+      "max": 2,
+      "cells": [
+       "Medio de comunicación."
+      ]
+     },
+     {
+      "min": 3,
+      "max": 3,
+      "cells": [
+       "Cibertecnología y tecnologías médicas."
+      ]
+     },
+     {
+      "min": 4,
+      "max": 4,
+      "cells": [
+       "Farmacéutica y biotecnológica."
+      ]
+     },
+     {
+      "min": 5,
+      "max": 5,
+      "cells": [
+       "Alimentos, ropa u otros artículos de consumo general."
+      ]
+     },
+     {
+      "min": 6,
+      "max": 6,
+      "cells": [
+       "Producción de energía."
+      ]
+     },
+     {
+      "min": 7,
+      "max": 7,
+      "cells": [
+       "Electrónica personal y robótica."
+      ]
+     },
+     {
+      "min": 8,
+      "max": 8,
+      "cells": [
+       "Servicios corporativos."
+      ]
+     },
+     {
+      "min": 9,
+      "max": 9,
+      "cells": [
+       "Servicios al consumidor."
+      ]
+     },
+     {
+      "min": 10,
+      "max": 10,
+      "cells": [
+       "Inmuebles y construcción."
+      ]
+     }
+    ]
+   },
+   {
+    "type": "table",
+    "id": "t1",
+    "title": "¿Para qué departamento trabajas?",
+    "instruction": "Tira 1d6 o elige un resultado.",
+    "die": "1d6",
+    "columns": [
+     "Departamento"
+    ],
+    "rows": [
+     {
+      "min": 1,
+      "max": 1,
+      "cells": [
+       "Compras."
+      ]
+     },
+     {
+      "min": 2,
+      "max": 2,
+      "cells": [
+       "Producción."
+      ]
+     },
+     {
+      "min": 3,
+      "max": 3,
+      "cells": [
+       "Investigación y desarrollo."
+      ]
+     },
+     {
+      "min": 4,
+      "max": 4,
+      "cells": [
+       "Recursos humanos."
+      ]
+     },
+     {
+      "min": 5,
+      "max": 5,
+      "cells": [
+       "Relaciones públicas/publicidad/propaganda."
+      ]
+     },
+     {
+      "min": 6,
+      "max": 6,
+      "cells": [
+       "Fusiones y adquisiciones."
+      ]
+     }
+    ]
+   },
+   {
+    "type": "table",
+    "id": "t2",
+    "title": "¿Cómo de buena/mala es tu corpo?",
+    "instruction": "Tira 1d6 o elige un resultado.",
+    "die": "1d6",
+    "columns": [
+     "Buena/mala"
+    ],
+    "rows": [
+     {
+      "min": 1,
+      "max": 1,
+      "cells": [
+       "Trabaja siempre por el bien, apoyando plenamente las prácticas éticas."
+      ]
+     },
+     {
+      "min": 2,
+      "max": 2,
+      "cells": [
+       "Opera como un negocio justo y honesto todo el tiempo."
+      ]
+     },
+     {
+      "min": 3,
+      "max": 3,
+      "cells": [
+       "A veces comete algún desliz y hace cosas poco éticas, pero es raro."
+      ]
+     },
+     {
+      "min": 4,
+      "max": 4,
+      "cells": [
+       "Dispuesta a doblegar las reglas para conseguir lo que necesita."
+      ]
+     },
+     {
+      "min": 5,
+      "max": 5,
+      "cells": [
+       "Despiadada y centrada en los beneficios, dispuesta a hacer cosas malas."
+      ]
+     },
+     {
+      "min": 6,
+      "max": 6,
+      "cells": [
+       "Totalmente malvada. Se involucra en negocios ilegales y poco éticos todo el tiempo."
+      ]
+     }
+    ]
+   },
+   {
+    "type": "table",
+    "id": "t3",
+    "title": "¿Dónde se encuentra tu corpo?",
+    "instruction": "Tira 1d6 o elige un resultado.",
+    "die": "1d6",
+    "columns": [
+     "¿Dónde?"
+    ],
+    "rows": [
+     {
+      "min": 1,
+      "max": 1,
+      "cells": [
+       "Una ciudad."
+      ]
+     },
+     {
+      "min": 2,
+      "max": 2,
+      "cells": [
+       "Varias ciudades."
+      ]
+     },
+     {
+      "min": 3,
+      "max": 3,
+      "cells": [
+       "A nivel estatal."
+      ]
+     },
+     {
+      "min": 4,
+      "max": 4,
+      "cells": [
+       "A nivel nacional."
+      ]
+     },
+     {
+      "min": 5,
+      "max": 5,
+      "cells": [
+       "Internacional, con oficinas en algunas ciudades importantes."
+      ]
+     },
+     {
+      "min": 6,
+      "max": 6,
+      "cells": [
+       "Internacional, con oficinas en todas partes."
+      ]
+     }
+    ]
+   },
+   {
+    "type": "table",
+    "id": "t4",
+    "title": "¿Quién tiene en el punto de mira a tu corpo?",
+    "instruction": "Tira 1d6 o elige un resultado.",
+    "die": "1d6",
+    "columns": [
+     "¿Quién?"
+    ],
+    "rows": [
+     {
+      "min": 1,
+      "max": 1,
+      "cells": [
+       "Corpo rival en la misma industria."
+      ]
+     },
+     {
+      "min": 2,
+      "max": 2,
+      "cells": [
+       "Las fuerzas del orden os vigilan."
+      ]
+     },
+     {
+      "min": 3,
+      "max": 3,
+      "cells": [
+       "Los medios de comunicación locales quieren derribaros."
+      ]
+     },
+     {
+      "min": 4,
+      "max": 4,
+      "cells": [
+       "Diferentes departamentos de tu propia compañía se pelean entre sí."
+      ]
+     },
+     {
+      "min": 5,
+      "max": 5,
+      "cells": [
+       "Al gobierno local no le gusta tu corporación."
+      ]
+     },
+     {
+      "min": 6,
+      "max": 6,
+      "cells": [
+       "Las corporaciones internacionales os están estudiando para una adquisición hostil."
+      ]
+     }
+    ]
+   },
+   {
+    "type": "table",
+    "id": "t5",
+    "title": "Situación actual con tu jefe",
+    "instruction": "Tira 1d6 o elige un resultado.",
+    "die": "1d6",
+    "columns": [
+     "Situación actual"
+    ],
+    "rows": [
+     {
+      "min": 1,
+      "max": 1,
+      "cells": [
+       "Tu jefe es tu mentor, pero ten cuidado con sus enemigos."
+      ]
+     },
+     {
+      "min": 2,
+      "max": 2,
+      "cells": [
+       "Tu jefe te da carta blanca y no quiere saber lo que estás haciendo."
+      ]
+     },
+     {
+      "min": 3,
+      "max": 3,
+      "cells": [
+       "Tu jefe es un microgestor que intenta entrometerse en tu trabajo."
+      ]
+     },
+     {
+      "min": 4,
+      "max": 4,
+      "cells": [
+       "Tu jefe es un psicópata cuyos impredecibles arrebatos se compensan con una paranoia silenciosa."
+      ]
+     },
+     {
+      "min": 5,
+      "max": 5,
+      "cells": [
+       "Tu jefe es genial y te cubre la espalda contra los rivales."
+      ]
+     },
+     {
+      "min": 6,
+      "max": 6,
+      "cells": [
+       "Tu jefe se siente amenazado por tu meteórico ascenso y planea acabar contigo."
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "key": "solo",
+  "name": "Mercenario",
+  "itemId": "I4qtphsiVa4rj9U8",
+  "uuid": "Compendium.cyberpunk-red-core.core_roles.Item.I4qtphsiVa4rj9U8",
+  "statTable": [
+   {
+    "int": 6,
+    "ref": 7,
+    "dex": 7,
+    "tech": 3,
+    "cool": 8,
+    "will": 6,
+    "luck": 5,
+    "move": 5,
+    "body": 6,
+    "emp": 5
+   },
+   {
+    "int": 7,
+    "ref": 8,
+    "dex": 6,
+    "tech": 3,
+    "cool": 6,
+    "will": 6,
+    "luck": 7,
+    "move": 5,
+    "body": 6,
+    "emp": 6
+   },
+   {
+    "int": 5,
+    "ref": 8,
+    "dex": 7,
+    "tech": 4,
+    "cool": 7,
+    "will": 7,
+    "luck": 6,
+    "move": 7,
+    "body": 8,
+    "emp": 5
+   },
+   {
+    "int": 5,
+    "ref": 8,
+    "dex": 6,
+    "tech": 4,
+    "cool": 6,
+    "will": 7,
+    "luck": 6,
+    "move": 5,
+    "body": 7,
+    "emp": 6
+   },
+   {
+    "int": 6,
+    "ref": 6,
+    "dex": 7,
+    "tech": 5,
+    "cool": 7,
+    "will": 6,
+    "luck": 7,
+    "move": 6,
+    "body": 8,
+    "emp": 4
+   },
+   {
+    "int": 7,
+    "ref": 7,
+    "dex": 6,
+    "tech": 5,
+    "cool": 7,
+    "will": 6,
+    "luck": 6,
+    "move": 7,
+    "body": 7,
+    "emp": 5
+   },
+   {
+    "int": 7,
+    "ref": 7,
+    "dex": 6,
+    "tech": 5,
+    "cool": 6,
+    "will": 7,
+    "luck": 7,
+    "move": 6,
+    "body": 6,
+    "emp": 6
+   },
+   {
+    "int": 7,
+    "ref": 8,
+    "dex": 7,
+    "tech": 5,
+    "cool": 6,
+    "will": 6,
+    "luck": 5,
+    "move": 6,
+    "body": 8,
+    "emp": 4
+   },
+   {
+    "int": 7,
+    "ref": 7,
+    "dex": 6,
+    "tech": 4,
+    "cool": 6,
+    "will": 6,
+    "luck": 6,
+    "move": 5,
+    "body": 6,
+    "emp": 5
+   },
+   {
+    "int": 6,
+    "ref": 6,
+    "dex": 8,
+    "tech": 5,
+    "cool": 6,
+    "will": 6,
+    "luck": 5,
+    "move": 6,
+    "body": 6,
+    "emp": 5
+   }
+  ],
+  "streetratSkills": [
+   {
+    "label": "Atletismo",
+    "red": "Athletics",
+    "level": 2
+   },
+   {
+    "label": "Concentración",
+    "red": "Concentration",
+    "level": 2
+   },
+   {
+    "label": "Conversación",
+    "red": "Conversation",
+    "level": 2
+   },
+   {
+    "label": "Cultura",
+    "red": "Education",
+    "level": 2
+   },
+   {
+    "label": "Evasión",
+    "red": "Evasion",
+    "level": 6
+   },
+   {
+    "label": "Experto local (tu hogar)",
+    "red": "Local Expert (Your Home)",
+    "level": 2
+   },
+   {
+    "label": "Idioma (jerga callejera)",
+    "red": "Language (Streetslang)",
+    "level": 2
+   },
+   {
+    "label": "Pelea",
+    "red": "Brawling",
+    "level": 2
+   },
+   {
+    "label": "Percepción",
+    "red": "Perception",
+    "level": 6
+   },
+   {
+    "label": "Percepción humana",
+    "red": "Human Perception",
+    "level": 2
+   },
+   {
+    "label": "Persuasión",
+    "red": "Persuasion",
+    "level": 2
+   },
+   {
+    "label": "Primeros auxilios",
+    "red": "First Aid",
+    "level": 6
+   },
+   {
+    "label": "Sigilo",
+    "red": "Stealth",
+    "level": 2
+   },
+   {
+    "label": "Arma cuerpo a cuerpo",
+    "red": "Melee Weapon",
+    "level": 6
+   },
+   {
+    "label": "Armas cortas",
+    "red": "Handgun",
+    "level": 6
+   },
+   {
+    "label": "Armas largas",
+    "red": "Shoulder Arms",
+    "level": 6
+   },
+   {
+    "label": "Disparo automático",
+    "red": "Autofire",
+    "level": 6
+   },
+   {
+    "label": "Interrogatorio",
+    "red": "Interrogation",
+    "level": 6
+   },
+   {
+    "label": "Resistir torturas/drogas",
+    "red": "Resist Torture/Drugs",
+    "level": 6
+   },
+   {
+    "label": "Tácticas",
+    "red": "Tactics",
+    "level": 6
+   }
+  ],
+  "edgerunnerSkills": [
+   {
+    "label": "Atletismo",
+    "red": "Athletics"
+   },
+   {
+    "label": "Concentración",
+    "red": "Concentration"
+   },
+   {
+    "label": "Conversación",
+    "red": "Conversation"
+   },
+   {
+    "label": "Cultura",
+    "red": "Education"
+   },
+   {
+    "label": "Evasión",
+    "red": "Evasion"
+   },
+   {
+    "label": "Experto local (tu hogar)",
+    "red": "Local Expert (Your Home)"
+   },
+   {
+    "label": "Idioma (jerga callejera)",
+    "red": "Language (Streetslang)"
+   },
+   {
+    "label": "Pelea",
+    "red": "Brawling"
+   },
+   {
+    "label": "Percepción",
+    "red": "Perception"
+   },
+   {
+    "label": "Percepción humana",
+    "red": "Human Perception"
+   },
+   {
+    "label": "Persuasión",
+    "red": "Persuasion"
+   },
+   {
+    "label": "Primeros auxilios",
+    "red": "First Aid"
+   },
+   {
+    "label": "Sigilo",
+    "red": "Stealth"
+   },
+   {
+    "label": "Arma cuerpo a cuerpo",
+    "red": "Melee Weapon"
+   },
+   {
+    "label": "Armas cortas",
+    "red": "Handgun"
+   },
+   {
+    "label": "Armas largas",
+    "red": "Shoulder Arms"
+   },
+   {
+    "label": "Disparo automático",
+    "red": "Autofire"
+   },
+   {
+    "label": "Interrogatorio",
+    "red": "Interrogation"
+   },
+   {
+    "label": "Resistir torturas/drogas",
+    "red": "Resist Torture/Drugs"
+   },
+   {
+    "label": "Tácticas",
+    "red": "Tactics"
+   }
+  ],
+  "weapons": [
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_weapons.Item.QrQNdHTuEDxrfIxS",
+      "name": "Fusil de asalto",
+      "qty": 1,
+      "note": ""
+     }
+    ]
+   },
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_weapons.Item.4L05qIZxsy0uDSHz",
+      "name": "Pistola muy pesada",
+      "qty": 1,
+      "note": ""
+     }
+    ]
+   },
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_weapons.Item.g2d7I3KLRXXbMr1g",
+      "name": "Arma cuerpo a cuerpo pesada",
+      "qty": 1,
+      "note": ""
+     },
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_armor.Item.Bg1YEeF25HhfrzOG",
+      "name": "escudo antibalas",
+      "qty": 1,
+      "note": ""
+     }
+    ]
+   },
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_ammo.Item.NQP4I9heyv9fXj46",
+      "name": "Munición básica de pistola MP",
+      "qty": 30,
+      "note": ""
+     }
+    ]
+   },
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_ammo.Item.J3NfMgRdqoUwFDDs",
+      "name": "Munición básica de fusil",
+      "qty": 70,
+      "note": ""
+     }
+    ]
+   },
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_armor.Item.uaN9WukkezPfcutU",
+      "name": "Blindaje ligero en el cuerpo",
+      "qty": 1,
+      "note": "(CP11)"
+     }
+    ]
+   },
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_armor.Item.Bsalv6m63PhmHkMm",
+      "name": "Blindaje ligero en la cabeza",
+      "qty": 1,
+      "note": "(CP11)"
+     }
+    ]
+   }
+  ],
+  "gear": [
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_gear.Item.GqYz689ddSKQHMen",
+      "name": "Agente",
+      "qty": 1,
+      "note": ""
+     }
+    ]
+   },
+   {
+    "clothing": {
+     "style": "Ropa de deporte",
+     "items": [
+      {
+       "type": "calzado",
+       "qty": 2
+      },
+      {
+       "type": "chaqueta",
+       "qty": 3
+      },
+      {
+       "type": "gafas espejadas",
+       "qty": 1
+      },
+      {
+       "type": "parte de abajo",
+       "qty": 2
+      },
+      {
+       "type": "parte de arriba",
+       "qty": 2
+      }
+     ]
+    },
+    "text": "Ropa de deporte: calzado x2, chaqueta x3, gafas espejadas, parte de abajo x2, parte de arriba x2"
+   }
+  ],
+  "cyberware": [
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_cyberware.Item.0d2bEozOFhfPgkUP",
+      "name": "Biomonitor",
+      "qty": 1,
+      "note": ""
+     }
+    ]
+   },
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_cyberware.Item.UX79WfUt7Yungbx7",
+      "name": "Cibervelocidad Sandevistan",
+      "qty": 1,
+      "note": ""
+     },
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_cyberware.Item.GUT0BBUD2iKpPRoM",
+      "name": "garras",
+      "qty": 1,
+      "note": ""
+     }
+    ]
+   },
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_cyberware.Item.ju5Rq9rOe2lpDKKl",
+      "name": "Conexión neuronal",
+      "qty": 1,
+      "note": ""
+     }
+    ]
+   }
+  ],
+  "cyberwareHumanityLoss": 14,
+  "cyberwareEmpLoss": -2,
+  "lifepathPage": "0a20fca66cd568e0",
+  "lifepath": [
+   {
+    "type": "table",
+    "id": "t0",
+    "title": "¿Qué tipo de mercenario eres?",
+    "instruction": "Tira 1d6 o colabora con tu DJ para elegir uno.",
+    "die": "1d6",
+    "columns": [
+     "Tipo"
+    ],
+    "rows": [
+     {
+      "min": 1,
+      "max": 1,
+      "cells": [
+       "Guardaespaldas."
+      ]
+     },
+     {
+      "min": 2,
+      "max": 2,
+      "cells": [
+       "Músculo de la calle de alquiler."
+      ]
+     },
+     {
+      "min": 3,
+      "max": 3,
+      "cells": [
+       "Empleado corporativo que acepta trabajos por su cuenta."
+      ]
+     },
+     {
+      "min": 4,
+      "max": 4,
+      "cells": [
+       "Agente de operaciones encubiertas corporativo o independiente."
+      ]
+     },
+     {
+      "min": 5,
+      "max": 5,
+      "cells": [
+       "Justiciero local de alquiler."
+      ]
+     },
+     {
+      "min": 6,
+      "max": 6,
+      "cells": [
+       "Asesino/tirador de alquiler."
+      ]
+     }
+    ]
+   },
+   {
+    "type": "table",
+    "id": "t1",
+    "title": "¿Cómo es tu brújula moral?",
+    "instruction": "Tira 1d6 o elige un resultado.",
+    "die": "1d6",
+    "columns": [
+     "Brújula moral"
+    ],
+    "rows": [
+     {
+      "min": 1,
+      "max": 1,
+      "cells": [
+       "Siempre trabajas para el bien, tratando de eliminar a los «tipos malos»."
+      ]
+     },
+     {
+      "min": 2,
+      "max": 2,
+      "cells": [
+       "Siempre respetas a los inocentes (ancianos, mujeres, niños, mascotas)."
+      ]
+     },
+     {
+      "min": 3,
+      "max": 3,
+      "cells": [
+       "A veces cometes algún desliz y haces cosas poco éticas o malas, pero es raro."
+      ]
+     },
+     {
+      "min": 4,
+      "max": 4,
+      "cells": [
+       "Despiadado y centrado en tu beneficio; trabajas para quien sea y aceptas cualquier trabajo por dinero."
+      ]
+     },
+     {
+      "min": 5,
+      "max": 5,
+      "cells": [
+       "Dispuesto a retorcer las reglas (y la ley) para hacer el trabajo."
+      ]
+     },
+     {
+      "min": 6,
+      "max": 6,
+      "cells": [
+       "Totalmente malvado. Te dedicas a trabajos ilegales y poco éticos todo el tiempo; de hecho, los disfrutas."
+      ]
+     }
+    ]
+   },
+   {
+    "type": "table",
+    "id": "t2",
+    "title": "¿Quién te tiene en el punto de mira?",
+    "instruction": "Tira 1d6 o elige un resultado.",
+    "die": "1d6",
+    "columns": [
+     "¿Quién?"
+    ],
+    "rows": [
+     {
+      "min": 1,
+      "max": 1,
+      "cells": [
+       "Una corporación a la que puedes haber cabreado."
+      ]
+     },
+     {
+      "min": 2,
+      "max": 2,
+      "cells": [
+       "Una pandilla contra la que ya te has enfrentado."
+      ]
+     },
+     {
+      "min": 3,
+      "max": 3,
+      "cells": [
+       "Policías corruptos o policías que erróneamente creen que eres culpable de algo."
+      ]
+     },
+     {
+      "min": 4,
+      "max": 4,
+      "cells": [
+       "Un mercenario rival de otra corpo."
+      ]
+     },
+     {
+      "min": 5,
+      "max": 5,
+      "cells": [
+       "Un arreglador que te considera una amenaza."
+      ]
+     },
+     {
+      "min": 6,
+      "max": 6,
+      "cells": [
+       "Un mercenario rival que te considera su némesis."
+      ]
+     }
+    ]
+   },
+   {
+    "type": "table",
+    "id": "t3",
+    "title": "¿Cuál es tu territorio operativo?",
+    "instruction": "Tira 1d6 o elige un resultado.",
+    "die": "1d6",
+    "columns": [
+     "Territorio"
+    ],
+    "rows": [
+     {
+      "min": 1,
+      "max": 1,
+      "cells": [
+       "Una zona corporativa."
+      ]
+     },
+     {
+      "min": 2,
+      "max": 2,
+      "cells": [
+       "Zonas de combate."
+      ]
+     },
+     {
+      "min": 3,
+      "max": 3,
+      "cells": [
+       "Toda la ciudad."
+      ]
+     },
+     {
+      "min": 4,
+      "max": 4,
+      "cells": [
+       "El territorio de una sola corporación."
+      ]
+     },
+     {
+      "min": 5,
+      "max": 5,
+      "cells": [
+       "El territorio de un arreglador o contacto concreto."
+      ]
+     },
+     {
+      "min": 6,
+      "max": 6,
+      "cells": [
+       "Dondequiera que el dinero te lleve."
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "key": "netrunner",
+  "name": "Netrunner",
+  "itemId": "g5S5E8UG1QJ4yFsp",
+  "uuid": "Compendium.cyberpunk-red-core.core_roles.Item.g5S5E8UG1QJ4yFsp",
+  "statTable": [
+   {
+    "int": 5,
+    "ref": 8,
+    "dex": 7,
+    "tech": 7,
+    "cool": 7,
+    "will": 4,
+    "luck": 8,
+    "move": 7,
+    "body": 7,
+    "emp": 4
+   },
+   {
+    "int": 5,
+    "ref": 6,
+    "dex": 7,
+    "tech": 5,
+    "cool": 8,
+    "will": 3,
+    "luck": 8,
+    "move": 7,
+    "body": 5,
+    "emp": 5
+   },
+   {
+    "int": 5,
+    "ref": 6,
+    "dex": 8,
+    "tech": 6,
+    "cool": 6,
+    "will": 4,
+    "luck": 7,
+    "move": 6,
+    "body": 7,
+    "emp": 4
+   },
+   {
+    "int": 5,
+    "ref": 7,
+    "dex": 7,
+    "tech": 7,
+    "cool": 7,
+    "will": 5,
+    "luck": 8,
+    "move": 6,
+    "body": 5,
+    "emp": 5
+   },
+   {
+    "int": 5,
+    "ref": 8,
+    "dex": 8,
+    "tech": 5,
+    "cool": 7,
+    "will": 3,
+    "luck": 7,
+    "move": 5,
+    "body": 5,
+    "emp": 6
+   },
+   {
+    "int": 6,
+    "ref": 6,
+    "dex": 6,
+    "tech": 7,
+    "cool": 8,
+    "will": 4,
+    "luck": 7,
+    "move": 7,
+    "body": 6,
+    "emp": 6
+   },
+   {
+    "int": 6,
+    "ref": 6,
+    "dex": 6,
+    "tech": 7,
+    "cool": 6,
+    "will": 5,
+    "luck": 7,
+    "move": 7,
+    "body": 7,
+    "emp": 6
+   },
+   {
+    "int": 5,
+    "ref": 7,
+    "dex": 8,
+    "tech": 6,
+    "cool": 8,
+    "will": 4,
+    "luck": 8,
+    "move": 5,
+    "body": 7,
+    "emp": 4
+   },
+   {
+    "int": 7,
+    "ref": 6,
+    "dex": 7,
+    "tech": 7,
+    "cool": 6,
+    "will": 3,
+    "luck": 6,
+    "move": 5,
+    "body": 6,
+    "emp": 5
+   },
+   {
+    "int": 7,
+    "ref": 8,
+    "dex": 6,
+    "tech": 6,
+    "cool": 6,
+    "will": 4,
+    "luck": 7,
+    "move": 7,
+    "body": 5,
+    "emp": 6
+   }
+  ],
+  "streetratSkills": [
+   {
+    "label": "Atletismo",
+    "red": "Athletics",
+    "level": 2
+   },
+   {
+    "label": "Concentración",
+    "red": "Concentration",
+    "level": 2
+   },
+   {
+    "label": "Conversación",
+    "red": "Conversation",
+    "level": 2
+   },
+   {
+    "label": "Cultura",
+    "red": "Education",
+    "level": 6
+   },
+   {
+    "label": "Evasión",
+    "red": "Evasion",
+    "level": 6
+   },
+   {
+    "label": "Experto local (tu hogar)",
+    "red": "Local Expert (Your Home)",
+    "level": 2
+   },
+   {
+    "label": "Idioma (jerga callejera)",
+    "red": "Language (Streetslang)",
+    "level": 2
+   },
+   {
+    "label": "Pelea",
+    "red": "Brawling",
+    "level": 2
+   },
+   {
+    "label": "Percepción",
+    "red": "Perception",
+    "level": 2
+   },
+   {
+    "label": "Percepción humana",
+    "red": "Human Perception",
+    "level": 2
+   },
+   {
+    "label": "Persuasión",
+    "red": "Persuasion",
+    "level": 2
+   },
+   {
+    "label": "Primeros auxilios",
+    "red": "First Aid",
+    "level": 2
+   },
+   {
+    "label": "Sigilo",
+    "red": "Stealth",
+    "level": 6
+   },
+   {
+    "label": "Armas cortas",
+    "red": "Handgun",
+    "level": 6
+   },
+   {
+    "label": "Buscar en bibliotecas",
+    "red": "Library Search",
+    "level": 6
+   },
+   {
+    "label": "Cibertecnología",
+    "red": "Cybertech",
+    "level": 6
+   },
+   {
+    "label": "Criptografía",
+    "red": "Cryptography",
+    "level": 6
+   },
+   {
+    "label": "Electrónica/Seguridad",
+    "red": "Electronics/Security Tech",
+    "level": 6
+   },
+   {
+    "label": "Mecánica básica",
+    "red": "Basic Tech",
+    "level": 6
+   },
+   {
+    "label": "Ocultar/Revelar objeto",
+    "red": "Conceal/Reveal Object",
+    "level": 6
+   }
+  ],
+  "edgerunnerSkills": [
+   {
+    "label": "Atletismo",
+    "red": "Athletics"
+   },
+   {
+    "label": "Concentración",
+    "red": "Concentration"
+   },
+   {
+    "label": "Conversación",
+    "red": "Conversation"
+   },
+   {
+    "label": "Cultura",
+    "red": "Education"
+   },
+   {
+    "label": "Evasión",
+    "red": "Evasion"
+   },
+   {
+    "label": "Experto local (tu hogar)",
+    "red": "Local Expert (Your Home)"
+   },
+   {
+    "label": "Idioma (jerga callejera)",
+    "red": "Language (Streetslang)"
+   },
+   {
+    "label": "Pelea",
+    "red": "Brawling"
+   },
+   {
+    "label": "Percepción",
+    "red": "Perception"
+   },
+   {
+    "label": "Percepción humana",
+    "red": "Human Perception"
+   },
+   {
+    "label": "Persuasión",
+    "red": "Persuasion"
+   },
+   {
+    "label": "Primeros auxilios",
+    "red": "First Aid"
+   },
+   {
+    "label": "Sigilo",
+    "red": "Stealth"
+   },
+   {
+    "label": "Armas cortas",
+    "red": "Handgun"
+   },
+   {
+    "label": "Buscar en bibliotecas",
+    "red": "Library Search"
+   },
+   {
+    "label": "Cibertecnología",
+    "red": "Cybertech"
+   },
+   {
+    "label": "Criptografía",
+    "red": "Cryptography"
+   },
+   {
+    "label": "Electrónica/Seguridad",
+    "red": "Electronics/Security Tech"
+   },
+   {
+    "label": "Mecánica básica",
+    "red": "Basic Tech"
+   },
+   {
+    "label": "Ocultar/Revelar objeto",
+    "red": "Conceal/Reveal Object"
+   }
+  ],
+  "weapons": [
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_weapons.Item.4L05qIZxsy0uDSHz",
+      "name": "Pistola muy pesada",
+      "qty": 1,
+      "note": ""
+     }
+    ]
+   },
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_ammo.Item.NQP4I9heyv9fXj46",
+      "name": "Munición básica de pistola MP",
+      "qty": 30,
+      "note": ""
+     }
+    ]
+   },
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_armor.Item.uaN9WukkezPfcutU",
+      "name": "Blindaje ligero en el cuerpo",
+      "qty": 1,
+      "note": "(CP11)"
+     }
+    ]
+   },
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_armor.Item.Bsalv6m63PhmHkMm",
+      "name": "Blindaje ligero en la cabeza",
+      "qty": 1,
+      "note": "(CP11)"
+     }
+    ]
+   }
+  ],
+  "gear": [
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_gear.Item.GqYz689ddSKQHMen",
+      "name": "Agente",
+      "qty": 1,
+      "note": ""
+     }
+    ]
+   },
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_gear.Item.0T5Yjy0asGttmbXP",
+      "name": "Ciberterminal",
+      "qty": 1,
+      "note": "(7 ranuras)"
+     }
+    ]
+   },
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_gear.Item.ECoCsPyfIEBCSggM",
+      "name": "Gafas de realidad virtual",
+      "qty": 1,
+      "note": ""
+     }
+    ]
+   },
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_programs.Item.yommG7jwlXzoyf8Z",
+      "name": "Armadura",
+      "qty": 1,
+      "note": ""
+     }
+    ],
+    "prefix": "Programa"
+   },
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_programs.Item.iHUrp2OkBZb3Ugf8",
+      "name": "Espada",
+      "qty": 1,
+      "note": ""
+     }
+    ],
+    "prefix": "Programa"
+   },
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_programs.Item.KwNqQrQpLzbhpDNR",
+      "name": "Te veo",
+      "qty": 1,
+      "note": ""
+     },
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_programs.Item.h6lsYlaAZLd6eoo2",
+      "name": "Borrado",
+      "qty": 1,
+      "note": ""
+     }
+    ],
+    "prefix": "Programa"
+   },
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_programs.Item.iHUrp2OkBZb3Ugf8",
+      "name": "Espada",
+      "qty": 1,
+      "note": ""
+     },
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_programs.Item.4D6wNDXnBUKCbJTF",
+      "name": "Vrizzbolt",
+      "qty": 1,
+      "note": ""
+     }
+    ],
+    "prefix": "Programa"
+   },
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_programs.Item.SmwW6B3Qi6svIClB",
+      "name": "Gusano",
+      "qty": 1,
+      "note": ""
+     },
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_programs.Item.iHUrp2OkBZb3Ugf8",
+      "name": "Espada",
+      "qty": 1,
+      "note": ""
+     }
+    ],
+    "prefix": "Programa"
+   },
+   {
+    "clothing": {
+     "style": "Ropa normal elegante",
+     "items": [
+      {
+       "type": "parte de arriba",
+       "qty": 10
+      }
+     ]
+    },
+    "text": "Ropa normal elegante: parte de arriba x10"
+   },
+   {
+    "clothing": {
+     "style": "Ropa de deporte",
+     "items": [
+      {
+       "type": "calzado",
+       "qty": 2
+      },
+      {
+       "type": "joyas",
+       "qty": 1
+      },
+      {
+       "type": "parte de abajo",
+       "qty": 2
+      }
+     ]
+    },
+    "text": "Ropa de deporte: calzado x2, joyas, parte de abajo x2"
+   },
+   {
+    "clothing": {
+     "style": "Tendencias urbanas",
+     "items": [
+      {
+       "type": "chaqueta",
+       "qty": 1
+      }
+     ]
+    },
+    "text": "Tendencias urbanas: chaqueta"
+   }
+  ],
+  "cyberware": [
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_cyberware.Item.KofoAolDFb3rvpbL",
+      "name": "Conectores interface",
+      "qty": 1,
+      "note": ""
+     }
+    ]
+   },
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_cyberware.Item.ju5Rq9rOe2lpDKKl",
+      "name": "Conexión neuronal",
+      "qty": 1,
+      "note": ""
+     }
+    ]
+   },
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_cyberware.Item.NjcHWKjj6h2OE4Kb",
+      "name": "Lentes cambiantes",
+      "qty": 1,
+      "note": ""
+     }
+    ]
+   }
+  ],
+  "cyberwareHumanityLoss": 14,
+  "cyberwareEmpLoss": -2,
+  "lifepathPage": "d4496efab4256ca0",
+  "lifepath": [
+   {
+    "type": "table",
+    "id": "t0",
+    "title": "¿Qué tipo de netrunner eres?",
+    "instruction": "Tira 1d6 o colabora con tu DJ para elegir uno.",
+    "die": "1d6",
+    "columns": [
+     "Tipo"
+    ],
+    "rows": [
+     {
+      "min": 1,
+      "max": 1,
+      "cells": [
+       "Un independiente que piratea por encargo."
+      ]
+     },
+     {
+      "min": 2,
+      "max": 2,
+      "cells": [
+       "Un «netrunner clónico» corporativo que piratea para una gran organización."
+      ]
+     },
+     {
+      "min": 3,
+      "max": 3,
+      "cells": [
+       "Un hacker activista interesado en romper sistemas y exponer a los tipos malos."
+      ]
+     },
+     {
+      "min": 4,
+      "max": 4,
+      "cells": [
+       "Simplemente te gusta romper sistemas por diversión."
+      ]
+     },
+     {
+      "min": 5,
+      "max": 5,
+      "cells": [
+       "Formas parte de un equipo regular de independientes."
+      ]
+     },
+     {
+      "min": 6,
+      "max": 6,
+      "cells": [
+       "Un hacker para un medio de comunicación, político o policía, que te contrata cuando lo necesita."
+      ]
+     }
+    ]
+   },
+   {
+    "type": "choice",
+    "id": "partner",
+    "title": "¿Tienes un socio, o trabajas solo?",
+    "options": [
+     {
+      "value": "partner",
+      "label": "Socio"
+     },
+     {
+      "value": "solo",
+      "label": "Solo"
+     }
+    ]
+   },
+   {
+    "type": "table",
+    "id": "t1",
+    "title": "Si tienes un socio, ¿quién es?",
+    "instruction": "Tira 1d6 o elige un resultado.",
+    "die": "1d6",
+    "columns": [
+     "¿Quién?"
+    ],
+    "rows": [
+     {
+      "min": 1,
+      "max": 1,
+      "cells": [
+       "Miembro de la familia."
+      ]
+     },
+     {
+      "min": 2,
+      "max": 2,
+      "cells": [
+       "Viejo amigo."
+      ]
+     },
+     {
+      "min": 3,
+      "max": 3,
+      "cells": [
+       "Posible pareja romántica."
+      ]
+     },
+     {
+      "min": 4,
+      "max": 4,
+      "cells": [
+       "Socio secreto que podría ser una IA renegada. Podría."
+      ]
+     },
+     {
+      "min": 5,
+      "max": 5,
+      "cells": [
+       "Socio secreto con conexiones con la mafia o alguna pandilla."
+      ]
+     },
+     {
+      "min": 6,
+      "max": 6,
+      "cells": [
+       "Socio secreto con conexiones corporativas."
+      ]
+     }
+    ],
+    "when": {
+     "id": "partner",
+     "value": "partner"
+    }
+   },
+   {
+    "type": "table",
+    "id": "t2",
+    "title": "¿Cómo es tu lugar de trabajo?",
+    "instruction": "Tira 1d6 o elige un resultado.",
+    "die": "1d6",
+    "columns": [
+     "Lugar de trabajo"
+    ],
+    "rows": [
+     {
+      "min": 1,
+      "max": 1,
+      "cells": [
+       "Hay pantallas por todas partes."
+      ]
+     },
+     {
+      "min": 2,
+      "max": 2,
+      "cells": [
+       "Tiene mejor aspecto en la virtualidad, lo juras."
+      ]
+     },
+     {
+      "min": 3,
+      "max": 3,
+      "cells": [
+       "Es una cama sucia cubierta de cables."
+      ]
+     },
+     {
+      "min": 4,
+      "max": 4,
+      "cells": [
+       "Corporativo, modular y utilitario."
+      ]
+     },
+     {
+      "min": 5,
+      "max": 5,
+      "cells": [
+       "Minimalista, limpio y organizado."
+      ]
+     },
+     {
+      "min": 6,
+      "max": 6,
+      "cells": [
+       "Se ha apoderado de todo tu espacio vital."
+      ]
+     }
+    ]
+   },
+   {
+    "type": "table",
+    "id": "t3",
+    "title": "¿Quiénes son algunos de tus otros clientes?",
+    "instruction": "Tira 1d6 o elige un resultado.",
+    "die": "1d6",
+    "columns": [
+     "¿Quién?"
+    ],
+    "rows": [
+     {
+      "min": 1,
+      "max": 1,
+      "cells": [
+       "Arregladores locales que te envían clientes."
+      ]
+     },
+     {
+      "min": 2,
+      "max": 2,
+      "cells": [
+       "Pandilleros locales que también protegen tu lugar de trabajo mientras barres la RED en busca de amenazas."
+      ]
+     },
+     {
+      "min": 3,
+      "max": 3,
+      "cells": [
+       "Ejecutivos corporativos que te usan para trabajar en «proyectos negros»."
+      ]
+     },
+     {
+      "min": 4,
+      "max": 4,
+      "cells": [
+       "Mercenarios locales u otros tipos de combatientes que te usan para mantener sus sistemas personales seguros."
+      ]
+     },
+     {
+      "min": 5,
+      "max": 5,
+      "cells": [
+       "Nómadas y arregladores locales que te usan para mantener sus sistemas familiares seguros."
+      ]
+     },
+     {
+      "min": 6,
+      "max": 6,
+      "cells": [
+       "Trabajas para ti mismo y vendes cualquier dato que encuentres en la RED."
+      ]
+     }
+    ]
+   },
+   {
+    "type": "table",
+    "id": "t4",
+    "title": "¿De dónde sacas tus programas?",
+    "instruction": "Tira 1d6 o elige un resultado.",
+    "die": "1d6",
+    "columns": [
+     "¿Dónde?"
+    ],
+    "rows": [
+     {
+      "min": 1,
+      "max": 1,
+      "cells": [
+       "Hurgando en viejas zonas urbanas abandonadas."
+      ]
+     },
+     {
+      "min": 2,
+      "max": 2,
+      "cells": [
+       "Los robas de otros netrunners a los que has frito el cerebro."
+      ]
+     },
+     {
+      "min": 3,
+      "max": 3,
+      "cells": [
+       "Tienes a un arreglador local que te suministra programas a cambio de trabajo de pirateo."
+      ]
+     },
+     {
+      "min": 4,
+      "max": 4,
+      "cells": [
+       "Unos ejecutivos corporativos te suministran programas a cambio de tus servicios."
+      ]
+     },
+     {
+      "min": 5,
+      "max": 5,
+      "cells": [
+       "Tienes puertas traseras en algunos almacenes corporativos."
+      ]
+     },
+     {
+      "min": 6,
+      "max": 6,
+      "cells": [
+       "Vas a los mercados nocturnos y consigues programas cuando puedes."
+      ]
+     }
+    ]
+   },
+   {
+    "type": "table",
+    "id": "t5",
+    "title": "¿Quién te tiene en el punto de mira?",
+    "instruction": "Tira 1d6 o elige un resultado.",
+    "die": "1d6",
+    "columns": [
+     "¿Quién?"
+    ],
+    "rows": [
+     {
+      "min": 1,
+      "max": 1,
+      "cells": [
+       "Crees que podría ser una IA renegada o un fantasma de la RED. En cualquier caso, nada bueno."
+      ]
+     },
+     {
+      "min": 2,
+      "max": 2,
+      "cells": [
+       "Netrunners rivales a los que no les gustas."
+      ]
+     },
+     {
+      "min": 3,
+      "max": 3,
+      "cells": [
+       "Corporativos que quieren que trabajes exclusivamente para ellos."
+      ]
+     },
+     {
+      "min": 4,
+      "max": 4,
+      "cells": [
+       "Policías que te consideran un «pirata informático» fuera de la ley y quieren arrestarte."
+      ]
+     },
+     {
+      "min": 5,
+      "max": 5,
+      "cells": [
+       "Antiguos clientes que creen que los engañaste."
+      ]
+     },
+     {
+      "min": 6,
+      "max": 6,
+      "cells": [
+       "Un arreglador u otro cliente que quiere tus servicios en exclusiva."
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "key": "nomad",
+  "name": "Nómada",
+  "itemId": "E2NkaEAx8Rv4nqWQ",
+  "uuid": "Compendium.cyberpunk-red-core.core_roles.Item.E2NkaEAx8Rv4nqWQ",
+  "statTable": [
+   {
+    "int": 6,
+    "ref": 6,
+    "dex": 8,
+    "tech": 3,
+    "cool": 6,
+    "will": 7,
+    "luck": 6,
+    "move": 6,
+    "body": 6,
+    "emp": 4
+   },
+   {
+    "int": 5,
+    "ref": 7,
+    "dex": 6,
+    "tech": 5,
+    "cool": 8,
+    "will": 8,
+    "luck": 8,
+    "move": 7,
+    "body": 5,
+    "emp": 4
+   },
+   {
+    "int": 5,
+    "ref": 8,
+    "dex": 6,
+    "tech": 3,
+    "cool": 8,
+    "will": 7,
+    "luck": 6,
+    "move": 5,
+    "body": 6,
+    "emp": 5
+   },
+   {
+    "int": 5,
+    "ref": 8,
+    "dex": 7,
+    "tech": 4,
+    "cool": 8,
+    "will": 6,
+    "luck": 7,
+    "move": 7,
+    "body": 7,
+    "emp": 5
+   },
+   {
+    "int": 6,
+    "ref": 6,
+    "dex": 6,
+    "tech": 3,
+    "cool": 6,
+    "will": 7,
+    "luck": 6,
+    "move": 7,
+    "body": 7,
+    "emp": 4
+   },
+   {
+    "int": 7,
+    "ref": 6,
+    "dex": 8,
+    "tech": 4,
+    "cool": 6,
+    "will": 7,
+    "luck": 6,
+    "move": 5,
+    "body": 6,
+    "emp": 5
+   },
+   {
+    "int": 6,
+    "ref": 7,
+    "dex": 8,
+    "tech": 4,
+    "cool": 6,
+    "will": 6,
+    "luck": 7,
+    "move": 5,
+    "body": 7,
+    "emp": 5
+   },
+   {
+    "int": 5,
+    "ref": 7,
+    "dex": 8,
+    "tech": 3,
+    "cool": 8,
+    "will": 6,
+    "luck": 7,
+    "move": 5,
+    "body": 5,
+    "emp": 5
+   },
+   {
+    "int": 6,
+    "ref": 7,
+    "dex": 6,
+    "tech": 4,
+    "cool": 8,
+    "will": 6,
+    "luck": 6,
+    "move": 6,
+    "body": 6,
+    "emp": 6
+   },
+   {
+    "int": 5,
+    "ref": 6,
+    "dex": 7,
+    "tech": 4,
+    "cool": 7,
+    "will": 8,
+    "luck": 7,
+    "move": 7,
+    "body": 7,
+    "emp": 4
+   }
+  ],
+  "streetratSkills": [
+   {
+    "label": "Atletismo",
+    "red": "Athletics",
+    "level": 2
+   },
+   {
+    "label": "Concentración",
+    "red": "Concentration",
+    "level": 2
+   },
+   {
+    "label": "Conversación",
+    "red": "Conversation",
+    "level": 2
+   },
+   {
+    "label": "Cultura",
+    "red": "Education",
+    "level": 2
+   },
+   {
+    "label": "Evasión",
+    "red": "Evasion",
+    "level": 6
+   },
+   {
+    "label": "Experto local (tu hogar)",
+    "red": "Local Expert (Your Home)",
+    "level": 2
+   },
+   {
+    "label": "Idioma (jerga callejera)",
+    "red": "Language (Streetslang)",
+    "level": 2
+   },
+   {
+    "label": "Pelea",
+    "red": "Brawling",
+    "level": 6
+   },
+   {
+    "label": "Percepción",
+    "red": "Perception",
+    "level": 4
+   },
+   {
+    "label": "Percepción humana",
+    "red": "Human Perception",
+    "level": 2
+   },
+   {
+    "label": "Persuasión",
+    "red": "Persuasion",
+    "level": 2
+   },
+   {
+    "label": "Primeros auxilios",
+    "red": "First Aid",
+    "level": 6
+   },
+   {
+    "label": "Sigilo",
+    "red": "Stealth",
+    "level": 6
+   },
+   {
+    "label": "Arma cuerpo a cuerpo",
+    "red": "Melee Weapon",
+    "level": 6
+   },
+   {
+    "label": "Armas cortas",
+    "red": "Handgun",
+    "level": 6
+   },
+   {
+    "label": "Comerciar",
+    "red": "Trading",
+    "level": 6
+   },
+   {
+    "label": "Conducir vehículo terrestre",
+    "red": "Drive Land Vehicle",
+    "level": 6
+   },
+   {
+    "label": "Manejo de animales",
+    "red": "Animal Handling",
+    "level": 6
+   },
+   {
+    "label": "Rastrear",
+    "red": "Tracking",
+    "level": 6
+   },
+   {
+    "label": "Supervivencia",
+    "red": "Wilderness Survival",
+    "level": 6
+   }
+  ],
+  "edgerunnerSkills": [
+   {
+    "label": "Atletismo",
+    "red": "Athletics"
+   },
+   {
+    "label": "Concentración",
+    "red": "Concentration"
+   },
+   {
+    "label": "Conversación",
+    "red": "Conversation"
+   },
+   {
+    "label": "Cultura",
+    "red": "Education"
+   },
+   {
+    "label": "Evasión",
+    "red": "Evasion"
+   },
+   {
+    "label": "Experto local (tu hogar)",
+    "red": "Local Expert (Your Home)"
+   },
+   {
+    "label": "Idioma (jerga callejera)",
+    "red": "Language (Streetslang)"
+   },
+   {
+    "label": "Pelea",
+    "red": "Brawling"
+   },
+   {
+    "label": "Percepción",
+    "red": "Perception"
+   },
+   {
+    "label": "Percepción humana",
+    "red": "Human Perception"
+   },
+   {
+    "label": "Persuasión",
+    "red": "Persuasion"
+   },
+   {
+    "label": "Primeros auxilios",
+    "red": "First Aid"
+   },
+   {
+    "label": "Sigilo",
+    "red": "Stealth"
+   },
+   {
+    "label": "Armas cortas",
+    "red": "Handgun"
+   },
+   {
+    "label": "Arma cuerpo a cuerpo",
+    "red": "Melee Weapon"
+   },
+   {
+    "label": "Comerciar",
+    "red": "Trading"
+   },
+   {
+    "label": "Conducir vehículo terrestre",
+    "red": "Drive Land Vehicle"
+   },
+   {
+    "label": "Manejo de animales",
+    "red": "Animal Handling"
+   },
+   {
+    "label": "Rastrear",
+    "red": "Tracking"
+   },
+   {
+    "label": "Supervivencia",
+    "red": "Wilderness Survival"
+   }
+  ],
+  "weapons": [
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_weapons.Item.Y433cjlB1uVHPysk",
+      "name": "Pistola pesada",
+      "qty": 1,
+      "note": ""
+     },
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_weapons.Item.4L05qIZxsy0uDSHz",
+      "name": "pistola muy pesada",
+      "qty": 1,
+      "note": ""
+     }
+    ]
+   },
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_ammo.Item.jmia1vHSv6bdQEVP",
+      "name": "Munición básica de pistola P",
+      "qty": 100,
+      "note": ""
+     },
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_ammo.Item.NQP4I9heyv9fXj46",
+      "name": "munición básica de pistola MP",
+      "qty": 100,
+      "note": ""
+     }
+    ]
+   },
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_weapons.Item.g2d7I3KLRXXbMr1g",
+      "name": "Arma cuerpo a cuerpo pesada",
+      "qty": 1,
+      "note": ""
+     },
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_weapons.Item.Y433cjlB1uVHPysk",
+      "name": "pistola pesada",
+      "qty": 1,
+      "note": ""
+     }
+    ]
+   },
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_armor.Item.uaN9WukkezPfcutU",
+      "name": "Blindaje ligero en el cuerpo",
+      "qty": 1,
+      "note": "(CP11)"
+     }
+    ]
+   },
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_armor.Item.Bsalv6m63PhmHkMm",
+      "name": "Blindaje ligero en la cabeza",
+      "qty": 1,
+      "note": "(CP11)"
+     }
+    ]
+   }
+  ],
+  "gear": [
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_gear.Item.GqYz689ddSKQHMen",
+      "name": "Agente",
+      "qty": 1,
+      "note": ""
+     }
+    ]
+   },
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_gear.Item.LTxStSIeRegbtZpd",
+      "name": "Máscara respiratoria antismog",
+      "qty": 1,
+      "note": ""
+     }
+    ]
+   },
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_gear.Item.WAOq0nMUFwvnZpCr",
+      "name": "Cinta adhesiva",
+      "qty": 1,
+      "note": ""
+     }
+    ]
+   },
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_gear.Item.spgehgLv94vrH4Zo",
+      "name": "Linterna",
+      "qty": 1,
+      "note": ""
+     }
+    ]
+   },
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_gear.Item.VrwVUEHuMCGjp8Fi",
+      "name": "Pistola de garfio",
+      "qty": 1,
+      "note": ""
+     }
+    ]
+   },
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_gear.Item.VgVcQgRkt8y5DL00",
+      "name": "Cama hinchable y saco de dormir",
+      "qty": 1,
+      "note": ""
+     }
+    ]
+   },
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_gear.Item.klPfcM59dHl4lvWS",
+      "name": "Bolsa de tecnomédico",
+      "qty": 1,
+      "note": ""
+     }
+    ]
+   },
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_gear.Item.DO2Nzq3dw0R72dpm",
+      "name": "Comunicador de radio",
+      "qty": 2,
+      "note": ""
+     }
+    ]
+   },
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_gear.Item.i0xmIJjhcMKIWJ0M",
+      "name": "Cuerda",
+      "qty": 1,
+      "note": ""
+     }
+    ]
+   },
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_gear.Item.GPgc2QczR4H1rYPj",
+      "name": "Tecnoherramienta",
+      "qty": 1,
+      "note": ""
+     }
+    ]
+   },
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_gear.Item.bZlhfqhQEVp4vodP",
+      "name": "Tienda y material de acampada",
+      "qty": 1,
+      "note": ""
+     }
+    ]
+   },
+   {
+    "clothing": {
+     "style": "Ropa bohemia",
+     "items": [
+      {
+       "type": "joyas",
+       "qty": 1
+      }
+     ]
+    },
+    "text": "Ropa bohemia: joyas"
+   },
+   {
+    "clothing": {
+     "style": "Cuero nómada",
+     "items": [
+      {
+       "type": "parte de arriba",
+       "qty": 4
+      },
+      {
+       "type": "parte de abajo",
+       "qty": 2
+      },
+      {
+       "type": "calzado",
+       "qty": 2
+      },
+      {
+       "type": "chaqueta",
+       "qty": 1
+      },
+      {
+       "type": "sombrero",
+       "qty": 1
+      }
+     ]
+    },
+    "text": "Cuero nómada: parte de arriba x4, parte de abajo x2, calzado x2, chaqueta, sombrero"
+   }
+  ],
+  "cyberware": [
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_cyberware.Item.KofoAolDFb3rvpbL",
+      "name": "Conectores interface",
+      "qty": 1,
+      "note": ""
+     },
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_cyberware.Item.GUT0BBUD2iKpPRoM",
+      "name": "garras",
+      "qty": 1,
+      "note": ""
+     }
+    ]
+   },
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_cyberware.Item.ju5Rq9rOe2lpDKKl",
+      "name": "Conexión neuronal",
+      "qty": 1,
+      "note": ""
+     }
+    ]
+   }
+  ],
+  "cyberwareHumanityLoss": 14,
+  "cyberwareEmpLoss": -2,
+  "lifepathPage": "f4e6a00e0cfb5c44",
+  "lifepath": [
+   {
+    "type": "table",
+    "id": "t0",
+    "title": "¿Qué tamaño tiene tu tribu?",
+    "instruction": "Tira 1d6 o elige un resultado.",
+    "die": "1d6",
+    "columns": [
+     "Tamaño de la tribu"
+    ],
+    "rows": [
+     {
+      "min": 1,
+      "max": 1,
+      "cells": [
+       "Una sola familia o familia extendida."
+      ]
+     },
+     {
+      "min": 2,
+      "max": 2,
+      "cells": [
+       "Un par de docenas de miembros."
+      ]
+     },
+     {
+      "min": 3,
+      "max": 3,
+      "cells": [
+       "Cuarenta o cincuenta miembros."
+      ]
+     },
+     {
+      "min": 4,
+      "max": 4,
+      "cells": [
+       "Cien o más miembros."
+      ]
+     },
+     {
+      "min": 5,
+      "max": 5,
+      "cells": [
+       "Una familia de sangre (cientos de miembros)."
+      ]
+     },
+     {
+      "min": 6,
+      "max": 6,
+      "cells": [
+       "Una familia asociada (compuesta por varias familias de sangre)."
+      ]
+     }
+    ]
+   },
+   {
+    "type": "choice",
+    "id": "base",
+    "title": "¿Tu tribu tiene su base en tierra, aire o mar?",
+    "options": [
+     {
+      "value": "land",
+      "label": "Tierra"
+     },
+     {
+      "value": "air",
+      "label": "Aire"
+     },
+     {
+      "value": "sea",
+      "label": "Mar"
+     }
+    ]
+   },
+   {
+    "type": "table",
+    "id": "t1",
+    "title": "Si está en tierra, ¿qué hace?",
+    "instruction": "Tira 1d10 o elige un resultado.",
+    "die": "1d10",
+    "columns": [
+     "Tipo"
+    ],
+    "rows": [
+     {
+      "min": 1,
+      "max": 1,
+      "cells": [
+       "Gogang/Motero."
+      ]
+     },
+     {
+      "min": 2,
+      "max": 2,
+      "cells": [
+       "Transporte de pasajeros."
+      ]
+     },
+     {
+      "min": 3,
+      "max": 3,
+      "cells": [
+       "Chautauqua/escuela."
+      ]
+     },
+     {
+      "min": 4,
+      "max": 4,
+      "cells": [
+       "Espectáculo/feria itinerante."
+      ]
+     },
+     {
+      "min": 5,
+      "max": 5,
+      "cells": [
+       "Agricultores ambulantes."
+      ]
+     },
+     {
+      "min": 6,
+      "max": 6,
+      "cells": [
+       "Transporte de carga."
+      ]
+     },
+     {
+      "min": 7,
+      "max": 7,
+      "cells": [
+       "Protección de transportes."
+      ]
+     },
+     {
+      "min": 8,
+      "max": 8,
+      "cells": [
+       "Contrabando."
+      ]
+     },
+     {
+      "min": 9,
+      "max": 9,
+      "cells": [
+       "Ejército mercenario."
+      ]
+     },
+     {
+      "min": 10,
+      "max": 10,
+      "cells": [
+       "Equipo de trabajo en la construcción."
+      ]
+     }
+    ],
+    "when": {
+     "id": "base",
+     "value": "land"
+    }
+   },
+   {
+    "type": "table",
+    "id": "t2",
+    "title": "Si está en el aire, ¿qué hace?",
+    "instruction": "Tira 1d6 o elige un resultado.",
+    "die": "1d6",
+    "columns": [
+     "Tipo"
+    ],
+    "rows": [
+     {
+      "min": 1,
+      "max": 1,
+      "cells": [
+       "Piratería aérea."
+      ]
+     },
+     {
+      "min": 2,
+      "max": 2,
+      "cells": [
+       "Transporte de carga."
+      ]
+     },
+     {
+      "min": 3,
+      "max": 3,
+      "cells": [
+       "Transporte de pasajeros."
+      ]
+     },
+     {
+      "min": 4,
+      "max": 4,
+      "cells": [
+       "Protección de aeronaves."
+      ]
+     },
+     {
+      "min": 5,
+      "max": 5,
+      "cells": [
+       "Contrabando."
+      ]
+     },
+     {
+      "min": 6,
+      "max": 6,
+      "cells": [
+       "Apoyo al combate."
+      ]
+     }
+    ],
+    "when": {
+     "id": "base",
+     "value": "air"
+    }
+   },
+   {
+    "type": "table",
+    "id": "t3",
+    "title": "Si está en el mar, ¿qué hace?",
+    "instruction": "Tira 1d6 o elige un resultado.",
+    "die": "1d6",
+    "columns": [
+     "Tipo"
+    ],
+    "rows": [
+     {
+      "min": 1,
+      "max": 1,
+      "cells": [
+       "Piratería."
+      ]
+     },
+     {
+      "min": 2,
+      "max": 2,
+      "cells": [
+       "Transporte de carga."
+      ]
+     },
+     {
+      "min": 3,
+      "max": 3,
+      "cells": [
+       "Transporte de pasajeros."
+      ]
+     },
+     {
+      "min": 4,
+      "max": 4,
+      "cells": [
+       "Contrabando."
+      ]
+     },
+     {
+      "min": 5,
+      "max": 5,
+      "cells": [
+       "Apoyo al combate."
+      ]
+     },
+     {
+      "min": 6,
+      "max": 6,
+      "cells": [
+       "Guerra submarina."
+      ]
+     }
+    ],
+    "when": {
+     "id": "base",
+     "value": "sea"
+    }
+   },
+   {
+    "type": "table",
+    "id": "t4",
+    "title": "¿Qué haces para tu tribu?",
+    "instruction": "Tira 1d6 o elige un resultado.",
+    "die": "1d6",
+    "columns": [
+     "Tipo"
+    ],
+    "rows": [
+     {
+      "min": 1,
+      "max": 1,
+      "cells": [
+       "Explorador (negociador)."
+      ]
+     },
+     {
+      "min": 2,
+      "max": 2,
+      "cells": [
+       "Escolta (protección, armas)."
+      ]
+     },
+     {
+      "min": 3,
+      "max": 3,
+      "cells": [
+       "Piloto/conductor de transporte."
+      ]
+     },
+     {
+      "min": 4,
+      "max": 4,
+      "cells": [
+       "Jefe de carga (gran transportista, camionero)."
+      ]
+     },
+     {
+      "min": 5,
+      "max": 5,
+      "cells": [
+       "Contrabandista en solitario."
+      ]
+     },
+     {
+      "min": 6,
+      "max": 6,
+      "cells": [
+       "Adquisiciones (combustible, vehículos, etc.)."
+      ]
+     }
+    ]
+   },
+   {
+    "type": "table",
+    "id": "t5",
+    "title": "¿Cuál es la filosofía general de tu tribu?",
+    "instruction": "Tira 1d6 o elige un resultado.",
+    "die": "1d6",
+    "columns": [
+     "Filosofía"
+    ],
+    "rows": [
+     {
+      "min": 1,
+      "max": 1,
+      "cells": [
+       "Siempre trabaja para el bien; tu tribu acepta a los demás y solo quiere convivir pacíficamente."
+      ]
+     },
+     {
+      "min": 2,
+      "max": 2,
+      "cells": [
+       "Es como un negocio familiar. Funciona como una empresa justa y honesta."
+      ]
+     },
+     {
+      "min": 3,
+      "max": 3,
+      "cells": [
+       "Ocasionalmente comete algún desliz y hace cosas poco éticas, pero es raro."
+      ]
+     },
+     {
+      "min": 4,
+      "max": 4,
+      "cells": [
+       "Dispuesta a retorcer las reglas cada vez que se interponen para conseguir lo que la tribu necesita."
+      ]
+     },
+     {
+      "min": 5,
+      "max": 5,
+      "cells": [
+       "Despiadada y egocéntrica, dispuesta a hacer cosas malas si eso hace que la tribu salga adelante."
+      ]
+     },
+     {
+      "min": 6,
+      "max": 6,
+      "cells": [
+       "Totalmente malvada. Va por las carreteras matando, saqueando y aterrorizando a todo el mundo."
+      ]
+     }
+    ]
+   },
+   {
+    "type": "table",
+    "id": "t6",
+    "title": "¿Quién tiene a tu tribu en el punto de mira?",
+    "instruction": "Tira 1d6 o elige un resultado.",
+    "die": "1d6",
+    "columns": [
+     "¿Quién?"
+    ],
+    "rows": [
+     {
+      "min": 1,
+      "max": 1,
+      "cells": [
+       "Crimen organizado."
+      ]
+     },
+     {
+      "min": 2,
+      "max": 2,
+      "cells": [
+       "Pandilleros."
+      ]
+     },
+     {
+      "min": 3,
+      "max": 3,
+      "cells": [
+       "Traficantes de drogas."
+      ]
+     },
+     {
+      "min": 4,
+      "max": 4,
+      "cells": [
+       "Políticos corruptos."
+      ]
+     },
+     {
+      "min": 5,
+      "max": 5,
+      "cells": [
+       "Tribus rivales en el mismo negocio."
+      ]
+     },
+     {
+      "min": 6,
+      "max": 6,
+      "cells": [
+       "Policías corruptos."
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "key": "media",
+  "name": "Periodista",
+  "itemId": "Ek251OMdphcqzWPP",
+  "uuid": "Compendium.cyberpunk-red-core.core_roles.Item.Ek251OMdphcqzWPP",
+  "statTable": [
+   {
+    "int": 6,
+    "ref": 6,
+    "dex": 5,
+    "tech": 5,
+    "cool": 8,
+    "will": 7,
+    "luck": 5,
+    "move": 7,
+    "body": 5,
+    "emp": 7
+   },
+   {
+    "int": 8,
+    "ref": 7,
+    "dex": 7,
+    "tech": 3,
+    "cool": 6,
+    "will": 6,
+    "luck": 6,
+    "move": 5,
+    "body": 6,
+    "emp": 8
+   },
+   {
+    "int": 6,
+    "ref": 7,
+    "dex": 7,
+    "tech": 5,
+    "cool": 6,
+    "will": 8,
+    "luck": 5,
+    "move": 5,
+    "body": 5,
+    "emp": 7
+   },
+   {
+    "int": 6,
+    "ref": 5,
+    "dex": 7,
+    "tech": 5,
+    "cool": 6,
+    "will": 7,
+    "luck": 5,
+    "move": 5,
+    "body": 6,
+    "emp": 6
+   },
+   {
+    "int": 6,
+    "ref": 6,
+    "dex": 7,
+    "tech": 4,
+    "cool": 8,
+    "will": 7,
+    "luck": 6,
+    "move": 7,
+    "body": 5,
+    "emp": 8
+   },
+   {
+    "int": 7,
+    "ref": 5,
+    "dex": 5,
+    "tech": 4,
+    "cool": 8,
+    "will": 7,
+    "luck": 6,
+    "move": 7,
+    "body": 5,
+    "emp": 8
+   },
+   {
+    "int": 8,
+    "ref": 5,
+    "dex": 6,
+    "tech": 3,
+    "cool": 7,
+    "will": 6,
+    "luck": 6,
+    "move": 5,
+    "body": 6,
+    "emp": 7
+   },
+   {
+    "int": 6,
+    "ref": 5,
+    "dex": 6,
+    "tech": 5,
+    "cool": 6,
+    "will": 8,
+    "luck": 6,
+    "move": 6,
+    "body": 7,
+    "emp": 8
+   },
+   {
+    "int": 7,
+    "ref": 7,
+    "dex": 5,
+    "tech": 4,
+    "cool": 6,
+    "will": 7,
+    "luck": 6,
+    "move": 5,
+    "body": 6,
+    "emp": 7
+   },
+   {
+    "int": 7,
+    "ref": 6,
+    "dex": 6,
+    "tech": 3,
+    "cool": 7,
+    "will": 6,
+    "luck": 7,
+    "move": 6,
+    "body": 7,
+    "emp": 6
+   }
+  ],
+  "streetratSkills": [
+   {
+    "label": "Atletismo",
+    "red": "Athletics",
+    "level": 2
+   },
+   {
+    "label": "Concentración",
+    "red": "Concentration",
+    "level": 2
+   },
+   {
+    "label": "Conversación",
+    "red": "Conversation",
+    "level": 6
+   },
+   {
+    "label": "Cultura",
+    "red": "Education",
+    "level": 2
+   },
+   {
+    "label": "Evasión",
+    "red": "Evasion",
+    "level": 6
+   },
+   {
+    "label": "Experto local (tu hogar)",
+    "red": "Local Expert (Your Home)",
+    "level": 6
+   },
+   {
+    "label": "Idioma (jerga callejera)",
+    "red": "Language (Streetslang)",
+    "level": 2
+   },
+   {
+    "label": "Pelea",
+    "red": "Brawling",
+    "level": 2
+   },
+   {
+    "label": "Percepción",
+    "red": "Perception",
+    "level": 6
+   },
+   {
+    "label": "Percepción humana",
+    "red": "Human Perception",
+    "level": 6
+   },
+   {
+    "label": "Persuasión",
+    "red": "Persuasion",
+    "level": 6
+   },
+   {
+    "label": "Primeros auxilios",
+    "red": "First Aid",
+    "level": 2
+   },
+   {
+    "label": "Sigilo",
+    "red": "Stealth",
+    "level": 2
+   },
+   {
+    "label": "Armas cortas",
+    "red": "Handgun",
+    "level": 6
+   },
+   {
+    "label": "Buscar en bibliotecas",
+    "red": "Library Search",
+    "level": 4
+   },
+   {
+    "label": "Composición",
+    "red": "Composition",
+    "level": 6
+   },
+   {
+    "label": "Deducción",
+    "red": "Deduction",
+    "level": 6
+   },
+   {
+    "label": "Fotografía/Filmación",
+    "red": "Photography/Film",
+    "level": 4
+   },
+   {
+    "label": "Lectura de labios",
+    "red": "Lip Reading",
+    "level": 4
+   },
+   {
+    "label": "Sobornar",
+    "red": "Bribery",
+    "level": 6
+   }
+  ],
+  "edgerunnerSkills": [
+   {
+    "label": "Atletismo",
+    "red": "Athletics"
+   },
+   {
+    "label": "Concentración",
+    "red": "Concentration"
+   },
+   {
+    "label": "Conversación",
+    "red": "Conversation"
+   },
+   {
+    "label": "Cultura",
+    "red": "Education"
+   },
+   {
+    "label": "Evasión",
+    "red": "Evasion"
+   },
+   {
+    "label": "Experto local (tu hogar)",
+    "red": "Local Expert (Your Home)"
+   },
+   {
+    "label": "Idioma (jerga callejera)",
+    "red": "Language (Streetslang)"
+   },
+   {
+    "label": "Pelea",
+    "red": "Brawling"
+   },
+   {
+    "label": "Percepción",
+    "red": "Perception"
+   },
+   {
+    "label": "Percepción humana",
+    "red": "Human Perception"
+   },
+   {
+    "label": "Persuasión",
+    "red": "Persuasion"
+   },
+   {
+    "label": "Primeros auxilios",
+    "red": "First Aid"
+   },
+   {
+    "label": "Sigilo",
+    "red": "Stealth"
+   },
+   {
+    "label": "Armas cortas",
+    "red": "Handgun"
+   },
+   {
+    "label": "Buscar en bibliotecas",
+    "red": "Library Search"
+   },
+   {
+    "label": "Composición",
+    "red": "Composition"
+   },
+   {
+    "label": "Deducción",
+    "red": "Deduction"
+   },
+   {
+    "label": "Fotografía/Filmación",
+    "red": "Photography/Film"
+   },
+   {
+    "label": "Lectura de labios",
+    "red": "Lip Reading"
+   },
+   {
+    "label": "Sobornar",
+    "red": "Bribery"
+   }
+  ],
+  "weapons": [
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_weapons.Item.Y433cjlB1uVHPysk",
+      "name": "Pistola pesada",
+      "qty": 1,
+      "note": ""
+     },
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_weapons.Item.4L05qIZxsy0uDSHz",
+      "name": "pistola muy pesada",
+      "qty": 1,
+      "note": ""
+     }
+    ]
+   },
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_ammo.Item.jmia1vHSv6bdQEVP",
+      "name": "Munición básica de pistola P",
+      "qty": 50,
+      "note": ""
+     },
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_ammo.Item.NQP4I9heyv9fXj46",
+      "name": "munición básica de pistola MP",
+      "qty": 50,
+      "note": ""
+     }
+    ]
+   },
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_armor.Item.uaN9WukkezPfcutU",
+      "name": "Blindaje ligero en el cuerpo",
+      "qty": 1,
+      "note": "(CP11)"
+     }
+    ]
+   },
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_armor.Item.Bsalv6m63PhmHkMm",
+      "name": "Blindaje ligero en la cabeza",
+      "qty": 1,
+      "note": "(CP11)"
+     }
+    ]
+   }
+  ],
+  "gear": [
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_gear.Item.GqYz689ddSKQHMen",
+      "name": "Agente",
+      "qty": 1,
+      "note": ""
+     }
+    ]
+   },
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_gear.Item.Lo7rXsc5ToQf2KlN",
+      "name": "Grabadora de audio",
+      "qty": 1,
+      "note": ""
+     }
+    ]
+   },
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_gear.Item.JL6Nf3l7hjzDmJZ5",
+      "name": "Binoculares",
+      "qty": 1,
+      "note": ""
+     }
+    ]
+   },
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_gear.Item.OjMJ2SyoMr4VWmnm",
+      "name": "Teléfono móvil desechable",
+      "qty": 2,
+      "note": ""
+     },
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_gear.Item.VrwVUEHuMCGjp8Fi",
+      "name": "pistola de garfio",
+      "qty": 1,
+      "note": ""
+     }
+    ]
+   },
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_gear.Item.spgehgLv94vrH4Zo",
+      "name": "Linterna",
+      "qty": 1,
+      "note": ""
+     }
+    ]
+   },
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_gear.Item.1K1dtvrm7rjoraAJ",
+      "name": "Ordenador",
+      "qty": 1,
+      "note": ""
+     }
+    ]
+   },
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_gear.Item.sMAZKb9ErPoQJ1vV",
+      "name": "Escáner de radio/Reproductor de música",
+      "qty": 1,
+      "note": ""
+     }
+    ]
+   },
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_gear.Item.CLaUNQ7cqa05XfFg",
+      "name": "Codificador/Descodificador",
+      "qty": 1,
+      "note": ""
+     }
+    ]
+   },
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_gear.Item.clCxd7qkp2olsKii",
+      "name": "Cámara de vídeo",
+      "qty": 1,
+      "note": ""
+     }
+    ]
+   },
+   {
+    "clothing": {
+     "style": "Ropa normal elegante",
+     "items": [
+      {
+       "type": "calzado",
+       "qty": 1
+      },
+      {
+       "type": "parte de abajo",
+       "qty": 1
+      },
+      {
+       "type": "parte de arriba",
+       "qty": 1
+      }
+     ]
+    },
+    "text": "Ropa normal elegante: calzado, parte de abajo, parte de arriba"
+   },
+   {
+    "clothing": {
+     "style": "Ropa de deporte",
+     "items": [
+      {
+       "type": "chaqueta",
+       "qty": 1
+      }
+     ]
+    },
+    "text": "Ropa de deporte: chaqueta"
+   },
+   {
+    "clothing": {
+     "style": "Tendencias urbanas",
+     "items": [
+      {
+       "type": "gafas espejadas",
+       "qty": 1
+      }
+     ]
+    },
+    "text": "Tendencias urbanas: gafas espejadas"
+   }
+  ],
+  "cyberware": [
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_cyberware.Item.hsoSD662cLKvHKZJ",
+      "name": "Equipo de ciberaudio",
+      "qty": 1,
+      "note": ""
+     }
+    ]
+   },
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_cyberware.Item.9pZMYMlVFeWDS56L",
+      "name": "Escucha amplificada",
+      "qty": 1,
+      "note": ""
+     },
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_cyberware.Item.5PWjp9rOnZuhYPPu",
+      "name": "analizador de voz",
+      "qty": 1,
+      "note": ""
+     }
+    ]
+   },
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_cyberware.Item.VbMY2fs3im1sP2dJ",
+      "name": "Tatuaje luminoso",
+      "qty": 1,
+      "note": ""
+     }
+    ]
+   }
+  ],
+  "cyberwareHumanityLoss": 10,
+  "cyberwareEmpLoss": -1,
+  "lifepathPage": "e2d10488d1188780",
+  "lifepath": [
+   {
+    "type": "table",
+    "id": "t0",
+    "title": "¿Qué tipo de periodista eres?",
+    "instruction": "Tira 1d6 o elige un resultado.",
+    "die": "1d6",
+    "columns": [
+     "Tipo"
+    ],
+    "rows": [
+     {
+      "min": 1,
+      "max": 1,
+      "cells": [
+       "Bloguero."
+      ]
+     },
+     {
+      "min": 2,
+      "max": 2,
+      "cells": [
+       "Escritor (de libros)."
+      ]
+     },
+     {
+      "min": 3,
+      "max": 3,
+      "cells": [
+       "Cámara."
+      ]
+     },
+     {
+      "min": 4,
+      "max": 4,
+      "cells": [
+       "Documentalista."
+      ]
+     },
+     {
+      "min": 5,
+      "max": 5,
+      "cells": [
+       "Reportero de investigación."
+      ]
+     },
+     {
+      "min": 6,
+      "max": 6,
+      "cells": [
+       "Escriba de la calle."
+      ]
+     }
+    ]
+   },
+   {
+    "type": "table",
+    "id": "t1",
+    "title": "¿Cómo llega tu trabajo al público?",
+    "instruction": "Tira 1d6 o elige un resultado.",
+    "die": "1d6",
+    "columns": [
+     "¿Cómo?"
+    ],
+    "rows": [
+     {
+      "min": 1,
+      "max": 1,
+      "cells": [
+       "Revista mensual."
+      ]
+     },
+     {
+      "min": 2,
+      "max": 2,
+      "cells": [
+       "Blog."
+      ]
+     },
+     {
+      "min": 3,
+      "max": 3,
+      "cells": [
+       "Señal de vídeo convencional."
+      ]
+     },
+     {
+      "min": 4,
+      "max": 4,
+      "cells": [
+       "Canal de noticias."
+      ]
+     },
+     {
+      "min": 5,
+      "max": 5,
+      "cells": [
+       "Venta de «libros»."
+      ]
+     },
+     {
+      "min": 6,
+      "max": 6,
+      "cells": [
+       "Screamsheets."
+      ]
+     }
+    ]
+   },
+   {
+    "type": "table",
+    "id": "t2",
+    "title": "¿Qué ética tienes?",
+    "instruction": "Tira 1d6 o elige un resultado.",
+    "die": "1d6",
+    "columns": [
+     "Ética"
+    ],
+    "rows": [
+     {
+      "min": 1,
+      "max": 1,
+      "cells": [
+       "Prácticas justas, sólidas y fuertemente éticas en la presentación de la información. Solo informas de la verdad verificable."
+      ]
+     },
+     {
+      "min": 2,
+      "max": 2,
+      "cells": [
+       "Información justa y honesta, pero con disposición a recurrir a rumores y chismes si es necesario."
+      ]
+     },
+     {
+      "min": 3,
+      "max": 3,
+      "cells": [
+       "Ocasionalmente cometes algún desliz y haces cosas poco éticas, pero es raro. Tienes algunos principios."
+      ]
+     },
+     {
+      "min": 4,
+      "max": 4,
+      "cells": [
+       "Dispuesto a doblegar cualquier regla para atrapar a los malos. Pero solo a los malos."
+      ]
+     },
+     {
+      "min": 5,
+      "max": 5,
+      "cells": [
+       "Implacable y decidido a triunfar, incluso si eso significa romper la ley. Te gusta escarbar en las vidas ajenas."
+      ]
+     },
+     {
+      "min": 6,
+      "max": 6,
+      "cells": [
+       "Totalmente corrupto. Aceptas sobornos, te involucras en reportajes ilegales y poco éticos todo el tiempo. Tu pluma está al servicio del mejor postor."
+      ]
+     }
+    ]
+   },
+   {
+    "type": "table",
+    "id": "t3",
+    "title": "¿Qué tipo de historias quieres contar?",
+    "instruction": "Tira 1d6 o elige un resultado.",
+    "die": "1d6",
+    "columns": [
+     "Tipo"
+    ],
+    "rows": [
+     {
+      "min": 1,
+      "max": 1,
+      "cells": [
+       "Intriga política."
+      ]
+     },
+     {
+      "min": 2,
+      "max": 2,
+      "cells": [
+       "Impacto ecológico."
+      ]
+     },
+     {
+      "min": 3,
+      "max": 3,
+      "cells": [
+       "Noticias de famosos."
+      ]
+     },
+     {
+      "min": 4,
+      "max": 4,
+      "cells": [
+       "Crítica de corporaciones."
+      ]
+     },
+     {
+      "min": 5,
+      "max": 5,
+      "cells": [
+       "Editoriales."
+      ]
+     },
+     {
+      "min": 6,
+      "max": 6,
+      "cells": [
+       "Propaganda."
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "key": "lawman",
+  "name": "Policía",
+  "itemId": "kDE2jnvcsbbz1vaL",
+  "uuid": "Compendium.cyberpunk-red-core.core_roles.Item.kDE2jnvcsbbz1vaL",
+  "statTable": [
+   {
+    "int": 5,
+    "ref": 6,
+    "dex": 7,
+    "tech": 5,
+    "cool": 7,
+    "will": 8,
+    "luck": 5,
+    "move": 6,
+    "body": 5,
+    "emp": 6
+   },
+   {
+    "int": 6,
+    "ref": 6,
+    "dex": 6,
+    "tech": 5,
+    "cool": 6,
+    "will": 8,
+    "luck": 5,
+    "move": 7,
+    "body": 5,
+    "emp": 5
+   },
+   {
+    "int": 5,
+    "ref": 7,
+    "dex": 7,
+    "tech": 7,
+    "cool": 6,
+    "will": 7,
+    "luck": 5,
+    "move": 5,
+    "body": 7,
+    "emp": 6
+   },
+   {
+    "int": 6,
+    "ref": 6,
+    "dex": 7,
+    "tech": 6,
+    "cool": 6,
+    "will": 8,
+    "luck": 5,
+    "move": 7,
+    "body": 7,
+    "emp": 6
+   },
+   {
+    "int": 6,
+    "ref": 6,
+    "dex": 7,
+    "tech": 6,
+    "cool": 7,
+    "will": 7,
+    "luck": 6,
+    "move": 5,
+    "body": 5,
+    "emp": 6
+   },
+   {
+    "int": 7,
+    "ref": 6,
+    "dex": 5,
+    "tech": 5,
+    "cool": 7,
+    "will": 8,
+    "luck": 5,
+    "move": 6,
+    "body": 7,
+    "emp": 4
+   },
+   {
+    "int": 7,
+    "ref": 8,
+    "dex": 7,
+    "tech": 5,
+    "cool": 6,
+    "will": 8,
+    "luck": 7,
+    "move": 6,
+    "body": 5,
+    "emp": 4
+   },
+   {
+    "int": 5,
+    "ref": 6,
+    "dex": 6,
+    "tech": 5,
+    "cool": 6,
+    "will": 8,
+    "luck": 5,
+    "move": 7,
+    "body": 6,
+    "emp": 4
+   },
+   {
+    "int": 7,
+    "ref": 7,
+    "dex": 5,
+    "tech": 5,
+    "cool": 7,
+    "will": 7,
+    "luck": 6,
+    "move": 5,
+    "body": 5,
+    "emp": 6
+   },
+   {
+    "int": 6,
+    "ref": 6,
+    "dex": 5,
+    "tech": 6,
+    "cool": 8,
+    "will": 7,
+    "luck": 5,
+    "move": 7,
+    "body": 6,
+    "emp": 6
+   }
+  ],
+  "streetratSkills": [
+   {
+    "label": "Atletismo",
+    "red": "Athletics",
+    "level": 2
+   },
+   {
+    "label": "Concentración",
+    "red": "Concentration",
+    "level": 2
+   },
+   {
+    "label": "Conversación",
+    "red": "Conversation",
+    "level": 6
+   },
+   {
+    "label": "Cultura",
+    "red": "Education",
+    "level": 2
+   },
+   {
+    "label": "Evasión",
+    "red": "Evasion",
+    "level": 6
+   },
+   {
+    "label": "Experto local (tu hogar)",
+    "red": "Local Expert (Your Home)",
+    "level": 2
+   },
+   {
+    "label": "Idioma (jerga callejera)",
+    "red": "Language (Streetslang)",
+    "level": 2
+   },
+   {
+    "label": "Pelea",
+    "red": "Brawling",
+    "level": 6
+   },
+   {
+    "label": "Percepción",
+    "red": "Perception",
+    "level": 2
+   },
+   {
+    "label": "Percepción humana",
+    "red": "Human Perception",
+    "level": 2
+   },
+   {
+    "label": "Persuasión",
+    "red": "Persuasion",
+    "level": 2
+   },
+   {
+    "label": "Primeros auxilios",
+    "red": "First Aid",
+    "level": 2
+   },
+   {
+    "label": "Sigilo",
+    "red": "Stealth",
+    "level": 2
+   },
+   {
+    "label": "Armas cortas",
+    "red": "Handgun",
+    "level": 6
+   },
+   {
+    "label": "Armas largas",
+    "red": "Shoulder Arms",
+    "level": 6
+   },
+   {
+    "label": "Criminología",
+    "red": "Criminology",
+    "level": 6
+   },
+   {
+    "label": "Deducción",
+    "red": "Deduction",
+    "level": 6
+   },
+   {
+    "label": "Disparo automático",
+    "red": "Autofire",
+    "level": 6
+   },
+   {
+    "label": "Interrogatorio",
+    "red": "Interrogation",
+    "level": 6
+   },
+   {
+    "label": "Rastrear",
+    "red": "Tracking",
+    "level": 6
+   }
+  ],
+  "edgerunnerSkills": [
+   {
+    "label": "Atletismo",
+    "red": "Athletics"
+   },
+   {
+    "label": "Concentración",
+    "red": "Concentration"
+   },
+   {
+    "label": "Conversación",
+    "red": "Conversation"
+   },
+   {
+    "label": "Cultura",
+    "red": "Education"
+   },
+   {
+    "label": "Evasión",
+    "red": "Evasion"
+   },
+   {
+    "label": "Experto local (tu hogar)",
+    "red": "Local Expert (Your Home)"
+   },
+   {
+    "label": "Idioma (jerga callejera)",
+    "red": "Language (Streetslang)"
+   },
+   {
+    "label": "Pelea",
+    "red": "Brawling"
+   },
+   {
+    "label": "Percepción",
+    "red": "Perception"
+   },
+   {
+    "label": "Percepción humana",
+    "red": "Human Perception"
+   },
+   {
+    "label": "Persuasión",
+    "red": "Persuasion"
+   },
+   {
+    "label": "Primeros auxilios",
+    "red": "First Aid"
+   },
+   {
+    "label": "Sigilo",
+    "red": "Stealth"
+   },
+   {
+    "label": "Armas cortas",
+    "red": "Handgun"
+   },
+   {
+    "label": "Armas largas",
+    "red": "Shoulder Arms"
+   },
+   {
+    "label": "Criminología",
+    "red": "Criminology"
+   },
+   {
+    "label": "Deducción",
+    "red": "Deduction"
+   },
+   {
+    "label": "Disparo automático",
+    "red": "Autofire"
+   },
+   {
+    "label": "Interrogatorio",
+    "red": "Interrogation"
+   },
+   {
+    "label": "Rastrear",
+    "red": "Tracking"
+   }
+  ],
+  "weapons": [
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_weapons.Item.QrQNdHTuEDxrfIxS",
+      "name": "Fusil de asalto",
+      "qty": 1,
+      "note": ""
+     },
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_weapons.Item.PJhu6eY766OegZBo",
+      "name": "escopeta",
+      "qty": 1,
+      "note": ""
+     }
+    ]
+   },
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_weapons.Item.Y433cjlB1uVHPysk",
+      "name": "Pistola pesada",
+      "qty": 1,
+      "note": ""
+     }
+    ]
+   },
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_ammo.Item.J3NfMgRdqoUwFDDs",
+      "name": "Munición básica de fusil",
+      "qty": 100,
+      "note": ""
+     },
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_ammo.Item.mkI1KpjAOUz9PxRM",
+      "name": "munición básica de cartucho de escopeta",
+      "qty": 100,
+      "note": ""
+     },
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_ammo.Item.YFnV9OetCCRru5Ky",
+      "name": "munición básica de escopeta",
+      "qty": 100,
+      "note": ""
+     }
+    ]
+   },
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_ammo.Item.jmia1vHSv6bdQEVP",
+      "name": "Munición básica de pistola P",
+      "qty": 30,
+      "note": ""
+     }
+    ]
+   },
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_armor.Item.Bg1YEeF25HhfrzOG",
+      "name": "Escudo antibalas",
+      "qty": 1,
+      "note": ""
+     },
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_ammo.Item.7xhKxgwOELzaPyYr",
+      "name": "granada de humo",
+      "qty": 2,
+      "note": ""
+     }
+    ]
+   },
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_armor.Item.uaN9WukkezPfcutU",
+      "name": "Blindaje ligero en el cuerpo",
+      "qty": 1,
+      "note": "(CP11)"
+     }
+    ]
+   },
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_armor.Item.Bsalv6m63PhmHkMm",
+      "name": "Blindaje ligero en la cabeza",
+      "qty": 1,
+      "note": "(CP11)"
+     }
+    ]
+   }
+  ],
+  "gear": [
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_gear.Item.GqYz689ddSKQHMen",
+      "name": "Agente",
+      "qty": 1,
+      "note": ""
+     }
+    ]
+   },
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_gear.Item.spgehgLv94vrH4Zo",
+      "name": "Linterna",
+      "qty": 1,
+      "note": ""
+     }
+    ]
+   },
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_gear.Item.uYXTKNbOO4ofu53c",
+      "name": "Esposas o grilletes",
+      "qty": 2,
+      "note": ""
+     }
+    ]
+   },
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_gear.Item.DO2Nzq3dw0R72dpm",
+      "name": "Comunicador de radio",
+      "qty": 1,
+      "note": ""
+     }
+    ]
+   },
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_gear.Item.EUZBOSRdQWOqKVUg",
+      "name": "Bengala de carretera",
+      "qty": 10,
+      "note": ""
+     }
+    ]
+   },
+   {
+    "clothing": {
+     "style": "Ropa normal elegante",
+     "items": [
+      {
+       "type": "chaqueta",
+       "qty": 1
+      },
+      {
+       "type": "parte de abajo",
+       "qty": 2
+      },
+      {
+       "type": "parte de arriba",
+       "qty": 3
+      }
+     ]
+    },
+    "text": "Ropa normal elegante: chaqueta, parte de abajo x2, parte de arriba x3"
+   },
+   {
+    "clothing": {
+     "style": "Ropa de deporte",
+     "items": [
+      {
+       "type": "calzado",
+       "qty": 2
+      },
+      {
+       "type": "chaqueta",
+       "qty": 2
+      },
+      {
+       "type": "parte de abajo",
+       "qty": 2
+      },
+      {
+       "type": "gafas espejadas",
+       "qty": 1
+      },
+      {
+       "type": "parte de arriba",
+       "qty": 2
+      }
+     ]
+    },
+    "text": "Ropa de deporte: calzado x2, chaqueta x2, parte de abajo x2, gafas espejadas, parte de arriba x2"
+   }
+  ],
+  "cyberware": [
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_cyberware.Item.kPYQ2Fod5FQvED38",
+      "name": "Bolsillo subcutáneo",
+      "qty": 1,
+      "note": ""
+     }
+    ]
+   },
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_cyberware.Item.WDAHvqIooCSGWnCz",
+      "name": "Pistolera oculta",
+      "qty": 1,
+      "note": ""
+     }
+    ]
+   }
+  ],
+  "cyberwareHumanityLoss": 10,
+  "cyberwareEmpLoss": -1,
+  "lifepathPage": "e46fea883008cb71",
+  "lifepath": [
+   {
+    "type": "table",
+    "id": "t0",
+    "title": "¿Cuál es tu posición en el Cuerpo?",
+    "instruction": "Tira 1d6 o colabora con el DJ para elegir uno.",
+    "die": "1d6",
+    "columns": [
+     "Posición"
+    ],
+    "rows": [
+     {
+      "min": 1,
+      "max": 1,
+      "cells": [
+       "Guardia."
+      ]
+     },
+     {
+      "min": 2,
+      "max": 2,
+      "cells": [
+       "Patrullero estándar."
+      ]
+     },
+     {
+      "min": 3,
+      "max": 3,
+      "cells": [
+       "Investigación criminal."
+      ]
+     },
+     {
+      "min": 4,
+      "max": 4,
+      "cells": [
+       "Armas y tácticas especiales."
+      ]
+     },
+     {
+      "min": 5,
+      "max": 5,
+      "cells": [
+       "Patrullero motorizado."
+      ]
+     },
+     {
+      "min": 6,
+      "max": 6,
+      "cells": [
+       "Asuntos Internos."
+      ]
+     }
+    ]
+   },
+   {
+    "type": "table",
+    "id": "t1",
+    "title": "¿Qué alcance tiene la jurisdicción de tu unidad?",
+    "instruction": "Tira 1d6 o elige un resultado.",
+    "die": "1d6",
+    "columns": [
+     "Jurisdicción"
+    ],
+    "rows": [
+     {
+      "min": 1,
+      "max": 1,
+      "cells": [
+       "Zonas corporativas."
+      ]
+     },
+     {
+      "min": 2,
+      "max": 2,
+      "cells": [
+       "Zona de patrulla urbana estándar."
+      ]
+     },
+     {
+      "min": 3,
+      "max": 3,
+      "cells": [
+       "Zonas de combate."
+      ]
+     },
+     {
+      "min": 4,
+      "max": 4,
+      "cells": [
+       "Afueras de la ciudad."
+      ]
+     },
+     {
+      "min": 5,
+      "max": 5,
+      "cells": [
+       "Zonas en recuperación."
+      ]
+     },
+     {
+      "min": 6,
+      "max": 6,
+      "cells": [
+       "Carreteras abiertas."
+      ]
+     }
+    ]
+   },
+   {
+    "type": "table",
+    "id": "t2",
+    "title": "¿Qué grado de corrupción hay en tu unidad?",
+    "instruction": "Tira 1d6 o elige un resultado.",
+    "die": "1d6",
+    "columns": [
+     "Corrupción"
+    ],
+    "rows": [
+     {
+      "min": 1,
+      "max": 1,
+      "cells": [
+       "Trabajo policial justo y honesto, prácticas éticas sólidas."
+      ]
+     },
+     {
+      "min": 2,
+      "max": 2,
+      "cells": [
+       "Trabajo policial justo y honesto, pero duro con los infractores de la ley."
+      ]
+     },
+     {
+      "min": 3,
+      "max": 3,
+      "cells": [
+       "Ocasionalmente comete algún desliz y hace cosas poco éticas, pero es raro."
+      ]
+     },
+     {
+      "min": 4,
+      "max": 4,
+      "cells": [
+       "Dispuesto a forzar cualquier regla para atrapar a los malos."
+      ]
+     },
+     {
+      "min": 5,
+      "max": 5,
+      "cells": [
+       "Despiadado y decidido a controlar la calle, incluso si eso significa romper la ley."
+      ]
+     },
+     {
+      "min": 6,
+      "max": 6,
+      "cells": [
+       "Totalmente corrupto. Acepta sobornos y se dedica a negocios ilegales y poco éticos todo el tiempo."
+      ]
+     }
+    ]
+   },
+   {
+    "type": "table",
+    "id": "t3",
+    "title": "¿Quién tiene a tu unidad en el punto de mira?",
+    "instruction": "Tira 1d6 o elige un resultado.",
+    "die": "1d6",
+    "columns": [
+     "¿Quién?"
+    ],
+    "rows": [
+     {
+      "min": 1,
+      "max": 1,
+      "cells": [
+       "Crimen organizado."
+      ]
+     },
+     {
+      "min": 2,
+      "max": 2,
+      "cells": [
+       "Pandilleros."
+      ]
+     },
+     {
+      "min": 3,
+      "max": 3,
+      "cells": [
+       "Departamento de asuntos internos."
+      ]
+     },
+     {
+      "min": 4,
+      "max": 4,
+      "cells": [
+       "Políticos corruptos."
+      ]
+     },
+     {
+      "min": 5,
+      "max": 5,
+      "cells": [
+       "Contrabandistas."
+      ]
+     },
+     {
+      "min": 6,
+      "max": 6,
+      "cells": [
+       "Delincuentes callejeros."
+      ]
+     }
+    ]
+   },
+   {
+    "type": "table",
+    "id": "t4",
+    "title": "¿Quién es el objetivo principal de tu unidad?",
+    "instruction": "Tira 1d6 o elige un resultado.",
+    "die": "1d6",
+    "columns": [
+     "¿Quién?"
+    ],
+    "rows": [
+     {
+      "min": 1,
+      "max": 1,
+      "cells": [
+       "Crimen organizado."
+      ]
+     },
+     {
+      "min": 2,
+      "max": 2,
+      "cells": [
+       "Pandilleros."
+      ]
+     },
+     {
+      "min": 3,
+      "max": 3,
+      "cells": [
+       "Traficantes de drogas."
+      ]
+     },
+     {
+      "min": 4,
+      "max": 4,
+      "cells": [
+       "Políticos corruptos."
+      ]
+     },
+     {
+      "min": 5,
+      "max": 5,
+      "cells": [
+       "Contrabandistas."
+      ]
+     },
+     {
+      "min": 6,
+      "max": 6,
+      "cells": [
+       "Delincuencia callejera."
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "key": "rockerboy",
+  "name": "Rockero",
+  "itemId": "ybQOwW3ICzHY7LiQ",
+  "uuid": "Compendium.cyberpunk-red-core.core_roles.Item.ybQOwW3ICzHY7LiQ",
+  "statTable": [
+   {
+    "int": 7,
+    "ref": 6,
+    "dex": 6,
+    "tech": 5,
+    "cool": 6,
+    "will": 8,
+    "luck": 7,
+    "move": 7,
+    "body": 3,
+    "emp": 8
+   },
+   {
+    "int": 3,
+    "ref": 7,
+    "dex": 7,
+    "tech": 7,
+    "cool": 7,
+    "will": 6,
+    "luck": 7,
+    "move": 7,
+    "body": 5,
+    "emp": 8
+   },
+   {
+    "int": 4,
+    "ref": 5,
+    "dex": 7,
+    "tech": 7,
+    "cool": 6,
+    "will": 6,
+    "luck": 7,
+    "move": 7,
+    "body": 5,
+    "emp": 8
+   },
+   {
+    "int": 4,
+    "ref": 5,
+    "dex": 7,
+    "tech": 7,
+    "cool": 6,
+    "will": 8,
+    "luck": 7,
+    "move": 6,
+    "body": 3,
+    "emp": 8
+   },
+   {
+    "int": 3,
+    "ref": 7,
+    "dex": 7,
+    "tech": 7,
+    "cool": 6,
+    "will": 8,
+    "luck": 6,
+    "move": 5,
+    "body": 4,
+    "emp": 7
+   },
+   {
+    "int": 5,
+    "ref": 6,
+    "dex": 7,
+    "tech": 5,
+    "cool": 7,
+    "will": 8,
+    "luck": 5,
+    "move": 7,
+    "body": 3,
+    "emp": 7
+   },
+   {
+    "int": 5,
+    "ref": 6,
+    "dex": 6,
+    "tech": 7,
+    "cool": 7,
+    "will": 8,
+    "luck": 7,
+    "move": 6,
+    "body": 3,
+    "emp": 6
+   },
+   {
+    "int": 5,
+    "ref": 7,
+    "dex": 7,
+    "tech": 5,
+    "cool": 6,
+    "will": 6,
+    "luck": 6,
+    "move": 6,
+    "body": 4,
+    "emp": 8
+   },
+   {
+    "int": 3,
+    "ref": 5,
+    "dex": 5,
+    "tech": 6,
+    "cool": 7,
+    "will": 8,
+    "luck": 7,
+    "move": 5,
+    "body": 5,
+    "emp": 7
+   },
+   {
+    "int": 4,
+    "ref": 5,
+    "dex": 6,
+    "tech": 5,
+    "cool": 8,
+    "will": 8,
+    "luck": 7,
+    "move": 6,
+    "body": 4,
+    "emp": 7
+   }
+  ],
+  "streetratSkills": [
+   {
+    "label": "Atletismo",
+    "red": "Athletics",
+    "level": 2
+   },
+   {
+    "label": "Concentración",
+    "red": "Concentration",
+    "level": 2
+   },
+   {
+    "label": "Conversación",
+    "red": "Conversation",
+    "level": 2
+   },
+   {
+    "label": "Cultura",
+    "red": "Education",
+    "level": 2
+   },
+   {
+    "label": "Evasión",
+    "red": "Evasion",
+    "level": 6
+   },
+   {
+    "label": "Experto local (tu hogar)",
+    "red": "Local Expert (Your Home)",
+    "level": 4
+   },
+   {
+    "label": "Idioma (jerga callejera)",
+    "red": "Language (Streetslang)",
+    "level": 2
+   },
+   {
+    "label": "Pelea",
+    "red": "Brawling",
+    "level": 6
+   },
+   {
+    "label": "Percepción",
+    "red": "Perception",
+    "level": 2
+   },
+   {
+    "label": "Percepción humana",
+    "red": "Human Perception",
+    "level": 6
+   },
+   {
+    "label": "Persuasión",
+    "red": "Persuasion",
+    "level": 6
+   },
+   {
+    "label": "Primeros auxilios",
+    "red": "First Aid",
+    "level": 6
+   },
+   {
+    "label": "Sigilo",
+    "red": "Stealth",
+    "level": 2
+   },
+   {
+    "label": "Arma cuerpo a cuerpo",
+    "red": "Melee Weapon",
+    "level": 6
+   },
+   {
+    "label": "Armas cortas",
+    "red": "Handgun",
+    "level": 6
+   },
+   {
+    "label": "Arreglo personal",
+    "red": "Personal Grooming",
+    "level": 4
+   },
+   {
+    "label": "Composición",
+    "red": "Composition",
+    "level": 6
+   },
+   {
+    "label": "Conocimiento de la calle",
+    "red": "Streetwise",
+    "level": 6
+   },
+   {
+    "label": "Tocar instrumento (elige 1)",
+    "specialtyPack": "core_skills-play-instrument",
+    "level": 6
+   },
+   {
+    "label": "Vestuario y estilo",
+    "red": "Wardrobe & Style",
+    "level": 4
+   }
+  ],
+  "edgerunnerSkills": [
+   {
+    "label": "Atletismo",
+    "red": "Athletics"
+   },
+   {
+    "label": "Concentración",
+    "red": "Concentration"
+   },
+   {
+    "label": "Conversación",
+    "red": "Conversation"
+   },
+   {
+    "label": "Cultura",
+    "red": "Education"
+   },
+   {
+    "label": "Evasión",
+    "red": "Evasion"
+   },
+   {
+    "label": "Experto local (tu hogar)",
+    "red": "Local Expert (Your Home)"
+   },
+   {
+    "label": "Idioma (jerga callejera)",
+    "red": "Language (Streetslang)"
+   },
+   {
+    "label": "Pelea",
+    "red": "Brawling"
+   },
+   {
+    "label": "Percepción",
+    "red": "Perception"
+   },
+   {
+    "label": "Percepción humana",
+    "red": "Human Perception"
+   },
+   {
+    "label": "Persuasión",
+    "red": "Persuasion"
+   },
+   {
+    "label": "Primeros auxilios",
+    "red": "First Aid"
+   },
+   {
+    "label": "Sigilo",
+    "red": "Stealth"
+   },
+   {
+    "label": "Arma cuerpo a cuerpo",
+    "red": "Melee Weapon"
+   },
+   {
+    "label": "Armas cortas",
+    "red": "Handgun"
+   },
+   {
+    "label": "Arreglo personal",
+    "red": "Personal Grooming"
+   },
+   {
+    "label": "Composición",
+    "red": "Composition"
+   },
+   {
+    "label": "Conocimiento de la calle",
+    "red": "Streetwise"
+   },
+   {
+    "label": "Tocar instrumento (elige 1)",
+    "specialtyPack": "core_skills-play-instrument"
+   },
+   {
+    "label": "Vestuario y estilo",
+    "red": "Wardrobe & Style"
+   }
+  ],
+  "weapons": [
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_weapons.Item.4L05qIZxsy0uDSHz",
+      "name": "Pistola muy pesada",
+      "qty": 1,
+      "note": ""
+     }
+    ]
+   },
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_ammo.Item.NQP4I9heyv9fXj46",
+      "name": "Munición básica de pistola MP",
+      "qty": 50,
+      "note": ""
+     }
+    ]
+   },
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_weapons.Item.g2d7I3KLRXXbMr1g",
+      "name": "Arma cuerpo a cuerpo pesada",
+      "qty": 1,
+      "note": ""
+     },
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_ammo.Item.e8gDMbdK1oPKwhqW",
+      "name": "granada cegadora",
+      "qty": 1,
+      "note": ""
+     }
+    ]
+   },
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_ammo.Item.3rtsVDMaB16lc5tY",
+      "name": "Granada de gas lacrimógeno",
+      "qty": 2,
+      "note": ""
+     }
+    ]
+   },
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_armor.Item.uaN9WukkezPfcutU",
+      "name": "Blindaje ligero en el cuerpo",
+      "qty": 1,
+      "note": "(CP11)"
+     }
+    ]
+   },
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_armor.Item.Bsalv6m63PhmHkMm",
+      "name": "Blindaje ligero en la cabeza",
+      "qty": 1,
+      "note": "(CP11)"
+     }
+    ]
+   }
+  ],
+  "gear": [
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_gear.Item.GqYz689ddSKQHMen",
+      "name": "Agente",
+      "qty": 1,
+      "note": ""
+     }
+    ]
+   },
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_gear.Item.1K1dtvrm7rjoraAJ",
+      "name": "Ordenador",
+      "qty": 1,
+      "note": ""
+     }
+    ]
+   },
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_gear.Item.aiX4CSRjs0oKGIFK",
+      "name": "Guitarra eléctrica",
+      "qty": 1,
+      "note": ""
+     },
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_gear.Item.Fa8Mse1uXrLLWIxo",
+      "name": "detector de micrófonos",
+      "qty": 1,
+      "note": ""
+     }
+    ]
+   },
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_gear.Item.3HWLPHE0VHMGgv48",
+      "name": "Pintura luminosa",
+      "qty": 5,
+      "note": ""
+     }
+    ]
+   },
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_gear.Item.Zp8YbDBMTCl7sy61",
+      "name": "Amplificador de bolsillo",
+      "qty": 1,
+      "note": ""
+     }
+    ]
+   },
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_gear.Item.sMAZKb9ErPoQJ1vV",
+      "name": "Escáner de radio/Reproductor de música",
+      "qty": 1,
+      "note": ""
+     }
+    ]
+   },
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_gear.Item.clCxd7qkp2olsKii",
+      "name": "Cámara de vídeo",
+      "qty": 1,
+      "note": ""
+     }
+    ]
+   },
+   {
+    "clothing": {
+     "style": "Ropa normal elegante",
+     "items": [
+      {
+       "type": "chaqueta",
+       "qty": 1
+      },
+      {
+       "type": "joyas",
+       "qty": 3
+      },
+      {
+       "type": "parte de arriba",
+       "qty": 4
+      }
+     ]
+    },
+    "text": "Ropa normal elegante: chaqueta, joyas x3, parte de arriba x4"
+   },
+   {
+    "clothing": {
+     "style": "Ropa de deporte",
+     "items": [
+      {
+       "type": "joyas",
+       "qty": 1
+      },
+      {
+       "type": "gafas espejadas",
+       "qty": 1
+      },
+      {
+       "type": "calzado",
+       "qty": 1
+      }
+     ]
+    },
+    "text": "Ropa de deporte: joyas, gafas espejadas, calzado"
+   },
+   {
+    "clothing": {
+     "style": "Tendencias urbanas",
+     "items": [
+      {
+       "type": "parte de abajo",
+       "qty": 1
+      },
+      {
+       "type": "parte de arriba",
+       "qty": 1
+      }
+     ]
+    },
+    "text": "Tendencias urbanas: parte de abajo, parte de arriba"
+   }
+  ],
+  "cyberware": [
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_cyberware.Item.hsoSD662cLKvHKZJ",
+      "name": "Equipo de ciberaudio",
+      "qty": 1,
+      "note": ""
+     }
+    ]
+   },
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_cyberware.Item.3LDuErXOiN3nkRl2",
+      "name": "Grabadora de audio",
+      "qty": 1,
+      "note": ""
+     }
+    ]
+   },
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_cyberware.Item.6jicmuwJKrB98O1R",
+      "name": "Quimipiel",
+      "qty": 1,
+      "note": ""
+     }
+    ]
+   },
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_cyberware.Item.opzHe5mz24EwqNCM",
+      "name": "Tecnopelo",
+      "qty": 1,
+      "note": ""
+     }
+    ]
+   }
+  ],
+  "cyberwareHumanityLoss": 9,
+  "cyberwareEmpLoss": -1,
+  "lifepathPage": "73488c40b5578053",
+  "lifepath": [
+   {
+    "type": "table",
+    "id": "t0",
+    "title": "¿Qué tipo de rockero eres?",
+    "instruction": "Tira 1d10 o elige un resultado.",
+    "die": "1d10",
+    "columns": [
+     "Tipo"
+    ],
+    "rows": [
+     {
+      "min": 1,
+      "max": 1,
+      "cells": [
+       "Músico."
+      ]
+     },
+     {
+      "min": 2,
+      "max": 2,
+      "cells": [
+       "Poeta callejero."
+      ]
+     },
+     {
+      "min": 3,
+      "max": 3,
+      "cells": [
+       "Artista callejero."
+      ]
+     },
+     {
+      "min": 4,
+      "max": 4,
+      "cells": [
+       "Actor o actriz."
+      ]
+     },
+     {
+      "min": 5,
+      "max": 5,
+      "cells": [
+       "Comediante."
+      ]
+     },
+     {
+      "min": 6,
+      "max": 6,
+      "cells": [
+       "Orador."
+      ]
+     },
+     {
+      "min": 7,
+      "max": 7,
+      "cells": [
+       "Político."
+      ]
+     },
+     {
+      "min": 8,
+      "max": 8,
+      "cells": [
+       "Rapero."
+      ]
+     },
+     {
+      "min": 9,
+      "max": 9,
+      "cells": [
+       "DJ."
+      ]
+     },
+     {
+      "min": 10,
+      "max": 10,
+      "cells": [
+       "Idoru."
+      ]
+     }
+    ]
+   },
+   {
+    "type": "choice",
+    "id": "group",
+    "title": "¿Estás en un grupo o actúas en solitario?",
+    "options": [
+     {
+      "value": "group",
+      "label": "En un grupo"
+     },
+     {
+      "value": "solo",
+      "label": "En solitario"
+     }
+    ]
+   },
+   {
+    "type": "choice",
+    "id": "wasInGroup",
+    "title": "¿Estuviste en un grupo?",
+    "options": [
+     {
+      "value": "yes",
+      "label": "Sí"
+     },
+     {
+      "value": "no",
+      "label": "No"
+     }
+    ],
+    "when": {
+     "id": "group",
+     "value": "solo"
+    }
+   },
+   {
+    "type": "table",
+    "id": "t1",
+    "title": "¿Por qué te marchaste?",
+    "instruction": "Tira 1d6 o elige un resultado.",
+    "die": "1d6",
+    "columns": [
+     "Razón"
+    ],
+    "rows": [
+     {
+      "min": 1,
+      "max": 1,
+      "cells": [
+       "Fuiste un imbécil y el resto del grupo te expulsó."
+      ]
+     },
+     {
+      "min": 2,
+      "max": 2,
+      "cells": [
+       "Te pillaron acostándote con la pareja de otro miembro."
+      ]
+     },
+     {
+      "min": 3,
+      "max": 3,
+      "cells": [
+       "El resto del grupo murió en un trágico «accidente»."
+      ]
+     },
+     {
+      "min": 4,
+      "max": 4,
+      "cells": [
+       "El resto del grupo fue asesinado o separado de alguna otra manera por enemigos externos."
+      ]
+     },
+     {
+      "min": 5,
+      "max": 5,
+      "cells": [
+       "El grupo se separó por «diferencias creativas»."
+      ]
+     },
+     {
+      "min": 6,
+      "max": 6,
+      "cells": [
+       "Decidiste ir en solitario."
+      ]
+     }
+    ],
+    "when": {
+     "id": "wasInGroup",
+     "value": "yes"
+    }
+   },
+   {
+    "type": "table",
+    "id": "t2",
+    "title": "¿Dónde actúas?",
+    "instruction": "Tira 1d6 o elige un resultado.",
+    "die": "1d6",
+    "columns": [
+     "Espacio"
+    ],
+    "rows": [
+     {
+      "min": 1,
+      "max": 1,
+      "cells": [
+       "Cafés alternativos."
+      ]
+     },
+     {
+      "min": 2,
+      "max": 2,
+      "cells": [
+       "Clubes privados."
+      ]
+     },
+     {
+      "min": 3,
+      "max": 3,
+      "cells": [
+       "Antros sórdidos."
+      ]
+     },
+     {
+      "min": 4,
+      "max": 4,
+      "cells": [
+       "Espectáculos de guerrilla."
+      ]
+     },
+     {
+      "min": 5,
+      "max": 5,
+      "cells": [
+       "Clubes nocturnos en la ciudad."
+      ]
+     },
+     {
+      "min": 6,
+      "max": 6,
+      "cells": [
+       "En la reserva de datos."
+      ]
+     }
+    ]
+   },
+   {
+    "type": "table",
+    "id": "t3",
+    "title": "¿Quién te tiene a ti o a tu grupo en el punto de mira?",
+    "instruction": "Tira 1d6 o elige un resultado.",
+    "die": "1d6",
+    "columns": [
+     "¿Quién?"
+    ],
+    "rows": [
+     {
+      "min": 1,
+      "max": 1,
+      "cells": [
+       "Un antiguo miembro del grupo que cree que se la jugaste."
+      ]
+     },
+     {
+      "min": 2,
+      "max": 2,
+      "cells": [
+       "Un grupo o artista rival que intenta robar cuota de mercado."
+      ]
+     },
+     {
+      "min": 3,
+      "max": 3,
+      "cells": [
+       "Enemigos corporativos a los que no les gusta tu mensaje."
+      ]
+     },
+     {
+      "min": 4,
+      "max": 4,
+      "cells": [
+       "Crítico u otro «influencer» que trata de derribarte."
+      ]
+     },
+     {
+      "min": 5,
+      "max": 5,
+      "cells": [
+       "Una estrella mediática más veterana que se siente amenazada por tu fama creciente."
+      ]
+     },
+     {
+      "min": 6,
+      "max": 6,
+      "cells": [
+       "Una figura de interés romántico o mediático que quiere vengarse por razones personales."
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "key": "tech",
+  "name": "Técnico",
+  "itemId": "f815HiiDpThbd7eY",
+  "uuid": "Compendium.cyberpunk-red-core.core_roles.Item.f815HiiDpThbd7eY",
+  "statTable": [
+   {
+    "int": 6,
+    "ref": 7,
+    "dex": 7,
+    "tech": 8,
+    "cool": 4,
+    "will": 4,
+    "luck": 5,
+    "move": 5,
+    "body": 7,
+    "emp": 6
+   },
+   {
+    "int": 7,
+    "ref": 6,
+    "dex": 6,
+    "tech": 7,
+    "cool": 5,
+    "will": 3,
+    "luck": 7,
+    "move": 7,
+    "body": 5,
+    "emp": 5
+   },
+   {
+    "int": 8,
+    "ref": 6,
+    "dex": 5,
+    "tech": 7,
+    "cool": 5,
+    "will": 4,
+    "luck": 7,
+    "move": 7,
+    "body": 5,
+    "emp": 7
+   },
+   {
+    "int": 7,
+    "ref": 8,
+    "dex": 7,
+    "tech": 8,
+    "cool": 4,
+    "will": 4,
+    "luck": 6,
+    "move": 5,
+    "body": 6,
+    "emp": 7
+   },
+   {
+    "int": 6,
+    "ref": 6,
+    "dex": 7,
+    "tech": 6,
+    "cool": 4,
+    "will": 3,
+    "luck": 7,
+    "move": 7,
+    "body": 6,
+    "emp": 6
+   },
+   {
+    "int": 8,
+    "ref": 7,
+    "dex": 5,
+    "tech": 6,
+    "cool": 3,
+    "will": 3,
+    "luck": 7,
+    "move": 6,
+    "body": 6,
+    "emp": 7
+   },
+   {
+    "int": 8,
+    "ref": 6,
+    "dex": 7,
+    "tech": 8,
+    "cool": 4,
+    "will": 4,
+    "luck": 7,
+    "move": 6,
+    "body": 7,
+    "emp": 6
+   },
+   {
+    "int": 8,
+    "ref": 8,
+    "dex": 7,
+    "tech": 8,
+    "cool": 5,
+    "will": 4,
+    "luck": 6,
+    "move": 5,
+    "body": 6,
+    "emp": 6
+   },
+   {
+    "int": 6,
+    "ref": 6,
+    "dex": 7,
+    "tech": 8,
+    "cool": 3,
+    "will": 3,
+    "luck": 5,
+    "move": 7,
+    "body": 7,
+    "emp": 7
+   },
+   {
+    "int": 8,
+    "ref": 8,
+    "dex": 5,
+    "tech": 6,
+    "cool": 4,
+    "will": 4,
+    "luck": 6,
+    "move": 5,
+    "body": 6,
+    "emp": 6
+   }
+  ],
+  "streetratSkills": [
+   {
+    "label": "Atletismo",
+    "red": "Athletics",
+    "level": 2
+   },
+   {
+    "label": "Concentración",
+    "red": "Concentration",
+    "level": 2
+   },
+   {
+    "label": "Conversación",
+    "red": "Conversation",
+    "level": 2
+   },
+   {
+    "label": "Cultura",
+    "red": "Education",
+    "level": 6
+   },
+   {
+    "label": "Evasión",
+    "red": "Evasion",
+    "level": 6
+   },
+   {
+    "label": "Experto local (tu hogar)",
+    "red": "Local Expert (Your Home)",
+    "level": 2
+   },
+   {
+    "label": "Idioma (jerga callejera)",
+    "red": "Language (Streetslang)",
+    "level": 2
+   },
+   {
+    "label": "Pelea",
+    "red": "Brawling",
+    "level": 2
+   },
+   {
+    "label": "Percepción",
+    "red": "Perception",
+    "level": 2
+   },
+   {
+    "label": "Percepción humana",
+    "red": "Human Perception",
+    "level": 2
+   },
+   {
+    "label": "Persuasión",
+    "red": "Persuasion",
+    "level": 2
+   },
+   {
+    "label": "Primeros auxilios",
+    "red": "First Aid",
+    "level": 6
+   },
+   {
+    "label": "Sigilo",
+    "red": "Stealth",
+    "level": 2
+   },
+   {
+    "label": "Armas largas",
+    "red": "Shoulder Arms",
+    "level": 6
+   },
+   {
+    "label": "Cibertecnología",
+    "red": "Cybertech",
+    "level": 6
+   },
+   {
+    "label": "Ciencia (elige 1)",
+    "specialtyPack": "core_skills-science",
+    "level": 6
+   },
+   {
+    "label": "Electrónica/Seguridad",
+    "red": "Electronics/Security Tech",
+    "level": 6
+   },
+   {
+    "label": "Mecánica básica",
+    "red": "Basic Tech",
+    "level": 6
+   },
+   {
+    "label": "Mecánica de armas",
+    "red": "Weaponstech",
+    "level": 6
+   },
+   {
+    "label": "Mecánica de vehículos terrestres",
+    "red": "Land Vehicle Tech",
+    "level": 6
+   }
+  ],
+  "edgerunnerSkills": [
+   {
+    "label": "Atletismo",
+    "red": "Athletics"
+   },
+   {
+    "label": "Concentración",
+    "red": "Concentration"
+   },
+   {
+    "label": "Conversación",
+    "red": "Conversation"
+   },
+   {
+    "label": "Cultura",
+    "red": "Education"
+   },
+   {
+    "label": "Evasión",
+    "red": "Evasion"
+   },
+   {
+    "label": "Experto local (tu hogar)",
+    "red": "Local Expert (Your Home)"
+   },
+   {
+    "label": "Idioma (jerga callejera)",
+    "red": "Language (Streetslang)"
+   },
+   {
+    "label": "Pelea",
+    "red": "Brawling"
+   },
+   {
+    "label": "Percepción",
+    "red": "Perception"
+   },
+   {
+    "label": "Percepción humana",
+    "red": "Human Perception"
+   },
+   {
+    "label": "Persuasión",
+    "red": "Persuasion"
+   },
+   {
+    "label": "Primeros auxilios",
+    "red": "First Aid"
+   },
+   {
+    "label": "Sigilo",
+    "red": "Stealth"
+   },
+   {
+    "label": "Armas largas",
+    "red": "Shoulder Arms"
+   },
+   {
+    "label": "Cibertecnología",
+    "red": "Cybertech"
+   },
+   {
+    "label": "Ciencia (elige 1)",
+    "specialtyPack": "core_skills-science"
+   },
+   {
+    "label": "Electrónica/Seguridad",
+    "red": "Electronics/Security Tech"
+   },
+   {
+    "label": "Mecánica básica",
+    "red": "Basic Tech"
+   },
+   {
+    "label": "Mecánica de armas",
+    "red": "Weaponstech"
+   },
+   {
+    "label": "Mecánica de vehículos terrestres",
+    "red": "Land Vehicle Tech"
+   }
+  ],
+  "weapons": [
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_weapons.Item.PJhu6eY766OegZBo",
+      "name": "Escopeta",
+      "qty": 1,
+      "note": ""
+     },
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_weapons.Item.QrQNdHTuEDxrfIxS",
+      "name": "fusil de asalto",
+      "qty": 1,
+      "note": ""
+     }
+    ]
+   },
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_ammo.Item.mkI1KpjAOUz9PxRM",
+      "name": "Munición básica de cartucho de escopeta",
+      "qty": 100,
+      "note": ""
+     },
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_ammo.Item.J3NfMgRdqoUwFDDs",
+      "name": "munición básica de fusil",
+      "qty": 100,
+      "note": ""
+     }
+    ]
+   },
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_ammo.Item.e8gDMbdK1oPKwhqW",
+      "name": "Granada cegadora",
+      "qty": 1,
+      "note": ""
+     }
+    ]
+   },
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_armor.Item.uaN9WukkezPfcutU",
+      "name": "Blindaje ligero en el cuerpo",
+      "qty": 1,
+      "note": "(CP11)"
+     }
+    ]
+   },
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_armor.Item.Bsalv6m63PhmHkMm",
+      "name": "Blindaje ligero en la cabeza",
+      "qty": 1,
+      "note": "(CP11)"
+     }
+    ]
+   }
+  ],
+  "gear": [
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_gear.Item.GqYz689ddSKQHMen",
+      "name": "Agente",
+      "qty": 1,
+      "note": ""
+     }
+    ]
+   },
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_gear.Item.LTxStSIeRegbtZpd",
+      "name": "Máscara respiratoria antismog",
+      "qty": 1,
+      "note": ""
+     }
+    ]
+   },
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_gear.Item.OjMJ2SyoMr4VWmnm",
+      "name": "Teléfono móvil desechable",
+      "qty": 1,
+      "note": ""
+     }
+    ]
+   },
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_gear.Item.WAOq0nMUFwvnZpCr",
+      "name": "Cinta adhesiva",
+      "qty": 5,
+      "note": ""
+     }
+    ]
+   },
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_gear.Item.spgehgLv94vrH4Zo",
+      "name": "Linterna",
+      "qty": 1,
+      "note": ""
+     }
+    ]
+   },
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_gear.Item.EUZBOSRdQWOqKVUg",
+      "name": "Bengala de carretera",
+      "qty": 6,
+      "note": ""
+     }
+    ]
+   },
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_gear.Item.uRkSAWB6JW8LfUqI",
+      "name": "Bolsa de técnico",
+      "qty": 1,
+      "note": ""
+     }
+    ]
+   },
+   {
+    "clothing": {
+     "style": "Ropa normal elegante",
+     "items": [
+      {
+       "type": "parte de abajo",
+       "qty": 8
+      },
+      {
+       "type": "parte de arriba",
+       "qty": 10
+      }
+     ]
+    },
+    "text": "Ropa normal elegante: parte de abajo x8, parte de arriba x10"
+   },
+   {
+    "clothing": {
+     "style": "Ropa de deporte",
+     "items": [
+      {
+       "type": "calzado",
+       "qty": 2
+      }
+     ]
+    },
+    "text": "Ropa de deporte: calzado x2"
+   }
+  ],
+  "cyberware": [
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_cyberware.Item.aC234RUXPPUb08cO",
+      "name": "Ciberojo",
+      "qty": 1,
+      "note": ""
+     }
+    ]
+   },
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_cyberware.Item.hAx2MqVm4JuwXsSV",
+      "name": "Mano con herramientas",
+      "qty": 1,
+      "note": ""
+     }
+    ]
+   },
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_cyberware.Item.343Bc0xzAzX3bcB7",
+      "name": "Microópticos",
+      "qty": 1,
+      "note": ""
+     }
+    ]
+   },
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_cyberware.Item.J2sKdlerg9DCFtkI",
+      "name": "Reloj subcutáneo",
+      "qty": 1,
+      "note": ""
+     }
+    ]
+   }
+  ],
+  "cyberwareHumanityLoss": 12,
+  "cyberwareEmpLoss": -2,
+  "lifepathPage": "a6a116775f0ea0ce",
+  "lifepath": [
+   {
+    "type": "table",
+    "id": "t0",
+    "title": "¿Qué tipo de técnico eres?",
+    "instruction": "Tira 1d10 o elige un resultado.",
+    "die": "1d10",
+    "columns": [
+     "Tipo"
+    ],
+    "rows": [
+     {
+      "min": 1,
+      "max": 1,
+      "cells": [
+       "Técnico de ciberequipo."
+      ]
+     },
+     {
+      "min": 2,
+      "max": 2,
+      "cells": [
+       "Mecánico de vehículos."
+      ]
+     },
+     {
+      "min": 3,
+      "max": 3,
+      "cells": [
+       "Un poco de todo."
+      ]
+     },
+     {
+      "min": 4,
+      "max": 4,
+      "cells": [
+       "Técnico de electrónica pequeña."
+      ]
+     },
+     {
+      "min": 5,
+      "max": 5,
+      "cells": [
+       "Fabricante de armas."
+      ]
+     },
+     {
+      "min": 6,
+      "max": 6,
+      "cells": [
+       "Inventor loco."
+      ]
+     },
+     {
+      "min": 7,
+      "max": 7,
+      "cells": [
+       "Mecánico de robots y drones."
+      ]
+     },
+     {
+      "min": 8,
+      "max": 8,
+      "cells": [
+       "Mecánico de maquinaria pesada."
+      ]
+     },
+     {
+      "min": 9,
+      "max": 9,
+      "cells": [
+       "Recuperador."
+      ]
+     },
+     {
+      "min": 10,
+      "max": 10,
+      "cells": [
+       "Mecánico náutico."
+      ]
+     }
+    ]
+   },
+   {
+    "type": "choice",
+    "id": "partner",
+    "title": "¿Tienes un socio o trabajas solo?",
+    "options": [
+     {
+      "value": "partner",
+      "label": "Socio"
+     },
+     {
+      "value": "solo",
+      "label": "Solo"
+     }
+    ]
+   },
+   {
+    "type": "table",
+    "id": "t1",
+    "title": "Si tienes un socio, ¿quién es?",
+    "instruction": "Tira 1d6 o elige un resultado.",
+    "die": "1d6",
+    "columns": [
+     "¿Quién?"
+    ],
+    "rows": [
+     {
+      "min": 1,
+      "max": 1,
+      "cells": [
+       "Miembro de la familia."
+      ]
+     },
+     {
+      "min": 2,
+      "max": 2,
+      "cells": [
+       "Viejo amigo."
+      ]
+     },
+     {
+      "min": 3,
+      "max": 3,
+      "cells": [
+       "Posible pareja romántica."
+      ]
+     },
+     {
+      "min": 4,
+      "max": 4,
+      "cells": [
+       "Mentor."
+      ]
+     },
+     {
+      "min": 5,
+      "max": 5,
+      "cells": [
+       "Socio secreto con conexiones con la mafia o alguna pandilla."
+      ]
+     },
+     {
+      "min": 6,
+      "max": 6,
+      "cells": [
+       "Socio secreto con conexiones corporativas."
+      ]
+     }
+    ],
+    "when": {
+     "id": "partner",
+     "value": "partner"
+    }
+   },
+   {
+    "type": "table",
+    "id": "t2",
+    "title": "¿Cómo es tu lugar de trabajo?",
+    "instruction": "Tira 1d6 o elige un resultado.",
+    "die": "1d6",
+    "columns": [
+     "Lugar de trabajo"
+    ],
+    "rows": [
+     {
+      "min": 1,
+      "max": 1,
+      "cells": [
+       "Un desastre cubierto de planos en papel."
+      ]
+     },
+     {
+      "min": 2,
+      "max": 2,
+      "cells": [
+       "Todo está codificado por colores, pero sigue siendo una pesadilla."
+      ]
+     },
+     {
+      "min": 3,
+      "max": 3,
+      "cells": [
+       "Totalmente digital y obsesivamente « copiado » todos los días."
+      ]
+     },
+     {
+      "min": 4,
+      "max": 4,
+      "cells": [
+       "Lo diseñas todo en tu agente."
+      ]
+     },
+     {
+      "min": 5,
+      "max": 5,
+      "cells": [
+       "Lo guardas todo, por si lo necesitas más tarde."
+      ]
+     },
+     {
+      "min": 6,
+      "max": 6,
+      "cells": [
+       "Solo tú entiendes tu sistema de clasificación."
+      ]
+     }
+    ]
+   },
+   {
+    "type": "table",
+    "id": "t3",
+    "title": "¿Quiénes son tus principales clientes?",
+    "instruction": "Tira 1d6 o elige un resultado.",
+    "die": "1d6",
+    "columns": [
+     "¿Quién?"
+    ],
+    "rows": [
+     {
+      "min": 1,
+      "max": 1,
+      "cells": [
+       "Arregladores locales que te envían clientes."
+      ]
+     },
+     {
+      "min": 2,
+      "max": 2,
+      "cells": [
+       "Pandilleros locales que también protegen tu lugar de trabajo o tu casa."
+      ]
+     },
+     {
+      "min": 3,
+      "max": 3,
+      "cells": [
+       "Ejecutivos corporativos que te usan para el trabajo en «proyectos negros»."
+      ]
+     },
+     {
+      "min": 4,
+      "max": 4,
+      "cells": [
+       "Mercenarios locales u otros tipos de combatientes que te utilizan para el mantenimiento de sus armas."
+      ]
+     },
+     {
+      "min": 5,
+      "max": 5,
+      "cells": [
+       "Nómadas y arregladores locales que te traen tecnología «encontrada» para reparar."
+      ]
+     },
+     {
+      "min": 6,
+      "max": 6,
+      "cells": [
+       "Trabajas para ti mismo y vendes lo que inventas o reparas."
+      ]
+     }
+    ]
+   },
+   {
+    "type": "table",
+    "id": "t4",
+    "title": "¿Dónde consigues tus suministros?",
+    "instruction": "Tira 1d6 o elige un resultado.",
+    "die": "1d6",
+    "columns": [
+     "¿Dónde?"
+    ],
+    "rows": [
+     {
+      "min": 1,
+      "max": 1,
+      "cells": [
+       "Recuperas los restos que encuentras en las zonas urbanas abandonadas."
+      ]
+     },
+     {
+      "min": 2,
+      "max": 2,
+      "cells": [
+       "Recoges equipo de los cuerpos después de los tiroteos."
+      ]
+     },
+     {
+      "min": 3,
+      "max": 3,
+      "cells": [
+       "Haces que un arreglador local te traiga suministros a cambio de trabajos de reparación."
+      ]
+     },
+     {
+      "min": 4,
+      "max": 4,
+      "cells": [
+       "Ejecutivos corporativos te proveen de material a cambio de tus servicios."
+      ]
+     },
+     {
+      "min": 5,
+      "max": 5,
+      "cells": [
+       "Tienes acceso a puertas traseras de varios almacenes corporativos."
+      ]
+     },
+     {
+      "min": 6,
+      "max": 6,
+      "cells": [
+       "Vas a los mercados nocturnos para cerrar tratos siempre que puedes."
+      ]
+     }
+    ]
+   },
+   {
+    "type": "table",
+    "id": "t5",
+    "title": "¿Quién te tiene en el punto de mira?",
+    "instruction": "Tira 1d6 o elige un resultado.",
+    "die": "1d6",
+    "columns": [
+     "¿Quién?"
+    ],
+    "rows": [
+     {
+      "min": 1,
+      "max": 1,
+      "cells": [
+       "Pandilleros de la zona de combate que quieren que trabajes exclusivamente para ellos."
+      ]
+     },
+     {
+      "min": 2,
+      "max": 2,
+      "cells": [
+       "Un técnico rival que intenta robarte clientes."
+      ]
+     },
+     {
+      "min": 3,
+      "max": 3,
+      "cells": [
+       "Corporativos que quieren que trabajes exclusivamente para ellos."
+      ]
+     },
+     {
+      "min": 4,
+      "max": 4,
+      "cells": [
+       "Un gran fabricante que intenta acabar contigo porque tus modificaciones son una amenaza."
+      ]
+     },
+     {
+      "min": 5,
+      "max": 5,
+      "cells": [
+       "Un viejo cliente que cree que le has engañado."
+      ]
+     },
+     {
+      "min": 6,
+      "max": 6,
+      "cells": [
+       "Un técnico rival que intenta conseguir recursos y piezas."
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "key": "medtech",
+  "name": "Tecnomédico",
+  "itemId": "8wRoRsRQnpt3Je00",
+  "uuid": "Compendium.cyberpunk-red-core.core_roles.Item.8wRoRsRQnpt3Je00",
+  "statTable": [
+   {
+    "int": 7,
+    "ref": 5,
+    "dex": 6,
+    "tech": 7,
+    "cool": 5,
+    "will": 3,
+    "luck": 8,
+    "move": 5,
+    "body": 5,
+    "emp": 7
+   },
+   {
+    "int": 6,
+    "ref": 7,
+    "dex": 7,
+    "tech": 7,
+    "cool": 4,
+    "will": 4,
+    "luck": 6,
+    "move": 7,
+    "body": 7,
+    "emp": 7
+   },
+   {
+    "int": 6,
+    "ref": 5,
+    "dex": 5,
+    "tech": 8,
+    "cool": 5,
+    "will": 3,
+    "luck": 8,
+    "move": 5,
+    "body": 7,
+    "emp": 8
+   },
+   {
+    "int": 8,
+    "ref": 7,
+    "dex": 6,
+    "tech": 8,
+    "cool": 3,
+    "will": 5,
+    "luck": 6,
+    "move": 6,
+    "body": 5,
+    "emp": 7
+   },
+   {
+    "int": 6,
+    "ref": 7,
+    "dex": 5,
+    "tech": 7,
+    "cool": 5,
+    "will": 5,
+    "luck": 8,
+    "move": 7,
+    "body": 6,
+    "emp": 8
+   },
+   {
+    "int": 8,
+    "ref": 5,
+    "dex": 5,
+    "tech": 8,
+    "cool": 5,
+    "will": 5,
+    "luck": 6,
+    "move": 6,
+    "body": 5,
+    "emp": 6
+   },
+   {
+    "int": 8,
+    "ref": 6,
+    "dex": 5,
+    "tech": 8,
+    "cool": 5,
+    "will": 4,
+    "luck": 8,
+    "move": 5,
+    "body": 7,
+    "emp": 7
+   },
+   {
+    "int": 6,
+    "ref": 5,
+    "dex": 7,
+    "tech": 7,
+    "cool": 3,
+    "will": 5,
+    "luck": 8,
+    "move": 5,
+    "body": 5,
+    "emp": 8
+   },
+   {
+    "int": 6,
+    "ref": 6,
+    "dex": 7,
+    "tech": 7,
+    "cool": 5,
+    "will": 4,
+    "luck": 6,
+    "move": 6,
+    "body": 5,
+    "emp": 6
+   },
+   {
+    "int": 8,
+    "ref": 7,
+    "dex": 6,
+    "tech": 6,
+    "cool": 3,
+    "will": 4,
+    "luck": 8,
+    "move": 7,
+    "body": 6,
+    "emp": 7
+   }
+  ],
+  "streetratSkills": [
+   {
+    "label": "Atletismo",
+    "red": "Athletics",
+    "level": 2
+   },
+   {
+    "label": "Concentración",
+    "red": "Concentration",
+    "level": 2
+   },
+   {
+    "label": "Conversación",
+    "red": "Conversation",
+    "level": 6
+   },
+   {
+    "label": "Cultura",
+    "red": "Education",
+    "level": 6
+   },
+   {
+    "label": "Evasión",
+    "red": "Evasion",
+    "level": 6
+   },
+   {
+    "label": "Experto local (tu hogar)",
+    "red": "Local Expert (Your Home)",
+    "level": 2
+   },
+   {
+    "label": "Idioma (jerga callejera)",
+    "red": "Language (Streetslang)",
+    "level": 2
+   },
+   {
+    "label": "Pelea",
+    "red": "Brawling",
+    "level": 2
+   },
+   {
+    "label": "Percepción",
+    "red": "Perception",
+    "level": 2
+   },
+   {
+    "label": "Percepción humana",
+    "red": "Human Perception",
+    "level": 6
+   },
+   {
+    "label": "Persuasión",
+    "red": "Persuasion",
+    "level": 2
+   },
+   {
+    "label": "Primeros auxilios",
+    "red": "First Aid",
+    "level": 2
+   },
+   {
+    "label": "Sigilo",
+    "red": "Stealth",
+    "level": 2
+   },
+   {
+    "label": "Armas largas",
+    "red": "Shoulder Arms",
+    "level": 6
+   },
+   {
+    "label": "Cibertecnología",
+    "red": "Cybertech",
+    "level": 4
+   },
+   {
+    "label": "Ciencia (elige 1)",
+    "specialtyPack": "core_skills-science",
+    "level": 6
+   },
+   {
+    "label": "Deducción",
+    "red": "Deduction",
+    "level": 6
+   },
+   {
+    "label": "Enfermería",
+    "red": "Paramedic",
+    "level": 6
+   },
+   {
+    "label": "Mecánica básica",
+    "red": "Basic Tech",
+    "level": 6
+   },
+   {
+    "label": "Resistir torturas/drogas",
+    "red": "Resist Torture/Drugs",
+    "level": 4
+   }
+  ],
+  "edgerunnerSkills": [
+   {
+    "label": "Atletismo",
+    "red": "Athletics"
+   },
+   {
+    "label": "Concentración",
+    "red": "Concentration"
+   },
+   {
+    "label": "Conversación",
+    "red": "Conversation"
+   },
+   {
+    "label": "Cultura",
+    "red": "Education"
+   },
+   {
+    "label": "Evasión",
+    "red": "Evasion"
+   },
+   {
+    "label": "Experto local (tu hogar)",
+    "red": "Local Expert (Your Home)"
+   },
+   {
+    "label": "Idioma (jerga callejera)",
+    "red": "Language (Streetslang)"
+   },
+   {
+    "label": "Pelea",
+    "red": "Brawling"
+   },
+   {
+    "label": "Percepción",
+    "red": "Perception"
+   },
+   {
+    "label": "Percepción humana",
+    "red": "Human Perception"
+   },
+   {
+    "label": "Persuasión",
+    "red": "Persuasion"
+   },
+   {
+    "label": "Primeros auxilios",
+    "red": "First Aid"
+   },
+   {
+    "label": "Sigilo",
+    "red": "Stealth"
+   },
+   {
+    "label": "Armas largas",
+    "red": "Shoulder Arms"
+   },
+   {
+    "label": "Cibertecnología",
+    "red": "Cybertech"
+   },
+   {
+    "label": "Ciencia (elige 1)",
+    "specialtyPack": "core_skills-science"
+   },
+   {
+    "label": "Deducción",
+    "red": "Deduction"
+   },
+   {
+    "label": "Enfermería",
+    "red": "Paramedic"
+   },
+   {
+    "label": "Mecánica básica",
+    "red": "Basic Tech"
+   },
+   {
+    "label": "Resistir torturas/drogas",
+    "red": "Resist Torture/Drugs"
+   }
+  ],
+  "weapons": [
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_weapons.Item.PJhu6eY766OegZBo",
+      "name": "Escopeta",
+      "qty": 1,
+      "note": ""
+     },
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_weapons.Item.QrQNdHTuEDxrfIxS",
+      "name": "fusil de asalto",
+      "qty": 1,
+      "note": ""
+     }
+    ]
+   },
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_ammo.Item.mkI1KpjAOUz9PxRM",
+      "name": "Munición básica de cartucho de escopeta",
+      "qty": 100,
+      "note": ""
+     },
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_ammo.Item.J3NfMgRdqoUwFDDs",
+      "name": "munición básica de fusil",
+      "qty": 100,
+      "note": ""
+     }
+    ]
+   },
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_ammo.Item.MdA5gBfCKbBuHGof",
+      "name": "Munición de cartucho de escopeta incendiario",
+      "qty": 10,
+      "note": ""
+     },
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_ammo.Item.U6VMjZRYgJMlMSsg",
+      "name": "munición de fusil incendiaria",
+      "qty": 10,
+      "note": ""
+     }
+    ]
+   },
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_ammo.Item.7xhKxgwOELzaPyYr",
+      "name": "Granada de humo",
+      "qty": 2,
+      "note": ""
+     }
+    ]
+   },
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_armor.Item.uaN9WukkezPfcutU",
+      "name": "Blindaje ligero en el cuerpo",
+      "qty": 1,
+      "note": "(CP11)"
+     }
+    ]
+   },
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_armor.Item.Bsalv6m63PhmHkMm",
+      "name": "Blindaje ligero en la cabeza",
+      "qty": 1,
+      "note": "(CP11)"
+     }
+    ]
+   },
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_armor.Item.Bg1YEeF25HhfrzOG",
+      "name": "Escudo antibalas",
+      "qty": 1,
+      "note": ""
+     }
+    ]
+   }
+  ],
+  "gear": [
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_gear.Item.GqYz689ddSKQHMen",
+      "name": "Agente",
+      "qty": 1,
+      "note": ""
+     }
+    ]
+   },
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_gear.Item.Th74cfC87RqEJKAb",
+      "name": "Jeringa de aire comprimido",
+      "qty": 1,
+      "note": ""
+     }
+    ]
+   },
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_gear.Item.uYXTKNbOO4ofu53c",
+      "name": "Esposas o grilletes",
+      "qty": 1,
+      "note": ""
+     }
+    ]
+   },
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_gear.Item.spgehgLv94vrH4Zo",
+      "name": "Linterna",
+      "qty": 1,
+      "note": ""
+     }
+    ]
+   },
+   {
+    "clothing": {
+     "style": "Ropa normal elegante",
+     "items": [
+      {
+       "type": "chaqueta",
+       "qty": 3
+      }
+     ]
+    },
+    "text": "Ropa normal elegante: chaqueta x3"
+   },
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_gear.Item.3HWLPHE0VHMGgv48",
+      "name": "Pintura luminosa",
+      "qty": 1,
+      "note": ""
+     }
+    ]
+   },
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_gear.Item.klPfcM59dHl4lvWS",
+      "name": "Bolsa de tecnomédico",
+      "qty": 1,
+      "note": ""
+     }
+    ]
+   },
+   {
+    "clothing": {
+     "style": "Ropa de deporte",
+     "items": [
+      {
+       "type": "calzado",
+       "qty": 1
+      },
+      {
+       "type": "parte de abajo",
+       "qty": 3
+      },
+      {
+       "type": "parte de arriba",
+       "qty": 5
+      }
+     ]
+    },
+    "text": "Ropa de deporte: calzado, parte de abajo x3, parte de arriba x5"
+   }
+  ],
+  "cyberware": [
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_cyberware.Item.uApwuxpuIJMe47Vn",
+      "name": "Amplificador de imagen",
+      "qty": 1,
+      "note": ""
+     }
+    ]
+   },
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_cyberware.Item.0d2bEozOFhfPgkUP",
+      "name": "Biomonitor",
+      "qty": 1,
+      "note": ""
+     }
+    ]
+   },
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_cyberware.Item.aC234RUXPPUb08cO",
+      "name": "Ciberojo",
+      "qty": 1,
+      "note": ""
+     }
+    ]
+   },
+   {
+    "options": [
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_cyberware.Item.1vcWKBzXQuBkJ3Dl",
+      "name": "Filtros nasales",
+      "qty": 1,
+      "note": ""
+     },
+     {
+      "uuid": "Compendium.cyberpunk-red-core.core_cyberware.Item.OhW1h2rwb7lvJPs3",
+      "name": "antitoxinas",
+      "qty": 1,
+      "note": ""
+     }
+    ]
+   }
+  ],
+  "cyberwareHumanityLoss": 12,
+  "cyberwareEmpLoss": -2,
+  "lifepathPage": "758d3573aae7fb23",
+  "lifepath": [
+   {
+    "type": "table",
+    "id": "t0",
+    "title": "¿Qué tipo de tecnomédico eres?",
+    "instruction": "Tira 1d10 o colabora con el DJ para elegir uno.",
+    "die": "1d10",
+    "columns": [
+     "Tipo"
+    ],
+    "rows": [
+     {
+      "min": 1,
+      "max": 1,
+      "cells": [
+       "Cirujano."
+      ]
+     },
+     {
+      "min": 2,
+      "max": 2,
+      "cells": [
+       "Médico de cabecera."
+      ]
+     },
+     {
+      "min": 3,
+      "max": 3,
+      "cells": [
+       "Médico de Trauma."
+      ]
+     },
+     {
+      "min": 4,
+      "max": 4,
+      "cells": [
+       "Psiquiatra."
+      ]
+     },
+     {
+      "min": 5,
+      "max": 5,
+      "cells": [
+       "Terapeuta de ciberpsicósis."
+      ]
+     },
+     {
+      "min": 6,
+      "max": 6,
+      "cells": [
+       "Matasanos."
+      ]
+     },
+     {
+      "min": 7,
+      "max": 7,
+      "cells": [
+       "Operador de criogenia."
+      ]
+     },
+     {
+      "min": 8,
+      "max": 8,
+      "cells": [
+       "Farmacéutico."
+      ]
+     },
+     {
+      "min": 9,
+      "max": 9,
+      "cells": [
+       "Escultor corporal."
+      ]
+     },
+     {
+      "min": 10,
+      "max": 10,
+      "cells": [
+       "Patólogo forense."
+      ]
+     }
+    ]
+   },
+   {
+    "type": "choice",
+    "id": "partner",
+    "title": "¿Tienes un socio o trabajas solo?",
+    "options": [
+     {
+      "value": "partner",
+      "label": "Socio"
+     },
+     {
+      "value": "solo",
+      "label": "Solo"
+     }
+    ]
+   },
+   {
+    "type": "table",
+    "id": "t1",
+    "title": "Háblanos de tu socio o socios",
+    "instruction": "Tira 1d6 o elige un resultado.",
+    "die": "1d6",
+    "columns": [
+     "¿Quién?"
+    ],
+    "rows": [
+     {
+      "min": 1,
+      "max": 1,
+      "cells": [
+       "Grupo de Trauma Team."
+      ]
+     },
+     {
+      "min": 2,
+      "max": 2,
+      "cells": [
+       "Viejo amigo."
+      ]
+     },
+     {
+      "min": 3,
+      "max": 3,
+      "cells": [
+       "Posible pareja romántica."
+      ]
+     },
+     {
+      "min": 4,
+      "max": 4,
+      "cells": [
+       "Miembro de la familia."
+      ]
+     },
+     {
+      "min": 5,
+      "max": 5,
+      "cells": [
+       "Socio secreto con conexiones con la mafia o alguna pandilla."
+      ]
+     },
+     {
+      "min": 6,
+      "max": 6,
+      "cells": [
+       "Socio secreto con conexiones corporativas."
+      ]
+     }
+    ],
+    "when": {
+     "id": "partner",
+     "value": "partner"
+    }
+   },
+   {
+    "type": "table",
+    "id": "t2",
+    "title": "¿Cómo es tu lugar de trabajo?",
+    "instruction": "Tira 1d6 o elige un resultado.",
+    "die": "1d6",
+    "columns": [
+     "Lugar de trabajo"
+    ],
+    "rows": [
+     {
+      "min": 1,
+      "max": 1,
+      "cells": [
+       "Esterilizado diariamente por la mañana como un reloj."
+      ]
+     },
+     {
+      "min": 2,
+      "max": 2,
+      "cells": [
+       "Ya no es de última generación, pero es cómodo para ti."
+      ]
+     },
+     {
+      "min": 3,
+      "max": 3,
+      "cells": [
+       "Tu equipo de criogenia también se usa para enfriar bebidas."
+      ]
+     },
+     {
+      "min": 4,
+      "max": 4,
+      "cells": [
+       "Todo lo posible es de un solo uso y se almacena compactado hasta que lo necesitas."
+      ]
+     },
+     {
+      "min": 5,
+      "max": 5,
+      "cells": [
+       "No tan limpio como muchos de tus pacientes podrían haber esperado."
+      ]
+     },
+     {
+      "min": 6,
+      "max": 6,
+      "cells": [
+       "Meticulosamente organizado, afilado y esterilizado."
+      ]
+     }
+    ]
+   },
+   {
+    "type": "table",
+    "id": "t3",
+    "title": "¿Quiénes son tus principales clientes?",
+    "instruction": "Tira 1d6 o elige un resultado.",
+    "die": "1d6",
+    "columns": [
+     "¿Quién?"
+    ],
+    "rows": [
+     {
+      "min": 1,
+      "max": 1,
+      "cells": [
+       "Arregladores locales que te envían clientes."
+      ]
+     },
+     {
+      "min": 2,
+      "max": 2,
+      "cells": [
+       "Pandilleros locales que también protegen tu lugar de trabajo o tu casa a cambio de ayuda médica."
+      ]
+     },
+     {
+      "min": 3,
+      "max": 3,
+      "cells": [
+       "Ejecutivos corporativos que te usan para trabajo médico en «proyectos negros»."
+      ]
+     },
+     {
+      "min": 4,
+      "max": 4,
+      "cells": [
+       "Mercenarios locales u otros tipos de combatientes que te emplean como ayuda médica."
+      ]
+     },
+     {
+      "min": 5,
+      "max": 5,
+      "cells": [
+       "Nómadas y arregladores locales que te traen clientes heridos."
+      ]
+     },
+     {
+      "min": 6,
+      "max": 6,
+      "cells": [
+       "Paramédicos de Trauma Teams."
+      ]
+     }
+    ]
+   },
+   {
+    "type": "table",
+    "id": "t4",
+    "title": "¿De dónde sacas tus suministros?",
+    "instruction": "Tira 1d6 o elige un resultado.",
+    "die": "1d6",
+    "columns": [
+     "¿Dónde?"
+    ],
+    "rows": [
+     {
+      "min": 1,
+      "max": 1,
+      "cells": [
+       "Recuperas restos de suministros médicos que encuentras en las zonas urbanas abandonadas."
+      ]
+     },
+     {
+      "min": 2,
+      "max": 2,
+      "cells": [
+       "Recoges partes de los cuerpos después de los tiroteos."
+      ]
+     },
+     {
+      "min": 3,
+      "max": 3,
+      "cells": [
+       "Haces que un arreglador local te traiga suministros a cambio de trabajos médicos."
+      ]
+     },
+     {
+      "min": 4,
+      "max": 4,
+      "cells": [
+       "Ejecutivos corporativos te proveen de material a cambio de tus servicios."
+      ]
+     },
+     {
+      "min": 5,
+      "max": 5,
+      "cells": [
+       "Tienes acceso a varios almacenes corporativos o de hospitales."
+      ]
+     },
+     {
+      "min": 6,
+      "max": 6,
+      "cells": [
+       "Vas a los mercados nocturnos para cerrar tratos siempre que puedes."
+      ]
+     }
+    ]
+   }
+  ]
+ }
+]

@@ -1,0 +1,1412 @@
+[
+ {
+  "id": "culturalOrigin",
+  "title": "Origen cultural",
+  "instruction": "Tira 1d10 o elige uno.",
+  "die": "1d10",
+  "columns": [
+   "Tu región cultural (general)",
+   "Idiomas que podrías conocer (elige uno de tu grupo)"
+  ],
+  "rows": [
+   {
+    "min": 1,
+    "max": 1,
+    "cells": [
+     "Norteamérica",
+     "Chino, cree, criollo, español, francés, inglés, navajo."
+    ]
+   },
+   {
+    "min": 2,
+    "max": 2,
+    "cells": [
+     "Centroamérica/Sudamérica",
+     "Alemán, criollo, español, guaraní, inglés, maya, portugués, quechua."
+    ]
+   },
+   {
+    "min": 3,
+    "max": 3,
+    "cells": [
+     "Europa occidental",
+     "Alemán, español, francés, holandés, inglés, italiano, noruego, portugués."
+    ]
+   },
+   {
+    "min": 4,
+    "max": 4,
+    "cells": [
+     "Europa oriental",
+     "Finlandés, inglés, polaco, rumano, ruso, ucraniano."
+    ]
+   },
+   {
+    "min": 5,
+    "max": 5,
+    "cells": [
+     "Oriente Medio/Norte de África",
+     "Árabe, bereber, farsi, francés, hebreo, inglés, turco."
+    ]
+   },
+   {
+    "min": 6,
+    "max": 6,
+    "cells": [
+     "África subsahariana",
+     "Árabe, francés, hausa, inglés, lingala, oromo, portugués, swahili, twi, yoruba."
+    ]
+   },
+   {
+    "min": 7,
+    "max": 7,
+    "cells": [
+     "Asia del Sur",
+     "Bengalí, cingalés, darí, hindi, inglés, nepalí, tamil, urdu."
+    ]
+   },
+   {
+    "min": 8,
+    "max": 8,
+    "cells": [
+     "Sudeste asiático",
+     "Árabe, birmano, camboyano, filipino, hindi, indonesio, inglés, malayo, vietnamita."
+    ]
+   },
+   {
+    "min": 9,
+    "max": 9,
+    "cells": [
+     "Asia oriental",
+     "Chino cantonés, chino mandarín, coreano, inglés, japonés, mongol."
+    ]
+   },
+   {
+    "min": 10,
+    "max": 10,
+    "cells": [
+     "Oceanía/Islas del Pacífico",
+     "Francés, hawaiano, inglés, maorí, pama-ñungano, tahitiano."
+    ]
+   }
+  ],
+  "fields": [
+   "culturalOrigin",
+   null
+  ],
+  "languages": true,
+  "languageOptions": [
+   [
+    "Chino",
+    "cree",
+    "criollo",
+    "español",
+    "francés",
+    "inglés",
+    "navajo"
+   ],
+   [
+    "Alemán",
+    "criollo",
+    "español",
+    "guaraní",
+    "inglés",
+    "maya",
+    "portugués",
+    "quechua"
+   ],
+   [
+    "Alemán",
+    "español",
+    "francés",
+    "holandés",
+    "inglés",
+    "italiano",
+    "noruego",
+    "portugués"
+   ],
+   [
+    "Finlandés",
+    "inglés",
+    "polaco",
+    "rumano",
+    "ruso",
+    "ucraniano"
+   ],
+   [
+    "Árabe",
+    "bereber",
+    "farsi",
+    "francés",
+    "hebreo",
+    "inglés",
+    "turco"
+   ],
+   [
+    "Árabe",
+    "francés",
+    "hausa",
+    "inglés",
+    "lingala",
+    "oromo",
+    "portugués",
+    "swahili",
+    "twi",
+    "yoruba"
+   ],
+   [
+    "Bengalí",
+    "cingalés",
+    "darí",
+    "hindi",
+    "inglés",
+    "nepalí",
+    "tamil",
+    "urdu"
+   ],
+   [
+    "Árabe",
+    "birmano",
+    "camboyano",
+    "filipino",
+    "hindi",
+    "indonesio",
+    "inglés",
+    "malayo",
+    "vietnamita"
+   ],
+   [
+    "Chino cantonés",
+    "chino mandarín",
+    "coreano",
+    "inglés",
+    "japonés",
+    "mongol"
+   ],
+   [
+    "Francés",
+    "hawaiano",
+    "inglés",
+    "maorí",
+    "pama-ñungano",
+    "tahitiano"
+   ]
+  ]
+ },
+ {
+  "id": "personality",
+  "title": "Personalidad",
+  "instruction": "Tira 1d10 o elige un resultado.",
+  "die": "1d10",
+  "columns": [
+   "¿Cómo eres?"
+  ],
+  "rows": [
+   {
+    "min": 1,
+    "max": 1,
+    "cells": [
+     "Tímido y reservado."
+    ]
+   },
+   {
+    "min": 2,
+    "max": 2,
+    "cells": [
+     "Rebelde, antisocial y violento."
+    ]
+   },
+   {
+    "min": 3,
+    "max": 3,
+    "cells": [
+     "Arrogante, orgulloso y frío."
+    ]
+   },
+   {
+    "min": 4,
+    "max": 4,
+    "cells": [
+     "Caprichoso, temerario y testarudo."
+    ]
+   },
+   {
+    "min": 5,
+    "max": 5,
+    "cells": [
+     "Nervioso, quisquilloso y delicado."
+    ]
+   },
+   {
+    "min": 6,
+    "max": 6,
+    "cells": [
+     "Serio y estable."
+    ]
+   },
+   {
+    "min": 7,
+    "max": 7,
+    "cells": [
+     "Idiota y atolondrado."
+    ]
+   },
+   {
+    "min": 8,
+    "max": 8,
+    "cells": [
+     "Soplón y falso."
+    ]
+   },
+   {
+    "min": 9,
+    "max": 9,
+    "cells": [
+     "Intelectual e independiente."
+    ]
+   },
+   {
+    "min": 10,
+    "max": 10,
+    "cells": [
+     "Amigable y extrovertido."
+    ]
+   }
+  ],
+  "fields": [
+   "personality"
+  ]
+ },
+ {
+  "id": "style",
+  "title": "Ropa y estilo personal",
+  "instruction": "Tira 1d10 o elige un resultado para cada columna.",
+  "die": "1d10",
+  "columns": [
+   "Estilo de ropa",
+   "Peinado"
+  ],
+  "rows": [
+   {
+    "min": 1,
+    "max": 1,
+    "cells": [
+     "Ropa normal elegante (estándar, colorido, modular).",
+     "Cresta."
+    ]
+   },
+   {
+    "min": 2,
+    "max": 2,
+    "cells": [
+     "Ropa de sport (cómodo, ligero, atlético).",
+     "Largo y rizado."
+    ]
+   },
+   {
+    "min": 3,
+    "max": 3,
+    "cells": [
+     "Tendencias urbanas (llamativo, tecnológico, de calle).",
+     "Corto y de punta."
+    ]
+   },
+   {
+    "min": 4,
+    "max": 4,
+    "cells": [
+     "Ropa de negocios (dominante, ostentoso, poderoso).",
+     "Suelto y despeinado."
+    ]
+   },
+   {
+    "min": 5,
+    "max": 5,
+    "cells": [
+     "Alta costura (exclusiva, de diseño, a la última).",
+     "Calvo."
+    ]
+   },
+   {
+    "min": 6,
+    "max": 6,
+    "cells": [
+     "Ropa bohemia (rústico, retro, libre de convencionalismos).",
+     "Con mechas."
+    ]
+   },
+   {
+    "min": 7,
+    "max": 7,
+    "cells": [
+     "Ropa de mendigo (sin hogar, andrajoso, callejero).",
+     "De colores vistosos."
+    ]
+   },
+   {
+    "min": 8,
+    "max": 8,
+    "cells": [
+     "Colores de pandilla (peligroso, violento, rebelde).",
+     "Corto y bien peinado."
+    ]
+   },
+   {
+    "min": 9,
+    "max": 9,
+    "cells": [
+     "Cuero nómada (de vaquero, resistente, tribal).",
+     "Corto y rizado."
+    ]
+   },
+   {
+    "min": 10,
+    "max": 10,
+    "cells": [
+     "Moda asiática (brillante, fantástico, joven).",
+     "Largo y liso."
+    ]
+   }
+  ],
+  "fields": [
+   "clothingStyle",
+   "hairStyle"
+  ]
+ },
+ {
+  "id": "affectations",
+  "title": "Ropa y estilo personal",
+  "instruction": "Tira 1d10 o elige un resultado.",
+  "die": "1d10",
+  "columns": [
+   "Rasgo que nunca te falta"
+  ],
+  "rows": [
+   {
+    "min": 1,
+    "max": 1,
+    "cells": [
+     "Tatuajes."
+    ]
+   },
+   {
+    "min": 2,
+    "max": 2,
+    "cells": [
+     "Gafas de espejo."
+    ]
+   },
+   {
+    "min": 3,
+    "max": 3,
+    "cells": [
+     "Cicatrices rituales."
+    ]
+   },
+   {
+    "min": 4,
+    "max": 4,
+    "cells": [
+     "Guantes claveteados."
+    ]
+   },
+   {
+    "min": 5,
+    "max": 5,
+    "cells": [
+     "Piercing en la nariz."
+    ]
+   },
+   {
+    "min": 6,
+    "max": 6,
+    "cells": [
+     "Piercing en la lengua o en otros lugares."
+    ]
+   },
+   {
+    "min": 7,
+    "max": 7,
+    "cells": [
+     "Implantes de uñas extraños."
+    ]
+   },
+   {
+    "min": 8,
+    "max": 8,
+    "cells": [
+     "Botas con punta o tacones."
+    ]
+   },
+   {
+    "min": 9,
+    "max": 9,
+    "cells": [
+     "Mitones."
+    ]
+   },
+   {
+    "min": 10,
+    "max": 10,
+    "cells": [
+     "Lentillas extrañas."
+    ]
+   }
+  ],
+  "fields": [
+   "affectations"
+  ]
+ },
+ {
+  "id": "motivations",
+  "title": "Motivaciones y relaciones",
+  "instruction": "Tira 1d10 o elige un resultado de cada columna.",
+  "die": "1d10",
+  "columns": [
+   "¿Qué aprecias más?",
+   "¿Qué opinas acerca de la mayoría de la gente?"
+  ],
+  "rows": [
+   {
+    "min": 1,
+    "max": 1,
+    "cells": [
+     "El dinero.",
+     "Eres neutral."
+    ]
+   },
+   {
+    "min": 2,
+    "max": 2,
+    "cells": [
+     "El honor.",
+     "Eres neutral."
+    ]
+   },
+   {
+    "min": 3,
+    "max": 3,
+    "cells": [
+     "Tu palabra.",
+     "Te gusta casi todo el mundo."
+    ]
+   },
+   {
+    "min": 4,
+    "max": 4,
+    "cells": [
+     "La honestidad.",
+     "Odias a casi todo el mundo."
+    ]
+   },
+   {
+    "min": 5,
+    "max": 5,
+    "cells": [
+     "El conocimiento.",
+     "Las personas son herramientas. Úsalas para conseguir tus metas y deséchalas."
+    ]
+   },
+   {
+    "min": 6,
+    "max": 6,
+    "cells": [
+     "La venganza.",
+     "Cada persona es un individuo valioso."
+    ]
+   },
+   {
+    "min": 7,
+    "max": 7,
+    "cells": [
+     "El amor.",
+     "Las personas son obstáculos que hay que destruir si se interponen."
+    ]
+   },
+   {
+    "min": 8,
+    "max": 8,
+    "cells": [
+     "El poder.",
+     "La gente no es digna de confianza. No dependas de nadie."
+    ]
+   },
+   {
+    "min": 9,
+    "max": 9,
+    "cells": [
+     "La familia.",
+     "Aniquílalos y deja el lugar para las cucarachas."
+    ]
+   },
+   {
+    "min": 10,
+    "max": 10,
+    "cells": [
+     "La amistad.",
+     "¡La gente es maravillosa!"
+    ]
+   }
+  ],
+  "fields": [
+   "valueMost",
+   "aboutPeople"
+  ]
+ },
+ {
+  "id": "valuedPerson",
+  "title": "Lo que más valoras",
+  "instruction": "Tira 1d10 o elige un resultado.",
+  "die": "1d10",
+  "columns": [
+   "Persona que más valoras"
+  ],
+  "rows": [
+   {
+    "min": 1,
+    "max": 1,
+    "cells": [
+     "Madre o padre."
+    ]
+   },
+   {
+    "min": 2,
+    "max": 2,
+    "cells": [
+     "Hermano."
+    ]
+   },
+   {
+    "min": 3,
+    "max": 3,
+    "cells": [
+     "Amante."
+    ]
+   },
+   {
+    "min": 4,
+    "max": 4,
+    "cells": [
+     "Amigo."
+    ]
+   },
+   {
+    "min": 5,
+    "max": 5,
+    "cells": [
+     "Tú mismo."
+    ]
+   },
+   {
+    "min": 6,
+    "max": 6,
+    "cells": [
+     "Mascota."
+    ]
+   },
+   {
+    "min": 7,
+    "max": 7,
+    "cells": [
+     "Profesor o mentor."
+    ]
+   },
+   {
+    "min": 8,
+    "max": 8,
+    "cells": [
+     "Personaje público."
+    ]
+   },
+   {
+    "min": 9,
+    "max": 9,
+    "cells": [
+     "Héroe personal."
+    ]
+   },
+   {
+    "min": 10,
+    "max": 10,
+    "cells": [
+     "Nadie."
+    ]
+   }
+  ],
+  "fields": [
+   "valuedPerson"
+  ]
+ },
+ {
+  "id": "valuedPossession",
+  "title": "Lo que más valoras",
+  "instruction": "Tira 1d10 o elige un resultado.",
+  "die": "1d10",
+  "columns": [
+   "Posesión más valiosa"
+  ],
+  "rows": [
+   {
+    "min": 1,
+    "max": 1,
+    "cells": [
+     "Arma."
+    ]
+   },
+   {
+    "min": 2,
+    "max": 2,
+    "cells": [
+     "Herramienta."
+    ]
+   },
+   {
+    "min": 3,
+    "max": 3,
+    "cells": [
+     "Prenda de vestir."
+    ]
+   },
+   {
+    "min": 4,
+    "max": 4,
+    "cells": [
+     "Fotografía."
+    ]
+   },
+   {
+    "min": 5,
+    "max": 5,
+    "cells": [
+     "Libro o diario."
+    ]
+   },
+   {
+    "min": 6,
+    "max": 6,
+    "cells": [
+     "Grabación."
+    ]
+   },
+   {
+    "min": 7,
+    "max": 7,
+    "cells": [
+     "Instrumento musical."
+    ]
+   },
+   {
+    "min": 8,
+    "max": 8,
+    "cells": [
+     "Joya."
+    ]
+   },
+   {
+    "min": 9,
+    "max": 9,
+    "cells": [
+     "Juguete."
+    ]
+   },
+   {
+    "min": 10,
+    "max": 10,
+    "cells": [
+     "Carta."
+    ]
+   }
+  ],
+  "fields": [
+   "valuedPossession"
+  ]
+ },
+ {
+  "id": "familyBackground",
+  "title": "Entorno familiar original",
+  "instruction": "Tira 1d10 o elige un resultado.",
+  "die": "1d10",
+  "columns": [
+   "Entorno original",
+   "Descripción"
+  ],
+  "rows": [
+   {
+    "min": 1,
+    "max": 1,
+    "cells": [
+     "Directores corporativos.",
+     "Ricos, poderosos, con criados, casas de lujo y lo mejor en todo. La seguridad privada se encargó de que siempre estuvieras a salvo. Fuiste a una escuela privada de renombre, por supuesto."
+    ]
+   },
+   {
+    "min": 2,
+    "max": 2,
+    "cells": [
+     "Ejecutivos corporativos.",
+     "Acomodados, con una casa grande en un vecindario seguro, un buen coche, etc. A veces tus padres contrataban asistentes, aunque era poco frecuente. Tuviste una mezcla de educación privada y corporativa."
+    ]
+   },
+   {
+    "min": 3,
+    "max": 3,
+    "cells": [
+     "Técnicos corporativos.",
+     "De clase media, con un cómodo cubículo o una casa en las ciudades de los castores, un monovolumen y asistencia a una escuela de técnicos corporativos. Algo así como vivir en Estados Unidos en una mezcla de la década de 1950 con 1984."
+    ]
+   },
+   {
+    "min": 4,
+    "max": 4,
+    "cells": [
+     "Grupo de nómadas.",
+     "Tuviste una mezcla de remolques, vehículos y enormes combis de carretera como hogar. Aprendiste a conducir y a pelear cuando eras muy joven, y la familia siempre estaba ahí para cuidarte. La comida era realmente fresca y abundante. Principalmente se educaba en casa."
+    ]
+   },
+   {
+    "min": 5,
+    "max": 5,
+    "cells": [
+     "Pandilla criminal.",
+     "Un hogar salvaje y violento en cualquier lugar que la pandilla pudiera ocupar. Normalmente tenías hambre, frío y miedo. Probablemente no sabías quiénes eran tus verdaderos padres. ¿Educación? La pandilla te enseñó a pelear, matar y robar... ¿qué más necesitabas saber?"
+    ]
+   },
+   {
+    "min": 6,
+    "max": 6,
+    "cells": [
+     "Habitantes de una zona de combate.",
+     "Un paso por encima de una pandilla «familiar», vuestra casa era un edificio en decadencia en algún lugar de la «zona», fuertemente fortificada. A veces pasabas hambre, pero normalmente podías conseguir cama y comida. Educado en casa."
+    ]
+   },
+   {
+    "min": 7,
+    "max": 7,
+    "cells": [
+     "Vagabundos urbanos.",
+     "Vivíais en coches, basureros o módulos de transporte abandonados, si había suerte. Normalmente tenías hambre, frío y miedo, a menos que fueras lo suficientemente duro para quedarte con las sobras. ¿Educación? La Escuela de Golpes Duros."
+    ]
+   },
+   {
+    "min": 8,
+    "max": 8,
+    "cells": [
+     "Ratas de megaestructura.",
+     "Creciste en una de las nuevas megaestructuras que surgieron después de la guerra. Un diminuto cubículo, pienso para comer y una cama casi siempre caliente. Es posible que algunos habitantes con educación de la megaestructura o una corporación local crearan una escuela."
+    ]
+   },
+   {
+    "min": 9,
+    "max": 9,
+    "cells": [
+     "Recuperadores.",
+     "Empezasteis en la carretera, pero luego os mudasteis a uno de los pueblos o ciudades fantasma desiertos para reconstruirlo. Una vida de pionero: peligrosa, pero con mucha comida sencilla y un lugar seguro donde dormir. Te educaron en casa, si es que alguien tenía tiempo."
+    ]
+   },
+   {
+    "min": 10,
+    "max": 10,
+    "cells": [
+     "Edgerunners.",
+     "Tu casa siempre cambiaba según el «trabajo» actual de tus padres. Podía ser un apartamento de lujo, un cubículo urbano o, si estabais huyendo, un basurero. La comida abarcaba toda la gama, desde la gastronomía gourmet hasta el pienso."
+    ]
+   }
+  ],
+  "fields": [
+   "familyBackground",
+   "familyBackground"
+  ]
+ },
+ {
+  "id": "childhoodEnvironment",
+  "title": "Ambiente",
+  "instruction": "Tira 1d10 o elige un resultado.",
+  "die": "1d10",
+  "columns": [
+   "Ambiente en la niñez"
+  ],
+  "rows": [
+   {
+    "min": 1,
+    "max": 1,
+    "cells": [
+     "En la calle, sin la supervisión de ningún adulto."
+    ]
+   },
+   {
+    "min": 2,
+    "max": 2,
+    "cells": [
+     "En un tranquilo barrio corporativo apartado del resto de la ciudad."
+    ]
+   },
+   {
+    "min": 3,
+    "max": 3,
+    "cells": [
+     "En una tribu nómada, yendo de un lado a otro."
+    ]
+   },
+   {
+    "min": 4,
+    "max": 4,
+    "cells": [
+     "En una tribu nómada basada en el transporte (barcos, aviones, caravanas)."
+    ]
+   },
+   {
+    "min": 5,
+    "max": 5,
+    "cells": [
+     "En un barrio que fue de alto nivel, ahora en decadencia y con dificultades para sobrevivir ante los pandilleros."
+    ]
+   },
+   {
+    "min": 6,
+    "max": 6,
+    "cells": [
+     "En el corazón de una zona de combate, viviendo en un edificio destruido o algún lugar similar."
+    ]
+   },
+   {
+    "min": 7,
+    "max": 7,
+    "cells": [
+     "En una enorme «megaurbanización» controlada por una corporación o ciudad."
+    ]
+   },
+   {
+    "min": 8,
+    "max": 8,
+    "cells": [
+     "En las ruinas de un pueblo o ciudad abandonados u ocupados por recuperadores."
+    ]
+   },
+   {
+    "min": 9,
+    "max": 9,
+    "cells": [
+     "En una nación a la deriva (una ciudad flotante en el mar), el punto de reunión de todo tipo de gente."
+    ]
+   },
+   {
+    "min": 10,
+    "max": 10,
+    "cells": [
+     "En un «rascaestrellas» corporativo de lujo, muy por encima del resto de los mortales."
+    ]
+   }
+  ],
+  "fields": [
+   "childhoodEnvironment"
+  ]
+ },
+ {
+  "id": "familyCrisis",
+  "title": "Tragedia familiar",
+  "instruction": "Tira 1d10 o elige un resultado.",
+  "die": "1d10",
+  "columns": [
+   "Tragedia"
+  ],
+  "rows": [
+   {
+    "min": 1,
+    "max": 1,
+    "cells": [
+     "Tu familia lo perdió todo por una traición."
+    ]
+   },
+   {
+    "min": 2,
+    "max": 2,
+    "cells": [
+     "Tu familia lo perdió todo a causa de la mala gestión."
+    ]
+   },
+   {
+    "min": 3,
+    "max": 3,
+    "cells": [
+     "Tu familia fue exiliada o expulsada de su hogar/nación/corporación de origen."
+    ]
+   },
+   {
+    "min": 4,
+    "max": 4,
+    "cells": [
+     "Tu familia está encarcelada y solo tú pudiste escapar."
+    ]
+   },
+   {
+    "min": 5,
+    "max": 5,
+    "cells": [
+     "Tu familia desapareció. Eres el único que queda."
+    ]
+   },
+   {
+    "min": 6,
+    "max": 6,
+    "cells": [
+     "Tu familia fue asesinada y tú fuiste el único superviviente."
+    ]
+   },
+   {
+    "min": 7,
+    "max": 7,
+    "cells": [
+     "Tu familia está implicada en una conspiración, organización o asociación importante, como por ejemplo una familia criminal o un grupo revolucionario."
+    ]
+   },
+   {
+    "min": 8,
+    "max": 8,
+    "cells": [
+     "Tu familia se dispersó a los cuatro vientos debido a una desgracia."
+    ]
+   },
+   {
+    "min": 9,
+    "max": 9,
+    "cells": [
+     "Tu familia está inmersa en una enemistad hereditaria que ha durado varias generaciones."
+    ]
+   },
+   {
+    "min": 10,
+    "max": 10,
+    "cells": [
+     "Eres el heredero de una deuda familiar; debes saldar esa deuda antes de que influya en tu vida."
+    ]
+   }
+  ],
+  "fields": [
+   "familyCrisis"
+  ]
+ },
+ {
+  "id": "friends",
+  "title": "Amigos y enemigos",
+  "instruction": "Tira 1d10 y resta 7 (mínimo 0) para ver cuántos amigos has hecho hasta ahora en tu vida.",
+  "die": "1d10",
+  "columns": [
+   "Tu relación con ese amigo"
+  ],
+  "rows": [
+   {
+    "min": 1,
+    "max": 1,
+    "cells": [
+     "Como un hermano o hermana mayor para ti."
+    ]
+   },
+   {
+    "min": 2,
+    "max": 2,
+    "cells": [
+     "Como un hermano o hermana menor para ti."
+    ]
+   },
+   {
+    "min": 3,
+    "max": 3,
+    "cells": [
+     "Un maestro o mentor."
+    ]
+   },
+   {
+    "min": 4,
+    "max": 4,
+    "cells": [
+     "Un socio o compañero de trabajo."
+    ]
+   },
+   {
+    "min": 5,
+    "max": 5,
+    "cells": [
+     "Un antiguo amante."
+    ]
+   },
+   {
+    "min": 6,
+    "max": 6,
+    "cells": [
+     "Un viejo enemigo."
+    ]
+   },
+   {
+    "min": 7,
+    "max": 7,
+    "cells": [
+     "Como un padre o una madre para ti."
+    ]
+   },
+   {
+    "min": 8,
+    "max": 8,
+    "cells": [
+     "Un viejo amigo de la infancia."
+    ]
+   },
+   {
+    "min": 9,
+    "max": 9,
+    "cells": [
+     "Alguien a quien conoces de la calle."
+    ]
+   },
+   {
+    "min": 10,
+    "max": 10,
+    "cells": [
+     "Lo conociste debido a un interés mutuo."
+    ]
+   }
+  ],
+  "fields": [
+   "friends"
+  ],
+  "count": "1d10-7"
+ },
+ {
+  "id": "enemies",
+  "title": "Enemigos",
+  "instruction": null,
+  "die": "1d10",
+  "columns": [
+   "Enemigo",
+   "¿Qué causó la enemistad? ¿Y quién fue el afectado? (elige)",
+   "¿Qué puede usar contra ti?"
+  ],
+  "rows": [
+   {
+    "min": 1,
+    "max": 1,
+    "cells": [
+     "Antiguo amigo.",
+     "Hizo que el otro perdiera su prestigio o posición.",
+     "Solo a sí mismo, y ni siquiera como prioridad."
+    ]
+   },
+   {
+    "min": 2,
+    "max": 2,
+    "cells": [
+     "Antiguo amante.",
+     "Provocó que el otro perdiera un amante, amigo o pariente.",
+     "Solo a sí mismo."
+    ]
+   },
+   {
+    "min": 3,
+    "max": 3,
+    "cells": [
+     "Pariente lejano.",
+     "Provocó al otro una importante humillación pública.",
+     "Él mismo y un amigo cercano."
+    ]
+   },
+   {
+    "min": 4,
+    "max": 4,
+    "cells": [
+     "Enemigo de la infancia.",
+     "Acusó al otro de cobardía o de cualquier otro defecto personal.",
+     "Él mismo y unos cuantos amigos (1d6/2)."
+    ]
+   },
+   {
+    "min": 5,
+    "max": 5,
+    "cells": [
+     "Persona que trabaja para ti.",
+     "Abandonó o traicionó al otro.",
+     "Él mismo y unos cuantos amigos (1d10/2)."
+    ]
+   },
+   {
+    "min": 6,
+    "max": 6,
+    "cells": [
+     "Persona para la que trabajas.",
+     "Rechazó la oferta de trabajo o de amor del otro.",
+     "Toda una banda (al menos 1d10 + 5 personas)."
+    ]
+   },
+   {
+    "min": 7,
+    "max": 7,
+    "cells": [
+     "Socio o compañero de trabajo.",
+     "Simplemente no os gustáis.",
+     "La policía local u otros agentes de la ley."
+    ]
+   },
+   {
+    "min": 8,
+    "max": 8,
+    "cells": [
+     "Ejecutivo de una corporación.",
+     "Uno fue rival amoroso del otro.",
+     "El jefe de una banda poderosa o una corporación pequeña."
+    ]
+   },
+   {
+    "min": 9,
+    "max": 9,
+    "cells": [
+     "Funcionario del gobierno.",
+     "Uno fue rival de negocios del otro.",
+     "Una corporación poderosa."
+    ]
+   },
+   {
+    "min": 10,
+    "max": 10,
+    "cells": [
+     "Miembro de una banda.",
+     "Uno hizo que culparan al otro por un crimen que no cometió.",
+     "Una ciudad entera, un gobierno o una agencia."
+    ]
+   }
+  ],
+  "fields": [
+   "enemies",
+   "enemies",
+   "enemies"
+  ],
+  "count": "1d10-7",
+  "choose": [
+   1
+  ],
+  "then": "revenge"
+ },
+ {
+  "id": "revenge",
+  "title": "¡Dulce venganza!",
+  "instruction": "Tira 1d10 o elige un resultado.",
+  "die": "1d10",
+  "columns": [
+   "¿Qué vas a hacer o qué hará al respecto?"
+  ],
+  "rows": [
+   {
+    "min": 1,
+    "max": 2,
+    "cells": [
+     "Evitar esa escoria."
+    ]
+   },
+   {
+    "min": 3,
+    "max": 4,
+    "cells": [
+     "Dejarte llevar por una cruel rabia asesina e intentar arrancarle la cara."
+    ]
+   },
+   {
+    "min": 5,
+    "max": 6,
+    "cells": [
+     "Apuñalarle indirectamente por la espalda."
+    ]
+   },
+   {
+    "min": 7,
+    "max": 8,
+    "cells": [
+     "Atacarle verbalmente."
+    ]
+   },
+   {
+    "min": 9,
+    "max": 9,
+    "cells": [
+     "Culparle de un crimen u otra transgresión que no cometió."
+    ]
+   },
+   {
+    "min": 10,
+    "max": 10,
+    "cells": [
+     "Salir a matarle o mutilarle."
+    ]
+   }
+  ],
+  "fields": [
+   "enemies"
+  ],
+  "perEnemy": true
+ },
+ {
+  "id": "tragicLoveAffairs",
+  "title": "Trágica vida amorosa",
+  "instruction": "Tira 1d10 y resta 7 (mínimo 0) para ver cuántas aventuras amorosas trágicas has tenido, luego usa la tabla siguiente para ver cómo terminó cada una.",
+  "die": "1d10",
+  "columns": [
+   "¿Qué ocurrió?"
+  ],
+  "rows": [
+   {
+    "min": 1,
+    "max": 1,
+    "cells": [
+     "Tu amante murió en un accidente."
+    ]
+   },
+   {
+    "min": 2,
+    "max": 2,
+    "cells": [
+     "Tu amante desapareció misteriosamente."
+    ]
+   },
+   {
+    "min": 3,
+    "max": 3,
+    "cells": [
+     "Simplemente no funcionó."
+    ]
+   },
+   {
+    "min": 4,
+    "max": 4,
+    "cells": [
+     "Se interpuso una venganza o una meta personal entre vosotros."
+    ]
+   },
+   {
+    "min": 5,
+    "max": 5,
+    "cells": [
+     "Tu amante fue secuestrado."
+    ]
+   },
+   {
+    "min": 6,
+    "max": 6,
+    "cells": [
+     "Tu amante enloqueció o sufrió ciberpsicosis."
+    ]
+   },
+   {
+    "min": 7,
+    "max": 7,
+    "cells": [
+     "Tu amante se suicidó."
+    ]
+   },
+   {
+    "min": 8,
+    "max": 8,
+    "cells": [
+     "Tu amante murió en una pelea."
+    ]
+   },
+   {
+    "min": 9,
+    "max": 9,
+    "cells": [
+     "Un rival te sacó del juego."
+    ]
+   },
+   {
+    "min": 10,
+    "max": 10,
+    "cells": [
+     "Tu amante fue encarcelado o exiliado."
+    ]
+   }
+  ],
+  "fields": [
+   "tragicLoveAffairs"
+  ],
+  "count": "1d10-7"
+ },
+ {
+  "id": "lifeGoals",
+  "title": "Objetivos vitales",
+  "instruction": "Tira 1d10 o elige un resultado.",
+  "die": "1d10",
+  "columns": [
+   "Objetivos vitales"
+  ],
+  "rows": [
+   {
+    "min": 1,
+    "max": 1,
+    "cells": [
+     "Librarte de la mala reputación."
+    ]
+   },
+   {
+    "min": 2,
+    "max": 2,
+    "cells": [
+     "Obtener poder y control."
+    ]
+   },
+   {
+    "min": 3,
+    "max": 3,
+    "cells": [
+     "Salir de la calle a cualquier precio."
+    ]
+   },
+   {
+    "min": 4,
+    "max": 4,
+    "cells": [
+     "Causar dolor y sufrimiento a cualquiera con quien te cruces."
+    ]
+   },
+   {
+    "min": 5,
+    "max": 5,
+    "cells": [
+     "Sobrevivir a tu pasado y tratar de olvidarlo."
+    ]
+   },
+   {
+    "min": 6,
+    "max": 6,
+    "cells": [
+     "Cazar a los responsables de tu miserable vida y hacerles pagar ."
+    ]
+   },
+   {
+    "min": 7,
+    "max": 7,
+    "cells": [
+     "Conseguir lo que es legítimamente tuyo."
+    ]
+   },
+   {
+    "min": 8,
+    "max": 8,
+    "cells": [
+     "Salvar, si es posible, a cualquier otra persona involucrada en tu pasado, como un amante o un familiar."
+    ]
+   },
+   {
+    "min": 9,
+    "max": 9,
+    "cells": [
+     "Obtener fama y reconocimiento."
+    ]
+   },
+   {
+    "min": 10,
+    "max": 10,
+    "cells": [
+     "Convertirte en temido y respetado."
+    ]
+   }
+  ],
+  "fields": [
+   "lifeGoals"
+  ]
+ }
+]

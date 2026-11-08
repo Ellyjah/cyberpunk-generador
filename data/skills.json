@@ -1,0 +1,524 @@
+{
+ "Burocracia": {
+  "name": "Burocracia",
+  "stat": "int",
+  "x2": false,
+  "red": "Bureaucracy",
+  "redId": "9Cn1HeCuzQZ27iJ7",
+  "basic": false
+ },
+ "Buscar en bibliotecas": {
+  "name": "Buscar en bibliotecas",
+  "stat": "int",
+  "x2": false,
+  "red": "Library Search",
+  "redId": "cUIOleVPNLHP9y3i",
+  "basic": false
+ },
+ "Ciencia": {
+  "name": "Ciencia",
+  "stat": "int",
+  "x2": false,
+  "specialtyPack": "core_skills-science"
+ },
+ "Composición": {
+  "name": "Composición",
+  "stat": "int",
+  "x2": false,
+  "red": "Composition",
+  "redId": "L4tVCWCpkCW7OYhE",
+  "basic": false
+ },
+ "Contabilidad": {
+  "name": "Contabilidad",
+  "stat": "int",
+  "x2": false,
+  "red": "Accounting",
+  "redId": "NafrVs2glkn6Ud82",
+  "basic": false
+ },
+ "Criminología": {
+  "name": "Criminología",
+  "stat": "int",
+  "x2": false,
+  "red": "Criminology",
+  "redId": "HbUTj5xqErBhyiN4",
+  "basic": false
+ },
+ "Criptografía": {
+  "name": "Criptografía",
+  "stat": "int",
+  "x2": false,
+  "red": "Cryptography",
+  "redId": "RI5M0MhWRVNFwUKm",
+  "basic": false
+ },
+ "Cultura": {
+  "name": "Cultura",
+  "stat": "int",
+  "x2": false,
+  "red": "Education",
+  "redId": "m6zHqBrjzEGAs3c0",
+  "basic": true
+ },
+ "Deducción": {
+  "name": "Deducción",
+  "stat": "int",
+  "x2": false,
+  "red": "Deduction",
+  "redId": "RkNmXeJttYnBdgTK",
+  "basic": false
+ },
+ "Experto local": {
+  "name": "Experto local",
+  "stat": "int",
+  "x2": false,
+  "red": "Local Expert (Your Home)",
+  "redId": "E6ZW9X4H8tjX294j",
+  "basic": true
+ },
+ "Idioma": {
+  "name": "Idioma",
+  "stat": "int",
+  "x2": false,
+  "red": "Language (Streetslang)",
+  "redId": "LsFm00AIool6DVwl",
+  "basic": true
+ },
+ "Juego": {
+  "name": "Juego",
+  "stat": "int",
+  "x2": false,
+  "red": "Gamble",
+  "redId": "AZiaiaTsX7p69VeW",
+  "basic": false
+ },
+ "Manejo de animales": {
+  "name": "Manejo de animales",
+  "stat": "int",
+  "x2": false,
+  "red": "Animal Handling",
+  "redId": "4mmnxQPl7tWbMweF",
+  "basic": false
+ },
+ "Negocios": {
+  "name": "Negocios",
+  "stat": "int",
+  "x2": false,
+  "red": "Business",
+  "redId": "iiYgc3iNOIzMG0fO",
+  "basic": false
+ },
+ "Tácticas": {
+  "name": "Tácticas",
+  "stat": "int",
+  "x2": false,
+  "red": "Tactics",
+  "redId": "xT6Lp6hhlWRaTs0n",
+  "basic": false
+ },
+ "Supervivencia": {
+  "name": "Supervivencia",
+  "stat": "int",
+  "x2": false,
+  "red": "Wilderness Survival",
+  "redId": "jFdPv4BuD0tLj7su",
+  "basic": false
+ },
+ "Armas cortas": {
+  "name": "Armas cortas",
+  "stat": "ref",
+  "x2": false,
+  "red": "Handgun",
+  "redId": "l7gW0F5MaWg9I7tC",
+  "basic": false
+ },
+ "Armas largas": {
+  "name": "Armas largas",
+  "stat": "ref",
+  "x2": false,
+  "red": "Shoulder Arms",
+  "redId": "VdvSW102ytvqRgfx",
+  "basic": false
+ },
+ "Armas pesadas": {
+  "name": "Armas pesadas",
+  "stat": "ref",
+  "x2": true,
+  "red": "Heavy Weapons",
+  "redId": "TNA0LGN1MAYoA60l",
+  "basic": false
+ },
+ "Disparo automático": {
+  "name": "Disparo automático",
+  "stat": "ref",
+  "x2": true,
+  "red": "Autofire",
+  "redId": "Xbk6aAKKUQtXRunw",
+  "basic": false
+ },
+ "Tiro con arco": {
+  "name": "Tiro con arco",
+  "stat": "ref",
+  "x2": false,
+  "red": "Archery",
+  "redId": "dZ6CPPQLCGfFULo5",
+  "basic": false
+ },
+ "Concentración": {
+  "name": "Concentración",
+  "stat": "will",
+  "x2": false,
+  "red": "Concentration",
+  "redId": "f319Qi6jITQMATyG",
+  "basic": true
+ },
+ "Lectura de labios": {
+  "name": "Lectura de labios",
+  "stat": "int",
+  "x2": false,
+  "red": "Lip Reading",
+  "redId": "oNkNlAveEaFmztRb",
+  "basic": false
+ },
+ "Ocultar/Revelar objeto": {
+  "name": "Ocultar/Revelar objeto",
+  "stat": "int",
+  "x2": false,
+  "red": "Conceal/Reveal Object",
+  "redId": "rIU0OZRG7RavocVV",
+  "basic": false
+ },
+ "Percepción": {
+  "name": "Percepción",
+  "stat": "int",
+  "x2": false,
+  "red": "Perception",
+  "redId": "nPVwsGDzkjaGu6mZ",
+  "basic": true
+ },
+ "Rastrear": {
+  "name": "Rastrear",
+  "stat": "int",
+  "x2": false,
+  "red": "Tracking",
+  "redId": "bkDDCt1Gb3xWXEEw",
+  "basic": false
+ },
+ "Conducir vehículo terrestre": {
+  "name": "Conducir vehículo terrestre",
+  "stat": "ref",
+  "x2": false,
+  "red": "Drive Land Vehicle",
+  "redId": "UZspAWJSJ2Gdb7NI",
+  "basic": false
+ },
+ "Montar": {
+  "name": "Montar",
+  "stat": "ref",
+  "x2": false,
+  "red": "Riding",
+  "redId": "AAQhR9XKhEFDhne7",
+  "basic": false
+ },
+ "Pilotar vehículo acuático": {
+  "name": "Pilotar vehículo acuático",
+  "stat": "ref",
+  "x2": false,
+  "red": "Pilot Sea Vehicle",
+  "redId": "TM1yunkgm8iUAsFZ",
+  "basic": false
+ },
+ "Pilotar vehículo aéreo": {
+  "name": "Pilotar vehículo aéreo",
+  "stat": "ref",
+  "x2": true,
+  "red": "Pilot Air Vehicle",
+  "redId": "wQZ4N3RJXfcAY5hR",
+  "basic": false
+ },
+ "Atletismo": {
+  "name": "Atletismo",
+  "stat": "dex",
+  "x2": false,
+  "red": "Athletics",
+  "redId": "2cEhxWWDwDYepIuJ",
+  "basic": true
+ },
+ "Baile": {
+  "name": "Baile",
+  "stat": "dex",
+  "x2": false,
+  "red": "Dance",
+  "redId": "zSBy9rWNSEVySygE",
+  "basic": false
+ },
+ "Contorsionismo": {
+  "name": "Contorsionismo",
+  "stat": "dex",
+  "x2": false,
+  "red": "Contortionist",
+  "redId": "F4QWNMT1koSiw4HL",
+  "basic": false
+ },
+ "Resistencia": {
+  "name": "Resistencia",
+  "stat": "will",
+  "x2": false,
+  "red": "Endurance",
+  "redId": "dai7lskmxzohcpZS",
+  "basic": false
+ },
+ "Resistir torturas/drogas": {
+  "name": "Resistir torturas/drogas",
+  "stat": "will",
+  "x2": false,
+  "red": "Resist Torture/Drugs",
+  "redId": "4nZAn6M44PYI8CU2",
+  "basic": false
+ },
+ "Sigilo": {
+  "name": "Sigilo",
+  "stat": "dex",
+  "x2": false,
+  "red": "Stealth",
+  "redId": "y2oyHHPllOLVxiNJ",
+  "basic": true
+ },
+ "Actuar": {
+  "name": "Actuar",
+  "stat": "cool",
+  "x2": false,
+  "red": "Acting",
+  "redId": "rWMTfz2YfmPPetNd",
+  "basic": false
+ },
+ "Tocar instrumento": {
+  "name": "Tocar instrumento",
+  "stat": "tech",
+  "x2": false,
+  "specialtyPack": "core_skills-play-instrument"
+ },
+ "Arma cuerpo a cuerpo": {
+  "name": "Arma cuerpo a cuerpo",
+  "stat": "dex",
+  "x2": false,
+  "red": "Melee Weapon",
+  "redId": "2YDWLi0oPsH3c7B6",
+  "basic": false
+ },
+ "Artes marciales": {
+  "name": "Artes marciales",
+  "stat": "dex",
+  "x2": true,
+  "specialtyPack": "core_skills-martial-arts"
+ },
+ "Evasión": {
+  "name": "Evasión",
+  "stat": "dex",
+  "x2": false,
+  "red": "Evasion",
+  "redId": "CzaAkwAjPDplz4nn",
+  "basic": true
+ },
+ "Pelea": {
+  "name": "Pelea",
+  "stat": "dex",
+  "x2": false,
+  "red": "Brawling",
+  "redId": "fPnx3mKaMiRgGavI",
+  "basic": true
+ },
+ "Arreglo personal": {
+  "name": "Arreglo personal",
+  "stat": "cool",
+  "x2": false,
+  "red": "Personal Grooming",
+  "redId": "fIq8FZsb8QgBN0sG",
+  "basic": false
+ },
+ "Comerciar": {
+  "name": "Comerciar",
+  "stat": "cool",
+  "x2": false,
+  "red": "Trading",
+  "redId": "3QXtTqLRdD1lZYsI",
+  "basic": false
+ },
+ "Conocimiento de la calle": {
+  "name": "Conocimiento de la calle",
+  "stat": "cool",
+  "x2": false,
+  "red": "Streetwise",
+  "redId": "EkO3gpmabPfeGZeU",
+  "basic": false
+ },
+ "Conversación": {
+  "name": "Conversación",
+  "stat": "emp",
+  "x2": false,
+  "red": "Conversation",
+  "redId": "DlYHwCapjvfyYgKh",
+  "basic": true
+ },
+ "Interrogatorio": {
+  "name": "Interrogatorio",
+  "stat": "cool",
+  "x2": false,
+  "red": "Interrogation",
+  "redId": "bBSVyMIWcWtEt4nC",
+  "basic": false
+ },
+ "Percepción humana": {
+  "name": "Percepción humana",
+  "stat": "emp",
+  "x2": false,
+  "red": "Human Perception",
+  "redId": "FxviNlk84J78vEhV",
+  "basic": true
+ },
+ "Persuasión": {
+  "name": "Persuasión",
+  "stat": "cool",
+  "x2": false,
+  "red": "Persuasion",
+  "redId": "cwwOn3YucT9CqJBN",
+  "basic": true
+ },
+ "Sobornar": {
+  "name": "Sobornar",
+  "stat": "cool",
+  "x2": false,
+  "red": "Bribery",
+  "redId": "pd1WswOLTjK2yjEc",
+  "basic": false
+ },
+ "Vestuario y estilo": {
+  "name": "Vestuario y estilo",
+  "stat": "cool",
+  "x2": false,
+  "red": "Wardrobe & Style",
+  "redId": "P9WIrQR7Nrxxq682",
+  "basic": false
+ },
+ "Abrir cerraduras": {
+  "name": "Abrir cerraduras",
+  "stat": "tech",
+  "x2": false,
+  "red": "Pick Lock",
+  "redId": "puWDSgyEiCY5qwVp",
+  "basic": false
+ },
+ "Cibertecnología": {
+  "name": "Cibertecnología",
+  "stat": "tech",
+  "x2": false,
+  "red": "Cybertech",
+  "redId": "LWy8XHIR3JKL1R0i",
+  "basic": false
+ },
+ "Demoliciones": {
+  "name": "Demoliciones",
+  "stat": "tech",
+  "x2": true,
+  "red": "Demolitions",
+  "redId": "hCZpo57MoOlMYfrL",
+  "basic": false
+ },
+ "Electrónica/Seguridad": {
+  "name": "Electrónica/Seguridad",
+  "stat": "tech",
+  "x2": true,
+  "red": "Electronics/Security Tech",
+  "redId": "4TnbLnA1TqSFnXtq",
+  "basic": false
+ },
+ "Enfermería": {
+  "name": "Enfermería",
+  "stat": "tech",
+  "x2": true,
+  "red": "Paramedic",
+  "redId": "zJA3lYQ47dmm55fd",
+  "basic": false
+ },
+ "Falsificación": {
+  "name": "Falsificación",
+  "stat": "tech",
+  "x2": false,
+  "red": "Forgery",
+  "redId": "wpHLZDqfC7wE00Vw",
+  "basic": false
+ },
+ "Fotografía/Filmación": {
+  "name": "Fotografía/Filmación",
+  "stat": "tech",
+  "x2": false,
+  "red": "Photography/Film",
+  "redId": "MRodaB3wlDzSQJl8",
+  "basic": false
+ },
+ "Mecánica básica": {
+  "name": "Mecánica básica",
+  "stat": "tech",
+  "x2": false,
+  "red": "Basic Tech",
+  "redId": "13raQA8s0uaE9Pmq",
+  "basic": false
+ },
+ "Mecánica de armas": {
+  "name": "Mecánica de armas",
+  "stat": "tech",
+  "x2": false,
+  "red": "Weaponstech",
+  "redId": "Z41spNxYQPCAPXoC",
+  "basic": false
+ },
+ "Mecánica de vehículos acuáticos": {
+  "name": "Mecánica de vehículos acuáticos",
+  "stat": "tech",
+  "x2": false,
+  "red": "Sea Vehicle Tech",
+  "redId": "ON66k91XPD6e3uby",
+  "basic": false
+ },
+ "Mecánica de vehículos aéreos": {
+  "name": "Mecánica de vehículos aéreos",
+  "stat": "tech",
+  "x2": false,
+  "red": "Air Vehicle Tech",
+  "redId": "sAQCgDP3EyJMIKP3",
+  "basic": false
+ },
+ "Mecánica de vehículos terrestres": {
+  "name": "Mecánica de vehículos terrestres",
+  "stat": "tech",
+  "x2": false,
+  "red": "Land Vehicle Tech",
+  "redId": "ENrWOKuCjjpJjCtl",
+  "basic": false
+ },
+ "Pintar/Dibujar/Esculpir": {
+  "name": "Pintar/Dibujar/Esculpir",
+  "stat": "tech",
+  "x2": false,
+  "red": "Paint/Draw/Sculpt",
+  "redId": "9CW2f27aYBUsNDXS",
+  "basic": false
+ },
+ "Primeros auxilios": {
+  "name": "Primeros auxilios",
+  "stat": "tech",
+  "x2": false,
+  "red": "First Aid",
+  "redId": "8yxaK6GbNu59yxKH",
+  "basic": true
+ },
+ "Robar bolsillos": {
+  "name": "Robar bolsillos",
+  "stat": "tech",
+  "x2": false,
+  "red": "Pick Pocket",
+  "redId": "cjOJUX2Wlc5jpuYU",
+  "basic": false
+ }
+}

@@ -22,7 +22,7 @@ El director pidió un generador lo más completo posible para PJ y PNJ. Debe cub
 ## Plan por pasos
 
 1. **Esqueleto, permisos y ajustes.** ✅ 0.1.0.
-2. Tablas en datos (`data/*.json`), extraídas del Core en español y cotejadas.
+2. **Tablas de PJ en datos** (`data/*.json`), extraídas del Core en español y cotejadas. ✅ (las tablas de PNJ se extraen en el paso 6).
 3. Rata callejera y vida pasada (tiradas en el chat y política de tiradas), probados en el banco.
 4. Edgerunner.
 5. Paquete completo con tienda.
@@ -45,6 +45,9 @@ El director pidió un generador lo más completo posible para PJ y PNJ. Debe cub
   lang/es.json, en.json  claves CPRGEN.*
   tests/*.test.mjs       node --test tests/*.test.mjs
   tools/bench/*.mjs      pruebas Playwright en el banco 30013
+  tools/extract_core_tables.py  genera data/*.json desde el Core en español (paso 2)
+  tools/check_pdf_stats.py      cotejo de las tablas de características con el PDF
+  data/*.json            tablas de creación (generadas; no editar a mano)
 ```
 
 **Estado del asistente:** todo lo elegido se guarda en la bandera `flags.cyberpunk-generador.draft` del actor, con la forma `{schema: 1, method, step, data, rolls}`.
@@ -62,25 +65,54 @@ El director pidió un generador lo más completo posible para PJ y PNJ. Debe cub
 
 **Pasos del asistente** (`STEPS`): method → role → stats → skills → lifepath → gear → review. Métodos (`METHODS`): `streetrat`, `edgerunner`, `complete`.
 
-## Fuentes de datos para el paso 2
+## Datos (`data/*.json`)
 
-Usa el Core en español, la última edición sellada: `02-edgerunners-world/staging/P02A21-audit-fixes-101/cyberpunk-red-core-esp/source/journals.json`. Así los textos coinciden con los journals que ve el grupo. Páginas útiles (por `_id`):
+**No se editan a mano.** Los genera `python -I tools/extract_core_tables.py` (desde la raíz del módulo) a partir del Core en español sellado, la edición 1.0.2: `02-edgerunners-world/staging/P02A21-audit-fixes-101/cyberpunk-red-core-esp/source/journals.json`. Las habilidades se resuelven contra el volcado de compendios de RED v0.92.4 (`05-cyberpunk-tr-esp-work/source/red-core-dump.json`).
+- El extractor se detiene ante cualquier discrepancia y no escribe nada a medias.
+- Es idempotente.
+- `rules.json` guarda el SHA-256 de ambas fuentes.
 
-| Página | `_id` |
+| Archivo | Contenido |
 |---|---|
-| Creación de un personaje rata callejera o edgerunner | `9f64a8493c1ea04e` |
-| Creación de un personaje del paquete completo | `0c7631aae032f7ad` |
+| `roles.json` | Los 10 roles. Cada uno lleva: `key` (fixer, exec, solo, netrunner, nomad, media, lawman, rockerboy, tech, medtech), nombre del Core, `uuid` del Item de `core_roles` y `statTable` (10 filas con las claves de RED `int ref dex tech cool will luck move body emp`). También `streetratSkills` (20 entradas `{label, red?, specialtyPack?, level}`) y `edgerunnerSkills` (las mismas 20, sin nivel). `weapons`, `gear` y `cyberware` son líneas: `{options:[{uuid,name,qty,note}], prefix?}`; varias opciones equivalen a «elige una», y la ropa va como `{clothing:{style, items:[{type,qty}]}, text}`. Por último, `cyberwareHumanityLoss` y `cyberwareEmpLoss` (lo que calcula el libro) y `lifepath` (los nodos de la vida pasada de rol, ver abajo). |
+| `lifepath.json` | 15 secciones de vida pasada general en el orden del libro. Cada una lleva `{id, title, instruction, die, columns, rows:[{min,max,cells}], fields}`. `fields` asigna cada columna a un campo `system.lifepath.*` de RED. Campos opcionales: `count: "1d10-7"` (amigos, enemigos, amores: se tira el recuento y luego una vez por entrada), `choose` (columnas que se eligen en lugar de tirar), `then`/`perEnemy` (la venganza se tira por cada enemigo) y `languageOptions` (los idiomas de cada región, para la habilidad de idioma a nivel 4). |
+| `skills.json` | Las 66 habilidades de la lista del Core: `{name, stat, x2, red, redId, basic}`, o `specialtyPack` para Artes marciales, Ciencia y Tocar instrumento (la especialidad se elige en el compendio de RED indicado). |
+| `rules.json` | Constantes de los métodos: aptitud de rol 4; idioma de origen 4; habilidades 86 puntos entre 2 y 6, con mínimo 2 en las básicas; paquete completo con características entre 2 y 8, puntos por rango de personaje (principiante 62), 2550 ed y 800 ed de moda; 500 ed extra para rata callejera y edgerunner; alojamiento y estilo de vida iniciales (con un caso propio para el ejecutivo). |
+
+**Nodos de la vida pasada de rol:**
+- `{type:"table", id:"t<n>", title, instruction, die, columns, rows}`;
+- `{type:"choice", id, title, options:[{value,label}]}`, para las decisiones del «Recorrido de las decisiones» del Core (socio o solo, tierra/aire/mar, grupo o solitario…).
+
+Un nodo con `when:{id, value}` solo se recorre si la decisión `id` vale `value`. Las decisiones están escritas en `ROLE_FLOW` del extractor, y se comprueba el número de tablas de cada rol.
+
+**Cotejo independiente:** `python -I -W ignore tools/check_pdf_stats.py` comprueba que las 100 filas de características aparecen en el PDF del libro básico (PDF 78–81).
+
+**Páginas del Core usadas** (`_id`):
+
+| Contenido | `_id` |
+|---|---|
+| Características por rol | `c7d392fb3b0523db` |
 | Habilidades de rata callejera | `fe24adb1816ab8f4` |
 | Habilidades del edgerunner | `c5d25d1e04982fcc` |
 | Habilidades del paquete completo | `76c00c7d1ac0a4eb` |
-| Ropa, equipo y alojamiento iniciales | `7153fd1d59d36712` |
+| Lista de habilidades | `1002f3699444b7ba` |
 | Armas y blindaje iniciales | `4a25d7645c5fd196` |
+| Ropa, equipo y alojamiento iniciales | `7153fd1d59d36712` |
+| Ciberequipo inicial | `32e92d6a0b5a4148` |
+| Vida pasada general | `556dabf81b249488`, `994c0f60ff144b8f`, `03f931e03bee71f4`, `97c0e8973496e0a1` |
+| Vida pasada de cada rol | la columna `lifepathPage` de `roles.json` |
 
-Faltan por localizar las páginas de vida pasada (general y de rol), las tablas de características por rol, el ciberequipo inicial y los PNJ. Están en «El alma y la nueva máquina», «Preparado para el futuro» y los capítulos del DJ.
+**Peculiaridades del Core que maneja el extractor:**
+- En Nómada, las habilidades de rata y de edgerunner traen el mismo conjunto en distinto orden.
+- La tabla de Edgerunner del tecnomédico trae una fila de encabezado que las demás no tienen.
+- Tras el encabezado «Tecnomédico» siguen tablas de ejemplo (Jay); se toma solo la primera tabla de cada encabezado.
+- La tabla de ciberequipo tiene dos filas: la lista y la pérdida de Humanidad.
 
-Las páginas llevan enlaces `@UUID[Compendium.cyberpunk-red-core.<pack>.Item.<id>]{nombre}` a los Items nativos de RED. Conviene conservar esos UUID en los datos, para añadir el Item exacto a la ficha.
+**PNJ (paso 6):** el Core en journals **no** incluye las fichas de PNJ del capítulo del DJ. Están en el PDF del libro básico, en «Tipejos y reclutas», páginas impresas 412–416, que son las PDF 416–420. Hay 10 fichas: Pandillero, Guardaespaldas, Operativo de seguridad, Pandillero de carretera, Jefe de recuperadores, Netrunner, Oficial de seguridad, Piloto, Ciberpsicópata y Pirómano. Las variaciones están en las tablas de encuentros que siguen (por ejemplo, PDF 424: «usa guardaespaldas; sustituye…»).
 
-En RED, la ficha de personaje solo trae campos de texto de vida pasada (`system.lifepath.culturalOrigin`, `personality`, `clothingStyle`, `hairStyle`, `affectations`, `valueMost`, `aboutPeople`, `valuedPerson`, `valuedPossession`, `familyBackground`, `childhoodEnvironment`, `familyCrisis`, `lifeGoals`, `friends`, `enemies`, `tragicLoveAffairs`, `roleLifepath`). RED no trae tablas ni asistente.
+**Ficha de RED:** solo trae campos de texto de vida pasada (`system.lifepath.culturalOrigin`, `personality`, `clothingStyle`, `hairStyle`, `affectations`, `valueMost`, `aboutPeople`, `valuedPerson`, `valuedPossession`, `familyBackground`, `childhoodEnvironment`, `familyCrisis`, `lifeGoals`, `friends`, `enemies`, `tragicLoveAffairs`, `roleLifepath`). RED no trae tablas ni asistente.
+
+**Pendiente para los pasos 3 y 4:** la ropa del equipo inicial está en texto («Ropa de deporte: calzado x2…»). Hay que decidir cómo convertirla en Items de `core_clothing` de RED, que distingue estilo y tipo, o dejarla como nota en la ficha.
 
 ## Pruebas
 
@@ -125,9 +157,34 @@ En RED, la ficha de personaje solo trae campos de texto de vida pasada (`system.
 - **Sin tocar:** `edgerunners-2070` (Codex trabaja en él) ni los registros compartidos `ESTADO.md` y `PRUEBAS.md`. El director pidió no escribir en ellos por ahora. Solo se ha creado el aviso nuevo `03-coordinacion/GENERADOR-PERSONAJES.md`, que remite a este documento.
 - **Git:** repositorio local en esta carpeta. Sin remoto ni push (pendiente de autorización del director).
 
+### 2026-11-08 — Paso 2: tablas de PJ en datos — Claude Code
+
+- **Hecho:**
+  - `tools/extract_core_tables.py` genera `data/roles.json`, `lifepath.json`, `skills.json` y `rules.json` (formato en «Datos»);
+  - 10 roles: tabla de características, 20 habilidades de rata callejera con nivel y las mismas 20 de edgerunner, armas y blindaje, equipo, ciberequipo con la pérdida de Humanidad del libro, y vida pasada de rol con decisiones y condiciones (52 tablas y 7 decisiones);
+  - 15 secciones de vida pasada general, cada una con su campo de RED;
+  - las 66 habilidades, con correspondencia con RED comprobada por característica y por coste doble (x2);
+  - todas las opciones de equipo enlazan un Item nativo existente en los compendios de RED.
+- **Pruebas:**
+  - unitarias 10/10 (`tests/data.test.mjs`: integridad, básicas presentes, niveles 2–6, rangos de dado completos, condiciones con su decisión, UUID con formato válido);
+  - extractor idempotente;
+  - cotejo con el PDF: 100/100 filas de características.
+- **Decisión técnica:** los datos se generan del Core en lugar de copiarse a mano, y el extractor se detiene ante cualquier discrepancia. Las cuatro peculiaridades del Core encontradas están documentadas en «Datos».
+- **Pendiente:**
+  - la ropa en texto (decidir en los pasos 3 y 4);
+  - las tablas de PNJ, del PDF, en el paso 6.
+
 ## Cómo retomar
 
 1. Lee este documento y `module.json`.
-2. Ejecuta las pruebas unitarias.
-3. Siguiente: **paso 2, tablas en datos.** Crea `data/` con JSON por tabla, cada entrada con su texto en español tal como aparece en el Core y, si existe, el UUID nativo. Cada tabla de tirada declara su dado (`1d10`, `1d6`…) y sus rangos. Añade una prueba que coteje las tablas con `journals.json`: recuentos, rangos completos sin huecos ni solapes y UUID existentes. Documenta en la bitácora qué páginas se usaron.
+2. Ejecuta las pruebas unitarias y, si cambias el extractor, vuelve a generar los datos.
+3. Siguiente: **paso 3, Rata callejera y vida pasada.**
+   - Carga los datos con `fetch("modules/cyberpunk-generador/data/…")`.
+   - **Paso Rol:** lista de los 10 roles.
+   - **Paso Características:** botón «Tirar 1d10» (tirada de Foundry al chat) que fija la fila; con la política `free`, también selector de fila.
+   - **Paso Habilidades:** muestra la plantilla y pide elegir especialidad (Ciencia o Tocar instrumento) e idioma de origen.
+   - **Paso Vida pasada:** la general y la de rol, nodo a nodo, cada tabla con «Tirar» y, si la política lo permite, «Elegir»; amigos, enemigos y amores con recuento.
+   - **Paso Equipo:** elegir entre las opciones.
+   - **Paso Revisión:** aplicar a la ficha. Esto incluye: características (RED las guarda en `system.stats.<clave>.value`; compruébalo en el código de RED), habilidades (Items `skill` que RED crea en la ficha, ajustando `system.level`), rol (Item de `core_roles` con la aptitud a 4), equipo (Items de los compendios), vida pasada (`system.lifepath.*`), dinero (500 ed) y alojamiento.
+   - **Repetir una tirada:** con la política `rollsOnly`, solo el DJ, o el jugador con autorización del DJ por socket.
 4. No escribas en `edgerunners-2070` ni en ESTADO/PRUEBAS sin confirmar con el director que Codex ha terminado.

@@ -1,0 +1,66 @@
+{
+ "source": {
+  "journals": "02-edgerunners-world/staging/P02A21-audit-fixes-101/cyberpunk-red-core-esp/source/journals.json",
+  "sha256": "26c43da5049bbe8e3ef443cccbfacb295b6fd40c9c95f9c89712396d06e4c4e2",
+  "redDump": "29f13b3739b4ee68f317700a5753b8e2608cef0c06bd4a874c8edf7da2677cf7"
+ },
+ "roleAbilityStart": 4,
+ "cultureLanguageLevel": 4,
+ "skills": {
+  "points": 86,
+  "min": 2,
+  "max": 6,
+  "basicMin": 2
+ },
+ "complete": {
+  "statMin": 2,
+  "statMax": 8,
+  "statPoints": [
+   {
+    "rank": "Personaje secundario menor",
+    "points": 50
+   },
+   {
+    "rank": "Personaje principiante",
+    "points": 62
+   },
+   {
+    "rank": "Personaje secundario importante",
+    "points": 70
+   },
+   {
+    "rank": "Héroe menor",
+    "points": 75
+   },
+   {
+    "rank": "Héroe importante",
+    "points": 80
+   }
+  ],
+  "money": 2550,
+  "fashionMoney": 800
+ },
+ "extraMoney": 500,
+ "housing": {
+  "default": {
+   "housing": {
+    "description": "Contenedor de carga",
+    "cost": 1000
+   },
+   "lifestyle": {
+    "description": "Pienso",
+    "cost": 100
+   }
+  },
+  "exec": {
+   "housing": {
+    "description": "Cubículo en zona corporativa",
+    "cost": 0
+   },
+   "lifestyle": {
+    "description": "Precocinados de calidad",
+    "cost": 600
+   }
+  }
+ }
+}
