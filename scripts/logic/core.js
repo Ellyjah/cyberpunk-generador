@@ -35,8 +35,13 @@ export function emptyDraft() {
   return { schema: DRAFT_SCHEMA, method: null, step: "method", data: {}, rolls: [] };
 }
 
-/** Normaliza un borrador leído de la bandera; si falta o es de otro esquema, devuelve uno vacío. */
+/**
+ * Normaliza un borrador leído de la bandera; si falta o es de otro esquema, devuelve uno vacío.
+ * Se guarda como texto JSON: Foundry trata los puntos de las claves («g.style.c0») como rutas y al fusionar
+ * objetos no borra claves viejas; un texto se sustituye entero. Se acepta también un objeto (0.1.0).
+ */
 export function normalizeDraft(raw) {
+  if (typeof raw === "string") { try { raw = JSON.parse(raw); } catch { raw = null; } }
   if (!raw || typeof raw !== "object" || raw.schema !== DRAFT_SCHEMA) return emptyDraft();
   const d = { ...emptyDraft(), ...raw };
   if (!METHODS.includes(d.method)) d.method = null;
@@ -45,6 +50,21 @@ export function normalizeDraft(raw) {
   if (typeof d.data !== "object" || d.data === null) d.data = {};
   if (!Array.isArray(d.rolls)) d.rolls = [];
   return d;
+}
+
+/** Serializa el borrador para la bandera. */
+export const serializeDraft = (draft) => JSON.stringify(draft);
+
+/**
+ * Permisos sobre un hueco que admite tirada:
+ * - tirar: si está vacío; si ya tiene valor, el DJ siempre, con «Tirar o elegir» cualquiera, con «Solo tiradas» solo con permiso del DJ;
+ * - elegir directamente: el DJ siempre; los demás solo con «Tirar o elegir»;
+ * - pedir repetir: el jugador con «Solo tiradas», si ya está tirado y no tiene permiso concedido.
+ */
+export function rollRights({ answered, policy, isGM, granted }) {
+  const free = policy === "free";
+  const canRoll = !answered || isGM || free || Boolean(granted);
+  return { canRoll, canChoose: isGM || free, canRequest: answered && !isGM && !free && !granted };
 }
 
 /** Paso siguiente o anterior (`dir` = 1 o −1); no sale de los límites ni avanza sin método. */

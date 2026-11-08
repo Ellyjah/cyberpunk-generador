@@ -32,7 +32,8 @@
       "reset": "Reset",
       "resetTitle": "Reset the generator",
       "resetBody": "Everything chosen in the generator for this sheet will be deleted. The RED sheet does not change.",
-      "pending": "This step is not available yet in this version of the generator."
+      "pending": "This step is not available yet for this method in this version of the generator.",
+      "needRole": "Choose a role first in the «Role» step."
     },
     "step": {
       "method": "Method",
@@ -47,9 +48,123 @@
       "intro": "Choose how to create the character. The method sets how stats, skills and gear are obtained. Changing it later discards your choices.",
       "changeTitle": "Change method",
       "changeBody": "Changing the method discards everything chosen so far in the generator. Continue?",
-      "streetrat": { "label": "Streetrat", "hint": "Fastest. Stats rolled on the role table; skills, weapons, armor, gear and cyberware set by role, plus 500eb." },
-      "edgerunner": { "label": "Edgerunner", "hint": "Stats rolled on the role table; buy skills with points; weapons, armor, gear and cyberware from the role lists, plus 500eb." },
-      "complete": { "label": "Complete Package", "hint": "Buy stats (2 to 8) and skills (max 6) with points, and spend 2550eb on weapons, armor, gear and cyberware and 800eb on fashion and cyberfashion." }
+      "streetrat": {
+        "label": "Streetrat",
+        "hint": "Fastest. Stats rolled on the role table; skills, weapons, armor, gear and cyberware set by role, plus 500eb."
+      },
+      "edgerunner": {
+        "label": "Edgerunner",
+        "hint": "Stats rolled on the role table; buy skills with points; weapons, armor, gear and cyberware from the role lists, plus 500eb."
+      },
+      "complete": {
+        "label": "Complete Package",
+        "hint": "Buy stats (2 to 8) and skills (max 6) with points, and spend 2550eb on weapons, armor, gear and cyberware and 800eb on fashion and cyberfashion."
+      }
+    },
+    "chat": {
+      "prefix": "Generator —",
+      "stats": "{role} stats (template row)",
+      "count": "{what}: count ({formula}, minimum 0)"
+    },
+    "reroll": {
+      "title": "Reroll",
+      "ask": "{user} asks to reroll a generator roll on {actor}: {what}. Allow it?",
+      "granted": "The GM lets {user} reroll: {what}.",
+      "denied": "The GM does not let {user} reroll: {what}.",
+      "locked": "With «Rolls only», rerolling needs GM approval.",
+      "sent": "Request sent to the GM."
+    },
+    "role": {
+      "intro": "Choose the character's role. It starts with its role ability at 4.",
+      "changeTitle": "Change role",
+      "changeBody": "Changing role discards everything that depends on it (stats, skills, gear and role lifepath). The general lifepath is kept. Continue?"
+    },
+    "stats": {
+      "row": "Stat row",
+      "introStreetrat": "Roll 1d10 and copy that row of your role template, in order."
+    },
+    "stat": {
+      "int": "INT",
+      "ref": "REF",
+      "dex": "DEX",
+      "tech": "TECH",
+      "cool": "COOL",
+      "will": "WILL",
+      "luck": "LUCK",
+      "move": "MOVE",
+      "body": "BODY",
+      "emp": "EMP"
+    },
+    "skills": {
+      "introStreetrat": "Streetrat skills are set by role. Just choose the listed specialties and your cultural origin language.",
+      "originLanguage": "Origin language (level {level})",
+      "otherLanguage": "…or type another language",
+      "suggested": "Languages of your cultural region",
+      "suggestedNone": "Roll or choose your cultural origin in «Lifepath» to see your region's languages."
+    },
+    "lifepath": {
+      "intro": "Go through the general and role lifepath. Tables can be rolled; decisions are chosen.",
+      "progress": "{done} of {total} done.",
+      "roleGroup": "{role} lifepath",
+      "count": "How many? ({formula}, minimum 0)",
+      "wronged": "Who was wronged?",
+      "none": "None",
+      "language": "Language"
+    },
+    "gear": {
+      "intro": "Starting gear is set by role. Where there are options, choose one. You also get 500eb.",
+      "chooseOne": "Choose one",
+      "weapons": "Weapons and armor",
+      "gear": "Gear and clothing",
+      "cyberware": "Cyberware",
+      "humanity": "The book computes a Humanity loss of {loss} ({emp} EMP) for this cyberware; RED's average loss is applied on install."
+    },
+    "review": {
+      "clothing": "Clothing",
+      "money": "Money",
+      "housing": "Housing and lifestyle",
+      "applied": "Already applied to the sheet on {date}.",
+      "note": "Applying writes stats, skills, lifepath, money and housing, and adds the role, gear and installed cyberware (with its Humanity loss). Nothing is deleted from the sheet.",
+      "apply": "Apply to sheet",
+      "missingIntro": "Still missing:",
+      "missing": {
+        "stats": "The stat row (Stats step).",
+        "spec": "The {key} specialty (Skills step).",
+        "lang": "The origin language (Skills step).",
+        "gear": "A gear option (Gear step).",
+        "lifepath": "{n} lifepath entries (Lifepath step)."
+      }
+    },
+    "slot": {
+      "rolled": "rolled:",
+      "empty": "undecided",
+      "roll": "Roll",
+      "reroll": "Reroll",
+      "request": "Ask to reroll",
+      "choose": "— Choose —"
+    },
+    "apply": {
+      "missingItem": "Item {uuid} not found in the RED compendia.",
+      "languageName": "Language ({name})",
+      "moneyReason": "Generator: starting money",
+      "againTitle": "Apply again",
+      "againBody": "This character was already applied. Applying again adds the role, gear and cyberware again (duplicates). Continue?",
+      "title": "Apply to sheet",
+      "body": "The character will be written to the RED sheet. Continue?",
+      "done": "Character applied to the sheet.",
+      "error": "Error applying the character: {msg}",
+      "log": {
+        "stats": "Stats, Humanity, lifepath and lifestyle written.",
+        "skillMissing": "Skill {name} not found on the sheet.",
+        "skills": "{n} skills set or added.",
+        "role": "Role {name} added at rank 4.",
+        "clothingMissing": "Clothing {name} not found in the RED compendium.",
+        "items": "{n} items added.",
+        "noFoundation": "{name} has no foundational cyberware of its type; installed directly on the body.",
+        "cyber": "{n} cyberware installed; Humanity {hum}, EMP {emp}.",
+        "money": "{n}eb added."
+      },
+      "noCoreSkills": "The sheet lacks RED core skills. Create the sheet from the actors directory (or the generator button) and apply again."
     }
   }
 }

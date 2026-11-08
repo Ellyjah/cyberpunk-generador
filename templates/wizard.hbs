@@ -1,3 +1,21 @@
+{{!-- Hueco con tirada y/o elección: se usa en características y vida pasada. --}}
+{{#*inline "slot"}}
+<div class="cprgen-slot {{#unless answered}}empty{{/unless}}">
+  <span class="cprgen-slot-label">{{label}}</span>
+  <span class="cprgen-slot-value">{{#if answered}}{{text}}{{#if rolled}} <em class="cprgen-rolled">({{localize "CPRGEN.slot.rolled"}} {{rolled}})</em>{{/if}}{{else}}<em>{{localize "CPRGEN.slot.empty"}}</em>{{/if}}</span>
+  <span class="cprgen-slot-actions">
+    {{#if canRoll}}<button type="button" data-action="rollSlot" data-key="{{key}}" title="{{die}}"><i class="fas fa-dice-d10"></i> {{#if answered}}{{localize "CPRGEN.slot.reroll"}}{{else}}{{localize "CPRGEN.slot.roll"}}{{/if}}{{#if die}} {{die}}{{/if}}</button>{{/if}}
+    {{#if canRequest}}<button type="button" data-action="requestReroll" data-key="{{key}}" data-label="{{label}}"><i class="fas fa-hand-paper"></i> {{localize "CPRGEN.slot.request"}}</button>{{/if}}
+    {{#if canChoose}}
+      <select data-key="{{key}}" data-kind="{{kind}}">
+        <option value="">{{localize "CPRGEN.slot.choose"}}</option>
+        {{#each options}}<option value="{{value}}" {{#if selected}}selected{{/if}}>{{label}}</option>{{/each}}
+      </select>
+    {{/if}}
+  </span>
+</div>
+{{/inline}}
+
 <div class="cprgen-layout">
   <nav class="cprgen-steps">
     {{#each steps}}
@@ -10,9 +28,9 @@
   </nav>
 
   <section class="cprgen-body">
-    <h2>{{stepLabel}}{{#if methodLabel}} <small>· {{methodLabel}}</small>{{/if}}</h2>
+    <h2>{{stepLabel}}{{#if methodLabel}} <small>· {{methodLabel}}</small>{{/if}}{{#if role}} <small>· {{role.name}}</small>{{/if}}</h2>
 
-    {{#if isMethodStep}}
+    {{#if step.method}}
       <p>{{localize "CPRGEN.method.intro"}}</p>
       <div class="cprgen-methods">
         {{#each methods}}
@@ -22,8 +40,77 @@
           </button>
         {{/each}}
       </div>
-    {{else}}
+    {{else if pending}}
       <p class="cprgen-pending">{{localize "CPRGEN.wizard.pending"}}</p>
+    {{else if needRole}}
+      <p class="cprgen-pending">{{localize "CPRGEN.wizard.needRole"}}</p>
+    {{else if step.role}}
+      <p>{{localize "CPRGEN.role.intro"}}</p>
+      <div class="cprgen-roles">
+        {{#each roles}}<button type="button" class="cprgen-role {{#if selected}}selected{{/if}}" data-action="selectRole" data-role="{{key}}">{{name}}</button>{{/each}}
+      </div>
+    {{else if step.stats}}
+      <p>{{localize "CPRGEN.stats.introStreetrat"}}</p>
+      {{> slot stats.slot}}
+      <table class="cprgen-table">
+        <thead><tr><th>1d10</th>{{#each stats.header}}<th>{{this}}</th>{{/each}}</tr></thead>
+        <tbody>{{#each stats.table}}<tr class="{{#if selected}}selected{{/if}}"><td>{{n}}</td>{{#each values}}<td>{{this}}</td>{{/each}}</tr>{{/each}}</tbody>
+      </table>
+    {{else if step.skills}}
+      <p>{{localize "CPRGEN.skills.introStreetrat"}}</p>
+      <table class="cprgen-table cprgen-skills">
+        <tbody>{{#each skills.list}}<tr><td>{{label}}{{#if spec}} → <strong>{{spec}}</strong>{{/if}}</td><td>{{level}}</td></tr>{{/each}}</tbody>
+      </table>
+      {{#each skills.specs}}
+        <div class="cprgen-slot">
+          <span class="cprgen-slot-label">{{label}} ({{level}})</span>
+          <select data-key="{{key}}" data-kind="uuid"><option value="">{{localize "CPRGEN.slot.choose"}}</option>{{#each options}}<option value="{{value}}" {{#if selected}}selected{{/if}}>{{label}}</option>{{/each}}</select>
+        </div>
+      {{/each}}
+      <div class="cprgen-slot">
+        <span class="cprgen-slot-label">{{localize "CPRGEN.skills.originLanguage" level=skills.lang.level}}</span>
+        <select data-key="lang.origin" data-kind="uuid"><option value="">{{localize "CPRGEN.slot.choose"}}</option>{{#each skills.lang.options}}<option value="{{value}}" {{#if selected}}selected{{/if}}>{{label}}</option>{{/each}}</select>
+        <input type="text" data-text-key="lang.origin" value="{{skills.lang.other}}" placeholder="{{localize "CPRGEN.skills.otherLanguage"}}">
+      </div>
+      {{#if skills.lang.suggested}}<p class="hint">{{localize "CPRGEN.skills.suggested"}}: {{skills.lang.suggested}}</p>{{else}}<p class="hint">{{localize "CPRGEN.skills.suggestedNone"}}</p>{{/if}}
+    {{else if step.lifepath}}
+      <p>{{localize "CPRGEN.lifepath.intro"}} <strong>{{localize "CPRGEN.lifepath.progress" done=lifepath.done total=lifepath.total missing=lifepath.missing}}</strong></p>
+      {{#each lifepath.groups}}
+        <fieldset class="cprgen-group"><legend>{{label}}</legend>
+          {{#each slots}}{{> slot this}}{{/each}}
+        </fieldset>
+      {{/each}}
+    {{else if step.gear}}
+      <p>{{localize "CPRGEN.gear.intro"}}</p>
+      {{#each gear.groups}}
+        <fieldset class="cprgen-group"><legend>{{label}}</legend>
+          {{#each lines}}
+            {{#if choose}}
+              <div class="cprgen-slot"><span class="cprgen-slot-label">{{localize "CPRGEN.gear.chooseOne"}}</span>
+                <select data-key="{{key}}" data-kind="row"><option value="">{{localize "CPRGEN.slot.choose"}}</option>{{#each options}}<option value="{{value}}" {{#if selected}}selected{{/if}}>{{label}}</option>{{/each}}</select></div>
+            {{else}}<div class="cprgen-line">{{text}}</div>{{/if}}
+          {{/each}}
+        </fieldset>
+      {{/each}}
+      <p class="hint">{{gear.humanity}}</p>
+    {{else if step.review}}
+      {{#if review.ready}}
+        <dl class="cprgen-summary">
+          <dt>{{localize "CPRGEN.step.role"}}</dt><dd>{{review.summary.role}}</dd>
+          <dt>{{localize "CPRGEN.step.stats"}}</dt><dd>{{review.summary.stats}}</dd>
+          <dt>{{localize "CPRGEN.step.skills"}}</dt><dd>{{review.summary.skills}}</dd>
+          <dt>{{localize "CPRGEN.step.gear"}}</dt><dd>{{review.summary.items}}</dd>
+          <dt>{{localize "CPRGEN.review.clothing"}}</dt><dd>{{review.summary.clothing}}</dd>
+          <dt>{{localize "CPRGEN.review.money"}}</dt><dd>{{review.summary.money}} ed</dd>
+          <dt>{{localize "CPRGEN.review.housing"}}</dt><dd>{{review.summary.housing}}</dd>
+        </dl>
+        {{#if review.applied}}<p class="hint">{{localize "CPRGEN.review.applied" date=review.applied}}</p>{{/if}}
+        <p>{{localize "CPRGEN.review.note"}}</p>
+        <button type="button" class="cprgen-apply" data-action="applySheet"><i class="fas fa-file-import"></i> {{localize "CPRGEN.review.apply"}}</button>
+      {{else}}
+        <p>{{localize "CPRGEN.review.missingIntro"}}</p>
+        <ul>{{#each review.missing}}<li>{{this}}</li>{{/each}}</ul>
+      {{/if}}
     {{/if}}
   </section>
 

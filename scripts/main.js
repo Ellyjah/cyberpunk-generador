@@ -46,6 +46,7 @@ async function createAndOpen() {
     rejectClose: false,
   });
   if (!name) return;
-  const actor = await Actor.create({ name, type: "character" });
+  // Actor.implementation (la clase de RED) añade las habilidades base y las ranuras de ciberequipo; Actor.create no.
+  const actor = await Actor.implementation.create({ name, type: "character" });
   if (actor) openGenerator(actor);
 }

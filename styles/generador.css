@@ -16,3 +16,27 @@
 .cprgen-footer { display: flex; justify-content: space-between; gap: 8px; padding: 8px 12px; border-top: 1px solid var(--color-border-light-tertiary, #999); }
 .cprgen-footer button { flex: 0 0 auto; width: auto; }
 #actors .header-actions .cprgen-new { flex-basis: 100%; }
+/* Paso 3: huecos de tirada/elección, tablas, roles, revisión. */
+.cprgen-roles { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 6px; }
+.cprgen-role.selected { outline: 2px solid var(--color-border-highlight, #ff6400); font-weight: bold; }
+.cprgen-slot { display: grid; grid-template-columns: 190px 1fr; gap: 2px 8px; align-items: center; padding: 4px 0; border-bottom: 1px dotted var(--color-border-light-tertiary, #999); }
+.cprgen-slot-actions { grid-column: 2; }
+.cprgen-slot > select, .cprgen-slot > input { grid-column: 2; }
+.cprgen-slot.empty .cprgen-slot-value { opacity: 0.7; }
+.cprgen-slot-label { font-weight: bold; }
+.cprgen-slot-actions { display: flex; gap: 4px; align-items: center; }
+.cprgen-slot-actions button { width: auto; white-space: nowrap; line-height: 1.6; }
+.cprgen-slot-actions select { flex: 1; min-width: 0; max-width: 420px; }
+.cprgen-slot > select { max-width: 420px; }
+.cprgen-rolled { font-size: 0.85em; opacity: 0.8; }
+.cprgen-group { margin: 8px 0; padding: 4px 8px; }
+.cprgen-group legend { font-weight: bold; }
+.cprgen-table { width: 100%; border-collapse: collapse; margin: 6px 0; font-size: 0.9em; }
+.cprgen-table th, .cprgen-table td { padding: 2px 4px; text-align: center; border: 1px solid var(--color-border-light-tertiary, #999); }
+.cprgen-skills td:first-child { text-align: left; }
+.cprgen-table tr.selected { font-weight: bold; outline: 2px solid var(--color-border-highlight, #ff6400); }
+.cprgen-line { padding: 2px 0; }
+.cprgen-summary dt { font-weight: bold; margin-top: 4px; }
+.cprgen-summary dd { margin: 0 0 0 12px; }
+.cprgen-apply { width: auto; margin-top: 8px; font-weight: bold; }
+.cprgen-body .hint { font-size: 0.9em; opacity: 0.8; font-style: italic; }

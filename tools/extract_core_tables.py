@@ -151,11 +151,11 @@ def skill_catalog():
 def resolve_skill(label, cat, where):
     """«Experto local (tu hogar)», «Artes marciales (x2)», «Ciencia (elige una)»… → referencia de habilidad."""
     lab = re.sub(r'\s*\(x2\)', '', label).strip()
-    if lab in FIXED_SPECIALTY: return {'label': lab, 'red': FIXED_SPECIALTY[lab]}
+    if lab in FIXED_SPECIALTY: return {'label': lab, 'red': FIXED_SPECIALTY[lab], 'redId': RED_SKILLS[FIXED_SPECIALTY[lab]]['_id']}
     base = re.sub(r'\s*\(.*\)$', '', lab).strip()
     e = cat.get(lab) or cat.get(base) or die(f'{where}: habilidad desconocida {label!r}')
     ref = {'label': lab}
-    if 'red' in e: ref['red'] = e['red']
+    if 'red' in e: ref['red'] = e['red']; ref['redId'] = e['redId']
     if 'specialtyPack' in e: ref['specialtyPack'] = e['specialtyPack']
     return ref
 
@@ -270,19 +270,21 @@ def write(name, data):
 
 # --- Vida pasada general ------------------------------------------------------------------------------------
 # (página, índice de tabla) → sección; `fields` asigna cada columna a un campo de system.lifepath de RED.
+# perColumn: cada columna se tira por separado (el libro: «tira … para cada columna»); sin él, una tirada da la fila entera.
+# wronged: en los enemigos, «decide cuál fue la parte perjudicada» (elección, no tirada).
 GENERAL = [
     ('culturalOrigin', '556dabf81b249488', 0, {'fields': ['culturalOrigin', None], 'languages': True}),
     ('personality', '556dabf81b249488', 1, {'fields': ['personality']}),
-    ('style', '556dabf81b249488', 2, {'fields': ['clothingStyle', 'hairStyle']}),
+    ('style', '556dabf81b249488', 2, {'fields': ['clothingStyle', 'hairStyle'], 'perColumn': True}),
     ('affectations', '556dabf81b249488', 3, {'fields': ['affectations']}),
-    ('motivations', '556dabf81b249488', 4, {'fields': ['valueMost', 'aboutPeople']}),
+    ('motivations', '556dabf81b249488', 4, {'fields': ['valueMost', 'aboutPeople'], 'perColumn': True}),
     ('valuedPerson', '556dabf81b249488', 5, {'fields': ['valuedPerson']}),
     ('valuedPossession', '556dabf81b249488', 6, {'fields': ['valuedPossession']}),
     ('familyBackground', '994c0f60ff144b8f', 0, {'fields': ['familyBackground', 'familyBackground']}),
     ('childhoodEnvironment', '994c0f60ff144b8f', 1, {'fields': ['childhoodEnvironment']}),
     ('familyCrisis', '994c0f60ff144b8f', 2, {'fields': ['familyCrisis']}),
     ('friends', '03f931e03bee71f4', 0, {'fields': ['friends'], 'count': '1d10-7'}),
-    ('enemies', '03f931e03bee71f4', 1, {'fields': ['enemies', 'enemies', 'enemies'], 'count': '1d10-7', 'choose': [1], 'then': 'revenge'}),
+    ('enemies', '03f931e03bee71f4', 1, {'fields': ['enemies', 'enemies', 'enemies'], 'count': '1d10-7', 'perColumn': True, 'wronged': [{'value': 'you', 'label': 'Tú'}, {'value': 'them', 'label': 'Tu enemigo'}], 'then': 'revenge'}),
     ('revenge', '03f931e03bee71f4', 2, {'fields': ['enemies'], 'perEnemy': True}),
     ('tragicLoveAffairs', '97c0e8973496e0a1', 0, {'fields': ['tragicLoveAffairs'], 'count': '1d10-7'}),
     ('lifeGoals', '97c0e8973496e0a1', 1, {'fields': ['lifeGoals']}),

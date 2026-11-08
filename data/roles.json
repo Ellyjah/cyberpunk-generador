@@ -130,184 +130,224 @@
    {
     "label": "Atletismo",
     "red": "Athletics",
+    "redId": "2cEhxWWDwDYepIuJ",
     "level": 2
    },
    {
     "label": "Concentración",
     "red": "Concentration",
+    "redId": "f319Qi6jITQMATyG",
     "level": 2
    },
    {
     "label": "Conversación",
     "red": "Conversation",
+    "redId": "DlYHwCapjvfyYgKh",
     "level": 6
    },
    {
     "label": "Cultura",
     "red": "Education",
+    "redId": "m6zHqBrjzEGAs3c0",
     "level": 2
    },
    {
     "label": "Evasión",
     "red": "Evasion",
+    "redId": "CzaAkwAjPDplz4nn",
     "level": 6
    },
    {
     "label": "Experto local (tu hogar)",
     "red": "Local Expert (Your Home)",
+    "redId": "E6ZW9X4H8tjX294j",
     "level": 6
    },
    {
     "label": "Idioma (jerga callejera)",
     "red": "Language (Streetslang)",
+    "redId": "LsFm00AIool6DVwl",
     "level": 4
    },
    {
     "label": "Pelea",
     "red": "Brawling",
+    "redId": "fPnx3mKaMiRgGavI",
     "level": 2
    },
    {
     "label": "Percepción",
     "red": "Perception",
+    "redId": "nPVwsGDzkjaGu6mZ",
     "level": 2
    },
    {
     "label": "Percepción humana",
     "red": "Human Perception",
+    "redId": "FxviNlk84J78vEhV",
     "level": 6
    },
    {
     "label": "Persuasión",
     "red": "Persuasion",
+    "redId": "cwwOn3YucT9CqJBN",
     "level": 4
    },
    {
     "label": "Primeros auxilios",
     "red": "First Aid",
+    "redId": "8yxaK6GbNu59yxKH",
     "level": 2
    },
    {
     "label": "Sigilo",
     "red": "Stealth",
+    "redId": "y2oyHHPllOLVxiNJ",
     "level": 2
    },
    {
     "label": "Abrir cerraduras",
     "red": "Pick Lock",
+    "redId": "puWDSgyEiCY5qwVp",
     "level": 4
    },
    {
     "label": "Armas cortas",
     "red": "Handgun",
+    "redId": "l7gW0F5MaWg9I7tC",
     "level": 6
    },
    {
     "label": "Comerciar",
     "red": "Trading",
+    "redId": "3QXtTqLRdD1lZYsI",
     "level": 6
    },
    {
     "label": "Conocimiento de la calle",
     "red": "Streetwise",
+    "redId": "EkO3gpmabPfeGZeU",
     "level": 6
    },
    {
     "label": "Falsificación",
     "red": "Forgery",
+    "redId": "wpHLZDqfC7wE00Vw",
     "level": 6
    },
    {
     "label": "Negocios",
     "red": "Business",
+    "redId": "iiYgc3iNOIzMG0fO",
     "level": 6
    },
    {
     "label": "Sobornar",
     "red": "Bribery",
+    "redId": "pd1WswOLTjK2yjEc",
     "level": 6
    }
   ],
   "edgerunnerSkills": [
    {
     "label": "Atletismo",
-    "red": "Athletics"
+    "red": "Athletics",
+    "redId": "2cEhxWWDwDYepIuJ"
    },
    {
     "label": "Concentración",
-    "red": "Concentration"
+    "red": "Concentration",
+    "redId": "f319Qi6jITQMATyG"
    },
    {
     "label": "Conversación",
-    "red": "Conversation"
+    "red": "Conversation",
+    "redId": "DlYHwCapjvfyYgKh"
    },
    {
     "label": "Cultura",
-    "red": "Education"
+    "red": "Education",
+    "redId": "m6zHqBrjzEGAs3c0"
    },
    {
     "label": "Evasión",
-    "red": "Evasion"
+    "red": "Evasion",
+    "redId": "CzaAkwAjPDplz4nn"
    },
    {
     "label": "Experto local (tu hogar)",
-    "red": "Local Expert (Your Home)"
+    "red": "Local Expert (Your Home)",
+    "redId": "E6ZW9X4H8tjX294j"
    },
    {
     "label": "Idioma (jerga callejera)",
-    "red": "Language (Streetslang)"
+    "red": "Language (Streetslang)",
+    "redId": "LsFm00AIool6DVwl"
    },
    {
     "label": "Pelea",
-    "red": "Brawling"
+    "red": "Brawling",
+    "redId": "fPnx3mKaMiRgGavI"
    },
    {
     "label": "Percepción",
-    "red": "Perception"
+    "red": "Perception",
+    "redId": "nPVwsGDzkjaGu6mZ"
    },
    {
     "label": "Percepción humana",
-    "red": "Human Perception"
+    "red": "Human Perception",
+    "redId": "FxviNlk84J78vEhV"
    },
    {
     "label": "Persuasión",
-    "red": "Persuasion"
+    "red": "Persuasion",
+    "redId": "cwwOn3YucT9CqJBN"
    },
    {
     "label": "Primeros auxilios",
-    "red": "First Aid"
+    "red": "First Aid",
+    "redId": "8yxaK6GbNu59yxKH"
    },
    {
     "label": "Sigilo",
-    "red": "Stealth"
+    "red": "Stealth",
+    "redId": "y2oyHHPllOLVxiNJ"
    },
    {
     "label": "Abrir cerraduras",
-    "red": "Pick Lock"
+    "red": "Pick Lock",
+    "redId": "puWDSgyEiCY5qwVp"
    },
    {
     "label": "Armas cortas",
-    "red": "Handgun"
+    "red": "Handgun",
+    "redId": "l7gW0F5MaWg9I7tC"
    },
    {
     "label": "Comerciar",
-    "red": "Trading"
+    "red": "Trading",
+    "redId": "3QXtTqLRdD1lZYsI"
    },
    {
     "label": "Conocimiento de la calle",
-    "red": "Streetwise"
+    "red": "Streetwise",
+    "redId": "EkO3gpmabPfeGZeU"
    },
    {
     "label": "Falsificación",
-    "red": "Forgery"
+    "red": "Forgery",
+    "redId": "wpHLZDqfC7wE00Vw"
    },
    {
     "label": "Negocios",
-    "red": "Business"
+    "red": "Business",
+    "redId": "iiYgc3iNOIzMG0fO"
    },
    {
     "label": "Sobornar",
-    "red": "Bribery"
+    "red": "Bribery",
+    "redId": "pd1WswOLTjK2yjEc"
    }
   ],
   "weapons": [
@@ -986,184 +1026,224 @@
    {
     "label": "Atletismo",
     "red": "Athletics",
+    "redId": "2cEhxWWDwDYepIuJ",
     "level": 2
    },
    {
     "label": "Concentración",
     "red": "Concentration",
+    "redId": "f319Qi6jITQMATyG",
     "level": 2
    },
    {
     "label": "Conversación",
     "red": "Conversation",
+    "redId": "DlYHwCapjvfyYgKh",
     "level": 6
    },
    {
     "label": "Cultura",
     "red": "Education",
+    "redId": "m6zHqBrjzEGAs3c0",
     "level": 6
    },
    {
     "label": "Evasión",
     "red": "Evasion",
+    "redId": "CzaAkwAjPDplz4nn",
     "level": 6
    },
    {
     "label": "Experto local (tu hogar)",
     "red": "Local Expert (Your Home)",
+    "redId": "E6ZW9X4H8tjX294j",
     "level": 2
    },
    {
     "label": "Idioma (jerga callejera)",
     "red": "Language (Streetslang)",
+    "redId": "LsFm00AIool6DVwl",
     "level": 2
    },
    {
     "label": "Pelea",
     "red": "Brawling",
+    "redId": "fPnx3mKaMiRgGavI",
     "level": 2
    },
    {
     "label": "Percepción",
     "red": "Perception",
+    "redId": "nPVwsGDzkjaGu6mZ",
     "level": 2
    },
    {
     "label": "Percepción humana",
     "red": "Human Perception",
+    "redId": "FxviNlk84J78vEhV",
     "level": 6
    },
    {
     "label": "Persuasión",
     "red": "Persuasion",
+    "redId": "cwwOn3YucT9CqJBN",
     "level": 6
    },
    {
     "label": "Primeros auxilios",
     "red": "First Aid",
+    "redId": "8yxaK6GbNu59yxKH",
     "level": 2
    },
    {
     "label": "Sigilo",
     "red": "Stealth",
+    "redId": "y2oyHHPllOLVxiNJ",
     "level": 2
    },
    {
     "label": "Armas cortas",
     "red": "Handgun",
+    "redId": "l7gW0F5MaWg9I7tC",
     "level": 6
    },
    {
     "label": "Arreglo personal",
     "red": "Personal Grooming",
+    "redId": "fIq8FZsb8QgBN0sG",
     "level": 4
    },
    {
     "label": "Burocracia",
     "red": "Bureaucracy",
+    "redId": "9Cn1HeCuzQZ27iJ7",
     "level": 6
    },
    {
     "label": "Contabilidad",
     "red": "Accounting",
+    "redId": "NafrVs2glkn6Ud82",
     "level": 6
    },
    {
     "label": "Deducción",
     "red": "Deduction",
+    "redId": "RkNmXeJttYnBdgTK",
     "level": 6
    },
    {
     "label": "Lectura de labios",
     "red": "Lip Reading",
+    "redId": "oNkNlAveEaFmztRb",
     "level": 6
    },
    {
     "label": "Negocios",
     "red": "Business",
+    "redId": "iiYgc3iNOIzMG0fO",
     "level": 6
    }
   ],
   "edgerunnerSkills": [
    {
     "label": "Atletismo",
-    "red": "Athletics"
+    "red": "Athletics",
+    "redId": "2cEhxWWDwDYepIuJ"
    },
    {
     "label": "Concentración",
-    "red": "Concentration"
+    "red": "Concentration",
+    "redId": "f319Qi6jITQMATyG"
    },
    {
     "label": "Conversación",
-    "red": "Conversation"
+    "red": "Conversation",
+    "redId": "DlYHwCapjvfyYgKh"
    },
    {
     "label": "Cultura",
-    "red": "Education"
+    "red": "Education",
+    "redId": "m6zHqBrjzEGAs3c0"
    },
    {
     "label": "Evasión",
-    "red": "Evasion"
+    "red": "Evasion",
+    "redId": "CzaAkwAjPDplz4nn"
    },
    {
     "label": "Experto local (tu hogar)",
-    "red": "Local Expert (Your Home)"
+    "red": "Local Expert (Your Home)",
+    "redId": "E6ZW9X4H8tjX294j"
    },
    {
     "label": "Idioma (jerga callejera)",
-    "red": "Language (Streetslang)"
+    "red": "Language (Streetslang)",
+    "redId": "LsFm00AIool6DVwl"
    },
    {
     "label": "Pelea",
-    "red": "Brawling"
+    "red": "Brawling",
+    "redId": "fPnx3mKaMiRgGavI"
    },
    {
     "label": "Percepción",
-    "red": "Perception"
+    "red": "Perception",
+    "redId": "nPVwsGDzkjaGu6mZ"
    },
    {
     "label": "Percepción humana",
-    "red": "Human Perception"
+    "red": "Human Perception",
+    "redId": "FxviNlk84J78vEhV"
    },
    {
     "label": "Persuasión",
-    "red": "Persuasion"
+    "red": "Persuasion",
+    "redId": "cwwOn3YucT9CqJBN"
    },
    {
     "label": "Primeros auxilios",
-    "red": "First Aid"
+    "red": "First Aid",
+    "redId": "8yxaK6GbNu59yxKH"
    },
    {
     "label": "Sigilo",
-    "red": "Stealth"
+    "red": "Stealth",
+    "redId": "y2oyHHPllOLVxiNJ"
    },
    {
     "label": "Armas cortas",
-    "red": "Handgun"
+    "red": "Handgun",
+    "redId": "l7gW0F5MaWg9I7tC"
    },
    {
     "label": "Arreglo personal",
-    "red": "Personal Grooming"
+    "red": "Personal Grooming",
+    "redId": "fIq8FZsb8QgBN0sG"
    },
    {
     "label": "Burocracia",
-    "red": "Bureaucracy"
+    "red": "Bureaucracy",
+    "redId": "9Cn1HeCuzQZ27iJ7"
    },
    {
     "label": "Contabilidad",
-    "red": "Accounting"
+    "red": "Accounting",
+    "redId": "NafrVs2glkn6Ud82"
    },
    {
     "label": "Deducción",
-    "red": "Deduction"
+    "red": "Deduction",
+    "redId": "RkNmXeJttYnBdgTK"
    },
    {
     "label": "Lectura de labios",
-    "red": "Lip Reading"
+    "red": "Lip Reading",
+    "redId": "oNkNlAveEaFmztRb"
    },
    {
     "label": "Negocios",
-    "red": "Business"
+    "red": "Business",
+    "redId": "iiYgc3iNOIzMG0fO"
    }
   ],
   "weapons": [
@@ -1805,184 +1885,224 @@
    {
     "label": "Atletismo",
     "red": "Athletics",
+    "redId": "2cEhxWWDwDYepIuJ",
     "level": 2
    },
    {
     "label": "Concentración",
     "red": "Concentration",
+    "redId": "f319Qi6jITQMATyG",
     "level": 2
    },
    {
     "label": "Conversación",
     "red": "Conversation",
+    "redId": "DlYHwCapjvfyYgKh",
     "level": 2
    },
    {
     "label": "Cultura",
     "red": "Education",
+    "redId": "m6zHqBrjzEGAs3c0",
     "level": 2
    },
    {
     "label": "Evasión",
     "red": "Evasion",
+    "redId": "CzaAkwAjPDplz4nn",
     "level": 6
    },
    {
     "label": "Experto local (tu hogar)",
     "red": "Local Expert (Your Home)",
+    "redId": "E6ZW9X4H8tjX294j",
     "level": 2
    },
    {
     "label": "Idioma (jerga callejera)",
     "red": "Language (Streetslang)",
+    "redId": "LsFm00AIool6DVwl",
     "level": 2
    },
    {
     "label": "Pelea",
     "red": "Brawling",
+    "redId": "fPnx3mKaMiRgGavI",
     "level": 2
    },
    {
     "label": "Percepción",
     "red": "Perception",
+    "redId": "nPVwsGDzkjaGu6mZ",
     "level": 6
    },
    {
     "label": "Percepción humana",
     "red": "Human Perception",
+    "redId": "FxviNlk84J78vEhV",
     "level": 2
    },
    {
     "label": "Persuasión",
     "red": "Persuasion",
+    "redId": "cwwOn3YucT9CqJBN",
     "level": 2
    },
    {
     "label": "Primeros auxilios",
     "red": "First Aid",
+    "redId": "8yxaK6GbNu59yxKH",
     "level": 6
    },
    {
     "label": "Sigilo",
     "red": "Stealth",
+    "redId": "y2oyHHPllOLVxiNJ",
     "level": 2
    },
    {
     "label": "Arma cuerpo a cuerpo",
     "red": "Melee Weapon",
+    "redId": "2YDWLi0oPsH3c7B6",
     "level": 6
    },
    {
     "label": "Armas cortas",
     "red": "Handgun",
+    "redId": "l7gW0F5MaWg9I7tC",
     "level": 6
    },
    {
     "label": "Armas largas",
     "red": "Shoulder Arms",
+    "redId": "VdvSW102ytvqRgfx",
     "level": 6
    },
    {
     "label": "Disparo automático",
     "red": "Autofire",
+    "redId": "Xbk6aAKKUQtXRunw",
     "level": 6
    },
    {
     "label": "Interrogatorio",
     "red": "Interrogation",
+    "redId": "bBSVyMIWcWtEt4nC",
     "level": 6
    },
    {
     "label": "Resistir torturas/drogas",
     "red": "Resist Torture/Drugs",
+    "redId": "4nZAn6M44PYI8CU2",
     "level": 6
    },
    {
     "label": "Tácticas",
     "red": "Tactics",
+    "redId": "xT6Lp6hhlWRaTs0n",
     "level": 6
    }
   ],
   "edgerunnerSkills": [
    {
     "label": "Atletismo",
-    "red": "Athletics"
+    "red": "Athletics",
+    "redId": "2cEhxWWDwDYepIuJ"
    },
    {
     "label": "Concentración",
-    "red": "Concentration"
+    "red": "Concentration",
+    "redId": "f319Qi6jITQMATyG"
    },
    {
     "label": "Conversación",
-    "red": "Conversation"
+    "red": "Conversation",
+    "redId": "DlYHwCapjvfyYgKh"
    },
    {
     "label": "Cultura",
-    "red": "Education"
+    "red": "Education",
+    "redId": "m6zHqBrjzEGAs3c0"
    },
    {
     "label": "Evasión",
-    "red": "Evasion"
+    "red": "Evasion",
+    "redId": "CzaAkwAjPDplz4nn"
    },
    {
     "label": "Experto local (tu hogar)",
-    "red": "Local Expert (Your Home)"
+    "red": "Local Expert (Your Home)",
+    "redId": "E6ZW9X4H8tjX294j"
    },
    {
     "label": "Idioma (jerga callejera)",
-    "red": "Language (Streetslang)"
+    "red": "Language (Streetslang)",
+    "redId": "LsFm00AIool6DVwl"
    },
    {
     "label": "Pelea",
-    "red": "Brawling"
+    "red": "Brawling",
+    "redId": "fPnx3mKaMiRgGavI"
    },
    {
     "label": "Percepción",
-    "red": "Perception"
+    "red": "Perception",
+    "redId": "nPVwsGDzkjaGu6mZ"
    },
    {
     "label": "Percepción humana",
-    "red": "Human Perception"
+    "red": "Human Perception",
+    "redId": "FxviNlk84J78vEhV"
    },
    {
     "label": "Persuasión",
-    "red": "Persuasion"
+    "red": "Persuasion",
+    "redId": "cwwOn3YucT9CqJBN"
    },
    {
     "label": "Primeros auxilios",
-    "red": "First Aid"
+    "red": "First Aid",
+    "redId": "8yxaK6GbNu59yxKH"
    },
    {
     "label": "Sigilo",
-    "red": "Stealth"
+    "red": "Stealth",
+    "redId": "y2oyHHPllOLVxiNJ"
    },
    {
     "label": "Arma cuerpo a cuerpo",
-    "red": "Melee Weapon"
+    "red": "Melee Weapon",
+    "redId": "2YDWLi0oPsH3c7B6"
    },
    {
     "label": "Armas cortas",
-    "red": "Handgun"
+    "red": "Handgun",
+    "redId": "l7gW0F5MaWg9I7tC"
    },
    {
     "label": "Armas largas",
-    "red": "Shoulder Arms"
+    "red": "Shoulder Arms",
+    "redId": "VdvSW102ytvqRgfx"
    },
    {
     "label": "Disparo automático",
-    "red": "Autofire"
+    "red": "Autofire",
+    "redId": "Xbk6aAKKUQtXRunw"
    },
    {
     "label": "Interrogatorio",
-    "red": "Interrogation"
+    "red": "Interrogation",
+    "redId": "bBSVyMIWcWtEt4nC"
    },
    {
     "label": "Resistir torturas/drogas",
-    "red": "Resist Torture/Drugs"
+    "red": "Resist Torture/Drugs",
+    "redId": "4nZAn6M44PYI8CU2"
    },
    {
     "label": "Tácticas",
-    "red": "Tactics"
+    "red": "Tactics",
+    "redId": "xT6Lp6hhlWRaTs0n"
    }
   ],
   "weapons": [
@@ -2494,184 +2614,224 @@
    {
     "label": "Atletismo",
     "red": "Athletics",
+    "redId": "2cEhxWWDwDYepIuJ",
     "level": 2
    },
    {
     "label": "Concentración",
     "red": "Concentration",
+    "redId": "f319Qi6jITQMATyG",
     "level": 2
    },
    {
     "label": "Conversación",
     "red": "Conversation",
+    "redId": "DlYHwCapjvfyYgKh",
     "level": 2
    },
    {
     "label": "Cultura",
     "red": "Education",
+    "redId": "m6zHqBrjzEGAs3c0",
     "level": 6
    },
    {
     "label": "Evasión",
     "red": "Evasion",
+    "redId": "CzaAkwAjPDplz4nn",
     "level": 6
    },
    {
     "label": "Experto local (tu hogar)",
     "red": "Local Expert (Your Home)",
+    "redId": "E6ZW9X4H8tjX294j",
     "level": 2
    },
    {
     "label": "Idioma (jerga callejera)",
     "red": "Language (Streetslang)",
+    "redId": "LsFm00AIool6DVwl",
     "level": 2
    },
    {
     "label": "Pelea",
     "red": "Brawling",
+    "redId": "fPnx3mKaMiRgGavI",
     "level": 2
    },
    {
     "label": "Percepción",
     "red": "Perception",
+    "redId": "nPVwsGDzkjaGu6mZ",
     "level": 2
    },
    {
     "label": "Percepción humana",
     "red": "Human Perception",
+    "redId": "FxviNlk84J78vEhV",
     "level": 2
    },
    {
     "label": "Persuasión",
     "red": "Persuasion",
+    "redId": "cwwOn3YucT9CqJBN",
     "level": 2
    },
    {
     "label": "Primeros auxilios",
     "red": "First Aid",
+    "redId": "8yxaK6GbNu59yxKH",
     "level": 2
    },
    {
     "label": "Sigilo",
     "red": "Stealth",
+    "redId": "y2oyHHPllOLVxiNJ",
     "level": 6
    },
    {
     "label": "Armas cortas",
     "red": "Handgun",
+    "redId": "l7gW0F5MaWg9I7tC",
     "level": 6
    },
    {
     "label": "Buscar en bibliotecas",
     "red": "Library Search",
+    "redId": "cUIOleVPNLHP9y3i",
     "level": 6
    },
    {
     "label": "Cibertecnología",
     "red": "Cybertech",
+    "redId": "LWy8XHIR3JKL1R0i",
     "level": 6
    },
    {
     "label": "Criptografía",
     "red": "Cryptography",
+    "redId": "RI5M0MhWRVNFwUKm",
     "level": 6
    },
    {
     "label": "Electrónica/Seguridad",
     "red": "Electronics/Security Tech",
+    "redId": "4TnbLnA1TqSFnXtq",
     "level": 6
    },
    {
     "label": "Mecánica básica",
     "red": "Basic Tech",
+    "redId": "13raQA8s0uaE9Pmq",
     "level": 6
    },
    {
     "label": "Ocultar/Revelar objeto",
     "red": "Conceal/Reveal Object",
+    "redId": "rIU0OZRG7RavocVV",
     "level": 6
    }
   ],
   "edgerunnerSkills": [
    {
     "label": "Atletismo",
-    "red": "Athletics"
+    "red": "Athletics",
+    "redId": "2cEhxWWDwDYepIuJ"
    },
    {
     "label": "Concentración",
-    "red": "Concentration"
+    "red": "Concentration",
+    "redId": "f319Qi6jITQMATyG"
    },
    {
     "label": "Conversación",
-    "red": "Conversation"
+    "red": "Conversation",
+    "redId": "DlYHwCapjvfyYgKh"
    },
    {
     "label": "Cultura",
-    "red": "Education"
+    "red": "Education",
+    "redId": "m6zHqBrjzEGAs3c0"
    },
    {
     "label": "Evasión",
-    "red": "Evasion"
+    "red": "Evasion",
+    "redId": "CzaAkwAjPDplz4nn"
    },
    {
     "label": "Experto local (tu hogar)",
-    "red": "Local Expert (Your Home)"
+    "red": "Local Expert (Your Home)",
+    "redId": "E6ZW9X4H8tjX294j"
    },
    {
     "label": "Idioma (jerga callejera)",
-    "red": "Language (Streetslang)"
+    "red": "Language (Streetslang)",
+    "redId": "LsFm00AIool6DVwl"
    },
    {
     "label": "Pelea",
-    "red": "Brawling"
+    "red": "Brawling",
+    "redId": "fPnx3mKaMiRgGavI"
    },
    {
     "label": "Percepción",
-    "red": "Perception"
+    "red": "Perception",
+    "redId": "nPVwsGDzkjaGu6mZ"
    },
    {
     "label": "Percepción humana",
-    "red": "Human Perception"
+    "red": "Human Perception",
+    "redId": "FxviNlk84J78vEhV"
    },
    {
     "label": "Persuasión",
-    "red": "Persuasion"
+    "red": "Persuasion",
+    "redId": "cwwOn3YucT9CqJBN"
    },
    {
     "label": "Primeros auxilios",
-    "red": "First Aid"
+    "red": "First Aid",
+    "redId": "8yxaK6GbNu59yxKH"
    },
    {
     "label": "Sigilo",
-    "red": "Stealth"
+    "red": "Stealth",
+    "redId": "y2oyHHPllOLVxiNJ"
    },
    {
     "label": "Armas cortas",
-    "red": "Handgun"
+    "red": "Handgun",
+    "redId": "l7gW0F5MaWg9I7tC"
    },
    {
     "label": "Buscar en bibliotecas",
-    "red": "Library Search"
+    "red": "Library Search",
+    "redId": "cUIOleVPNLHP9y3i"
    },
    {
     "label": "Cibertecnología",
-    "red": "Cybertech"
+    "red": "Cybertech",
+    "redId": "LWy8XHIR3JKL1R0i"
    },
    {
     "label": "Criptografía",
-    "red": "Cryptography"
+    "red": "Cryptography",
+    "redId": "RI5M0MhWRVNFwUKm"
    },
    {
     "label": "Electrónica/Seguridad",
-    "red": "Electronics/Security Tech"
+    "red": "Electronics/Security Tech",
+    "redId": "4TnbLnA1TqSFnXtq"
    },
    {
     "label": "Mecánica básica",
-    "red": "Basic Tech"
+    "red": "Basic Tech",
+    "redId": "13raQA8s0uaE9Pmq"
    },
    {
     "label": "Ocultar/Revelar objeto",
-    "red": "Conceal/Reveal Object"
+    "red": "Conceal/Reveal Object",
+    "redId": "rIU0OZRG7RavocVV"
    }
   ],
   "weapons": [
@@ -3377,184 +3537,224 @@
    {
     "label": "Atletismo",
     "red": "Athletics",
+    "redId": "2cEhxWWDwDYepIuJ",
     "level": 2
    },
    {
     "label": "Concentración",
     "red": "Concentration",
+    "redId": "f319Qi6jITQMATyG",
     "level": 2
    },
    {
     "label": "Conversación",
     "red": "Conversation",
+    "redId": "DlYHwCapjvfyYgKh",
     "level": 2
    },
    {
     "label": "Cultura",
     "red": "Education",
+    "redId": "m6zHqBrjzEGAs3c0",
     "level": 2
    },
    {
     "label": "Evasión",
     "red": "Evasion",
+    "redId": "CzaAkwAjPDplz4nn",
     "level": 6
    },
    {
     "label": "Experto local (tu hogar)",
     "red": "Local Expert (Your Home)",
+    "redId": "E6ZW9X4H8tjX294j",
     "level": 2
    },
    {
     "label": "Idioma (jerga callejera)",
     "red": "Language (Streetslang)",
+    "redId": "LsFm00AIool6DVwl",
     "level": 2
    },
    {
     "label": "Pelea",
     "red": "Brawling",
+    "redId": "fPnx3mKaMiRgGavI",
     "level": 6
    },
    {
     "label": "Percepción",
     "red": "Perception",
+    "redId": "nPVwsGDzkjaGu6mZ",
     "level": 4
    },
    {
     "label": "Percepción humana",
     "red": "Human Perception",
+    "redId": "FxviNlk84J78vEhV",
     "level": 2
    },
    {
     "label": "Persuasión",
     "red": "Persuasion",
+    "redId": "cwwOn3YucT9CqJBN",
     "level": 2
    },
    {
     "label": "Primeros auxilios",
     "red": "First Aid",
+    "redId": "8yxaK6GbNu59yxKH",
     "level": 6
    },
    {
     "label": "Sigilo",
     "red": "Stealth",
+    "redId": "y2oyHHPllOLVxiNJ",
     "level": 6
    },
    {
     "label": "Arma cuerpo a cuerpo",
     "red": "Melee Weapon",
+    "redId": "2YDWLi0oPsH3c7B6",
     "level": 6
    },
    {
     "label": "Armas cortas",
     "red": "Handgun",
+    "redId": "l7gW0F5MaWg9I7tC",
     "level": 6
    },
    {
     "label": "Comerciar",
     "red": "Trading",
+    "redId": "3QXtTqLRdD1lZYsI",
     "level": 6
    },
    {
     "label": "Conducir vehículo terrestre",
     "red": "Drive Land Vehicle",
+    "redId": "UZspAWJSJ2Gdb7NI",
     "level": 6
    },
    {
     "label": "Manejo de animales",
     "red": "Animal Handling",
+    "redId": "4mmnxQPl7tWbMweF",
     "level": 6
    },
    {
     "label": "Rastrear",
     "red": "Tracking",
+    "redId": "bkDDCt1Gb3xWXEEw",
     "level": 6
    },
    {
     "label": "Supervivencia",
     "red": "Wilderness Survival",
+    "redId": "jFdPv4BuD0tLj7su",
     "level": 6
    }
   ],
   "edgerunnerSkills": [
    {
     "label": "Atletismo",
-    "red": "Athletics"
+    "red": "Athletics",
+    "redId": "2cEhxWWDwDYepIuJ"
    },
    {
     "label": "Concentración",
-    "red": "Concentration"
+    "red": "Concentration",
+    "redId": "f319Qi6jITQMATyG"
    },
    {
     "label": "Conversación",
-    "red": "Conversation"
+    "red": "Conversation",
+    "redId": "DlYHwCapjvfyYgKh"
    },
    {
     "label": "Cultura",
-    "red": "Education"
+    "red": "Education",
+    "redId": "m6zHqBrjzEGAs3c0"
    },
    {
     "label": "Evasión",
-    "red": "Evasion"
+    "red": "Evasion",
+    "redId": "CzaAkwAjPDplz4nn"
    },
    {
     "label": "Experto local (tu hogar)",
-    "red": "Local Expert (Your Home)"
+    "red": "Local Expert (Your Home)",
+    "redId": "E6ZW9X4H8tjX294j"
    },
    {
     "label": "Idioma (jerga callejera)",
-    "red": "Language (Streetslang)"
+    "red": "Language (Streetslang)",
+    "redId": "LsFm00AIool6DVwl"
    },
    {
     "label": "Pelea",
-    "red": "Brawling"
+    "red": "Brawling",
+    "redId": "fPnx3mKaMiRgGavI"
    },
    {
     "label": "Percepción",
-    "red": "Perception"
+    "red": "Perception",
+    "redId": "nPVwsGDzkjaGu6mZ"
    },
    {
     "label": "Percepción humana",
-    "red": "Human Perception"
+    "red": "Human Perception",
+    "redId": "FxviNlk84J78vEhV"
    },
    {
     "label": "Persuasión",
-    "red": "Persuasion"
+    "red": "Persuasion",
+    "redId": "cwwOn3YucT9CqJBN"
    },
    {
     "label": "Primeros auxilios",
-    "red": "First Aid"
+    "red": "First Aid",
+    "redId": "8yxaK6GbNu59yxKH"
    },
    {
     "label": "Sigilo",
-    "red": "Stealth"
+    "red": "Stealth",
+    "redId": "y2oyHHPllOLVxiNJ"
    },
    {
     "label": "Armas cortas",
-    "red": "Handgun"
+    "red": "Handgun",
+    "redId": "l7gW0F5MaWg9I7tC"
    },
    {
     "label": "Arma cuerpo a cuerpo",
-    "red": "Melee Weapon"
+    "red": "Melee Weapon",
+    "redId": "2YDWLi0oPsH3c7B6"
    },
    {
     "label": "Comerciar",
-    "red": "Trading"
+    "red": "Trading",
+    "redId": "3QXtTqLRdD1lZYsI"
    },
    {
     "label": "Conducir vehículo terrestre",
-    "red": "Drive Land Vehicle"
+    "red": "Drive Land Vehicle",
+    "redId": "UZspAWJSJ2Gdb7NI"
    },
    {
     "label": "Manejo de animales",
-    "red": "Animal Handling"
+    "red": "Animal Handling",
+    "redId": "4mmnxQPl7tWbMweF"
    },
    {
     "label": "Rastrear",
-    "red": "Tracking"
+    "red": "Tracking",
+    "redId": "bkDDCt1Gb3xWXEEw"
    },
    {
     "label": "Supervivencia",
-    "red": "Wilderness Survival"
+    "red": "Wilderness Survival",
+    "redId": "jFdPv4BuD0tLj7su"
    }
   ],
   "weapons": [
@@ -4381,184 +4581,224 @@
    {
     "label": "Atletismo",
     "red": "Athletics",
+    "redId": "2cEhxWWDwDYepIuJ",
     "level": 2
    },
    {
     "label": "Concentración",
     "red": "Concentration",
+    "redId": "f319Qi6jITQMATyG",
     "level": 2
    },
    {
     "label": "Conversación",
     "red": "Conversation",
+    "redId": "DlYHwCapjvfyYgKh",
     "level": 6
    },
    {
     "label": "Cultura",
     "red": "Education",
+    "redId": "m6zHqBrjzEGAs3c0",
     "level": 2
    },
    {
     "label": "Evasión",
     "red": "Evasion",
+    "redId": "CzaAkwAjPDplz4nn",
     "level": 6
    },
    {
     "label": "Experto local (tu hogar)",
     "red": "Local Expert (Your Home)",
+    "redId": "E6ZW9X4H8tjX294j",
     "level": 6
    },
    {
     "label": "Idioma (jerga callejera)",
     "red": "Language (Streetslang)",
+    "redId": "LsFm00AIool6DVwl",
     "level": 2
    },
    {
     "label": "Pelea",
     "red": "Brawling",
+    "redId": "fPnx3mKaMiRgGavI",
     "level": 2
    },
    {
     "label": "Percepción",
     "red": "Perception",
+    "redId": "nPVwsGDzkjaGu6mZ",
     "level": 6
    },
    {
     "label": "Percepción humana",
     "red": "Human Perception",
+    "redId": "FxviNlk84J78vEhV",
     "level": 6
    },
    {
     "label": "Persuasión",
     "red": "Persuasion",
+    "redId": "cwwOn3YucT9CqJBN",
     "level": 6
    },
    {
     "label": "Primeros auxilios",
     "red": "First Aid",
+    "redId": "8yxaK6GbNu59yxKH",
     "level": 2
    },
    {
     "label": "Sigilo",
     "red": "Stealth",
+    "redId": "y2oyHHPllOLVxiNJ",
     "level": 2
    },
    {
     "label": "Armas cortas",
     "red": "Handgun",
+    "redId": "l7gW0F5MaWg9I7tC",
     "level": 6
    },
    {
     "label": "Buscar en bibliotecas",
     "red": "Library Search",
+    "redId": "cUIOleVPNLHP9y3i",
     "level": 4
    },
    {
     "label": "Composición",
     "red": "Composition",
+    "redId": "L4tVCWCpkCW7OYhE",
     "level": 6
    },
    {
     "label": "Deducción",
     "red": "Deduction",
+    "redId": "RkNmXeJttYnBdgTK",
     "level": 6
    },
    {
     "label": "Fotografía/Filmación",
     "red": "Photography/Film",
+    "redId": "MRodaB3wlDzSQJl8",
     "level": 4
    },
    {
     "label": "Lectura de labios",
     "red": "Lip Reading",
+    "redId": "oNkNlAveEaFmztRb",
     "level": 4
    },
    {
     "label": "Sobornar",
     "red": "Bribery",
+    "redId": "pd1WswOLTjK2yjEc",
     "level": 6
    }
   ],
   "edgerunnerSkills": [
    {
     "label": "Atletismo",
-    "red": "Athletics"
+    "red": "Athletics",
+    "redId": "2cEhxWWDwDYepIuJ"
    },
    {
     "label": "Concentración",
-    "red": "Concentration"
+    "red": "Concentration",
+    "redId": "f319Qi6jITQMATyG"
    },
    {
     "label": "Conversación",
-    "red": "Conversation"
+    "red": "Conversation",
+    "redId": "DlYHwCapjvfyYgKh"
    },
    {
     "label": "Cultura",
-    "red": "Education"
+    "red": "Education",
+    "redId": "m6zHqBrjzEGAs3c0"
    },
    {
     "label": "Evasión",
-    "red": "Evasion"
+    "red": "Evasion",
+    "redId": "CzaAkwAjPDplz4nn"
    },
    {
     "label": "Experto local (tu hogar)",
-    "red": "Local Expert (Your Home)"
+    "red": "Local Expert (Your Home)",
+    "redId": "E6ZW9X4H8tjX294j"
    },
    {
     "label": "Idioma (jerga callejera)",
-    "red": "Language (Streetslang)"
+    "red": "Language (Streetslang)",
+    "redId": "LsFm00AIool6DVwl"
    },
    {
     "label": "Pelea",
-    "red": "Brawling"
+    "red": "Brawling",
+    "redId": "fPnx3mKaMiRgGavI"
    },
    {
     "label": "Percepción",
-    "red": "Perception"
+    "red": "Perception",
+    "redId": "nPVwsGDzkjaGu6mZ"
    },
    {
     "label": "Percepción humana",
-    "red": "Human Perception"
+    "red": "Human Perception",
+    "redId": "FxviNlk84J78vEhV"
    },
    {
     "label": "Persuasión",
-    "red": "Persuasion"
+    "red": "Persuasion",
+    "redId": "cwwOn3YucT9CqJBN"
    },
    {
     "label": "Primeros auxilios",
-    "red": "First Aid"
+    "red": "First Aid",
+    "redId": "8yxaK6GbNu59yxKH"
    },
    {
     "label": "Sigilo",
-    "red": "Stealth"
+    "red": "Stealth",
+    "redId": "y2oyHHPllOLVxiNJ"
    },
    {
     "label": "Armas cortas",
-    "red": "Handgun"
+    "red": "Handgun",
+    "redId": "l7gW0F5MaWg9I7tC"
    },
    {
     "label": "Buscar en bibliotecas",
-    "red": "Library Search"
+    "red": "Library Search",
+    "redId": "cUIOleVPNLHP9y3i"
    },
    {
     "label": "Composición",
-    "red": "Composition"
+    "red": "Composition",
+    "redId": "L4tVCWCpkCW7OYhE"
    },
    {
     "label": "Deducción",
-    "red": "Deduction"
+    "red": "Deduction",
+    "redId": "RkNmXeJttYnBdgTK"
    },
    {
     "label": "Fotografía/Filmación",
-    "red": "Photography/Film"
+    "red": "Photography/Film",
+    "redId": "MRodaB3wlDzSQJl8"
    },
    {
     "label": "Lectura de labios",
-    "red": "Lip Reading"
+    "red": "Lip Reading",
+    "redId": "oNkNlAveEaFmztRb"
    },
    {
     "label": "Sobornar",
-    "red": "Bribery"
+    "red": "Bribery",
+    "redId": "pd1WswOLTjK2yjEc"
    }
   ],
   "weapons": [
@@ -5148,184 +5388,224 @@
    {
     "label": "Atletismo",
     "red": "Athletics",
+    "redId": "2cEhxWWDwDYepIuJ",
     "level": 2
    },
    {
     "label": "Concentración",
     "red": "Concentration",
+    "redId": "f319Qi6jITQMATyG",
     "level": 2
    },
    {
     "label": "Conversación",
     "red": "Conversation",
+    "redId": "DlYHwCapjvfyYgKh",
     "level": 6
    },
    {
     "label": "Cultura",
     "red": "Education",
+    "redId": "m6zHqBrjzEGAs3c0",
     "level": 2
    },
    {
     "label": "Evasión",
     "red": "Evasion",
+    "redId": "CzaAkwAjPDplz4nn",
     "level": 6
    },
    {
     "label": "Experto local (tu hogar)",
     "red": "Local Expert (Your Home)",
+    "redId": "E6ZW9X4H8tjX294j",
     "level": 2
    },
    {
     "label": "Idioma (jerga callejera)",
     "red": "Language (Streetslang)",
+    "redId": "LsFm00AIool6DVwl",
     "level": 2
    },
    {
     "label": "Pelea",
     "red": "Brawling",
+    "redId": "fPnx3mKaMiRgGavI",
     "level": 6
    },
    {
     "label": "Percepción",
     "red": "Perception",
+    "redId": "nPVwsGDzkjaGu6mZ",
     "level": 2
    },
    {
     "label": "Percepción humana",
     "red": "Human Perception",
+    "redId": "FxviNlk84J78vEhV",
     "level": 2
    },
    {
     "label": "Persuasión",
     "red": "Persuasion",
+    "redId": "cwwOn3YucT9CqJBN",
     "level": 2
    },
    {
     "label": "Primeros auxilios",
     "red": "First Aid",
+    "redId": "8yxaK6GbNu59yxKH",
     "level": 2
    },
    {
     "label": "Sigilo",
     "red": "Stealth",
+    "redId": "y2oyHHPllOLVxiNJ",
     "level": 2
    },
    {
     "label": "Armas cortas",
     "red": "Handgun",
+    "redId": "l7gW0F5MaWg9I7tC",
     "level": 6
    },
    {
     "label": "Armas largas",
     "red": "Shoulder Arms",
+    "redId": "VdvSW102ytvqRgfx",
     "level": 6
    },
    {
     "label": "Criminología",
     "red": "Criminology",
+    "redId": "HbUTj5xqErBhyiN4",
     "level": 6
    },
    {
     "label": "Deducción",
     "red": "Deduction",
+    "redId": "RkNmXeJttYnBdgTK",
     "level": 6
    },
    {
     "label": "Disparo automático",
     "red": "Autofire",
+    "redId": "Xbk6aAKKUQtXRunw",
     "level": 6
    },
    {
     "label": "Interrogatorio",
     "red": "Interrogation",
+    "redId": "bBSVyMIWcWtEt4nC",
     "level": 6
    },
    {
     "label": "Rastrear",
     "red": "Tracking",
+    "redId": "bkDDCt1Gb3xWXEEw",
     "level": 6
    }
   ],
   "edgerunnerSkills": [
    {
     "label": "Atletismo",
-    "red": "Athletics"
+    "red": "Athletics",
+    "redId": "2cEhxWWDwDYepIuJ"
    },
    {
     "label": "Concentración",
-    "red": "Concentration"
+    "red": "Concentration",
+    "redId": "f319Qi6jITQMATyG"
    },
    {
     "label": "Conversación",
-    "red": "Conversation"
+    "red": "Conversation",
+    "redId": "DlYHwCapjvfyYgKh"
    },
    {
     "label": "Cultura",
-    "red": "Education"
+    "red": "Education",
+    "redId": "m6zHqBrjzEGAs3c0"
    },
    {
     "label": "Evasión",
-    "red": "Evasion"
+    "red": "Evasion",
+    "redId": "CzaAkwAjPDplz4nn"
    },
    {
     "label": "Experto local (tu hogar)",
-    "red": "Local Expert (Your Home)"
+    "red": "Local Expert (Your Home)",
+    "redId": "E6ZW9X4H8tjX294j"
    },
    {
     "label": "Idioma (jerga callejera)",
-    "red": "Language (Streetslang)"
+    "red": "Language (Streetslang)",
+    "redId": "LsFm00AIool6DVwl"
    },
    {
     "label": "Pelea",
-    "red": "Brawling"
+    "red": "Brawling",
+    "redId": "fPnx3mKaMiRgGavI"
    },
    {
     "label": "Percepción",
-    "red": "Perception"
+    "red": "Perception",
+    "redId": "nPVwsGDzkjaGu6mZ"
    },
    {
     "label": "Percepción humana",
-    "red": "Human Perception"
+    "red": "Human Perception",
+    "redId": "FxviNlk84J78vEhV"
    },
    {
     "label": "Persuasión",
-    "red": "Persuasion"
+    "red": "Persuasion",
+    "redId": "cwwOn3YucT9CqJBN"
    },
    {
     "label": "Primeros auxilios",
-    "red": "First Aid"
+    "red": "First Aid",
+    "redId": "8yxaK6GbNu59yxKH"
    },
    {
     "label": "Sigilo",
-    "red": "Stealth"
+    "red": "Stealth",
+    "redId": "y2oyHHPllOLVxiNJ"
    },
    {
     "label": "Armas cortas",
-    "red": "Handgun"
+    "red": "Handgun",
+    "redId": "l7gW0F5MaWg9I7tC"
    },
    {
     "label": "Armas largas",
-    "red": "Shoulder Arms"
+    "red": "Shoulder Arms",
+    "redId": "VdvSW102ytvqRgfx"
    },
    {
     "label": "Criminología",
-    "red": "Criminology"
+    "red": "Criminology",
+    "redId": "HbUTj5xqErBhyiN4"
    },
    {
     "label": "Deducción",
-    "red": "Deduction"
+    "red": "Deduction",
+    "redId": "RkNmXeJttYnBdgTK"
    },
    {
     "label": "Disparo automático",
-    "red": "Autofire"
+    "red": "Autofire",
+    "redId": "Xbk6aAKKUQtXRunw"
    },
    {
     "label": "Interrogatorio",
-    "red": "Interrogation"
+    "red": "Interrogation",
+    "redId": "bBSVyMIWcWtEt4nC"
    },
    {
     "label": "Rastrear",
-    "red": "Tracking"
+    "red": "Tracking",
+    "redId": "bkDDCt1Gb3xWXEEw"
    }
   ],
   "weapons": [
@@ -5953,91 +6233,109 @@
    {
     "label": "Atletismo",
     "red": "Athletics",
+    "redId": "2cEhxWWDwDYepIuJ",
     "level": 2
    },
    {
     "label": "Concentración",
     "red": "Concentration",
+    "redId": "f319Qi6jITQMATyG",
     "level": 2
    },
    {
     "label": "Conversación",
     "red": "Conversation",
+    "redId": "DlYHwCapjvfyYgKh",
     "level": 2
    },
    {
     "label": "Cultura",
     "red": "Education",
+    "redId": "m6zHqBrjzEGAs3c0",
     "level": 2
    },
    {
     "label": "Evasión",
     "red": "Evasion",
+    "redId": "CzaAkwAjPDplz4nn",
     "level": 6
    },
    {
     "label": "Experto local (tu hogar)",
     "red": "Local Expert (Your Home)",
+    "redId": "E6ZW9X4H8tjX294j",
     "level": 4
    },
    {
     "label": "Idioma (jerga callejera)",
     "red": "Language (Streetslang)",
+    "redId": "LsFm00AIool6DVwl",
     "level": 2
    },
    {
     "label": "Pelea",
     "red": "Brawling",
+    "redId": "fPnx3mKaMiRgGavI",
     "level": 6
    },
    {
     "label": "Percepción",
     "red": "Perception",
+    "redId": "nPVwsGDzkjaGu6mZ",
     "level": 2
    },
    {
     "label": "Percepción humana",
     "red": "Human Perception",
+    "redId": "FxviNlk84J78vEhV",
     "level": 6
    },
    {
     "label": "Persuasión",
     "red": "Persuasion",
+    "redId": "cwwOn3YucT9CqJBN",
     "level": 6
    },
    {
     "label": "Primeros auxilios",
     "red": "First Aid",
+    "redId": "8yxaK6GbNu59yxKH",
     "level": 6
    },
    {
     "label": "Sigilo",
     "red": "Stealth",
+    "redId": "y2oyHHPllOLVxiNJ",
     "level": 2
    },
    {
     "label": "Arma cuerpo a cuerpo",
     "red": "Melee Weapon",
+    "redId": "2YDWLi0oPsH3c7B6",
     "level": 6
    },
    {
     "label": "Armas cortas",
     "red": "Handgun",
+    "redId": "l7gW0F5MaWg9I7tC",
     "level": 6
    },
    {
     "label": "Arreglo personal",
     "red": "Personal Grooming",
+    "redId": "fIq8FZsb8QgBN0sG",
     "level": 4
    },
    {
     "label": "Composición",
     "red": "Composition",
+    "redId": "L4tVCWCpkCW7OYhE",
     "level": 6
    },
    {
     "label": "Conocimiento de la calle",
     "red": "Streetwise",
+    "redId": "EkO3gpmabPfeGZeU",
     "level": 6
    },
    {
@@ -6048,81 +6346,100 @@
    {
     "label": "Vestuario y estilo",
     "red": "Wardrobe & Style",
+    "redId": "P9WIrQR7Nrxxq682",
     "level": 4
    }
   ],
   "edgerunnerSkills": [
    {
     "label": "Atletismo",
-    "red": "Athletics"
+    "red": "Athletics",
+    "redId": "2cEhxWWDwDYepIuJ"
    },
    {
     "label": "Concentración",
-    "red": "Concentration"
+    "red": "Concentration",
+    "redId": "f319Qi6jITQMATyG"
    },
    {
     "label": "Conversación",
-    "red": "Conversation"
+    "red": "Conversation",
+    "redId": "DlYHwCapjvfyYgKh"
    },
    {
     "label": "Cultura",
-    "red": "Education"
+    "red": "Education",
+    "redId": "m6zHqBrjzEGAs3c0"
    },
    {
     "label": "Evasión",
-    "red": "Evasion"
+    "red": "Evasion",
+    "redId": "CzaAkwAjPDplz4nn"
    },
    {
     "label": "Experto local (tu hogar)",
-    "red": "Local Expert (Your Home)"
+    "red": "Local Expert (Your Home)",
+    "redId": "E6ZW9X4H8tjX294j"
    },
    {
     "label": "Idioma (jerga callejera)",
-    "red": "Language (Streetslang)"
+    "red": "Language (Streetslang)",
+    "redId": "LsFm00AIool6DVwl"
    },
    {
     "label": "Pelea",
-    "red": "Brawling"
+    "red": "Brawling",
+    "redId": "fPnx3mKaMiRgGavI"
    },
    {
     "label": "Percepción",
-    "red": "Perception"
+    "red": "Perception",
+    "redId": "nPVwsGDzkjaGu6mZ"
    },
    {
     "label": "Percepción humana",
-    "red": "Human Perception"
+    "red": "Human Perception",
+    "redId": "FxviNlk84J78vEhV"
    },
    {
     "label": "Persuasión",
-    "red": "Persuasion"
+    "red": "Persuasion",
+    "redId": "cwwOn3YucT9CqJBN"
    },
    {
     "label": "Primeros auxilios",
-    "red": "First Aid"
+    "red": "First Aid",
+    "redId": "8yxaK6GbNu59yxKH"
    },
    {
     "label": "Sigilo",
-    "red": "Stealth"
+    "red": "Stealth",
+    "redId": "y2oyHHPllOLVxiNJ"
    },
    {
     "label": "Arma cuerpo a cuerpo",
-    "red": "Melee Weapon"
+    "red": "Melee Weapon",
+    "redId": "2YDWLi0oPsH3c7B6"
    },
    {
     "label": "Armas cortas",
-    "red": "Handgun"
+    "red": "Handgun",
+    "redId": "l7gW0F5MaWg9I7tC"
    },
    {
     "label": "Arreglo personal",
-    "red": "Personal Grooming"
+    "red": "Personal Grooming",
+    "redId": "fIq8FZsb8QgBN0sG"
    },
    {
     "label": "Composición",
-    "red": "Composition"
+    "red": "Composition",
+    "redId": "L4tVCWCpkCW7OYhE"
    },
    {
     "label": "Conocimiento de la calle",
-    "red": "Streetwise"
+    "red": "Streetwise",
+    "redId": "EkO3gpmabPfeGZeU"
    },
    {
     "label": "Tocar instrumento (elige 1)",
@@ -6130,7 +6447,8 @@
    },
    {
     "label": "Vestuario y estilo",
-    "red": "Wardrobe & Style"
+    "red": "Wardrobe & Style",
+    "redId": "P9WIrQR7Nrxxq682"
    }
   ],
   "weapons": [
@@ -6796,76 +7114,91 @@
    {
     "label": "Atletismo",
     "red": "Athletics",
+    "redId": "2cEhxWWDwDYepIuJ",
     "level": 2
    },
    {
     "label": "Concentración",
     "red": "Concentration",
+    "redId": "f319Qi6jITQMATyG",
     "level": 2
    },
    {
     "label": "Conversación",
     "red": "Conversation",
+    "redId": "DlYHwCapjvfyYgKh",
     "level": 2
    },
    {
     "label": "Cultura",
     "red": "Education",
+    "redId": "m6zHqBrjzEGAs3c0",
     "level": 6
    },
    {
     "label": "Evasión",
     "red": "Evasion",
+    "redId": "CzaAkwAjPDplz4nn",
     "level": 6
    },
    {
     "label": "Experto local (tu hogar)",
     "red": "Local Expert (Your Home)",
+    "redId": "E6ZW9X4H8tjX294j",
     "level": 2
    },
    {
     "label": "Idioma (jerga callejera)",
     "red": "Language (Streetslang)",
+    "redId": "LsFm00AIool6DVwl",
     "level": 2
    },
    {
     "label": "Pelea",
     "red": "Brawling",
+    "redId": "fPnx3mKaMiRgGavI",
     "level": 2
    },
    {
     "label": "Percepción",
     "red": "Perception",
+    "redId": "nPVwsGDzkjaGu6mZ",
     "level": 2
    },
    {
     "label": "Percepción humana",
     "red": "Human Perception",
+    "redId": "FxviNlk84J78vEhV",
     "level": 2
    },
    {
     "label": "Persuasión",
     "red": "Persuasion",
+    "redId": "cwwOn3YucT9CqJBN",
     "level": 2
    },
    {
     "label": "Primeros auxilios",
     "red": "First Aid",
+    "redId": "8yxaK6GbNu59yxKH",
     "level": 6
    },
    {
     "label": "Sigilo",
     "red": "Stealth",
+    "redId": "y2oyHHPllOLVxiNJ",
     "level": 2
    },
    {
     "label": "Armas largas",
     "red": "Shoulder Arms",
+    "redId": "VdvSW102ytvqRgfx",
     "level": 6
    },
    {
     "label": "Cibertecnología",
     "red": "Cybertech",
+    "redId": "LWy8XHIR3JKL1R0i",
     "level": 6
    },
    {
@@ -6876,84 +7209,103 @@
    {
     "label": "Electrónica/Seguridad",
     "red": "Electronics/Security Tech",
+    "redId": "4TnbLnA1TqSFnXtq",
     "level": 6
    },
    {
     "label": "Mecánica básica",
     "red": "Basic Tech",
+    "redId": "13raQA8s0uaE9Pmq",
     "level": 6
    },
    {
     "label": "Mecánica de armas",
     "red": "Weaponstech",
+    "redId": "Z41spNxYQPCAPXoC",
     "level": 6
    },
    {
     "label": "Mecánica de vehículos terrestres",
     "red": "Land Vehicle Tech",
+    "redId": "ENrWOKuCjjpJjCtl",
     "level": 6
    }
   ],
   "edgerunnerSkills": [
    {
     "label": "Atletismo",
-    "red": "Athletics"
+    "red": "Athletics",
+    "redId": "2cEhxWWDwDYepIuJ"
    },
    {
     "label": "Concentración",
-    "red": "Concentration"
+    "red": "Concentration",
+    "redId": "f319Qi6jITQMATyG"
    },
    {
     "label": "Conversación",
-    "red": "Conversation"
+    "red": "Conversation",
+    "redId": "DlYHwCapjvfyYgKh"
    },
    {
     "label": "Cultura",
-    "red": "Education"
+    "red": "Education",
+    "redId": "m6zHqBrjzEGAs3c0"
    },
    {
     "label": "Evasión",
-    "red": "Evasion"
+    "red": "Evasion",
+    "redId": "CzaAkwAjPDplz4nn"
    },
    {
     "label": "Experto local (tu hogar)",
-    "red": "Local Expert (Your Home)"
+    "red": "Local Expert (Your Home)",
+    "redId": "E6ZW9X4H8tjX294j"
    },
    {
     "label": "Idioma (jerga callejera)",
-    "red": "Language (Streetslang)"
+    "red": "Language (Streetslang)",
+    "redId": "LsFm00AIool6DVwl"
    },
    {
     "label": "Pelea",
-    "red": "Brawling"
+    "red": "Brawling",
+    "redId": "fPnx3mKaMiRgGavI"
    },
    {
     "label": "Percepción",
-    "red": "Perception"
+    "red": "Perception",
+    "redId": "nPVwsGDzkjaGu6mZ"
    },
    {
     "label": "Percepción humana",
-    "red": "Human Perception"
+    "red": "Human Perception",
+    "redId": "FxviNlk84J78vEhV"
    },
    {
     "label": "Persuasión",
-    "red": "Persuasion"
+    "red": "Persuasion",
+    "redId": "cwwOn3YucT9CqJBN"
    },
    {
     "label": "Primeros auxilios",
-    "red": "First Aid"
+    "red": "First Aid",
+    "redId": "8yxaK6GbNu59yxKH"
    },
    {
     "label": "Sigilo",
-    "red": "Stealth"
+    "red": "Stealth",
+    "redId": "y2oyHHPllOLVxiNJ"
    },
    {
     "label": "Armas largas",
-    "red": "Shoulder Arms"
+    "red": "Shoulder Arms",
+    "redId": "VdvSW102ytvqRgfx"
    },
    {
     "label": "Cibertecnología",
-    "red": "Cybertech"
+    "red": "Cybertech",
+    "redId": "LWy8XHIR3JKL1R0i"
    },
    {
     "label": "Ciencia (elige 1)",
@@ -6961,19 +7313,23 @@
    },
    {
     "label": "Electrónica/Seguridad",
-    "red": "Electronics/Security Tech"
+    "red": "Electronics/Security Tech",
+    "redId": "4TnbLnA1TqSFnXtq"
    },
    {
     "label": "Mecánica básica",
-    "red": "Basic Tech"
+    "red": "Basic Tech",
+    "redId": "13raQA8s0uaE9Pmq"
    },
    {
     "label": "Mecánica de armas",
-    "red": "Weaponstech"
+    "red": "Weaponstech",
+    "redId": "Z41spNxYQPCAPXoC"
    },
    {
     "label": "Mecánica de vehículos terrestres",
-    "red": "Land Vehicle Tech"
+    "red": "Land Vehicle Tech",
+    "redId": "ENrWOKuCjjpJjCtl"
    }
   ],
   "weapons": [
@@ -7690,76 +8046,91 @@
    {
     "label": "Atletismo",
     "red": "Athletics",
+    "redId": "2cEhxWWDwDYepIuJ",
     "level": 2
    },
    {
     "label": "Concentración",
     "red": "Concentration",
+    "redId": "f319Qi6jITQMATyG",
     "level": 2
    },
    {
     "label": "Conversación",
     "red": "Conversation",
+    "redId": "DlYHwCapjvfyYgKh",
     "level": 6
    },
    {
     "label": "Cultura",
     "red": "Education",
+    "redId": "m6zHqBrjzEGAs3c0",
     "level": 6
    },
    {
     "label": "Evasión",
     "red": "Evasion",
+    "redId": "CzaAkwAjPDplz4nn",
     "level": 6
    },
    {
     "label": "Experto local (tu hogar)",
     "red": "Local Expert (Your Home)",
+    "redId": "E6ZW9X4H8tjX294j",
     "level": 2
    },
    {
     "label": "Idioma (jerga callejera)",
     "red": "Language (Streetslang)",
+    "redId": "LsFm00AIool6DVwl",
     "level": 2
    },
    {
     "label": "Pelea",
     "red": "Brawling",
+    "redId": "fPnx3mKaMiRgGavI",
     "level": 2
    },
    {
     "label": "Percepción",
     "red": "Perception",
+    "redId": "nPVwsGDzkjaGu6mZ",
     "level": 2
    },
    {
     "label": "Percepción humana",
     "red": "Human Perception",
+    "redId": "FxviNlk84J78vEhV",
     "level": 6
    },
    {
     "label": "Persuasión",
     "red": "Persuasion",
+    "redId": "cwwOn3YucT9CqJBN",
     "level": 2
    },
    {
     "label": "Primeros auxilios",
     "red": "First Aid",
+    "redId": "8yxaK6GbNu59yxKH",
     "level": 2
    },
    {
     "label": "Sigilo",
     "red": "Stealth",
+    "redId": "y2oyHHPllOLVxiNJ",
     "level": 2
    },
    {
     "label": "Armas largas",
     "red": "Shoulder Arms",
+    "redId": "VdvSW102ytvqRgfx",
     "level": 6
    },
    {
     "label": "Cibertecnología",
     "red": "Cybertech",
+    "redId": "LWy8XHIR3JKL1R0i",
     "level": 4
    },
    {
@@ -7770,84 +8141,103 @@
    {
     "label": "Deducción",
     "red": "Deduction",
+    "redId": "RkNmXeJttYnBdgTK",
     "level": 6
    },
    {
     "label": "Enfermería",
     "red": "Paramedic",
+    "redId": "zJA3lYQ47dmm55fd",
     "level": 6
    },
    {
     "label": "Mecánica básica",
     "red": "Basic Tech",
+    "redId": "13raQA8s0uaE9Pmq",
     "level": 6
    },
    {
     "label": "Resistir torturas/drogas",
     "red": "Resist Torture/Drugs",
+    "redId": "4nZAn6M44PYI8CU2",
     "level": 4
    }
   ],
   "edgerunnerSkills": [
    {
     "label": "Atletismo",
-    "red": "Athletics"
+    "red": "Athletics",
+    "redId": "2cEhxWWDwDYepIuJ"
    },
    {
     "label": "Concentración",
-    "red": "Concentration"
+    "red": "Concentration",
+    "redId": "f319Qi6jITQMATyG"
    },
    {
     "label": "Conversación",
-    "red": "Conversation"
+    "red": "Conversation",
+    "redId": "DlYHwCapjvfyYgKh"
    },
    {
     "label": "Cultura",
-    "red": "Education"
+    "red": "Education",
+    "redId": "m6zHqBrjzEGAs3c0"
    },
    {
     "label": "Evasión",
-    "red": "Evasion"
+    "red": "Evasion",
+    "redId": "CzaAkwAjPDplz4nn"
    },
    {
     "label": "Experto local (tu hogar)",
-    "red": "Local Expert (Your Home)"
+    "red": "Local Expert (Your Home)",
+    "redId": "E6ZW9X4H8tjX294j"
    },
    {
     "label": "Idioma (jerga callejera)",
-    "red": "Language (Streetslang)"
+    "red": "Language (Streetslang)",
+    "redId": "LsFm00AIool6DVwl"
    },
    {
     "label": "Pelea",
-    "red": "Brawling"
+    "red": "Brawling",
+    "redId": "fPnx3mKaMiRgGavI"
    },
    {
     "label": "Percepción",
-    "red": "Perception"
+    "red": "Perception",
+    "redId": "nPVwsGDzkjaGu6mZ"
    },
    {
     "label": "Percepción humana",
-    "red": "Human Perception"
+    "red": "Human Perception",
+    "redId": "FxviNlk84J78vEhV"
    },
    {
     "label": "Persuasión",
-    "red": "Persuasion"
+    "red": "Persuasion",
+    "redId": "cwwOn3YucT9CqJBN"
    },
    {
     "label": "Primeros auxilios",
-    "red": "First Aid"
+    "red": "First Aid",
+    "redId": "8yxaK6GbNu59yxKH"
    },
    {
     "label": "Sigilo",
-    "red": "Stealth"
+    "red": "Stealth",
+    "redId": "y2oyHHPllOLVxiNJ"
    },
    {
     "label": "Armas largas",
-    "red": "Shoulder Arms"
+    "red": "Shoulder Arms",
+    "redId": "VdvSW102ytvqRgfx"
    },
    {
     "label": "Cibertecnología",
-    "red": "Cybertech"
+    "red": "Cybertech",
+    "redId": "LWy8XHIR3JKL1R0i"
    },
    {
     "label": "Ciencia (elige 1)",
@@ -7855,19 +8245,23 @@
    },
    {
     "label": "Deducción",
-    "red": "Deduction"
+    "red": "Deduction",
+    "redId": "RkNmXeJttYnBdgTK"
    },
    {
     "label": "Enfermería",
-    "red": "Paramedic"
+    "red": "Paramedic",
+    "redId": "zJA3lYQ47dmm55fd"
    },
    {
     "label": "Mecánica básica",
-    "red": "Basic Tech"
+    "red": "Basic Tech",
+    "redId": "13raQA8s0uaE9Pmq"
    },
    {
     "label": "Resistir torturas/drogas",
-    "red": "Resist Torture/Drugs"
+    "red": "Resist Torture/Drugs",
+    "redId": "4nZAn6M44PYI8CU2"
    }
   ],
   "weapons": [

@@ -371,7 +371,8 @@
   "fields": [
    "clothingStyle",
    "hairStyle"
-  ]
+  ],
+  "perColumn": true
  },
  {
   "id": "affectations",
@@ -551,7 +552,8 @@
   "fields": [
    "valueMost",
    "aboutPeople"
-  ]
+  ],
+  "perColumn": true
  },
  {
   "id": "valuedPerson",
@@ -1178,8 +1180,16 @@
    "enemies"
   ],
   "count": "1d10-7",
-  "choose": [
-   1
+  "perColumn": true,
+  "wronged": [
+   {
+    "value": "you",
+    "label": "Tú"
+   },
+   {
+    "value": "them",
+    "label": "Tu enemigo"
+   }
   ],
   "then": "revenge"
  },

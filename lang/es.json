@@ -32,7 +32,8 @@
       "reset": "Reiniciar",
       "resetTitle": "Reiniciar el generador",
       "resetBody": "Se borrará todo lo elegido en el generador para esta ficha. La ficha de RED no cambia.",
-      "pending": "Este paso todavía no está disponible en esta versión del generador."
+      "pending": "Este paso todavía no está disponible para este método en esta versión del generador.",
+      "needRole": "Elige primero un rol en el paso «Rol»."
     },
     "step": {
       "method": "Método",
@@ -59,6 +60,111 @@
         "label": "Paquete completo",
         "hint": "Compras características (entre 2 y 8) y habilidades (máximo 6) con puntos, y gastas 2550 ed. en armas, armadura, equipo y ciberequipo y 800 ed. en moda y cibermoda."
       }
+    },
+    "chat": {
+      "prefix": "Generador —",
+      "stats": "características de {role} (fila de la plantilla)",
+      "count": "{what}: recuento ({formula}, mínimo 0)"
+    },
+    "reroll": {
+      "title": "Repetir una tirada",
+      "ask": "{user} pide repetir una tirada del generador en la ficha de {actor}: {what}. ¿Lo permites?",
+      "granted": "El DJ permite a {user} repetir: {what}.",
+      "denied": "El DJ no permite a {user} repetir: {what}.",
+      "locked": "Con «Solo tiradas», repetir una tirada requiere la autorización del DJ.",
+      "sent": "Petición enviada al DJ."
+    },
+    "role": {
+      "intro": "Elige el rol del personaje. Empieza con su aptitud de rol a 4.",
+      "changeTitle": "Cambiar de rol",
+      "changeBody": "Al cambiar de rol se descarta lo que depende del rol (características, habilidades, equipo y vida pasada de rol). La vida pasada general se conserva. ¿Continuar?"
+    },
+    "stats": {
+      "row": "Fila de características",
+      "introStreetrat": "Tira 1d10 y copia la fila de la plantilla de tu rol, sin cambiar el orden."
+    },
+    "stat": {
+      "int": "INT",
+      "ref": "REF",
+      "dex": "DES",
+      "tech": "TEC",
+      "cool": "FRI",
+      "will": "VOL",
+      "luck": "SUE",
+      "move": "MOV",
+      "body": "TCO",
+      "emp": "EMP"
+    },
+    "skills": {
+      "introStreetrat": "Las habilidades de la rata callejera vienen dadas por el rol. Solo hay que elegir las especialidades indicadas y el idioma de tu origen cultural.",
+      "originLanguage": "Idioma de origen (nivel {level})",
+      "otherLanguage": "…o escribe otro idioma",
+      "suggested": "Idiomas de tu región cultural",
+      "suggestedNone": "Tira o elige tu origen cultural en «Vida pasada» para ver los idiomas de tu región."
+    },
+    "lifepath": {
+      "intro": "Recorre la vida pasada general y la de tu rol. Cada tabla se puede tirar; las decisiones se eligen.",
+      "progress": "{done} de {total} completados.",
+      "roleGroup": "Vida pasada de {role}",
+      "count": "¿Cuántos? ({formula}, mínimo 0)",
+      "wronged": "¿Quién fue el perjudicado?",
+      "none": "Ninguno",
+      "language": "Idioma"
+    },
+    "gear": {
+      "intro": "El equipo inicial viene dado por el rol. Donde hay varias opciones, elige una. Además tendrás 500 ed.",
+      "chooseOne": "Elige una opción",
+      "weapons": "Armas y blindaje",
+      "gear": "Equipo y ropa",
+      "cyberware": "Ciberequipo",
+      "humanity": "El libro calcula una pérdida de Humanidad de {loss} ({emp} EMP) para este ciberequipo; se aplica la pérdida media de RED al instalarlo."
+    },
+    "review": {
+      "clothing": "Ropa",
+      "money": "Dinero",
+      "housing": "Alojamiento y estilo de vida",
+      "applied": "Ya se aplicó a la ficha el {date}.",
+      "note": "Al aplicar se escriben las características, habilidades, vida pasada, dinero y alojamiento, y se añaden el rol, el equipo y el ciberequipo instalado (con su pérdida de Humanidad). No se borra nada de la ficha.",
+      "apply": "Aplicar a la ficha",
+      "missingIntro": "Falta completar:",
+      "missing": {
+        "stats": "La fila de características (paso Características).",
+        "spec": "La especialidad de {key} (paso Habilidades).",
+        "lang": "El idioma de origen (paso Habilidades).",
+        "gear": "Una opción de equipo (paso Equipo).",
+        "lifepath": "{n} apartados de la vida pasada (paso Vida pasada)."
+      }
+    },
+    "slot": {
+      "rolled": "tirada:",
+      "empty": "sin decidir",
+      "roll": "Tirar",
+      "reroll": "Repetir",
+      "request": "Pedir repetir",
+      "choose": "— Elegir —"
+    },
+    "apply": {
+      "missingItem": "No se encuentra el Item {uuid} en los compendios de RED.",
+      "languageName": "Idioma ({name})",
+      "moneyReason": "Generador: dinero inicial",
+      "againTitle": "Volver a aplicar",
+      "againBody": "Este personaje ya se aplicó a la ficha. Si vuelves a aplicarlo, el rol, el equipo y el ciberequipo se añadirán otra vez (duplicados). ¿Continuar?",
+      "title": "Aplicar a la ficha",
+      "body": "Se escribirá el personaje en la ficha de RED. ¿Continuar?",
+      "done": "Personaje aplicado a la ficha.",
+      "error": "Error al aplicar el personaje: {msg}",
+      "log": {
+        "stats": "Características, Humanidad, vida pasada y estilo de vida escritos.",
+        "skillMissing": "No se encontró la habilidad {name} en la ficha.",
+        "skills": "{n} habilidades ajustadas o añadidas.",
+        "role": "Rol {name} añadido con rango 4.",
+        "clothingMissing": "No se encontró la prenda {name} en el compendio de RED.",
+        "items": "{n} objetos añadidos.",
+        "noFoundation": "{name} no tiene ciberequipo base de su tipo; se instala directamente en el cuerpo.",
+        "cyber": "{n} piezas de ciberequipo instaladas; Humanidad {hum}, EMP {emp}.",
+        "money": "{n} ed añadidos al dinero."
+      },
+      "noCoreSkills": "La ficha no tiene las habilidades base de RED. Crea la ficha desde el directorio de actores (o con el botón del generador) y vuelve a aplicar."
     }
   }
 }

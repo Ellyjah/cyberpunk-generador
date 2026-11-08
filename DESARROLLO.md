@@ -23,7 +23,7 @@ El director pidió un generador lo más completo posible para PJ y PNJ. Debe cub
 
 1. **Esqueleto, permisos y ajustes.** ✅ 0.1.0.
 2. **Tablas de PJ en datos** (`data/*.json`), extraídas del Core en español y cotejadas. ✅ (las tablas de PNJ se extraen en el paso 6).
-3. Rata callejera y vida pasada (tiradas en el chat y política de tiradas), probados en el banco.
+3. **Rata callejera y vida pasada** (tiradas en el chat, política de tiradas, repetición autorizada, aplicación a la ficha). ✅ 0.2.0.
 4. Edgerunner.
 5. Paquete completo con tienda.
 6. PNJ.
@@ -38,8 +38,14 @@ El director pidió un generador lo más completo posible para PJ y PNJ. Debe cub
   scripts/main.js        hooks: init (ajustes y API), ready (socket), botón de cabecera de ficha, botón del directorio (DJ)
   scripts/settings.js    ajustes de mundo: rollPolicy ("free" | "rollsOnly"), playersEnabled (Boolean)
   scripts/socket.js      canal DJ: gmExec/registerHandler/listenSocket (mismo patrón que edgerunners-2070/effects.js)
-  scripts/wizard.js      GeneratorWizard (ApplicationV2 + HandlebarsApplicationMixin), openGenerator, userCanUse
-  scripts/logic/core.js  lógica pura sin Foundry: constantes, permisos, borrador, navegación (probada con node)
+  scripts/wizard.js      GeneratorWizard (ApplicationV2 + HandlebarsApplicationMixin): contexto de cada paso, acciones
+                         (tirar, elegir, pedir repetir, aplicar) y manejador de socket «rerollRequest»
+  scripts/data.js        carga de data/*.json y de índices de compendios de RED (especialidades, idiomas)
+  scripts/rolls.js       tirada de Foundry publicada en el chat a nombre del actor
+  scripts/apply.js       buildPlan (borrador → plan) y applyPlan (plan → ficha de RED)
+  scripts/logic/core.js  lógica pura: constantes, permisos, borrador (texto JSON), navegación, rollRights
+  scripts/logic/lifepath.js  huecos de vida pasada, filas por tirada, condiciones, texto para system.lifepath.*
+  scripts/logic/streetrat.js plan de Rata callejera: elecciones pendientes, equipo, ropa → core_clothing
   templates/wizard.hbs   barra de pasos, cuerpo del paso, pie con Anterior/Siguiente
   styles/generador.css   solo estructura; los colores son los del tema
   lang/es.json, en.json  claves CPRGEN.*
@@ -50,7 +56,10 @@ El director pidió un generador lo más completo posible para PJ y PNJ. Debe cub
   data/*.json            tablas de creación (generadas; no editar a mano)
 ```
 
-**Estado del asistente:** todo lo elegido se guarda en la bandera `flags.cyberpunk-generador.draft` del actor, con la forma `{schema: 1, method, step, data, rolls}`.
+**Estado del asistente:** todo lo elegido se guarda en la bandera `flags.cyberpunk-generador.draft` del actor, **como texto JSON**, con la forma `{schema: 1, method, step, data: {role, answers, grants}, rolls, appliedAt?}`.
+- Es texto porque Foundry trata los puntos de las claves («g.style.c0») como rutas y, al fusionar objetos, no borra claves viejas. Un texto se sustituye entero. `normalizeDraft` acepta también el objeto de 0.1.0.
+- `answers`: claves de hueco → `{row}`, `{count}`, `{value}`, `{uuid, text}` o `{text}`, con `total` si salió de una tirada. Las claves están documentadas en la cabecera de `logic/lifepath.js` y `logic/streetrat.js`.
+- `grants`: repeticiones concedidas por el DJ (se consumen al tirar). `rolls`: registro de cada tirada (clave, total, usuario y fecha).
 - Se puede cerrar y retomar.
 - El DJ y el jugador propietario ven el mismo progreso, porque el asistente se redibuja con `updateActor`.
 - **Nada se escribe en `system` de la ficha hasta el paso «Revisión»** (paso 7 del asistente), que aplicará todo de una vez.
@@ -63,7 +72,24 @@ El director pidió un generador lo más completo posible para PJ y PNJ. Debe cub
 
 **API:** `game.modules.get("cyberpunk-generador").api.open(actor)`.
 
-**Pasos del asistente** (`STEPS`): method → role → stats → skills → lifepath → gear → review. Métodos (`METHODS`): `streetrat`, `edgerunner`, `complete`.
+**Pasos del asistente** (`STEPS`): method → role → stats → skills → lifepath → gear → review. Métodos (`METHODS`): `streetrat`, `edgerunner`, `complete`. `IMPLEMENTED` en `wizard.js` dice qué pasos están hechos para cada método. Los demás muestran «todavía no disponible».
+
+**Tiradas** (`rollRights`):
+- Un hueco vacío lo puede tirar cualquiera.
+- Si ya tiene valor: el DJ siempre; con «Tirar o elegir», cualquiera; con «Solo tiradas», solo con permiso del DJ. El jugador pulsa «Pedir repetir», el DJ activo recibe un diálogo por socket y, si acepta, se escribe la concesión en `grants` y se envía un susurro a ambos.
+- Elegir directamente en el desplegable: el DJ siempre, los demás solo con «Tirar o elegir». Las decisiones de la vida pasada de rol siempre se eligen, porque el libro no las tira.
+
+**Aplicación a la ficha** (`apply.js`, paso «Revisión»). Escribe como lo haría RED y no borra nada de la ficha:
+- características (`system.stats.*.value`, más `max` de SUE y EMP), Humanidad = EMP × 10 y PG = `actor.calcMaxHp()`;
+- vida pasada en `system.lifepath.*` y alojamiento y estilo de vida en `system.lifestyle.housing` y `lifeStyle`;
+- habilidades base: se ajusta `system.level` del Item `skill` de la ficha (por nombre interno, o por el nombre visible del compendio `internal_skills`); especialidades e idioma se añaden desde sus compendios;
+- rol: Item de `core_roles` con `system.rank` 4 y `system.roleInfo.activeRole`;
+- equipo de los compendios: los apilables con `system.amount`, los demás repetidos; armas y blindaje se equipan;
+- ropa: `core_clothing` por `system.style` y `system.type`;
+- ciberequipo: primero el fundacional, en la ficha; cada opción, en el fundacional de su tipo. Las ranuras base de RED (interno, externo, moda) cuentan como fundacionales. Se instala con `installItems`, sin el diálogo de RED, y después se aplica `loseHumanityValue(…, "static")`, la pérdida media; RED recalcula la Humanidad máxima y la EMP;
+- dinero: +500 en el libro de cuentas `system.wealth`, con su apunte.
+
+**Importante, fichas creadas por código:** hay que usar `Actor.implementation.create(…)` (la clase de RED). `Actor.create(…)` crea la ficha **sin** las 63 habilidades base ni las ranuras de ciberequipo. `applyPlan` se detiene con un aviso si la ficha no tiene habilidades base.
 
 ## Datos (`data/*.json`)
 
@@ -75,7 +101,7 @@ El director pidió un generador lo más completo posible para PJ y PNJ. Debe cub
 | Archivo | Contenido |
 |---|---|
 | `roles.json` | Los 10 roles. Cada uno lleva: `key` (fixer, exec, solo, netrunner, nomad, media, lawman, rockerboy, tech, medtech), nombre del Core, `uuid` del Item de `core_roles` y `statTable` (10 filas con las claves de RED `int ref dex tech cool will luck move body emp`). También `streetratSkills` (20 entradas `{label, red?, specialtyPack?, level}`) y `edgerunnerSkills` (las mismas 20, sin nivel). `weapons`, `gear` y `cyberware` son líneas: `{options:[{uuid,name,qty,note}], prefix?}`; varias opciones equivalen a «elige una», y la ropa va como `{clothing:{style, items:[{type,qty}]}, text}`. Por último, `cyberwareHumanityLoss` y `cyberwareEmpLoss` (lo que calcula el libro) y `lifepath` (los nodos de la vida pasada de rol, ver abajo). |
-| `lifepath.json` | 15 secciones de vida pasada general en el orden del libro. Cada una lleva `{id, title, instruction, die, columns, rows:[{min,max,cells}], fields}`. `fields` asigna cada columna a un campo `system.lifepath.*` de RED. Campos opcionales: `count: "1d10-7"` (amigos, enemigos, amores: se tira el recuento y luego una vez por entrada), `choose` (columnas que se eligen en lugar de tirar), `then`/`perEnemy` (la venganza se tira por cada enemigo) y `languageOptions` (los idiomas de cada región, para la habilidad de idioma a nivel 4). |
+| `lifepath.json` | 15 secciones de vida pasada general en el orden del libro. Cada una lleva `{id, title, instruction, die, columns, rows:[{min,max,cells}], fields}`. `fields` asigna cada columna a un campo `system.lifepath.*` de RED. Campos opcionales: `count: "1d10-7"` (amigos, enemigos, amores: se tira el recuento y luego una vez por entrada), `perColumn` (cada columna se tira por separado: estilo, motivaciones, enemigos; sin él, una tirada da la fila entera), `wronged` (en enemigos, elección de la parte perjudicada), `then`/`perEnemy` (la venganza se tira por cada enemigo) y `languageOptions` (los idiomas de cada región, para la habilidad de idioma a nivel 4). |
 | `skills.json` | Las 66 habilidades de la lista del Core: `{name, stat, x2, red, redId, basic}`, o `specialtyPack` para Artes marciales, Ciencia y Tocar instrumento (la especialidad se elige en el compendio de RED indicado). |
 | `rules.json` | Constantes de los métodos: aptitud de rol 4; idioma de origen 4; habilidades 86 puntos entre 2 y 6, con mínimo 2 en las básicas; paquete completo con características entre 2 y 8, puntos por rango de personaje (principiante 62), 2550 ed y 800 ed de moda; 500 ed extra para rata callejera y edgerunner; alojamiento y estilo de vida iniciales (con un caso propio para el ejecutivo). |
 
@@ -172,17 +198,46 @@ Un nodo con `when:{id, value}` solo se recorre si la decisión `id` vale `value`
 - **Decisión técnica:** los datos se generan del Core en lugar de copiarse a mano, y el extractor se detiene ante cualquier discrepancia. Las cuatro peculiaridades del Core encontradas están documentadas en «Datos».
 - **Pendiente:** la ropa se convierte en Items en el paso 3 (correspondencia en «Datos»); las tablas de PNJ, del PDF, en el paso 6.
 
+### 2026-11-08 — Paso 3: Rata callejera y vida pasada (0.2.0) — Claude Code
+
+- **Hecho:**
+  - Paso Rol: los 10 roles; cambiar de rol conserva la vida pasada general.
+  - Paso Características: tirada 1d10 en el chat, o fila elegida.
+  - Paso Habilidades: plantilla, especialidad desde el compendio de RED, e idioma de origen desde `core_skills-languages` o escrito a mano.
+  - Paso Vida pasada: general y de rol, con decisiones, recuentos, perjudicado y venganza por enemigo.
+  - Paso Equipo: elección entre opciones.
+  - Paso Revisión: lista de pendientes, resumen y «Aplicar a la ficha» (con aviso si ya se aplicó).
+  - «Pedir repetir» por socket.
+  - Los pasos de Rol y Vida pasada ya sirven para los tres métodos. Características, Habilidades, Equipo y Revisión de Edgerunner y Paquete completo quedan para los pasos 4 y 5.
+- **Pruebas:**
+  - unitarias 16/16 (`tests/streetrat.test.mjs`: filas por tirada, recuentos, condiciones de rol, huecos, texto de vida pasada, plan, correspondencia de toda la ropa);
+  - banco 30013 (`tools/bench/gen03-rata-callejera.mjs`, Foundry 12.343, RED v0.92.4, motor 0.5.4 activo, Babele y `cyberpunk-tr-esp` activos, cliente en español), con un tecnomédico de punta a punta:
+    - tirada de características en el chat;
+    - Ciencia (Biología) e idioma;
+    - 28 huecos de vida pasada (24 tiradas);
+    - 4 elecciones de equipo;
+    - aplicación: 21 habilidades con su nivel, rol con rango 4 y rol activo, 21 objetos, armas y blindaje equipados, 4 piezas de ciberequipo instaladas en su fundacional, Humanidad 80 − 12 = 68 con máximo 74 (regla de RED), 500 ed con apunte, alojamiento y los 17 campos de vida pasada;
+    - jugador con «Solo tiradas»: tira, se bloquea, pide repetir, el DJ acepta (diálogo y susurro), repite y vuelve a quedar bloqueado;
+    - 0 errores; capturas revisadas (vida pasada, revisión y ficha de RED).
+- **Fallos encontrados y corregidos durante la prueba:**
+  1. `foundry.utils.escapeHTML` no existe en V12 (el diálogo del DJ fallaba): escape propio.
+  2. `Actor.create` no añade las habilidades base de RED: el botón del directorio y la prueba usan `Actor.implementation.create`, y `applyPlan` lo comprueba.
+  3. El idioma salía duplicado en la vida pasada («Idioma: Idioma (Bengalí)»): se elige una sola vez, en Habilidades, y se limpia el nombre.
+  4. En la vida pasada, el resultado quedaba en una columna estrecha: los botones van debajo.
+  5. Los nombres tras «o» del Core empezaban en minúscula: mayúscula al mostrarlos.
+  6. La pestaña Combate salía vacía: armas y blindaje se equipan.
+- **Decisiones:**
+  - Pérdida de Humanidad: se usa la media de RED, que coincide con la del libro en los 10 roles (comprobado).
+  - La «mano con herramientas» del técnico es una opción de ciberbrazo sin ciberbrazo en el libro: si una opción no tiene fundacional de su tipo, se instala en la ficha y se avisa en el resumen del chat.
+
 ## Cómo retomar
 
 1. Lee este documento y `module.json`.
 2. Ejecuta las pruebas unitarias y, si cambias el extractor, vuelve a generar los datos.
-3. Siguiente: **paso 3, Rata callejera y vida pasada.**
-   - Carga los datos con `fetch("modules/cyberpunk-generador/data/…")`.
-   - **Paso Rol:** lista de los 10 roles.
-   - **Paso Características:** botón «Tirar 1d10» (tirada de Foundry al chat) que fija la fila; con la política `free`, también selector de fila.
-   - **Paso Habilidades:** muestra la plantilla y pide elegir especialidad (Ciencia o Tocar instrumento) e idioma de origen.
-   - **Paso Vida pasada:** la general y la de rol, nodo a nodo, cada tabla con «Tirar» y, si la política lo permite, «Elegir»; amigos, enemigos y amores con recuento.
-   - **Paso Equipo:** elegir entre las opciones.
-   - **Paso Revisión:** aplicar a la ficha. Esto incluye: características (RED las guarda en `system.stats.<clave>.value`; compruébalo en el código de RED), habilidades (Items `skill` que RED crea en la ficha, ajustando `system.level`), rol (Item de `core_roles` con la aptitud a 4), equipo (Items de los compendios), vida pasada (`system.lifepath.*`), dinero (500 ed) y alojamiento.
-   - **Repetir una tirada:** con la política `rollsOnly`, solo el DJ, o el jugador con autorización del DJ por socket.
+3. Siguiente: **paso 4, Edgerunner.**
+   - **Características:** según el Core, «tira 1d10 para cada característica individualmente» en la tabla del rol: 10 huecos `stats.<clave>` con fila por característica. `rollRights` sirve igual.
+   - **Habilidades:** las 20 de `edgerunnerSkills`, con 86 puntos, cada una entre 2 y 6; las básicas, mínimo 2; las de coste doble (`x2` en `skills.json`) cuestan 2 puntos por nivel. El idioma de origen es gratis, a 4. Hay que añadir la lógica pura de coste y validación con sus pruebas.
+   - **Equipo:** el mismo que Rata callejera (el Core da la misma lista para ambos métodos), es decir, `gearContext` y `chosenGear`.
+   - **Plan:** generaliza `streetratPlan` en un `planFor(method)`: misma aplicación, distinta fuente de características y habilidades.
+   - Para la prueba de banco, copia `gen03-rata-callejera.mjs`.
 4. No escribas en `edgerunners-2070` ni en ESTADO/PRUEBAS sin confirmar con el director que Codex ha terminado.
