@@ -169,7 +169,7 @@ try {
   // E) Solo RED: desactiva los demás módulos, recarga y aplica una Rata callejera; después restaura.
   const prev = await gm.evaluate(async () => {
     const conf = game.settings.get("core", "moduleConfiguration"); const prev = { ...conf };
-    for (const m of ["babele", "cyberpunk-tr-esp", "cyberpunk-red-core-private", "edgerunners-2070", "lib-wrapper"]) if (m in conf) conf[m] = false;
+    for (const m of ["babele", "cyberpunk-tr-esp", "cyberpunk-red-core-private", "edgerunners-2070", "edgerunners-mission-kit", "lib-wrapper"]) if (m in conf) conf[m] = false;
     await game.settings.set("core", "moduleConfiguration", conf); return prev;
   });
   await gm.close(); await wait(2000);

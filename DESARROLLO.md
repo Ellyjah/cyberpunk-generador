@@ -30,7 +30,7 @@ El director pidió un generador lo más completo posible para PJ y PNJ. Debe cub
 5. **Paquete completo con tienda**, más sustitución autorizada de la segunda aplicación, autorización de jugadores con efecto inmediato y prueba con solo RED. ✅ 0.4.0.
 6. **PNJ**: fichas del libro, encuentros aleatorios y PNJ rápido por rol. ✅ 0.5.0.
 7. **Partida de Edgerunners** (tienda Mission Kit + RED al doble, neuropuerto de creación). ✅ 0.6.0.
-8. Pruebas completas y copias habituales (proyecto, Raspberry, V12 con el mundo cerrado, GitHub privado; esto último, previa autorización).
+8. **Pruebas completas y copias habituales** (1.0.0). Copias en la bitácora del paso 8. (proyecto, Raspberry, V12 con el mundo cerrado, GitHub privado; esto último, previa autorización).
 
 ## Arquitectura (estado actual)
 
@@ -388,6 +388,16 @@ Un nodo con `when:{id, value}` solo se recorre si la decisión `id` vale `value`
   - regresiones de los pasos 5 (`gen05`, con su prueba actualizada a los id completos de compendio) y 6 (`gen06`): correctas;
   - 0 errores; captura de la tienda revisada.
 - **Incidencias de entorno:** la copia del Mission Kit al banco con `cp -a` y `cp -r` falló porque el disco del banco no admite permisos Unix y porque una tubería con `head` cortó la copia (error mío). Se hizo con `tar` y se comparó archivo a archivo. La primera ejecución de la parte B no la probaba de verdad, porque el mundo del banco ya tenía el Mission Kit activado; se corrigió la prueba para desactivarlo primero.
+
+### 2026-11-08 — Paso 8: pruebas completas y versión 1.0.0 — Claude Code
+
+- **Pruebas:** batería completa en el banco 30013 con `tools/bench/run-all.sh` (gen01, 03, 04, 05, 06 y 07; resultados en `tools/bench/out/`, que no se versiona). Las seis pruebas pasan, con 0 errores de página o consola.
+- **Adaptaciones de las pruebas antiguas:**
+  - `gen01` y `gen03` activan la autorización de jugadores, desactivada por defecto desde 0.4.0;
+  - `gen01` crea con `Actor.implementation.create`;
+  - `gen05` elige los compendios por id completo y su prueba de «solo RED» desactiva también el Mission Kit, ahora instalado en el banco. Repetida: solo `cyberpunk-generador` activo, personaje creado y aplicado.
+- **Versión 1.0.0:** `CHANGELOG.md` con la historia de versiones. Copias: ver el apartado siguiente, que se completa al hacerlas.
+- **Pendiente:** revisión visual del director y registro en ESTADO y PRUEBAS, que se hará cuando el director confirme que Codex ya no escribe en ellos.
 
 ## Cómo retomar
 

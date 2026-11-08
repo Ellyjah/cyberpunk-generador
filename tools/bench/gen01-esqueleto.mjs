@@ -28,6 +28,8 @@ try {
     await gm.evaluate(async () => { const c = game.settings.get("core", "moduleConfiguration"); c["cyberpunk-generador"] = true; await game.settings.set("core", "moduleConfiguration", c); });
     await wait(1500); await gm.close(); gm = await login("x.role === 4");
   }
+  // Desde 0.4.0 la autorización de jugadores está desactivada por defecto: esta prueba la activa.
+  await gm.evaluate(() => game.settings.set("cyberpunk-generador", "playersEnabled", true)); await wait(800);
   step("entorno", await gm.evaluate(() => ({ gen: game.modules.get("cyberpunk-generador")?.version, active: game.modules.get("cyberpunk-generador")?.active, lang: game.i18n.lang, users: game.users.map((u) => `${u.name}:${u.role}`), policy: game.settings.get("cyberpunk-generador", "rollPolicy"), players: game.settings.get("cyberpunk-generador", "playersEnabled"), api: typeof game.modules.get("cyberpunk-generador").api?.open })));
   // Botón del directorio (DJ).
   await gm.evaluate(() => ui.sidebar.activateTab("actors")); await wait(800);
@@ -36,8 +38,8 @@ try {
   const ids = await gm.evaluate(async () => {
     await Actor.deleteDocuments(game.actors.filter((a) => a.name.startsWith("[GEN] ")).map((a) => a.id));
     const player = game.users.find((u) => !u.isGM);
-    const own = await Actor.create({ name: "[GEN] Propio", type: "character", ownership: { default: 0, [player.id]: 3 } });
-    const other = await Actor.create({ name: "[GEN] Ajeno", type: "character", ownership: { default: 2 } });
+    const own = await Actor.implementation.create({ name: "[GEN] Propio", type: "character", ownership: { default: 0, [player.id]: 3 } });
+    const other = await Actor.implementation.create({ name: "[GEN] Ajeno", type: "character", ownership: { default: 2 } });
     const mook = await Actor.create({ name: "[GEN] Secuaz", type: "mook" });
     return { own: own.id, other: other.id, mook: mook.id, player: player.name };
   });

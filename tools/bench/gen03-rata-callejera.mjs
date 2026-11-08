@@ -40,6 +40,7 @@ try {
   step("entorno", await gm.evaluate(() => ({ gen: game.modules.get("cyberpunk-generador")?.version, active: game.modules.get("cyberpunk-generador")?.active, lang: game.i18n.lang, motor: game.modules.get("edgerunners-2070")?.active, babele: game.modules.get("babele")?.active, tr: game.modules.get("cyberpunk-tr-esp")?.active })));
   const id = await gm.evaluate(async () => {
     await game.settings.set("cyberpunk-generador", "rollPolicy", "free");
+    await game.settings.set("cyberpunk-generador", "playersEnabled", true); // desactivado por defecto desde 0.4.0
     await Actor.deleteDocuments(game.actors.filter((a) => a.name.startsWith("[GEN3] ")).map((a) => a.id));
     const a = await Actor.implementation.create({ name: "[GEN3] Tecnomédica", type: "character" });
     game.modules.get("cyberpunk-generador").api.open(a); await __w(2000);
