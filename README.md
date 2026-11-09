@@ -2,8 +2,6 @@
 
 Asistente para **Foundry VTT 12** y **Cyberpunk RED – Core** que crea personajes jugadores y PNJ con los métodos del libro básico. Las tiradas salen en el chat y el resultado se aplica a una ficha.
 
-*Contenido no oficial, no aprobado ni respaldado por R. Talsorian Games.*
-
 ## Qué hace
 
 **Personajes jugadores**, con los tres métodos del libro:
