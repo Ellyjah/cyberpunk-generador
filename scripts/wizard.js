@@ -13,7 +13,7 @@ import { setting, edgerunnersMode } from "./settings.js";
 import { loadData, packChoices } from "./data.js";
 import { rollToChat } from "./rolls.js";
 import { gmExec, registerHandler } from "./socket.js";
-import { buildPlan, applyCharacter, appliedRecord } from "./apply.js";
+import { buildPlan, applyCharacter, appliedRecord, isApplied } from "./apply.js";
 
 const { ApplicationV2, HandlebarsApplicationMixin } = foundry.applications.api;
 const L = (k, d) => game.i18n.format(`CPRGEN.${k}`, d ?? {});
@@ -339,7 +339,7 @@ export class GeneratorWizard extends HandlebarsApplicationMixin(ApplicationV2) {
       ...(missLp.length ? [L("review.missing.lifepath", { n: missLp.length })] : []),
     ];
     const rec = appliedRecord(this.actor);
-    const ctx = { missing, ready: missing.length === 0, applied: rec ? new Date(rec.at).toLocaleString(game.i18n.lang) : null, needAuth: Boolean(rec) && !game.user.isGM, edgerunners: edgerunnersMode() };
+    const ctx = { missing, ready: missing.length === 0, applied: isApplied(rec) ? new Date(rec.at).toLocaleString(game.i18n.lang) : null, needAuth: isApplied(rec) && !game.user.isGM, edgerunners: edgerunnersMode() };
     if (ctx.ready) {
       const plan = buildPlan(data, draft);
       ctx.summary = {
@@ -507,7 +507,9 @@ export class GeneratorWizard extends HandlebarsApplicationMixin(ApplicationV2) {
   static async #onApply() {
     const d = this.draft;
     const data = await loadData();
-    const previous = appliedRecord(this.actor);
+    const record = appliedRecord(this.actor);
+    // 1.0.1 (H01): una aplicación interrumpida (registro pendiente) se reintenta como primera aplicación.
+    const previous = isApplied(record) ? record : null;
     if (previous && !game.user.isGM) {
       // Segunda aplicación de un jugador: la autoriza (y la ejecuta) el DJ.
       if (!game.users.activeGM) return ui.notifications.error(L("noGM"));

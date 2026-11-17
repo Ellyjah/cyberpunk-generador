@@ -227,7 +227,8 @@
       "authSent": "Request sent to the GM.",
       "authDenied": "The GM does not approve applying the generator again to {actor} ({user}).",
       "doneReplaced": "Character applied, replacing the previous application.",
-      "moneyUndo": "Generator: previous application money removed"
+      "moneyUndo": "Generator: previous application money removed",
+      "busy": "This character is already being applied to this sheet. Wait for it to finish."
     },
     "shop": {
       "intro": "You have {money}eb for weapons, armor, gear, programs and cyberware, which you may keep, and {fashion}eb for fashion and cyberfashion only, lost if unspent. Fashion beyond {fashion}eb is paid from the rest.",

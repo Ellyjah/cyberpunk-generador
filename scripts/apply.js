@@ -49,7 +49,7 @@ export function appliedRecord(actor) {
 }
 
 /** Deshace una aplicación anterior: Items generados, habilidades base tocadas y dinero. */
-export async function undoApplied(actor, record) {
+export async function undoApplied(actor, record, extra = {}) {
   const log = [];
   const generated = actor.items.filter((i) => i.getFlag(MODULE_ID, "generated"));
   // Ciberequipo: primero las opciones y después los fundacionales, cada uno desde su contenedor.
@@ -71,15 +71,16 @@ export async function undoApplied(actor, record) {
   if (stale.length) await actor.updateEmbeddedDocuments("Item", stale);
   const resetSkills = (record?.coreSkills ?? []).filter((id) => actor.items.has(id)).map((id) => ({ _id: id, "system.level": 0 }));
   if (resetSkills.length) await actor.updateEmbeddedDocuments("Item", resetSkills);
+  // Dinero, rol activo y `extra` (1.0.1: el registro pendiente de la nueva aplicación) en una sola actualización, para
+  // que una interrupción no devuelva el dinero dos veces.
+  const upd = { "system.roleInfo.activeRole": "", ...extra };
   if (record?.money && actor.system.wealth) {
     const wealth = actor.system.wealth;
     const total = (wealth.value ?? 0) - record.money;
-    await actor.update({
-      "system.wealth.value": total,
-      "system.wealth.transactions": [...(wealth.transactions ?? []), [game.i18n.format("CPR.ledger.decreaseSentence", { property: "wealth", amount: record.money, total }), L("apply.moneyUndo")]],
-    });
+    upd["system.wealth.value"] = total;
+    upd["system.wealth.transactions"] = [...(wealth.transactions ?? []), [game.i18n.format("CPR.ledger.decreaseSentence", { property: "wealth", amount: record.money, total }), L("apply.moneyUndo")]];
   }
-  await actor.update({ "system.roleInfo.activeRole": "" });
+  await actor.update(upd);
   log.push(L("apply.log.undo", { items: ids.length, skills: resetSkills.length, money: record?.money ?? 0 }));
   return log;
 }
@@ -103,6 +104,12 @@ async function clothingIndex() {
  * Devuelve los ids de las habilidades base ajustadas (para poder deshacerlo). La usan los PJ y los PNJ.
  */
 export async function applySkills(actor, skills, log) {
+  const { skillUpd, newSkills } = await resolveSkills(actor, skills, log);
+  return writeSkills(actor, { skillUpd, newSkills }, log);
+}
+
+/** 1.0.1 (H01): resuelve las habilidades sin escribir nada en la ficha. */
+export async function resolveSkills(actor, skills, log) {
   const skillIndex = await game.packs.get("cyberpunk-red-core.internal_skills").getIndex();
   const visibleName = (en) => skillIndex.find((e) => e.name === en || e.originalName === en || e.flags?.babele?.originalName === en)?.name;
   const skillUpd = [], newSkills = [];
@@ -125,6 +132,11 @@ export async function applySkills(actor, skills, log) {
       newSkills.push(d);
     }
   }
+  return { skillUpd, newSkills };
+}
+
+/** Escribe las habilidades resueltas. Devuelve los ids de las habilidades base ajustadas. */
+async function writeSkills(actor, { skillUpd, newSkills }, log) {
   if (skillUpd.length) await actor.updateEmbeddedDocuments("Item", skillUpd);
   if (newSkills.length) await actor.createEmbeddedDocuments("Item", newSkills);
   log.push(L("apply.log.skills", { n: skillUpd.length + newSkills.length }));
@@ -142,10 +154,50 @@ export function buildPlan(data, draft) {
   return plan;
 }
 
-export async function applyPlan(actor, plan) {
+/**
+ * 1.0.1 (H01): la aplicación tiene dos fases. Primero se resuelve todo lo que viene de los compendios (habilidades, rol,
+ * equipo, ropa y neuropuerto) sin escribir nada: si algo falla, la ficha queda intacta. Después se llama a `before`
+ * (applyCharacter deshace la aplicación anterior y guarda un registro «pendiente» con las habilidades base que se van a
+ * tocar) y se escribe. Si una escritura falla, el reintento deshace lo generado a partir de ese registro y no duplica.
+ * El dinero no se escribe aquí: se devuelve para guardarlo junto con el registro final en una sola actualización.
+ */
+export async function applyPlan(actor, plan, { before } = {}) {
   // Una ficha creada por código con Actor.create (no Actor.implementation) no tiene las habilidades base de RED.
   if (!actor.itemTypes.skill.some((i) => i.system.core)) throw new Error(L("apply.noCoreSkills"));
   const log = [];
+  // 0. Resolución sin escrituras.
+  const skills = await resolveSkills(actor, plan.skills, log);
+  const roleData = await itemData(plan.roleUuid);
+  roleData.system.rank = plan.roleRank;
+  const toCreate = [];
+  for (const it of plan.items) {
+    const d = await itemData(it.uuid);
+    // Armas y blindaje iniciales, equipados (si no, la pestaña Combate de RED aparece vacía).
+    if (["weapon", "armor"].includes(d.type) && foundry.utils.hasProperty(d, "system.equipped")) d.system.equipped = "equipped";
+    toCreate.push(...withQty(d, it.qty));
+  }
+  const clothes = await clothingIndex();
+  for (const c of plan.clothing) {
+    const e = clothes.find((x) => x.system?.style === c.style && x.system?.type === c.type);
+    if (!e) { log.push(L("apply.log.clothingMissing", { name: c.text })); continue; }
+    toCreate.push(...withQty(await itemData(e.uuid ?? `Compendium.cyberpunk-red-core.core_clothing.Item.${e._id}`), c.qty));
+  }
+  // Partida de Edgerunners: neuropuerto de creación del Mission Kit si hay ciberequipo que no sea de grado médico.
+  const edgerunners = edgerunnersMode();
+  let portData = null;
+  if (edgerunners) {
+    const cyberData = toCreate.filter((d) => d.type === "cyberware");
+    const hasPort = cyberData.some((d) => capsOf(d).includes("neuroport"));
+    const needs = cyberData.some((d) => !capsOf(d).includes("neuroport") && !capsOf(d).includes("medical-grade") && !/grado m[eé]dico|medical grade/i.test(d.name));
+    if (needs && !hasPort) {
+      const uuid = await findCreationNeuroport();
+      if (uuid) portData = await itemData(uuid);
+      else log.push(L("apply.log.noNeuroport"));
+    }
+  }
+  const coreSkills = skills.skillUpd.map((u) => u._id);
+  if (before) await before({ coreSkills });
+
   // 1. Características, Humanidad, vida pasada y estilo de vida.
   const upd = {};
   for (const k of STATS) upd[`system.stats.${k}.value`] = plan.stats[k];
@@ -172,29 +224,14 @@ export async function applyPlan(actor, plan) {
   log.push(L("apply.log.stats"));
 
   // 2. Habilidades.
-  const coreSkills = await applySkills(actor, plan.skills, log);
+  await writeSkills(actor, skills, log);
 
   // 3. Rol con rango 4, rol activo.
-  const roleData = await itemData(plan.roleUuid);
-  roleData.system.rank = plan.roleRank;
   const [roleItem] = await actor.createEmbeddedDocuments("Item", [roleData]);
   await actor.update({ "system.roleInfo.activeRole": roleItem.name });
   log.push(L("apply.log.role", { name: roleItem.name }));
 
   // 4. Equipo y ropa.
-  const toCreate = [];
-  for (const it of plan.items) {
-    const d = await itemData(it.uuid);
-    // Armas y blindaje iniciales, equipados (si no, la pestaña Combate de RED aparece vacía).
-    if (["weapon", "armor"].includes(d.type) && foundry.utils.hasProperty(d, "system.equipped")) d.system.equipped = "equipped";
-    toCreate.push(...withQty(d, it.qty));
-  }
-  const clothes = await clothingIndex();
-  for (const c of plan.clothing) {
-    const e = clothes.find((x) => x.system?.style === c.style && x.system?.type === c.type);
-    if (!e) { log.push(L("apply.log.clothingMissing", { name: c.text })); continue; }
-    toCreate.push(...withQty(await itemData(e.uuid ?? `Compendium.cyberpunk-red-core.core_clothing.Item.${e._id}`), c.qty));
-  }
   const created = await actor.createEmbeddedDocuments("Item", toCreate);
   log.push(L("apply.log.items", { n: created.length }));
 
@@ -203,15 +240,9 @@ export async function applyPlan(actor, plan) {
   // instalado sin pérdida de Humanidad y marcado para el motor 2070 (install.mode = "creation"; el motor devuelve el −2
   // de Humanidad máxima que resta RED). Las opciones de neuralware van a la conexión neuronal, no al neuropuerto.
   let port = null;
-  if (edgerunnersMode()) {
-    const cyberItems = created.filter((i) => i.type === "cyberware");
-    port = cyberItems.find((i) => capsOf(i).includes("neuroport")) ?? null;
-    const needs = cyberItems.some((i) => !capsOf(i).includes("neuroport") && !capsOf(i).includes("medical-grade") && !/grado m[eé]dico|medical grade/i.test(i.name));
-    if (needs && !port) {
-      const uuid = await findCreationNeuroport();
-      if (uuid) { [port] = await actor.createEmbeddedDocuments("Item", [await itemData(uuid)]); log.push(L("apply.log.neuroport", { name: port.name })); }
-      else log.push(L("apply.log.noNeuroport"));
-    }
+  if (edgerunners) {
+    port = created.filter((i) => i.type === "cyberware").find((i) => capsOf(i).includes("neuroport")) ?? null;
+    if (!port && portData) { [port] = await actor.createEmbeddedDocuments("Item", [portData]); log.push(L("apply.log.neuroport", { name: port.name })); }
     if (port) {
       await actor.installItems([actor.items.get(port.id)]);
       await actor.items.get(port.id).setFlag(ER, "install", { mode: "creation", at: game.time.worldTime });
@@ -230,33 +261,55 @@ export async function applyPlan(actor, plan) {
   else if (port) await actor.setMaxHumanity();
   log.push(L("apply.log.cyber", { n: installed.length, hum: actor.system.derivedStats.humanity.value, emp: actor.system.stats.emp.value }));
 
-  // 6. Dinero inicial en el libro de cuentas de RED (la ficha de secuaz no tiene dinero).
+  // 6. Dinero inicial en el libro de cuentas de RED (la ficha de secuaz no tiene dinero): se devuelve la actualización
+  // para que applyCharacter la escriba junto con el registro final.
   const wealth = actor.system.wealth;
-  if (!wealth) return { log, coreSkills, money: 0 };
+  if (!wealth) return { log, coreSkills, money: 0, moneyUpdate: {} };
   const total = (wealth.value ?? 0) + plan.money;
-  await actor.update({
-    "system.wealth.value": total,
-    "system.wealth.transactions": [...(wealth.transactions ?? []), [game.i18n.format("CPR.ledger.increaseSentence", { property: "wealth", amount: plan.money, total }), L("apply.moneyReason")]],
-  });
   log.push(L("apply.log.money", { n: plan.money }));
-  return { log, coreSkills, money: plan.money };
+  return {
+    log, coreSkills, money: plan.money,
+    moneyUpdate: {
+      "system.wealth.value": total,
+      "system.wealth.transactions": [...(wealth.transactions ?? []), [game.i18n.format("CPR.ledger.increaseSentence", { property: "wealth", amount: plan.money, total }), L("apply.moneyReason")]],
+    },
+  };
 }
+
+/** Registro terminado (los pendientes son aplicaciones interrumpidas: se deshacen al reintentar sin pedir autorización). */
+export const isApplied = (record) => Boolean(record) && !record.pending;
+
+const applying = new Set(); // 1.0.1 (H01): una sola aplicación a la vez por ficha en este cliente
 
 /**
  * Aplica el borrador a la ficha, sustituyendo la aplicación anterior si la hay. Lo llama el DJ, o el propietario
  * en la primera aplicación; la autorización de una reaplicación se comprueba en wizard.js antes de llegar aquí.
+ * 1.0.1 (H01): registro «pendiente» antes de la primera escritura y registro final junto con el dinero.
  */
 export async function applyCharacter(actor, data, draft, userId = game.user.id, { whisper = false } = {}) {
-  const previous = appliedRecord(actor);
-  const plan = buildPlan(data, draft);
-  const log = previous ? await undoApplied(actor, previous) : [];
-  const res = await applyPlan(actor, plan);
-  log.push(...res.log);
-  const record = { at: Date.now(), by: userId, method: draft.method, money: res.money, coreSkills: res.coreSkills, replaced: Boolean(previous) };
-  await actor.setFlag(MODULE_ID, "applied", JSON.stringify(record));
-  await actor.setFlag(MODULE_ID, "draft", JSON.stringify(markApplied(draft, userId)));
-  await ChatMessage.create({ speaker: ChatMessage.getSpeaker({ actor }), content: `<p><strong>${L(previous ? "apply.doneReplaced" : "apply.done")}</strong></p><ul>${log.map((l) => `<li>${l}</li>`).join("")}</ul>`, ...(whisper ? { whisper: ChatMessage.getWhisperRecipients("GM").map((u) => u.id) } : {}) });
-  return log;
+  if (applying.has(actor.uuid)) throw new Error(L("apply.busy"));
+  applying.add(actor.uuid);
+  try {
+    const previous = appliedRecord(actor);
+    const plan = buildPlan(data, draft);
+    const log = [];
+    const at = Date.now();
+    const res = await applyPlan(actor, plan, {
+      before: async ({ coreSkills }) => {
+        const pending = { [`flags.${MODULE_ID}.applied`]: JSON.stringify({ at, by: userId, method: draft.method, money: 0, coreSkills, replaced: isApplied(previous), pending: true }) };
+        if (previous) log.push(...await undoApplied(actor, previous, pending));
+        else await actor.update(pending);
+      },
+    });
+    log.push(...res.log);
+    const record = { at, by: userId, method: draft.method, money: res.money, coreSkills: res.coreSkills, replaced: isApplied(previous) };
+    await actor.update({ ...res.moneyUpdate, [`flags.${MODULE_ID}.applied`]: JSON.stringify(record) });
+    await actor.setFlag(MODULE_ID, "draft", JSON.stringify(markApplied(draft, userId)));
+    await ChatMessage.create({ speaker: ChatMessage.getSpeaker({ actor }), content: `<p><strong>${L(isApplied(previous) ? "apply.doneReplaced" : "apply.done")}</strong></p><ul>${log.map((l) => `<li>${l}</li>`).join("")}</ul>`, ...(whisper ? { whisper: ChatMessage.getWhisperRecipients("GM").map((u) => u.id) } : {}) });
+    return log;
+  } finally {
+    applying.delete(actor.uuid);
+  }
 }
 
 /** Marca el borrador como aplicado (fecha y quién) sin perder lo elegido. */

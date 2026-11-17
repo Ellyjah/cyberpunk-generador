@@ -2,7 +2,7 @@
   "id": "cyberpunk-generador",
   "title": "Cyberpunk RED — Generador de personajes",
   "description": "Generador privado de personajes jugadores y PNJ para Cyberpunk RED – Core: Rata callejera, Edgerunner y Paquete completo, camino de vida y plantillas de PNJ, con tiradas en el chat. Contenido privado no oficial, no aprobado ni respaldado por R. Talsorian Games.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "authors": [{ "name": "Ellyjah" }],
   "compatibility": {
     "minimum": "12",
@@ -21,5 +21,8 @@
   ],
   "flags": {
     "verifiedSystemVersion": "v0.92.4"
-  }
+  },
+  "url": "https://github.com/Ellyjah/cyberpunk-generador",
+  "manifest": "https://github.com/Ellyjah/cyberpunk-generador/releases/latest/download/module.json",
+  "download": "https://github.com/Ellyjah/cyberpunk-generador/releases/download/v1.0.1/cyberpunk-generador-1.0.1.zip"
 }

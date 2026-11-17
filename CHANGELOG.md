@@ -1,5 +1,15 @@
 # Cambios — cyberpunk-generador
 
+## 1.0.1 — 2026-11-17
+
+Corrección H01 de la auditoría global de Codex: una aplicación interrumpida ya no deja la ficha a medias ni duplica al reintentar.
+
+- Todo lo que viene de los compendios (habilidades, rol, equipo, ropa y neuropuerto) se resuelve antes de escribir. Si algo falla, la ficha queda intacta y la generación anterior se conserva.
+- Antes de la primera escritura se guarda un registro «pendiente» con las habilidades base que se van a tocar. Si una escritura falla, el reintento deshace lo generado y aplica de nuevo, sin roles, habilidades ni dinero duplicados, y sin pedir autorización al DJ por ser una aplicación que no terminó.
+- La devolución del dinero de la aplicación anterior y el cobro de la nueva van en la misma actualización que su registro.
+- No se aplican dos veces a la vez en la misma ficha.
+- `module.json` lleva ya sus direcciones de proyecto, manifiesto y descarga, como el de la release.
+
 ## 1.0.0 — 2026-11-08
 
 Primera versión completa. Recoge los pasos 1 a 7 del desarrollo y las pruebas del paso 8. El detalle está en [DESARROLLO.md](DESARROLLO.md).
